@@ -1,0 +1,66 @@
+# Informacion configurable
+LOCALLIBS = tinyxml bullet
+PROJECT = Wii Pang
+TARGET = boot
+BUILD = build
+SOURCE = src
+DEPSDIR = $(BUILD)
+
+# Reglas de compilacion
+.SUFFIXES:
+include $(DEVKITPPC)/wii_rules
+include $(DEVKITPPC)/libwiiesp_rules
+
+# Generar una lista con todos los ficheros objeto del proyecto
+CPPFILES = $(notdir $(wildcard $(SOURCE)/*.cpp))
+OFILES = $(CPPFILES:.cpp=.o)
+OBJS = $(addprefix $(CURDIR)/$(BUILD)/,$(OFILES))
+
+# Variables para la compilacion
+INCLUDE = $(foreach dir,$(LOCALLIBS),-Ilib/$(dir)) -I$(LIBOGC_INC)
+LIBPATHS = -L$(LIBOGC_LIB) -L$(CURDIR)/$(BUILD)
+VPATH = $(SOURCE)$(foreach dir,$(LOCALLIBS),:lib/$(dir))
+LIBS = $(LIBWIIESP_LIBS) -ltinyxml -lbullet
+OUTPUT = $(CURDIR)/$(TARGET)
+LD = $(CXX)
+
+# Flags para la compilacion
+CXXFLAGS	= -g -ansi -Wall $(MACHDEP) $(INCLUDE) -std=c++0x
+OPTIONS		= -MMD -MP -MF
+LDFLAGS		= -g $(MACHDEP) -Wl,-Map,$(notdir $@).map
+
+# Objetivos
+.PHONY: all $(BUILD) libs $(LOCALLIBS) listo run clean
+
+all: $(BUILD) libs $(OUTPUT).dol listo
+
+$(BUILD):
+	@[ -d $(BUILD) ] || mkdir -p $(BUILD)
+
+libs: $(LOCALLIBS)
+	@echo Bibliotecas externas listas
+
+$(LOCALLIBS):
+	$(MAKE) --no-print-directory --silent -C lib/$@
+	mv lib/$@/*.a $(BUILD)
+
+$(CURDIR)/$(BUILD)/%.o: $(CURDIR)/$(SOURCE)/%.cpp
+	$(CXX) -MMD -MP -MF $(DEPSDIR)/$*.d $(CXXFLAGS) -c $< -o $@
+
+listo:
+	$(RM) $(SOURCE)/-g $(OUTPUT).elf.map
+
+run:
+	wiiload $(TARGET).dol
+
+clean:
+	for dir in $(LOCALLIBS); do $(MAKE) clean -C lib/$$dir; done
+	$(RM) -fr $(BUILD) $(OUTPUT).elf $(OUTPUT).dol *~ $(SOURCE)/*~
+
+DEPENDS	:=	$(OBJS:.o=.d)
+
+$(OUTPUT).dol: $(OUTPUT).elf
+
+$(OUTPUT).elf: $(OBJS)
+
+-include $(DEPENDS)

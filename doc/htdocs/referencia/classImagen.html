@@ -1,0 +1,369 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>libWiiEsp: Referencia de la Clase Imagen</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Generado por Doxygen 1.7.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+--></script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libWiiEsp&#160;<span id="projectnumber">0.9.2</span></div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Clases</span></a></li>
+      <li><a href="files.html"><span>Archivos</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Clases</a> &#124;
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-static-attribs">Atributos públicos estáticos</a> &#124;
+<a href="#pro-methods">Métodos protegidos</a>  </div>
+  <div class="headertitle">
+<h1>Referencia de la Clase Imagen</h1>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="Imagen" -->
+<p>Clase que representa una imagen cargada en memoria, lista para ser dibujada en la pantalla.  
+<a href="#_details">Más...</a></p>
+
+<p><code>#include &lt;<a class="el" href="imagen_8h_source.html">imagen.h</a>&gt;</code></p>
+
+<p><a href="classImagen-members.html">Lista de todos los miembros.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="nested-classes"></a>
+Clases</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><b>tagBitmapFileHeader</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><b>tagBitmapInfoHeader</b></td></tr>
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImagen.html#ab0647d0d98ebd2a4b59f05817109ea1e">Imagen</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImagen.html#a703eaec1e9de38b0f6c077aa3d756c4a">cargarBmp</a> (const std::string &amp;ruta)  throw (ArchivoEx, ImagenEx, TarjetaEx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImagen.html#ab3d169b4678ac21dc8b2987cfa814c23">dibujar</a> (s16 x, s16 y, s16 z) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImagen.html#a4a408b001747fb28b00d3ab1b88b69a0">ancho</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImagen.html#a5ccca0a09ebc808211b97cb1fc32a00f">alto</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">GXTexObj *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImagen.html#acd99fb766ee6bd81eb313b38eca76be8">textura</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImagen.html#a784a8ba054971c8491779aab1c30c9ad">~Imagen</a> (void)</td></tr>
+<tr><td colspan="2"><h2><a name="pub-static-attribs"></a>
+Atributos públicos estáticos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static u32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImagen.html#ab2acf148722c896989fca68a592dae39">alpha</a></td></tr>
+<tr><td colspan="2"><h2><a name="pro-methods"></a>
+Métodos protegidos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImagen.html#a02f127fe68ccfacadc9e38499f876013">Imagen</a> (const <a class="el" href="classImagen.html">Imagen</a> &amp;i)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classImagen.html">Imagen</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImagen.html#a74ee29a2f8ea0bef4ba07e3ee2407214">operator=</a> (const <a class="el" href="classImagen.html">Imagen</a> &amp;i)</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Descripción detallada</h2>
+<div class="textblock"><p>Clase que representa una imagen cargada en memoria, lista para ser dibujada en la pantalla. </p>
+<dl class="author"><dt><b>Autor:</b></dt><dd>Ezequiel Vázquez de la Calle </dd></dl>
+<dl class="version"><dt><b>Versión:</b></dt><dd>0.9.2</dd></dl>
+<p>Se puede decir que esta clase <a class="el" href="classImagen.html" title="Clase que representa una imagen cargada en memoria, lista para ser dibujada en la pantalla...">Imagen</a> es una abstracción de todos los mecanismos del sistema de la consola Nintendo Wii que es necesario conocer para dibujar una textura en la pantalla. Su sencillo uso hace que, en lugar de complicadas funciones de dibujo, rectángulos, píxeles y demás, únicamente se deba tener en cuenta un archivo de mapa de bits, y unas coordenadas (x,y,z).</p>
+<p>Cada instancia de esta clase representa y gestiona la imagen de un archivo bitmap cargado en la memoria de la consola. Dicho bitmap se carga desde la tarjeta SD dinámicamente, pero existen ciertas limitaciones a la hora de trabajar con una imagen concreta.</p>
+<p>Para empezar, las medidas de la imagen (alto y ancho), en píxeles, deben ser, obligatoriamente, múltiplos de 8. Si este detalle no se tiene en cuenta, se produce un error del sistema en tiempo de ejecución. Esta restricción está relacionada con la organización de las texturas en tiles de 4×4 píxeles (ver clase <a class="el" href="classScreen.html" title="Clase que gestiona los gráficos en la Nintendo Wii.">Screen</a> para más información), y el problema de cargar una textura cuyas medidas no sean múltiplos 8 es que, seguramente, se rompan los tiles formados, o que incluso no se pudiera reorganizar la información de píxeles de la textura en forma de tiles.</p>
+<p>El máximo tamaño para una textura es de 1024×1024 píxeles, y ello se debe a que ése es el tamaño máximo del buffer FIFO que se encarga de enviar la información de un frame al procesador gráfico (consultar la clase <a class="el" href="classScreen.html" title="Clase que gestiona los gráficos en la Nintendo Wii.">Screen</a>). El formato para indicar el color transparente es el mismo que se utiliza en la clase <a class="el" href="classScreen.html" title="Clase que gestiona los gráficos en la Nintendo Wii.">Screen</a>, es decir, un entero de 32 bits, sin signo, y con la forma 0xRRGGBBAA.</p>
+<p>Otra limitación importante, aunque esta ya no es de la consola si no de la propia biblioteca, es que, de momento, sólo se pueden cargar imágenes en formato bitmap (BMP), de 24 bits de color directo, y 8 bits por cada componente de color. El por qué de esta restricción es exclusivamente el tiempo que habría que dedicar a desarrollar métodos de carga para cualquier formato de BMP (algunos formatos de bitmap trabajan con color indirecto y paletas de color), JPG o PNG (como ejemplos más comunes). De todas formas, en sucesivas versiones de la clase se irán desarrollando estas funcionalidades para dotarla de mayor potencia.</p>
+<p>El formato de color para un píxel que utiliza de forma nativa la Nintendo Wii es RGB5A3. Este formato, de 16 bits, consiste en que cada componente del píxel se representa con 5 bits, y el último bit es el canal alpha (la transparencia). Esto sería, sobre el papel, formato RGB5A1 (y de hecho, generalmente se comporta de la misma manera), pero la diferencia está en que, si el canal alpha está activado, la consola trabajará como si cada componente del píxel ocupara 4 bits (es decir, 4 bits para rojo, 4 bits para verde, 4 bits para azul, 3 bits para el canal alpha, y 1 bit para indicar que éste está activo). Los tres bits ‘extra’ del canal alpha se toman, cada uno, de una componente de color.</p>
+<p>Por último, hay que tener en cuenta que la Wii trabaja en Big Endian, y que por lo tanto, hay que tratar todo aquello que se lea desde un dispositivo para que el Endian no ocasione conflictos. Para más información, consultar el módulo de utilidades.</p>
+<p>Funcionamiento interno de la clase <a class="el" href="classImagen.html" title="Clase que representa una imagen cargada en memoria, lista para ser dibujada en la pantalla...">Imagen</a></p>
+<p>La clase <a class="el" href="classImagen.html" title="Clase que representa una imagen cargada en memoria, lista para ser dibujada en la pantalla...">Imagen</a> se compone de cuatro atributos internos, y uno estático y público. Éste último es el color que se considerará como color transparente, y es compartido por todas las instancias de la clase. Los atributos internos son dos enteros de 16 bits sin signo, que indican el ancho y el alto de la imagen en píxeles, una dirección que apunta hacia la memoria donde se almacena la información de color de los píxeles que componen la imagen, y la dirección de un objeto GXTexObj, que es el atributo que realmente se utilizará para dibujar en la pantalla.</p>
+<p>El proceso de cargar una imagen es sencillo. En primer lugar, se crea una instancia de la clase, y después se llama al método cargarBMP(), pasándole como parámetro un std::string que indique la ruta absoluta hasta el archivo de imagen a cargar (debe estar en la SD). Cuando se vaya a implementar el soporte para otro formato de imagen, habrá que definir un método similar, pero específico para el formato nuevo, como por ejemplo cargarPNG() o cargarJPG().</p>
+<p>El método de carga de bitmaps comprueba primero que la tarjeta SD esté montada y operativa (ver clase <a class="el" href="classSdcard.html" title="Clase que gestiona la ranura para tarjetas SD de la consola Wii.">Sdcard</a>). A continuación, abre el archivo que se le ha indicado en la ruta, y trata de leer los 14 primeros bytes del archivo (que corresponden con la cabecera de archivo de todo bitmap). Se comprueba, mediante el campo de tipo de la cabecera, que el archivo es efectivamente un BMP, en caso contrario, se cierra el flujo de entrada y se lanza una excepción. Si todo va bien, se procede a leer los siguientes 40 bytes, que son la cabecera de la propia imagen (que no del archivo, que es la otra). Se toman de ésta los valores de ancho y alto en píxeles de la imagen, y la profundidad de color. Como ya se ha comentado antes, si el ancho y el alto no son múltiplos de ocho, no se puede continuar, y por tanto, se lanza una excepción.</p>
+<p>El dato de la profundidad de color es importante, ya que permite diferenciar entre los distintos formatos de BMP que existen. Ya se ha comentado que, de momento, sólo se da soporte a los bitmaps de 24 bits de color, así que, si el dato es correcto, se reserva la memoria alineada y se llama al método correspondiente; en caso contrario, se lanza una excepción.</p>
+<p>El método cargarBmp24() se encarga de la tarea específica de leer desde la entrada un bitmap de 24 bits. Si se quisiera ampliar la clase, dotándola de la posibilidad de leer otros formatos de bitmap, únicamente habría que añadir la comprobación en el método <a class="el" href="classImagen.html#a703eaec1e9de38b0f6c077aa3d756c4a">cargarBmp()</a>, y crear el método específico de carga del formato.</p>
+<p>Un bitmap de 24 bits de color, con 8 bits de color directo por componente, se carga leyendo la información de la imagen de 3 bytes en 3 bytes. Posteriormente, se trabaja a nivel de bit (con operadores de desplazamiento) para transformar el formato de píxel del BMP (BGR) en RGB5A3, y se van guardando, en orden de llegada, los píxeles con este último formato en la zona de memoria reservada.</p>
+<p>Por último, se fijan los datos en la memoria desde la caché, y se crea el objeto de textura haciendo uso de la función que proporciona la clase <a class="el" href="classScreen.html" title="Clase que gestiona los gráficos en la Nintendo Wii.">Screen</a>. Dibujar una imagen es algo trivial, ya que se recurre a los métodos dibujarTextura() o dibujarCuadro(), también de la clase <a class="el" href="classScreen.html" title="Clase que gestiona los gráficos en la Nintendo Wii.">Screen</a>. Finalmente, mencionar que el destructor de la clase se encarga de liberar la memoria ocupada por la textura y la información de los píxeles.</p>
+<p>Un sencillo ejemplo de uso:</p>
+<div class="fragment"><pre class="fragment"> <span class="comment">// Crear una instancia de Imagen</span>
+ <a class="code" href="classImagen.html" title="Clase que representa una imagen cargada en memoria, lista para ser dibujada en la pantalla...">Imagen</a> i;
+ <span class="comment">// Cargar un bitmap</span>
+ i.cargarBMP( <span class="stringliteral">&quot;/apps/wiipang/media/imagen.bmp&quot;</span> );
+ <span class="comment">// Dibujar la textura en unas coordenadas (x, y, z)</span>
+ i.<a class="code" href="classImagen.html#ab3d169b4678ac21dc8b2987cfa814c23">dibujar</a>( 100, 200, 15 );
+</pre></div> </div><hr/><h2>Documentación del constructor y destructor</h2>
+<a class="anchor" id="ab0647d0d98ebd2a4b59f05817109ea1e"></a><!-- doxytag: member="Imagen::Imagen" ref="ab0647d0d98ebd2a4b59f05817109ea1e" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Imagen::Imagen </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Constructor de la clase <a class="el" href="classImagen.html" title="Clase que representa una imagen cargada en memoria, lista para ser dibujada en la pantalla...">Imagen</a>. El objeto creado tiene todos sus atributos a cero. </p>
+
+</div>
+</div>
+<a class="anchor" id="a784a8ba054971c8491779aab1c30c9ad"></a><!-- doxytag: member="Imagen::~Imagen" ref="a784a8ba054971c8491779aab1c30c9ad" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Imagen::~Imagen </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Destructor de la clase <a class="el" href="classImagen.html" title="Clase que representa una imagen cargada en memoria, lista para ser dibujada en la pantalla...">Imagen</a>. Libera la memoria ocupada por la textura y la información de los píxeles. </p>
+
+</div>
+</div>
+<a class="anchor" id="a02f127fe68ccfacadc9e38499f876013"></a><!-- doxytag: member="Imagen::Imagen" ref="a02f127fe68ccfacadc9e38499f876013" args="(const Imagen &amp;i)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Imagen::Imagen </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classImagen.html">Imagen</a> &amp;&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Constructor de copia de la clase <a class="el" href="classImagen.html" title="Clase que representa una imagen cargada en memoria, lista para ser dibujada en la pantalla...">Imagen</a>. Se encuentra en la zona protegida para no permitir la copia. </p>
+
+</div>
+</div>
+<hr/><h2>Documentación de las funciones miembro</h2>
+<a class="anchor" id="a5ccca0a09ebc808211b97cb1fc32a00f"></a><!-- doxytag: member="Imagen::alto" ref="a5ccca0a09ebc808211b97cb1fc32a00f" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u16 Imagen::alto </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método observador para el alto en píxeles de la imagen. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Número de píxeles de alto de la imagen. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4a408b001747fb28b00d3ab1b88b69a0"></a><!-- doxytag: member="Imagen::ancho" ref="a4a408b001747fb28b00d3ab1b88b69a0" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u16 Imagen::ancho </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método observador para el ancho en píxeles de la imagen. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Número de píxeles de ancho de la imagen. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a703eaec1e9de38b0f6c077aa3d756c4a"></a><!-- doxytag: member="Imagen::cargarBmp" ref="a703eaec1e9de38b0f6c077aa3d756c4a" args="(const std::string &amp;ruta)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Imagen::cargarBmp </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>ruta</em></td><td>)</td>
+          <td>  throw (<a class="el" href="classArchivoEx.html">ArchivoEx</a>, <a class="el" href="classImagenEx.html">ImagenEx</a>, <a class="el" href="classTarjetaEx.html">TarjetaEx</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Función para cargar una imagen desde un archivo bitmap que debe estar en la tarjeta SD. De momento, sólo se da soporte a los bitmaps de 24 bits de color directo (sin paleta). </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ruta</td><td>Ruta absoluta hasta el fichero que contiene la imagen. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Excepciones:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classArchivoEx.html" title="Clase de excepción para errores relacionados con archivos.">ArchivoEx</a></td><td>Se lanza si hay algún error al abrir el archivo al que apunta la ruta aportada </td></tr>
+    <tr><td class="paramname"><a class="el" href="classImagenEx.html" title="Clase de excepción para errores relacionados con una imagen o textura.">ImagenEx</a></td><td>Se lanza si sucede un error relacionado con la propia imagen </td></tr>
+    <tr><td class="paramname"><a class="el" href="classTarjetaEx.html" title="Clase de excepción para errores relacionados con la tarjeta SD.">TarjetaEx</a></td><td>Se lanza si ocurre un error relacionado con la tarjeta SD </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab3d169b4678ac21dc8b2987cfa814c23"></a><!-- doxytag: member="Imagen::dibujar" ref="ab3d169b4678ac21dc8b2987cfa814c23" args="(s16 x, s16 y, s16 z) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Imagen::dibujar </td>
+          <td>(</td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>z</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Dibuja la imagen en la pantalla en unas coordenadas (x,y,z). </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Coordenada X del punto superior izquierdo del lugar donde se quiere dibujar la imagen. </td></tr>
+    <tr><td class="paramname">y</td><td>Coordenada Y del punto superior izquierdo del lugar donde se quiere dibujar la imagen. </td></tr>
+    <tr><td class="paramname">z</td><td>Coordenada Z (capa) en la que se dibujará la imagen. Entre 0 y 999. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Verdadero si se ha dibujado la imagen, y falso en caso contrario. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a74ee29a2f8ea0bef4ba07e3ee2407214"></a><!-- doxytag: member="Imagen::operator=" ref="a74ee29a2f8ea0bef4ba07e3ee2407214" args="(const Imagen &amp;i)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classImagen.html">Imagen</a>&amp; Imagen::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classImagen.html">Imagen</a> &amp;&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Operador de asignación de la clase <a class="el" href="classImagen.html" title="Clase que representa una imagen cargada en memoria, lista para ser dibujada en la pantalla...">Imagen</a>. Se encuentra en la zona protegida para no permitir la asignación. </p>
+
+</div>
+</div>
+<a class="anchor" id="acd99fb766ee6bd81eb313b38eca76be8"></a><!-- doxytag: member="Imagen::textura" ref="acd99fb766ee6bd81eb313b38eca76be8" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GXTexObj* Imagen::textura </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método observador para la textura de la imagen. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Objeto de textura de la imagen. </dd></dl>
+
+</div>
+</div>
+<hr/><h2>Documentación de los datos miembro</h2>
+<a class="anchor" id="ab2acf148722c896989fca68a592dae39"></a><!-- doxytag: member="Imagen::alpha" ref="ab2acf148722c896989fca68a592dae39" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u32 <a class="el" href="classImagen.html#ab2acf148722c896989fca68a592dae39">Imagen::alpha</a><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Variable de clase que determina el color considerado transparente, y que por tanto será invisible. </p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>/home/rabbit/Escritorio/libwiiesp/include/<a class="el" href="imagen_8h_source.html">imagen.h</a></li>
+</ul>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumeraciones</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Generado el Martes, 19 de Julio de 2011 20:45:52 para libWiiEsp por&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
+</body>
+</html>

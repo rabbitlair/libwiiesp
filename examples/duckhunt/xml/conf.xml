@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conf>
+	<log valor="/apps/duckhunt/info.log" nivel="3" />
+	<alpha valor="0xFF00FFFF" />
+	<fps valor="25" />
+	<galeria valor="/apps/duckhunt/xml/galeria.xml" />
+	<lang valor="/apps/duckhunt/xml/lang.xml" defecto="español" />
+	<jugadores pj1="pj1" pj2="pj2" pj3="" pj4="" />
+</conf>

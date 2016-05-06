@@ -1,0 +1,69 @@
+% Este archivo es parte de la memoria de libWiiEsp, protegida bajo la 
+% licencia GFDL. Puede encontrar una copia de la licencia en el archivo fdl-1.3.tex
+
+% Fuente tomada de la plantilla LaTeX para la realización de Proyectos Final 
+% de Carrera de Pablo Recio Quijano.
+
+% Copyright (C) 2009 Pablo Recio Quijano
+% Copyright (C) 2011 Ezequiel Vázquez de la Calle
+
+% -*-ejemploslibwiiesp.tex-*-
+
+Una vez concluido el desarrollo de \programa{LibWiiEsp}, quise aportar una serie de ejemplos para ilustrar hasta qué punto es útil la herramienta con la intención añadida de que sirvieran como iniciación al uso de la biblioteca. En esta sección se trata el funcionamiento de los tres juegos que acompañan a \programa{LibWiiEsp}, explicando los detalles más relevantes de su implementación.
+
+\subsection{Arkanoid}
+
+Este primer juego es un clon de clásico de 1986, publicado por la empresa japonesa Taito. Consiste en una bola que se mueve por la zona de juego, rebotando en las paredes, y con la cual el jugador debe intentar destruir una serie de ladrillos que se encuentran en el escenario. Para conseguir su objetivo, el jugador controla una pala con la que debe evitar que la bola caiga por la zona inferior de la pantalla, en cuyo caso pierde una oportunidad. Además, cuando se destruye un ladrillo puede generarse aleatoriamente un objeto que cae verticalmente, y que si es recogido con la pala, puede aportar beneficios al jugador (una oportunidad extra, un multiplicador temporal de puntuación obtenida, o un aumento del tamaño de la pala).\\
+
+La novedad de este desarrollo respecto al original es que se permite controlar la pala con los botones de la cruceta del mando, o bien mediante el ángulo de cabeceo (al más puro estilo del Mario Kart Wii de Nintendo).\\
+
+Entrando en el apartado técnico, el juego tiene cuatro actores, que son la bola, los ladrillos, la pala y los objetos, que tienen sus animaciones y figuras de colisión organizadas por estados, información que se carga desde sendos archivos XML. Los escenarios, que tienen toda la lógica del juego implementada en la clase Escenario (derivada de Nivel), están diseñados con el editor Tiled \cite{website:tiled}, y una última clase, llamada Juego, se encarga de controlar el bucle principal.\\
+
+La pala se mueve horizontalmente según se indique mediante el mando hasta tocar los límites laterales de la zona de juego; por otro lado, los objetos simplemente caen hasta la zona inferior de ésta, y cuando llegan simplemente desaparecen. Los ladrillos no se mueven.\\
+
+El detalle más reseñable es el movimiento de la bola, que se compone de dos variables, velocidad y dirección, que son el módulo y el ángulo de un vector de movimiento, respectivamente. Cada vez que hay un rebote de la bola, se calcula un nuevo vector de movimiento para ésta, y cada fotograma la bola por la zona de juego se mueve en horizontal y en vertical un número de píxeles equivalentes a la parte entera de las componentes horizontal y vertical del vector. Cuando se destruye un ladrillo, el módulo del vector aumenta un poco, hasta llegar al límite establecido para la velocidad máxima en el archivo XML de la bola. Cabe destacar también el hecho de que el punto de impacto de la bola con la pala influye en el nuevo vector que tendrá tras el rebote.\\
+
+Este juego resulta muy sencillo de ampliar mediante escenarios nuevos, e incorpora el soporte de internacionalización (i18n) que incluye \programa{LibWiiEsp}.\\
+
+Por último, mencionar que durante el desarrollo de Arkanoid se tuvieron que efectuar algunas modificaciones en la biblioteca, principalmente relacionadas con la clase abstracta Actor. En su momento, se diseñó esta clase de tal forma que se facilitaba el desarrollo de juegos de plataforma, pero rápidamente se comprobó que atributos como la dirección no resultarían útiles como tipos enumerados, lo que ocasionó que se eliminara esa característica. También hubo que corregir la representación del mapa de \emph{tiles} del escenario, ya que antes se guardaba en un conjunto \emph{set}, y por tanto había que recorrer todos los \emph{tiles} para identificar si un actor colisionaba con el escenario. Con la implementación actual, se consigue optimizar mucho el rendimiento de la detección de colisiones, ya que sólo se evalúan los \emph{tiles} que se encuentren alrededor del actor.\\
+
+En la figura \ref{arkanoid} puede observarse una captura de pantalla de este juego.\\
+
+\figura{arkanoid.png}{scale=0.6}{Captura de pantalla de Arkanoid}{arkanoid}{h}
+
+\subsection{Duck Hunt}
+
+El segundo juego desarrollado es una versión del juego de Nintendo de 1984. A diferencia del original, en esta implementación de Duck Hunt pueden jugar dos personas simultáneamente, y los patos salen cada poco tiempo desde uno de los laterales de la pantalla hasta el otro, con un ángulo de inclinación. El objetivo del juego es llegar a abatir una cierta cantidad de patos, configurable desde el archivo XML del escenario.\\
+
+En esta ocasión, son sólo dos los actores que participan en el juego, siendo uno los patos y el otro el que controla los dos puntos de mira.\\
+
+La clase Escenario, derivada de Nivel, se encarga de generar un pato nuevo a uno de los lados de la pantalla cada cierto tiempo, siendo este periodo un intervalo que va desde el segundo y medio a los tres segundos. El lateral del escenario en el que aparece el pato es aleatorio, al igual que el ángulo que tomará en su vuelo, que puede ir desde -30 grados hasta +30 grados. Si el pato escapa sin ser abatido, se elimina el objeto para no congestionar la memoria, sin embargo, cuando se dispara a un pato, éste queda suspendido durante medio segundo en el lugar del impacto (con una animación que indica que ha sido alcanzado), y después cae verticalmente hacia la zona inferior de la pantalla.\\
+
+Por otro lado, las coordenadas de los puntos de mira equivalen al puntero infrarrojo de su correspondiente mando asociado, y un pato será derribado cuando un punto de colisión que coincida con el puntero de un mando colisione con el pato y además se haya pulsado el botón B del mando. Tras efectuar un disparo, no se puede volver a disparar hasta pasados 0,8 segundos, que es el tiempo que dura la recarga de la escopeta. Esto supone un cambio de estado para el actor del punto de mira, que vuelve al estado normal tras agotarse el periodo de tiempo indicado.\\
+
+Al desarrollar este juego se realizaron modificaciones a la clase Nivel de \programa{LibWiiEsp}, ya que los patos no se dibujaban bien cuando se acercaban al lateral izquierdo de la pantalla. El error consistía en que, para determinar si un pato estaba en pantalla o no, se tomaba únicamente la referencia de su punto superior izquierdo, en lugar de utilizar ambos laterales del actor. Al solucionar este error, se aprovechó para solucionar la misma situación que ocurría con los componentes del mapa de \emph{tiles}, de tal manera que se dibujara correctamente el lateral izquierdo de un escenario compuesto por \emph{tiles}.\\
+
+En la figura \ref{duck} puede observarse una captura de pantalla de este juego.\\
+
+\figura{duck.png}{scale=0.6}{Captura de pantalla de Duck Hunt}{duck}{h}
+
+\subsection{Wii Pang}
+
+El tercer y último juego completo de ejemplo que acompaña a \programa{LibWiiEsp} es Wii Pang, una versión sencilla del clásico Pang publicado por Mitchell Co. en 1989. En este juego controlamos a un personaje que puede moverse horizontalmente sobre el escenario, hasta tocar las paredes laterales de éste, y que debe evitar ser aplastado por unas bolas que rebotan con los límites del nivel. Para destruir las bolas, puede lanzar ganchos, que van subiendo hacia la parte superior de la pantalla con una dirección vertical desde el punto donde se han lanzado. Cuando un gancho colisiona con una bola, ésta se deshace, produciendo que dos bolas de un tamaño inferior aparezcan en su lugar, así hasta que se destruyen las bolas de tamaño más pequeño, que no generan ninguna otra nueva.\\
+
+Las bolas tienen un movimiento horizontal con velocidad constante, y su movimiento vertical se ve modificado por una aceleración de gravedad, de tal manera que resulta una parábola. Para implementar este movimiento, una bola que caiga verá incrementada su velocidad vertical cada fotograma, hasta que colisione con el suelo, momento en el que se le asigna su velocidad inicial, pero hacia arriba. Esta velocidad va descendiendo hasta que llega a cero, momento en el que alcanza el punto más alto de rebote, y de nuevo comienza a bajar, ya que la velocidad cambia de signo y comienza a aumentar de nuevo en función de la aceleración de gravedad. Cada tamaño de bola llegará a una altura determinada por una velocidad inicial diferente del resto de tamaños de bola.\\
+
+El personaje podrá lanzar dos ganchos simultáneos. Estos ganchos empiezan siendo un objeto pequeño a nivel del suelo del escenario, pero cada fotograma van creciendo de tamaño hacia arriba hasta que llegan a tocar la parte superior del escenario, momento en el que desaparecen. Si colisionan con una bola, desaparecen también. El método de dibujo de este actor recorre toda la extensión vertical de éste, de arriba hacia abajo, dibujando en cada paso una parte del cable que acompaña al gancho. También su figura de colisión asociada va aumentando de tamaño a medida que crece.\\
+
+Otro detalle interesante es el movimiento del personaje cuando es aplastado por una bola, momento en el que, con una animación de muerte, inicia un movimiento parabólico similar (pero no igual) al de las bolas, rebotando con el lateral del escenario y después cayendo hacia fuera de la pantalla.\\
+
+Un nivel acaba cuando no quedan más bolas en el escenario, y cuando el personaje muere, tiene que volver a empezar el nivel desde el principio. Al igual que ocurre con Arkanoid, resulta muy sencillo añadir escenarios nuevos al juego.\\
+
+Respecto a las modificaciones implementadas a \programa{LibWiiEsp} en base al desarrollo de este juego, el principal cambio constó en dar la posibilidad de redefinir el método de dibujo de los actores, ya que los ganchos son actores cuyo tamaño no se mantiene constante durante la ejecución del programa. También hubo que añadir un método nuevo para saber si un actor colisiona con los cuatro bordes del escenario, ya que el que había hasta ese momento disponible únicamente indicaba si un actor chocaba con un componente del escenario.\\
+
+En la figura \ref{pang} puede observarse una captura de pantalla de este juego.\\
+
+\figura{pang.png}{scale=0.6}{Captura de pantalla de Wii Pang}{pang}{h}
+
+Hay que mencionar que las capturas de pantalla de los tres juegos no tienen una alta calidad por haberse realizado mediante fotografías disparadas a la pantalla de una televisión CRT (es decir, de tubo de rayos catódicos).
+

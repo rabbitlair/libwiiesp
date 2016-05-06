@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>libWiiEsp: Fichero Fuente /home/rabbit/Escritorio/libwiiesp/include/colision.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Generado por Doxygen 1.7.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+--></script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libWiiEsp&#160;<span id="projectnumber">0.9.2</span></div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>/home/rabbit/Escritorio/libwiiesp/include/colision.h</h1>  </div>
+</div>
+<div class="contents">
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
+<a name="l00002"></a>00002 <span class="comment">// Licencia GPLv3</span>
+<a name="l00003"></a>00003 <span class="comment">//</span>
+<a name="l00004"></a>00004 <span class="comment">// Este archivo es parte de libWiiEsp. Copyright (C) 2011 Ezequiel Vázquez de la Calle</span>
+<a name="l00005"></a>00005 <span class="comment">//</span>
+<a name="l00006"></a>00006 <span class="comment">// libWiiEsp es software libre: usted puede redistribuirlo y/o modificarlo bajo los términos de la </span>
+<a name="l00007"></a>00007 <span class="comment">// Licencia Pública General GNU publicada por la Fundación para el Software Libre, ya sea la versión 3 </span>
+<a name="l00008"></a>00008 <span class="comment">// de la Licencia, o (a su elección) cualquier versión posterior.</span>
+<a name="l00009"></a>00009 <span class="comment">//</span>
+<a name="l00010"></a>00010 <span class="comment">// libWiiEsp se distribuye con la esperanza de que sea útil, pero SIN GARANTÍA ALGUNA; ni siquiera </span>
+<a name="l00011"></a>00011 <span class="comment">// la garantía implícita MERCANTIL o de APTITUD PARA UN PROPÓSITO DETERMINADO. Consulte los detalles de</span>
+<a name="l00012"></a>00012 <span class="comment">// la Licencia Pública General GNU para obtener una información más detallada.</span>
+<a name="l00013"></a>00013 <span class="comment">//</span>
+<a name="l00014"></a>00014 <span class="comment">// Debería haber recibido una copia de la Licencia Pública General GNU junto a libWiiEsp. En caso </span>
+<a name="l00015"></a>00015 <span class="comment">// contrario, consulte &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00016"></a>00016 <span class="comment">//</span>
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 <span class="preprocessor">#ifndef _COLISION_H_</span>
+<a name="l00019"></a>00019 <span class="preprocessor"></span><span class="preprocessor">#define _COLISION_H_</span>
+<a name="l00020"></a>00020 <span class="preprocessor"></span>
+<a name="l00021"></a>00021 <span class="preprocessor">    #include &lt;cmath&gt;</span>
+<a name="l00022"></a>00022 <span class="preprocessor">    #include &lt;cstdlib&gt;</span>
+<a name="l00023"></a>00023 <span class="preprocessor">    #include &lt;gctypes.h&gt;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">    #include &quot;excepcion.h&quot;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">    #include &quot;parser.h&quot;</span>
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027     <span class="comment">// Declaraciones anticipadas</span>
+<a name="l00028"></a>00028     <span class="keyword">class </span><a class="code" href="classCirculo.html" title="Clase que representa un círculo en el sistema de gestión de colisiones.">Circulo</a>;
+<a name="l00029"></a>00029     <span class="keyword">class </span><a class="code" href="classPunto.html" title="Clase que representa un punto en el sistema de gestión de colisiones.">Punto</a>;
+<a name="l00030"></a>00030     <span class="keyword">class </span><a class="code" href="classRectangulo.html" title="Clase que representa un rectángulo en el sistema de gestión de colisiones.">Rectangulo</a>;
+<a name="l00031"></a>00031 
+<a name="l00099"></a><a class="code" href="classFigura.html">00099</a>     <span class="keyword">class </span><a class="code" href="classFigura.html" title="Clase abstracta que sirve como base a todas las figuras de colisión definidas en el sistema...">Figura</a>
+<a name="l00100"></a>00100     {
+<a name="l00101"></a>00101         <span class="keyword">public</span>:
+<a name="l00102"></a>00102 
+<a name="l00115"></a>00115             <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classFigura.html#a81c5d812ebc26129e2da49779f5efa33">hayColision</a>(<a class="code" href="classFigura.html" title="Clase abstracta que sirve como base a todas las figuras de colisión definidas en el sistema...">Figura</a>* f, s16 dx1, s16 dy1, s16 dx2, s16 dy2) = 0;
+<a name="l00116"></a>00116 
+<a name="l00127"></a>00127             <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classFigura.html#a81c5d812ebc26129e2da49779f5efa33">hayColision</a>(<a class="code" href="classPunto.html" title="Clase que representa un punto en el sistema de gestión de colisiones.">Punto</a>* f, s16 dx1, s16 dy1, s16 dx2, s16 dy2) = 0;
+<a name="l00128"></a>00128 
+<a name="l00139"></a>00139             <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classFigura.html#a81c5d812ebc26129e2da49779f5efa33">hayColision</a>(<a class="code" href="classCirculo.html" title="Clase que representa un círculo en el sistema de gestión de colisiones.">Circulo</a>* f, s16 dx1, s16 dy1, s16 dx2, s16 dy2) = 0;
+<a name="l00140"></a>00140 
+<a name="l00151"></a>00151             <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classFigura.html#a81c5d812ebc26129e2da49779f5efa33">hayColision</a>(<a class="code" href="classRectangulo.html" title="Clase que representa un rectángulo en el sistema de gestión de colisiones.">Rectangulo</a>* f, s16 dx1, s16 dy1, s16 dx2, s16 dy2) = 0;
+<a name="l00152"></a>00152 
+<a name="l00156"></a><a class="code" href="classFigura.html#a28c684793f0732648f4d92fe57ce2260">00156</a>             <span class="keyword">virtual</span> <a class="code" href="classFigura.html#a28c684793f0732648f4d92fe57ce2260">~Figura</a>(<span class="keywordtype">void</span>) { };
+<a name="l00157"></a>00157 
+<a name="l00163"></a>00163             <span class="keyword">static</span> <a class="code" href="classFigura.html" title="Clase abstracta que sirve como base a todas las figuras de colisión definidas en el sistema...">Figura</a>* <a class="code" href="classFigura.html#a4eca0f13224ffbd97ebc56841a3ad514">leerRectangulo</a>(TiXmlElement* nodo);
+<a name="l00164"></a>00164 
+<a name="l00170"></a>00170             <span class="keyword">static</span> <a class="code" href="classFigura.html" title="Clase abstracta que sirve como base a todas las figuras de colisión definidas en el sistema...">Figura</a>* <a class="code" href="classFigura.html#a169bc4ffb38d3d2138a5d69ca0582044">leerCirculo</a>(TiXmlElement* nodo);
+<a name="l00171"></a>00171 
+<a name="l00177"></a>00177             <span class="keyword">static</span> <a class="code" href="classFigura.html" title="Clase abstracta que sirve como base a todas las figuras de colisión definidas en el sistema...">Figura</a>* <a class="code" href="classFigura.html#a9060b44008d584b594ccff928fcf3547">leerPunto</a>(TiXmlElement* nodo);
+<a name="l00178"></a>00178     };
+<a name="l00179"></a>00179 
+<a name="l00187"></a><a class="code" href="classPunto.html">00187</a>     <span class="keyword">class </span><a class="code" href="classPunto.html" title="Clase que representa un punto en el sistema de gestión de colisiones.">Punto</a>: <span class="keyword">public</span> <a class="code" href="classFigura.html" title="Clase abstracta que sirve como base a todas las figuras de colisión definidas en el sistema...">Figura</a>
+<a name="l00188"></a>00188     {
+<a name="l00189"></a>00189         <span class="keyword">public</span>:
+<a name="l00190"></a>00190 
+<a name="l00196"></a><a class="code" href="classPunto.html#a8e0b7463f6b89470f77428e3cdc55601">00196</a>             <a class="code" href="classPunto.html#a8e0b7463f6b89470f77428e3cdc55601">Punto</a>(s16 <a class="code" href="classPunto.html#a9a094bbdf455c0ecbfdfcbcfe9233fa3">x</a> = 0, s16 <a class="code" href="classPunto.html#a86cf9a55a04d8799a92ea1140a6ff173">y</a> = 0): _x(<a class="code" href="classPunto.html#a9a094bbdf455c0ecbfdfcbcfe9233fa3">x</a>), _y(<a class="code" href="classPunto.html#a86cf9a55a04d8799a92ea1140a6ff173">y</a>) { };
+<a name="l00197"></a>00197 
+<a name="l00208"></a><a class="code" href="classPunto.html#acb47f309a7408be82de202ac780950c0">00208</a>             <span class="keywordtype">bool</span> <a class="code" href="classPunto.html#acb47f309a7408be82de202ac780950c0">hayColision</a>(<a class="code" href="classFigura.html" title="Clase abstracta que sirve como base a todas las figuras de colisión definidas en el sistema...">Figura</a>* f, s16 dx1, s16 dy1, s16 dx2, s16 dy2) {
+<a name="l00209"></a>00209                 <span class="keywordflow">return</span> f-&gt;<a class="code" href="classFigura.html#a81c5d812ebc26129e2da49779f5efa33">hayColision</a>(<span class="keyword">this</span>, dx2, dy2, dx1, dy1);
+<a name="l00210"></a>00210             };
+<a name="l00211"></a>00211 
+<a name="l00222"></a>00222             <span class="keywordtype">bool</span> <a class="code" href="classPunto.html#acb47f309a7408be82de202ac780950c0">hayColision</a>(<a class="code" href="classCirculo.html" title="Clase que representa un círculo en el sistema de gestión de colisiones.">Circulo</a>* c, s16 dx1, s16 dy1, s16 dx2, s16 dy2);
+<a name="l00223"></a>00223 
+<a name="l00234"></a>00234             <span class="keywordtype">bool</span> <a class="code" href="classPunto.html#acb47f309a7408be82de202ac780950c0">hayColision</a>(<a class="code" href="classRectangulo.html" title="Clase que representa un rectángulo en el sistema de gestión de colisiones.">Rectangulo</a>* r, s16 dx1, s16 dy1, s16 dx2, s16 dy2);
+<a name="l00235"></a>00235 
+<a name="l00246"></a><a class="code" href="classPunto.html#a11f603e043031938a9fa679a3ada725f">00246</a>             <span class="keywordtype">bool</span> <a class="code" href="classPunto.html#a11f603e043031938a9fa679a3ada725f">hayColision</a>(<a class="code" href="classPunto.html" title="Clase que representa un punto en el sistema de gestión de colisiones.">Punto</a>* p, s16 dx1, s16 dy1, s16 dx2, s16 dy2) { <span class="keywordflow">return</span> <span class="keyword">false</span>; }
+<a name="l00247"></a>00247 
+<a name="l00252"></a><a class="code" href="classPunto.html#a9a094bbdf455c0ecbfdfcbcfe9233fa3">00252</a>             s16&amp; <a class="code" href="classPunto.html#a9a094bbdf455c0ecbfdfcbcfe9233fa3">x</a>(<span class="keywordtype">void</span>) { <span class="keywordflow">return</span> _x; };
+<a name="l00253"></a>00253 
+<a name="l00258"></a><a class="code" href="classPunto.html#aceda4512b31c2de31d504a4c70ba0d23">00258</a>             <span class="keyword">const</span> s16&amp; <a class="code" href="classPunto.html#aceda4512b31c2de31d504a4c70ba0d23">x</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _x; };
+<a name="l00259"></a>00259 
+<a name="l00264"></a><a class="code" href="classPunto.html#a86cf9a55a04d8799a92ea1140a6ff173">00264</a>             s16&amp; <a class="code" href="classPunto.html#a86cf9a55a04d8799a92ea1140a6ff173">y</a>(<span class="keywordtype">void</span>) { <span class="keywordflow">return</span> _y; };
+<a name="l00265"></a>00265 
+<a name="l00270"></a><a class="code" href="classPunto.html#ac078c5a7954d672ab8bbd50f363bc86c">00270</a>             <span class="keyword">const</span> s16&amp; <a class="code" href="classPunto.html#ac078c5a7954d672ab8bbd50f363bc86c">y</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _y; };
+<a name="l00271"></a>00271 
+<a name="l00272"></a>00272         <span class="keyword">private</span>:
+<a name="l00273"></a>00273 
+<a name="l00274"></a>00274             s16 _x, _y;
+<a name="l00275"></a>00275     };
+<a name="l00276"></a>00276 
+<a name="l00286"></a><a class="code" href="classRectangulo.html">00286</a>     <span class="keyword">class </span><a class="code" href="classRectangulo.html" title="Clase que representa un rectángulo en el sistema de gestión de colisiones.">Rectangulo</a>: <span class="keyword">public</span> <a class="code" href="classFigura.html" title="Clase abstracta que sirve como base a todas las figuras de colisión definidas en el sistema...">Figura</a>
+<a name="l00287"></a>00287     {
+<a name="l00288"></a>00288         <span class="keyword">public</span>:
+<a name="l00289"></a>00289 
+<a name="l00298"></a><a class="code" href="classRectangulo.html#a605b5a15d499e4af0cc34944f2738fb6">00298</a>             <a class="code" href="classRectangulo.html#a605b5a15d499e4af0cc34944f2738fb6">Rectangulo</a>(<a class="code" href="classPunto.html" title="Clase que representa un punto en el sistema de gestión de colisiones.">Punto</a> <a class="code" href="classRectangulo.html#aae8d6253cf3d29cf62e5531de3915fb4">p1</a>, <a class="code" href="classPunto.html" title="Clase que representa un punto en el sistema de gestión de colisiones.">Punto</a> <a class="code" href="classRectangulo.html#ab3baa48d3f0d1c5b432c21175df10311">p2</a>, <a class="code" href="classPunto.html" title="Clase que representa un punto en el sistema de gestión de colisiones.">Punto</a> <a class="code" href="classRectangulo.html#ad39adc1e5de7678c24868430aafc34b2">p3</a>, <a class="code" href="classPunto.html" title="Clase que representa un punto en el sistema de gestión de colisiones.">Punto</a> <a class="code" href="classRectangulo.html#a8a71426ea6df6bd1851131ce27f4ac26">p4</a>): _p1(p1), _p2(p2), _p3(p3), _p4(p4)
+<a name="l00299"></a>00299             {
+<a name="l00300"></a>00300                 _centro.<a class="code" href="classPunto.html#a9a094bbdf455c0ecbfdfcbcfe9233fa3">x</a>() = _p1.<a class="code" href="classPunto.html#a9a094bbdf455c0ecbfdfcbcfe9233fa3">x</a>() + abs(_p1.<a class="code" href="classPunto.html#a9a094bbdf455c0ecbfdfcbcfe9233fa3">x</a>() - _p2.<a class="code" href="classPunto.html#a9a094bbdf455c0ecbfdfcbcfe9233fa3">x</a>())/2;
+<a name="l00301"></a>00301                 _centro.<a class="code" href="classPunto.html#a86cf9a55a04d8799a92ea1140a6ff173">y</a>() = _p1.<a class="code" href="classPunto.html#a86cf9a55a04d8799a92ea1140a6ff173">y</a>() + abs(_p1.<a class="code" href="classPunto.html#a86cf9a55a04d8799a92ea1140a6ff173">y</a>() - _p4.<a class="code" href="classPunto.html#a86cf9a55a04d8799a92ea1140a6ff173">y</a>())/2;
+<a name="l00302"></a>00302             };
+<a name="l00303"></a>00303 
+<a name="l00314"></a><a class="code" href="classRectangulo.html#a98668d209503d1464422554d0a3837f8">00314</a>             <span class="keywordtype">bool</span> <a class="code" href="classRectangulo.html#a98668d209503d1464422554d0a3837f8">hayColision</a>(<a class="code" href="classFigura.html" title="Clase abstracta que sirve como base a todas las figuras de colisión definidas en el sistema...">Figura</a>* f, s16 dx1, s16 dy1, s16 dx2, s16 dy2) {
+<a name="l00315"></a>00315                 <span class="keywordflow">return</span> f-&gt;<a class="code" href="classFigura.html#a81c5d812ebc26129e2da49779f5efa33">hayColision</a>(<span class="keyword">this</span>, dx2, dy2, dx1, dy1);
+<a name="l00316"></a>00316             };
+<a name="l00317"></a>00317 
+<a name="l00328"></a>00328             <span class="keywordtype">bool</span> <a class="code" href="classRectangulo.html#a98668d209503d1464422554d0a3837f8">hayColision</a>(<a class="code" href="classCirculo.html" title="Clase que representa un círculo en el sistema de gestión de colisiones.">Circulo</a>* c, s16 dx1, s16 dy1, s16 dx2, s16 dy2);
+<a name="l00329"></a>00329 
+<a name="l00340"></a>00340             <span class="keywordtype">bool</span> <a class="code" href="classRectangulo.html#a98668d209503d1464422554d0a3837f8">hayColision</a>(<a class="code" href="classRectangulo.html" title="Clase que representa un rectángulo en el sistema de gestión de colisiones.">Rectangulo</a>* r, s16 dx1, s16 dy1, s16 dx2, s16 dy2);
+<a name="l00341"></a>00341 
+<a name="l00352"></a>00352             <span class="keywordtype">bool</span> <a class="code" href="classRectangulo.html#a98668d209503d1464422554d0a3837f8">hayColision</a>(<a class="code" href="classPunto.html" title="Clase que representa un punto en el sistema de gestión de colisiones.">Punto</a>* p, s16 dx1, s16 dy1, s16 dx2, s16 dy2);
+<a name="l00353"></a>00353 
+<a name="l00358"></a><a class="code" href="classRectangulo.html#aae8d6253cf3d29cf62e5531de3915fb4">00358</a>             <a class="code" href="classPunto.html" title="Clase que representa un punto en el sistema de gestión de colisiones.">Punto</a>&amp; <a class="code" href="classRectangulo.html#aae8d6253cf3d29cf62e5531de3915fb4">p1</a>(<span class="keywordtype">void</span>) { <span class="keywordflow">return</span> _p1; };
+<a name="l00359"></a>00359 
+<a name="l00364"></a><a class="code" href="classRectangulo.html#aaa5f9012f2127bd31fed5cbe0ba15a4e">00364</a>             <span class="keyword">const</span> <a class="code" href="classPunto.html" title="Clase que representa un punto en el sistema de gestión de colisiones.">Punto</a>&amp; <a class="code" href="classRectangulo.html#aaa5f9012f2127bd31fed5cbe0ba15a4e">p1</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _p1; };
+<a name="l00365"></a>00365 
+<a name="l00370"></a><a class="code" href="classRectangulo.html#ab3baa48d3f0d1c5b432c21175df10311">00370</a>             <a class="code" href="classPunto.html" title="Clase que representa un punto en el sistema de gestión de colisiones.">Punto</a>&amp; <a class="code" href="classRectangulo.html#ab3baa48d3f0d1c5b432c21175df10311">p2</a>(<span class="keywordtype">void</span>) { <span class="keywordflow">return</span> _p2; };
+<a name="l00371"></a>00371 
+<a name="l00376"></a><a class="code" href="classRectangulo.html#a6f917d874dda6ce90b0d028dd7589c57">00376</a>             <span class="keyword">const</span> <a class="code" href="classPunto.html" title="Clase que representa un punto en el sistema de gestión de colisiones.">Punto</a>&amp; <a class="code" href="classRectangulo.html#a6f917d874dda6ce90b0d028dd7589c57">p2</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _p2; };
+<a name="l00377"></a>00377 
+<a name="l00382"></a><a class="code" href="classRectangulo.html#ad39adc1e5de7678c24868430aafc34b2">00382</a>             <a class="code" href="classPunto.html" title="Clase que representa un punto en el sistema de gestión de colisiones.">Punto</a>&amp; <a class="code" href="classRectangulo.html#ad39adc1e5de7678c24868430aafc34b2">p3</a>(<span class="keywordtype">void</span>) { <span class="keywordflow">return</span> _p3; };
+<a name="l00383"></a>00383 
+<a name="l00388"></a><a class="code" href="classRectangulo.html#a91b295644d24cc8a6580c861a3037feb">00388</a>             <span class="keyword">const</span> <a class="code" href="classPunto.html" title="Clase que representa un punto en el sistema de gestión de colisiones.">Punto</a>&amp; <a class="code" href="classRectangulo.html#a91b295644d24cc8a6580c861a3037feb">p3</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _p3; };
+<a name="l00389"></a>00389 
+<a name="l00394"></a><a class="code" href="classRectangulo.html#a8a71426ea6df6bd1851131ce27f4ac26">00394</a>             <a class="code" href="classPunto.html" title="Clase que representa un punto en el sistema de gestión de colisiones.">Punto</a>&amp; <a class="code" href="classRectangulo.html#a8a71426ea6df6bd1851131ce27f4ac26">p4</a>(<span class="keywordtype">void</span>) { <span class="keywordflow">return</span> _p4; };
+<a name="l00395"></a>00395 
+<a name="l00400"></a><a class="code" href="classRectangulo.html#abd43cc52bdd102b8b638d86a86b70ad8">00400</a>             <span class="keyword">const</span> <a class="code" href="classPunto.html" title="Clase que representa un punto en el sistema de gestión de colisiones.">Punto</a>&amp; <a class="code" href="classRectangulo.html#abd43cc52bdd102b8b638d86a86b70ad8">p4</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _p4; };
+<a name="l00401"></a>00401 
+<a name="l00406"></a><a class="code" href="classRectangulo.html#a94cbc88ff0f32ea0e0938cea742ecf08">00406</a>             <a class="code" href="classPunto.html" title="Clase que representa un punto en el sistema de gestión de colisiones.">Punto</a>&amp; <a class="code" href="classRectangulo.html#a94cbc88ff0f32ea0e0938cea742ecf08">centro</a>(<span class="keywordtype">void</span>) { <span class="keywordflow">return</span> _centro; };
+<a name="l00407"></a>00407 
+<a name="l00412"></a><a class="code" href="classRectangulo.html#adb6724864af753e8df7f1beadbdf9ffe">00412</a>             <span class="keyword">const</span> <a class="code" href="classPunto.html" title="Clase que representa un punto en el sistema de gestión de colisiones.">Punto</a>&amp; <a class="code" href="classRectangulo.html#adb6724864af753e8df7f1beadbdf9ffe">centro</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _centro; };
+<a name="l00413"></a>00413 
+<a name="l00414"></a>00414         <span class="keyword">private</span>:
+<a name="l00415"></a>00415 
+<a name="l00416"></a>00416             <a class="code" href="classPunto.html" title="Clase que representa un punto en el sistema de gestión de colisiones.">Punto</a> _p1, _p2, _p3, _p4, _centro;
+<a name="l00417"></a>00417     };
+<a name="l00418"></a>00418 
+<a name="l00427"></a><a class="code" href="classCirculo.html">00427</a>     <span class="keyword">class </span><a class="code" href="classCirculo.html" title="Clase que representa un círculo en el sistema de gestión de colisiones.">Circulo</a>: <span class="keyword">public</span> <a class="code" href="classFigura.html" title="Clase abstracta que sirve como base a todas las figuras de colisión definidas en el sistema...">Figura</a>
+<a name="l00428"></a>00428     {
+<a name="l00429"></a>00429         <span class="keyword">public</span>:
+<a name="l00430"></a>00430 
+<a name="l00436"></a><a class="code" href="classCirculo.html#a61a0e051dd92768557d09bc712bb7c81">00436</a>             <a class="code" href="classCirculo.html#a61a0e051dd92768557d09bc712bb7c81">Circulo</a>(<a class="code" href="classPunto.html" title="Clase que representa un punto en el sistema de gestión de colisiones.">Punto</a> <a class="code" href="classCirculo.html#ad33dd9a5ac99ab0fce037fc6f3f0f9db">centro</a>, f32 <a class="code" href="classCirculo.html#a0d7b8ef3791b8e62b0e16cc201d741dc">radio</a>): _centro(centro), _radio(radio) { };
+<a name="l00437"></a>00437 
+<a name="l00448"></a><a class="code" href="classCirculo.html#a8fa2be7d3ed9e17f43124df3faa14cca">00448</a>             <span class="keywordtype">bool</span> <a class="code" href="classCirculo.html#a8fa2be7d3ed9e17f43124df3faa14cca">hayColision</a>(<a class="code" href="classFigura.html" title="Clase abstracta que sirve como base a todas las figuras de colisión definidas en el sistema...">Figura</a>* f, s16 dx1, s16 dy1, s16 dx2, s16 dy2) {
+<a name="l00449"></a>00449                 <span class="keywordflow">return</span> f-&gt;<a class="code" href="classFigura.html#a81c5d812ebc26129e2da49779f5efa33">hayColision</a>(<span class="keyword">this</span>, dx2, dy2, dx1, dy1);
+<a name="l00450"></a>00450             };
+<a name="l00451"></a>00451 
+<a name="l00462"></a>00462             <span class="keywordtype">bool</span> <a class="code" href="classCirculo.html#a8fa2be7d3ed9e17f43124df3faa14cca">hayColision</a>(<a class="code" href="classCirculo.html" title="Clase que representa un círculo en el sistema de gestión de colisiones.">Circulo</a>* c, s16 dx1, s16 dy1, s16 dx2, s16 dy2);
+<a name="l00463"></a>00463 
+<a name="l00474"></a>00474             <span class="keywordtype">bool</span> <a class="code" href="classCirculo.html#a8fa2be7d3ed9e17f43124df3faa14cca">hayColision</a>(<a class="code" href="classRectangulo.html" title="Clase que representa un rectángulo en el sistema de gestión de colisiones.">Rectangulo</a>* r, s16 dx1, s16 dy1, s16 dx2, s16 dy2);
+<a name="l00475"></a>00475 
+<a name="l00486"></a>00486             <span class="keywordtype">bool</span> <a class="code" href="classCirculo.html#a8fa2be7d3ed9e17f43124df3faa14cca">hayColision</a>(<a class="code" href="classPunto.html" title="Clase que representa un punto en el sistema de gestión de colisiones.">Punto</a>* p, s16 dx1, s16 dy1, s16 dx2, s16 dy2);
+<a name="l00487"></a>00487 
+<a name="l00492"></a><a class="code" href="classCirculo.html#ad33dd9a5ac99ab0fce037fc6f3f0f9db">00492</a>             <a class="code" href="classPunto.html" title="Clase que representa un punto en el sistema de gestión de colisiones.">Punto</a>&amp; <a class="code" href="classCirculo.html#ad33dd9a5ac99ab0fce037fc6f3f0f9db">centro</a>(<span class="keywordtype">void</span>) { <span class="keywordflow">return</span> _centro; };
+<a name="l00493"></a>00493 
+<a name="l00498"></a><a class="code" href="classCirculo.html#af61adf56d7133f83c3bcabf525862798">00498</a>             <span class="keyword">const</span> <a class="code" href="classPunto.html" title="Clase que representa un punto en el sistema de gestión de colisiones.">Punto</a>&amp; <a class="code" href="classCirculo.html#af61adf56d7133f83c3bcabf525862798">centro</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _centro; };
+<a name="l00499"></a>00499 
+<a name="l00504"></a><a class="code" href="classCirculo.html#a0d7b8ef3791b8e62b0e16cc201d741dc">00504</a>             f32&amp; <a class="code" href="classCirculo.html#a0d7b8ef3791b8e62b0e16cc201d741dc">radio</a>(<span class="keywordtype">void</span>) { <span class="keywordflow">return</span> _radio; };
+<a name="l00505"></a>00505 
+<a name="l00510"></a><a class="code" href="classCirculo.html#acc09b9002ad2bafea2b327fe596ae678">00510</a>             <span class="keyword">const</span> f32&amp; <a class="code" href="classCirculo.html#acc09b9002ad2bafea2b327fe596ae678">radio</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _radio; };
+<a name="l00511"></a>00511 
+<a name="l00512"></a>00512         <span class="keyword">private</span>:
+<a name="l00513"></a>00513 
+<a name="l00514"></a>00514             <a class="code" href="classPunto.html" title="Clase que representa un punto en el sistema de gestión de colisiones.">Punto</a> _centro;
+<a name="l00515"></a>00515             f32 _radio;
+<a name="l00516"></a>00516     };
+<a name="l00517"></a>00517 
+<a name="l00518"></a>00518 <span class="preprocessor">#endif</span>
+<a name="l00519"></a>00519 <span class="preprocessor"></span>
+</pre></div></div>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumeraciones</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Generado el Martes, 19 de Julio de 2011 20:45:52 para libWiiEsp por&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
+</body>
+</html>

@@ -1,0 +1,65 @@
+% Este archivo es parte de la memoria de libWiiEsp, protegida bajo la 
+% licencia GFDL. Puede encontrar una copia de la licencia en el archivo fdl-1.3.tex
+
+% Fuente tomada de la plantilla LaTeX para la realización de Proyectos Final 
+% de Carrera de Pablo Recio Quijano.
+
+% Copyright (C) 2009 Pablo Recio Quijano
+% Copyright (C) 2011 Ezequiel Vázquez de la Calle
+
+% -*-mandos.tex-*-
+
+En la tercera iteración del proceso de desarrollo del proyecto se entra de lleno en la gestión de los dispositivos de entrada, es decir, los mandos. La mayor innovación de Nintendo Wii respecto a las demás videoconsolas fue precisamente su revolucionario sistema de control de los juegos, denominado \emph{Wii Remote} (o, coloquialmente, \emph{wiimote}), que permitían ir mucho más allá de participar en el videojuego apretando botones.
+
+\subsection{Módulo \emph{Wpad}}
+
+A la hora de gestionar los mandos de la consola, \programa{libogc} utiliza el módulo llamado \emph{Wpad}, que brinda acceso a las estructuras de control y las funciones dedicadas a leer el estado de los controles. Cada \emph{wiimote} que quiera utilizarse, como ya se comenta en el capítulo de descripción general de este documento, debe estar sincronizado permanentemente a la videoconsola.\\
+
+\emph{Wpad} asigna a cada mando que esté conectado una estructura de tipo \emph{WPADData}, en la cual se encuentra toda la información relacionada con su estado en un momento dado. Cada \emph{wiimote} se identifica mediante un número entero, denominado \emph{chan}, que se genera automáticamente según el orden en el que se conectan los mandos (el primero tendrá \emph{chan} cero, el segundo \emph{chan} uno, y así).\\
+
+La información sobre la pulsación de los botones se obtiene con variables de tipo entero de 32 bits sin signo, en la que cada dígito binario del entero representa el estado de un botón. Para saber si un botón concreto está pulsado basta con comparar (a nivel de bit, con un AND) la variable correspondiente con el valor binario único del botón (ver figura \ref{pulsacion}). Existen cuatro variables que indican si los botones acaban de ser pulsados, si se están manteniendo pulsados, si se acaban de soltar, o si no están pulsados. Por otro lado, hay variables también numéricas que indican el estado de la batería (menor carga cuanto menor es la cifra) o si el mando tiene alguna nueva información pendiente de recibir (normalmente, efectos de sonido para reproducir en el altavoz del \emph{wiimote}).\\
+
+\figura{pulsacion.png}{scale=0.8}{Operación AND para conocer si hay pulsación de un botón}{pulsacion}{h}
+
+Los últimos elementos que constituyen esta estructura son, a su vez, cinco estructuras más que almacenan los datos de orientación del mando (ángulos de viraje, cabeceo y rotación), de los acelerómetros, la fuerza con la que se mueve, las coordenadas en pantalla del puntero infrarrojo y la expansión conectada al \emph{wiimote}.\\
+
+Respecto a los ángulos que determinan la orientación del mando, el cabeceo es el ángulo que forma éste respecto a un plano horizontal y perpendicular a la pantalla si se le hace girar sobre el eje X, el viraje es el ángulo formado por el \emph{wiimote} respecto a un plano vertical y perpendicular a la pantalla si se le hace girar sobre el eje Z, y la rotación es el ángulo que mide el giro de éste sobre el eje Y, como si estuviera dando una vuelta de campana. En la figura \ref{wiimote} puede apreciarse un esquema donde se describen gráficamente estos ángulos.\\
+
+\figura{wiimote.png}{scale=0.6}{Ángulos de giro en la orientación de un \emph{Wii Remote}}{wiimote}{h}
+
+En el módulo \emph{Wpad} se definen varias funciones que permiten trabajar con la estructura \emph{WPADData}, siendo la más importante de ellas \emph{WPAD\_ScanPads}, que lee el estado de todos los mandos conectados y actualiza la información de cada uno en su respectiva estructura. Por otro lado, existen funciones consultoras para conocer el estado de pulsación de los botones, pero no para el resto de información relativa a los \emph{wiimotes}, así pues, hay que acceder directamente a la estructura para conocer la orientación del mando, el puntero infrarrojo, etc.\\
+
+El resto de funciones del módulo permite activar o desactivar la vibración, inicializar o desconectar el sistema de \emph{Bluetooth} con el que funcionan los mandos, desactivar uno de éstos conociendo su número identificador o enviar un flujo de datos con un efecto de sonido para reproducirlo en el altavoz del \emph{wiimote}.
+
+\subsection{Identificación de funcionalidad necesaria}
+
+A partir de toda la información recopilada en el epígrafe anterior, se debe decidir qué funcionalidad se quiere obtener para cubrir el requisito de \emph{Utilizar hasta cuatro mandos}.\\
+
+Aunque sería muy interesante proporcionar control sobre todos los aspectos del \emph{wiimote}, existe un problema conocido en la lectura de los acelerómetros utilizando el módulo \emph{Wpad}, por lo que se descarta, de momento, esta funcionalidad. Igualmente, la utilización de la \emph{Wii Balance Board} (más conocida como la tabla de \emph{Wii Fit}), la guitarra de títulos como \emph{Guitar Hero} o \emph{Rock Band}, el \emph{Wii Motion Plus} y el mando clásico podrían aportar inmensas posibilidades a \programa{LibWiiEsp}, pero al no disponer de estos periféricos no puedo desarrollar un módulo completo para ello, por tanto, se descarta su uso. Sin embargo, sí puedo aportar la funcionalidad relativa a la extensión del \emph{wiimote} por excelencia, el \emph{Nunchuck}.\\
+
+Recapitulando, el módulo de gestión de entrada de la biblioteca va a permitir conectar hasta cuatro \emph{Wii Remotes} simultáneos, cada uno con su respectiva expansión \emph{Nunchuck}. Se van a mapear todos los botones de ambos periféricos, para conocer tanto si se encuentran pulsados o no, si se acaban de presionar o si se acaban de soltar en un momento determinado.\\
+
+Respecto a las características especiales de los mandos de la videoconsola, se ofrecerán métodos consultores sobre la orientación de los mandos y sobre la situación del puntero infrarrojo sobre la pantalla, quedando el acceso a la información de los acelerómetros pendiente para una futura versión (cuando una actualización del módulo \emph{Wpad} consiga que la lectura de dicha información sea correcta). Se controlará además el estado de la palanca del \emph{Nunchuck}, y la vibración del \emph{wiimote}.
+
+\subsection{Diseño e implementación}
+
+Una vez fijados los objetivos a conseguir, se crea una clase que gestione todos los aspectos relativos a la gestión de los \emph{wiimotes}. La clase debe tener un puntero a la estructura de tipo \emph{WPADData} del mando que tendrá asociado cada instancia, además de almacenar el \emph{chan} (número identificador único para el dispositivo), una variable que indique la expansión conectada y un diccionario en el que se guarde el mapeo de los botones, tanto del propio \emph{wiimote} como del \emph{Nunchuck}. El sistema de \emph{Bluetooth} bajo el que trabajan los mandos con la videoconsola tiene que inicializarse antes de poder usarse, así que se crea un método de clase que se encargue de ello.\\
+
+La identificación de cada botón se realiza mediante un tipo enumerado que se utiliza como clave en el diccionario de botones. A cada una de estas claves se le asigna el valor binario de su botón correspondiente. Por otra parte, se crean dos \emph{arrays} de valores booleanos, del mismo tamaño que el diccionario, y que guardarán el estado actual de todos los botones (pulsado o no), y el estado anterior. De esta forma se podrá identificar si se acaba de pulsar o soltar un botón.\\
+
+A la hora de actualizar el estado del \emph{wiimote}, se definen dos funciones. Una de ellas será un método de clase que realice la lectura y actualización de la estructura \emph{WPADData} de todos los controles conectados (no se puede hacer de forma individual), y la otra función obtendrá, a partir del contenido de la estructura actualizada, toda la información relativa al mando que esté asociado con la instancia concreta de la clase. En este último método se comprueba también el estado de pulsación de los botones, refrescando la información de los \emph{arrays} de datos booleanos.\\
+
+Prácticamente la totalidad del resto de métodos son de consulta, tomando la información desde los \emph{arrays} de booleanos (los métodos que comprueban el estado de un botón concreto) o bien desde la estructura \emph{WPADData} (orientación, puntero infrarrojo, palanca del \emph{Nunchuck}, si el mando está conectado o no, si el \emph{Nunchuck} está conectado\ldots). El único método restante no observador es el que activa la vibración del \emph{wiimote} durante la cantidad de microsegundos que se le indique.\\
+
+Un detalle a mencionar es la implementación de los métodos relacionados con el \emph{Nunchuck}, ya que se ofrece el valor crudo de los ejes de la palanca (son enteros sin signo, de 8 bits), donde el centro es, aproximadamente, un valor de 128. Pero ocurre que esto no es exacto, y por eso se proporcionan dos métodos (uno para cada eje) que indican si la palanca está pulsada hacia arriba o abajo, hacia la derecha o la izquierda, o si está en centrada en el eje.\\
+
+Por último, mencionar que no se permite la copia ni asignación de una instancia, debido a que cada una está ligada a un único \emph{wiimote}, y no es posible asignar un mismo dispositivo a distintos objetos de la clase, ni utilizar una misma instancia para controlar más de un mando.\\
+
+En la figura \ref{mando} se muestra la interfaz pública de la clase Mando.\\
+
+\figura{mando.png}{scale=0.5}{Interfaz pública de la clase Mando}{mando}{h}
+
+\subsection{Pruebas}
+
+Comprobar la detección de pulsaciones de los botones fue sencillo, se hizo a partir de un programa que escribía en el sistema de consola que aporta \programa{libogc} un mensaje distinto según el botón que se pulsaba. Los métodos observadores se validaron imprimiendo directamente en la pantalla los valores que devolvían, y comprobando que fueran correctos. En cambio, para probar los métodos observadores para el estado del puntero infrarrojo sobre la pantalla, se utilizó el método \emph{dibujarPunto} de la clase \emph{Screen} con las coordenadas que devolvían las mencionadas funciones.
+

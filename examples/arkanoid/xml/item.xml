@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actor vx="0" vy="6" tipo="item">
+	<animaciones>
+		<animacion estado="azul" img="item" sec="0" filas="2" columnas="2" retardo="0" />
+		<animacion estado="amarillo" img="item" sec="1" filas="2" columnas="2" retardo="0" />
+		<animacion estado="verde" img="item" sec="2" filas="2" columnas="2" retardo="0" />
+		<animacion estado="rojo" img="item" sec="3" filas="2" columnas="2" retardo="0" />
+	</animaciones>
+	<colisiones>
+		<rectangulo estado="azul" x1="3" y1="1" x2="28" y2="1" x3="28" y3="14" x4="3" y4="14" />
+		<rectangulo estado="amarillo" x1="3" y1="1" x2="28" y2="1" x3="28" y3="14" x4="3" y4="14" />
+		<rectangulo estado="verde" x1="3" y1="1" x2="28" y2="1" x3="28" y3="14" x4="3" y4="14" />
+		<rectangulo estado="rojo" x1="3" y1="1" x2="28" y2="1" x3="28" y3="14" x4="3" y4="14" />
+	</colisiones>
+</actor>

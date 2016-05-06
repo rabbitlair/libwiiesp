@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>libWiiEsp: Fichero Fuente /home/rabbit/Escritorio/libwiiesp/include/nivel.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Generado por Doxygen 1.7.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+--></script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libWiiEsp&#160;<span id="projectnumber">0.9.2</span></div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>/home/rabbit/Escritorio/libwiiesp/include/nivel.h</h1>  </div>
+</div>
+<div class="contents">
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
+<a name="l00002"></a>00002 <span class="comment">// Licencia GPLv3</span>
+<a name="l00003"></a>00003 <span class="comment">//</span>
+<a name="l00004"></a>00004 <span class="comment">// Este archivo es parte de libWiiEsp. Copyright (C) 2011 Ezequiel Vázquez de la Calle</span>
+<a name="l00005"></a>00005 <span class="comment">//</span>
+<a name="l00006"></a>00006 <span class="comment">// libWiiEsp es software libre: usted puede redistribuirlo y/o modificarlo bajo los términos de la </span>
+<a name="l00007"></a>00007 <span class="comment">// Licencia Pública General GNU publicada por la Fundación para el Software Libre, ya sea la versión 3 </span>
+<a name="l00008"></a>00008 <span class="comment">// de la Licencia, o (a su elección) cualquier versión posterior.</span>
+<a name="l00009"></a>00009 <span class="comment">//</span>
+<a name="l00010"></a>00010 <span class="comment">// libWiiEsp se distribuye con la esperanza de que sea útil, pero SIN GARANTÍA ALGUNA; ni siquiera </span>
+<a name="l00011"></a>00011 <span class="comment">// la garantía implícita MERCANTIL o de APTITUD PARA UN PROPÓSITO DETERMINADO. Consulte los detalles de</span>
+<a name="l00012"></a>00012 <span class="comment">// la Licencia Pública General GNU para obtener una información más detallada.</span>
+<a name="l00013"></a>00013 <span class="comment">//</span>
+<a name="l00014"></a>00014 <span class="comment">// Debería haber recibido una copia de la Licencia Pública General GNU junto a libWiiEsp. En caso </span>
+<a name="l00015"></a>00015 <span class="comment">// contrario, consulte &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00016"></a>00016 <span class="comment">//</span>
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 <span class="preprocessor">#ifndef _NIVEL_H_</span>
+<a name="l00019"></a>00019 <span class="preprocessor"></span><span class="preprocessor">#define _NIVEL_H_</span>
+<a name="l00020"></a>00020 <span class="preprocessor"></span>
+<a name="l00021"></a>00021 <span class="preprocessor">    #include &lt;map&gt;</span>
+<a name="l00022"></a>00022 <span class="preprocessor">    #include &lt;string&gt;</span>
+<a name="l00023"></a>00023 <span class="preprocessor">    #include &lt;vector&gt;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">    #include &quot;actor.h&quot;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">    #include &quot;colision.h&quot;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">    #include &quot;excepcion.h&quot;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">    #include &quot;galeria.h&quot;</span>
+<a name="l00028"></a>00028 <span class="preprocessor">    #include &quot;mando.h&quot;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">    #include &quot;parser.h&quot;</span>
+<a name="l00030"></a>00030 <span class="preprocessor">    #include &quot;screen.h&quot;</span>
+<a name="l00031"></a>00031 
+<a name="l00168"></a><a class="code" href="classNivel.html">00168</a>     <span class="keyword">class </span><a class="code" href="classNivel.html" title="Clase que proporciona una base para definir niveles (escenarios donde participan actores) de manera f...">Nivel</a>
+<a name="l00169"></a>00169     {
+<a name="l00170"></a>00170         <span class="keyword">public</span>:
+<a name="l00171"></a>00171 
+<a name="l00179"></a><a class="code" href="structNivel_1_1tile.html">00179</a>             <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structNivel_1_1tile.html" title="Estructura que almacena los datos de un tile.">tile</a>
+<a name="l00180"></a>00180             {
+<a name="l00181"></a>00181                 u32 x;
+<a name="l00182"></a>00182                 u32 y;
+<a name="l00183"></a>00183                 u32 gid;
+<a name="l00184"></a>00184                 <a class="code" href="classRectangulo.html" title="Clase que representa un rectángulo en el sistema de gestión de colisiones.">Rectangulo</a>* colision;
+<a name="l00185"></a>00185             } <a class="code" href="classNivel.html#a8a8d39822df100fa23c0f974f0016c01" title="Estructura que almacena los datos de un tile.">Tile</a>;
+<a name="l00186"></a>00186 
+<a name="l00190"></a><a class="code" href="classNivel.html#aed6ad41d54c382497340467581423120">00190</a>             <span class="keyword">typedef</span> <span class="keyword">enum</span>
+<a name="l00191"></a>00191             {
+<a name="l00192"></a>00192                 PLATAFORMAS,
+<a name="l00193"></a>00193                 ESCENARIO
+<a name="l00194"></a>00194             } <a class="code" href="classNivel.html#aed6ad41d54c382497340467581423120">Capa</a>;
+<a name="l00195"></a>00195 
+<a name="l00199"></a><a class="code" href="classNivel.html#a9f346861d82f9e1fe310648f305f77c7">00199</a>             <span class="keyword">typedef</span> std::map&lt;Capa, Tile**&gt; <a class="code" href="classNivel.html#a9f346861d82f9e1fe310648f305f77c7">Escenario</a>;
+<a name="l00200"></a>00200 
+<a name="l00204"></a><a class="code" href="classNivel.html#a83ebd38813eb4c49c43980e49d3c112a">00204</a>             <span class="keyword">typedef</span> std::vector&lt;Actor*&gt; <a class="code" href="classNivel.html#a83ebd38813eb4c49c43980e49d3c112a">Actores</a>;
+<a name="l00205"></a>00205 
+<a name="l00210"></a><a class="code" href="classNivel.html#a2eb2ef5528ee6025efa22b86dead7193">00210</a>             <span class="keyword">typedef</span> std::map&lt;std::string, Actor*&gt; <a class="code" href="classNivel.html#a2eb2ef5528ee6025efa22b86dead7193">Jugadores</a>;
+<a name="l00211"></a>00211 
+<a name="l00219"></a>00219             <a class="code" href="classNivel.html#ae12e03c0a3d464b3d7be1186dace54a1">Nivel</a>(<span class="keyword">const</span> std::string&amp; ruta) <span class="keywordflow">throw</span> (<a class="code" href="classArchivoEx.html" title="Clase de excepción para errores relacionados con archivos.">ArchivoEx</a>, <a class="code" href="classTarjetaEx.html" title="Clase de excepción para errores relacionados con la tarjeta SD.">TarjetaEx</a>);
+<a name="l00220"></a>00220 
+<a name="l00224"></a>00224             <span class="keyword">virtual</span> <a class="code" href="classNivel.html#a22b70d3681654e0cae6c81605e5043bc">~Nivel</a>(<span class="keywordtype">void</span>);
+<a name="l00225"></a>00225 
+<a name="l00230"></a>00230             u32 <a class="code" href="classNivel.html#a776815722bd45d20938ee004e18f18a8">ancho</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;
+<a name="l00231"></a>00231 
+<a name="l00236"></a>00236             u32 <a class="code" href="classNivel.html#ab493f22ee983591692dde12121f332c3">alto</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;
+<a name="l00237"></a>00237 
+<a name="l00245"></a>00245             u32 <a class="code" href="classNivel.html#a00be2e52e079182b6ec18ca82e8d8dc2">xScroll</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;
+<a name="l00246"></a>00246 
+<a name="l00254"></a>00254             u32 <a class="code" href="classNivel.html#a0273d1bdf8cc780515e910721523d1c2">yScroll</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;
+<a name="l00255"></a>00255 
+<a name="l00260"></a>00260             <span class="keyword">const</span> <a class="code" href="classMusica.html" title="Clase que representa una pista de música que puede ser reproducida en la consola Nintendo Wii...">Musica</a>&amp; <a class="code" href="classNivel.html#a4b15c15df99c845fe218cc0872922e12">musica</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;
+<a name="l00261"></a>00261 
+<a name="l00269"></a>00269             <span class="keywordtype">void</span> <a class="code" href="classNivel.html#a3e4e0dcb5742c842987f057b25dd946d">moverScroll</a>(u32 x, u32 y);
+<a name="l00270"></a>00270 
+<a name="l00276"></a>00276             <span class="keywordtype">bool</span> <a class="code" href="classNivel.html#ad5d1718b04e32bae5fb99e3140144c34">colision</a>(<span class="keyword">const</span> <a class="code" href="classActor.html" title="Clase que proporciona una base para definir actores (también llamados sprites) de una manera fácil...">Actor</a>* a);
+<a name="l00277"></a>00277 
+<a name="l00283"></a>00283             <span class="keywordtype">bool</span> <a class="code" href="classNivel.html#aed1647306f61c2bce087187e1d8ed4b3">colisionBordes</a>(<span class="keyword">const</span> <a class="code" href="classActor.html" title="Clase que proporciona una base para definir actores (también llamados sprites) de una manera fácil...">Actor</a>* a);
+<a name="l00284"></a>00284 
+<a name="l00292"></a>00292             <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classNivel.html#af7727e9795771e4d8d65beb3c51dc576">actualizarPj</a>(<span class="keyword">const</span> std::string&amp; jugador, <span class="keyword">const</span> <a class="code" href="classMando.html" title="Clase que permite leer información desde un Wii Remote.">Mando</a>&amp; m) = 0;
+<a name="l00293"></a>00293 
+<a name="l00299"></a>00299             <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classNivel.html#a741d6ae283f581fbbc0c89db89c0576a">actualizarNpj</a>(<span class="keywordtype">void</span>) = 0;
+<a name="l00300"></a>00300 
+<a name="l00306"></a>00306             <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classNivel.html#af2cf5f77c22cd349e5773c9533ef6549">actualizarEscenario</a>(<span class="keywordtype">void</span>) = 0;
+<a name="l00307"></a>00307 
+<a name="l00313"></a>00313             <span class="keywordtype">void</span> <a class="code" href="classNivel.html#aa857f42c9c48428b576ccaad69d13ee3">dibujar</a>(<span class="keywordtype">void</span>);
+<a name="l00314"></a>00314 
+<a name="l00315"></a>00315         <span class="keyword">protected</span>:
+<a name="l00316"></a>00316 
+<a name="l00325"></a><a class="code" href="structNivel_1_1actor.html">00325</a>             <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structNivel_1_1actor.html" title="Estructura para almacenar de forma temporal la información de un actor.">actor</a>
+<a name="l00326"></a>00326             {
+<a name="l00327"></a>00327                 std::string tipo_actor;
+<a name="l00328"></a>00328                 std::string xml;
+<a name="l00329"></a>00329                 u32 x;
+<a name="l00330"></a>00330                 u32 y;
+<a name="l00331"></a>00331                 std::string jugador;
+<a name="l00332"></a>00332             } <a class="code" href="classNivel.html#a17e089ca49c99625b0e8ecf489e8d6fb" title="Estructura para almacenar de forma temporal la información de un actor.">ActorTemp</a>;
+<a name="l00333"></a>00333 
+<a name="l00341"></a><a class="code" href="classNivel.html#a8fef0904670f88dfcf0409bc43ab3896">00341</a>             <span class="keyword">typedef</span> std::vector&lt;ActorTemp&gt; <a class="code" href="classNivel.html#a8fef0904670f88dfcf0409bc43ab3896">Temporal</a>;
+<a name="l00342"></a>00342 
+<a name="l00347"></a>00347             <span class="keywordtype">void</span> <a class="code" href="classNivel.html#a5273f9847f9506330591b1cab0c26f85">leerPropiedades</a>(TiXmlElement* propiedades);
+<a name="l00348"></a>00348 
+<a name="l00355"></a>00355             <span class="keywordtype">void</span> <a class="code" href="classNivel.html#a95d4532808b2109d7f56fe786d525c3b">leerEscenario</a>(TiXmlElement* escenario);
+<a name="l00356"></a>00356 
+<a name="l00363"></a>00363             <span class="keywordtype">void</span> <a class="code" href="classNivel.html#a1c5fcd2c8c5cf356d1a5aa9af663877a">leerPlataformas</a>(TiXmlElement* plataformas);
+<a name="l00364"></a>00364 
+<a name="l00371"></a>00371             <span class="keywordtype">void</span> <a class="code" href="classNivel.html#a1a3e4f1f1fc404f8dfc64d7af5ded258">leerActores</a>(TiXmlElement* actores);
+<a name="l00372"></a>00372 
+<a name="l00381"></a>00381             <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classNivel.html#a2b4abbc1033f5404cf2529304e5c51f7">cargarActores</a>(<span class="keywordtype">void</span>) = 0;
+<a name="l00382"></a>00382 
+<a name="l00386"></a><a class="code" href="classNivel.html#af29f145ba7dd4880034e08c52d980379">00386</a>             std::string <a class="code" href="classNivel.html#af29f145ba7dd4880034e08c52d980379">_imagen_fondo</a>;
+<a name="l00387"></a>00387 
+<a name="l00391"></a><a class="code" href="classNivel.html#aca568916514c947481661758329384b7">00391</a>             std::string <a class="code" href="classNivel.html#aca568916514c947481661758329384b7">_imagen_tileset</a>;
+<a name="l00392"></a>00392 
+<a name="l00396"></a><a class="code" href="classNivel.html#a16c9fcd711cd939408db3e32e0220975">00396</a>             std::string <a class="code" href="classNivel.html#a16c9fcd711cd939408db3e32e0220975">_musica</a>;
+<a name="l00397"></a>00397 
+<a name="l00401"></a><a class="code" href="classNivel.html#ae50a8537321f7c47a89f47c2f25a0599">00401</a>             u32 <a class="code" href="classNivel.html#ae50a8537321f7c47a89f47c2f25a0599">_ancho_un_tile</a>;
+<a name="l00402"></a>00402 
+<a name="l00406"></a><a class="code" href="classNivel.html#a84815dfb270317c424e9d6191f144d18">00406</a>             u32 <a class="code" href="classNivel.html#a84815dfb270317c424e9d6191f144d18">_alto_un_tile</a>;
+<a name="l00407"></a>00407 
+<a name="l00411"></a><a class="code" href="classNivel.html#afaf6133abea1278a5e4a8bdc9f6a3dbe">00411</a>             u32 <a class="code" href="classNivel.html#afaf6133abea1278a5e4a8bdc9f6a3dbe">_ancho_tiles</a>;
+<a name="l00412"></a>00412 
+<a name="l00416"></a><a class="code" href="classNivel.html#a0fea1bca5795e11d5061fc56aeb2b5dd">00416</a>             u32 <a class="code" href="classNivel.html#a0fea1bca5795e11d5061fc56aeb2b5dd">_alto_tiles</a>;
+<a name="l00417"></a>00417 
+<a name="l00421"></a><a class="code" href="classNivel.html#a05fa1950bf92517d39c2ad4be2315e38">00421</a>             u32 <a class="code" href="classNivel.html#a05fa1950bf92517d39c2ad4be2315e38">_scroll_x</a>;
+<a name="l00422"></a>00422 
+<a name="l00426"></a><a class="code" href="classNivel.html#a27e5dc9ba1dbd91b97aa58420df7e72d">00426</a>             u32 <a class="code" href="classNivel.html#a27e5dc9ba1dbd91b97aa58420df7e72d">_scroll_y</a>;
+<a name="l00427"></a>00427 
+<a name="l00431"></a><a class="code" href="classNivel.html#a4cc1709bc082af950eb6bf8e161e02ff">00431</a>             u32 <a class="code" href="classNivel.html#a4cc1709bc082af950eb6bf8e161e02ff">_ancho_nivel</a>;
+<a name="l00432"></a>00432 
+<a name="l00436"></a><a class="code" href="classNivel.html#af3ab0545fbcc9ca5bb1b6ff941d36cdb">00436</a>             u32 <a class="code" href="classNivel.html#af3ab0545fbcc9ca5bb1b6ff941d36cdb">_alto_nivel</a>;
+<a name="l00437"></a>00437 
+<a name="l00441"></a><a class="code" href="classNivel.html#a70e31bf4e712ee6b4fa1bfced819a9a0">00441</a>             u16 <a class="code" href="classNivel.html#a70e31bf4e712ee6b4fa1bfced819a9a0">_filas_tileset</a>;
+<a name="l00442"></a>00442 
+<a name="l00446"></a><a class="code" href="classNivel.html#a6cfbf44495d191eaab1b5c3a82d51611">00446</a>             u16 <a class="code" href="classNivel.html#a6cfbf44495d191eaab1b5c3a82d51611">_columnas_tileset</a>;
+<a name="l00447"></a>00447 
+<a name="l00451"></a><a class="code" href="classNivel.html#aa8707165cea833c160cd80f1b62f15fe">00451</a>             <a class="code" href="classNivel.html#a9f346861d82f9e1fe310648f305f77c7">Escenario</a> <a class="code" href="classNivel.html#aa8707165cea833c160cd80f1b62f15fe">_escenario</a>;
+<a name="l00452"></a>00452 
+<a name="l00456"></a><a class="code" href="classNivel.html#abdf73007ecb6ae68839525ec3c0744ab">00456</a>             <a class="code" href="classNivel.html#a83ebd38813eb4c49c43980e49d3c112a">Actores</a> <a class="code" href="classNivel.html#abdf73007ecb6ae68839525ec3c0744ab">_actores</a>;
+<a name="l00457"></a>00457 
+<a name="l00461"></a><a class="code" href="classNivel.html#ad8f484753fc81276e7aeb1a6f4b14ce7">00461</a>             <a class="code" href="classNivel.html#a2eb2ef5528ee6025efa22b86dead7193">Jugadores</a> <a class="code" href="classNivel.html#ad8f484753fc81276e7aeb1a6f4b14ce7">_jugadores</a>;
+<a name="l00462"></a>00462 
+<a name="l00470"></a><a class="code" href="classNivel.html#a13a4cf660dba59d72a6c3845de4266c0">00470</a>             <a class="code" href="classNivel.html#a8fef0904670f88dfcf0409bc43ab3896">Temporal</a> <a class="code" href="classNivel.html#a13a4cf660dba59d72a6c3845de4266c0">_temporal</a>;
+<a name="l00471"></a>00471     };
+<a name="l00472"></a>00472 
+<a name="l00473"></a>00473 <span class="preprocessor">#endif</span>
+<a name="l00474"></a>00474 <span class="preprocessor"></span>
+</pre></div></div>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumeraciones</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Generado el Martes, 19 de Julio de 2011 20:45:52 para libWiiEsp por&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<app version="1">
+	<name>Wii Pang</name>
+	<coder>Ezequiel Vázquez</coder>
+	<version>0.1</version>
+	<short_description>Clon del clásico Pang</short_description>
+	<long_description>Este juego es un clon del clásico Pang, desarrollado en 1989 por la compañía Mitchell Co. Es un ejemplo de implementación de un juego con la biblioteca LibWiiEsp.
+
+Más información en: https://forja.rediris.es/projects/libwiiesp</long_description>
+</app>
+

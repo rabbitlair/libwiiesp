@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lang>
+	<idioma nombre="español">
+		<tag nombre="PUNTOS" valor="Puntuación" />
+		<tag nombre="VIDAS" valor="Vidas" />
+		<tag nombre="NIVEL" valor="Nivel" />
+		<tag nombre="PAUSA" valor="Pausa" />
+		<tag nombre="COMPLETADO" valor="Nivel completado" />
+		<tag nombre="PULSAR" valor="Pulse el botón A" />
+		<tag nombre="FINAL" valor="¡Has perdido!" />
+	</idioma>
+	<idioma nombre="english">
+		<tag nombre="PUNTOS" valor="Score" />
+		<tag nombre="VIDAS" valor="Lives" />
+		<tag nombre="NIVEL" valor="Level" />
+		<tag nombre="PAUSA" valor="Pause" />
+		<tag nombre="COMPLETADO" valor="Level completed" />
+		<tag nombre="PULSAR" valor="Press button A" />
+		<tag nombre="FINAL" valor="Game over!" />
+	</idioma>
+	<idioma nombre="русский">
+		<tag nombre="PUNTOS" valor="Счёт Очков" />
+		<tag nombre="VIDAS" valor="Жизни" />
+		<tag nombre="NIVEL" valor="Уровень" />
+		<tag nombre="PAUSA" valor="Пауза" />
+		<tag nombre="COMPLETADO" valor="Завершённый уровень" />
+		<tag nombre="PULSAR" valor="Нажать на кнопку А" />
+		<tag nombre="FINAL" valor="Игра окончена!" />
+	</idioma>
+	<idioma nombre="français">
+		<tag nombre="PUNTOS" valor="Points" />
+		<tag nombre="VIDAS" valor="Vies" />
+		<tag nombre="NIVEL" valor="Niveau" />
+		<tag nombre="PAUSA" valor="Pause" />
+		<tag nombre="COMPLETADO" valor="Niveau complet" />
+		<tag nombre="PULSAR" valor="Appuyer sur le bouton A" />
+		<tag nombre="FINAL" valor="Jeu terminé!" />
+	</idioma>
+</lang>

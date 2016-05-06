@@ -1,0 +1,1008 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>libWiiEsp: Referencia de la Clase Actor</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Generado por Doxygen 1.7.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+--></script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libWiiEsp&#160;<span id="projectnumber">0.9.2</span></div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Clases</span></a></li>
+      <li><a href="files.html"><span>Archivos</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Tipos públicos</a> &#124;
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pro-methods">Métodos protegidos</a> &#124;
+<a href="#pro-attribs">Atributos protegidos</a>  </div>
+  <div class="headertitle">
+<h1>Referencia de la Clase Actor</h1>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="Actor" -->
+<p>Clase que proporciona una base para definir actores (también llamados sprites) de una manera fácil.  
+<a href="#_details">Más...</a></p>
+
+<p><code>#include &lt;<a class="el" href="actor_8h_source.html">actor.h</a>&gt;</code></p>
+
+<p><a href="classActor-members.html">Lista de todos los miembros.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-types"></a>
+Tipos públicos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef std::set&lt; <a class="el" href="classFigura.html">Figura</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#ad22fbe855330f5a409b261956656deee">CajasColision</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; std::string, <br class="typebreak"/>
+<a class="el" href="classActor.html#ad22fbe855330f5a409b261956656deee">CajasColision</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#a1d0a3cdd82143c906260a23bc453617c">Colisiones</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; std::string, <br class="typebreak"/>
+<a class="el" href="classAnimacion.html">Animacion</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#a1e7ee055136226d7992d681cff7fe204">Animaciones</a></td></tr>
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#a0211f419effddbee853a0605b6b6d9de">Actor</a> (const std::string &amp;ruta, const <a class="el" href="classNivel.html">Nivel</a> *nivel)  throw (ArchivoEx, CodigoEx, TarjetaEx, XmlEx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#ac0565e14088480f37c58f2b78a0718f7">~Actor</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#afcce565a0274a45dac8491f9ef964168">x</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#a0d66e6aa088654516d8dbfe34cfaa267">y</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#a65420ba1f5f394d0418ec1d90a5661cf">xPrevio</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#acb0e3f836c5446a5aa6d436a192e47a3">yPrevio</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">s16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#ae50b3dd83150fcf498183bf18935601a">velX</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">s16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#a7d5bcde0f00b2e11f488baffd4587fa2">velY</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#af43729472c2a73871faaa2b6fb2b5490">estado</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#a251ad509170c036e724e5125fdb5cec8">estadoPrevio</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classActor.html#ad22fbe855330f5a409b261956656deee">CajasColision</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#acac1941ca230527e62b8bbd643615ccf">cajasColision</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#a5379a3952ed3f167d53b790847fc9e0c">ancho</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#a9206a7a5738ea371e3e9348294dcf7f5">alto</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#a65aaf76cab7cbdf510c0ccd2d94ff7ef">tipoActor</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#a4e6a81bb83bb2a20507e8570f3f139aa">mover</a> (u32 x, u32 y)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#a641f0e1852ce50859971e4def8596273">setVelX</a> (s16 vx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#a1a7f02903c3a9cbbfe4a428e542d864c">setVelY</a> (s16 vy)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#af2e0aea9a6d6a0b8e10664ffe040b2fd">setEstado</a> (const std::string &amp;e)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#aace6a41bbd220497ffe8bbf178762e85">invertirDibujo</a> (bool inv)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#a35db3f2df853c01393d24c1d9d2ee08d">dibujar</a> (s16 x, s16 y, s16 z)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#ad02e335b098db2f8814ff0a77482d29b">colision</a> (const <a class="el" href="classActor.html">Actor</a> &amp;a)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#ae97b2e0eb9f32ca077b40b642ccfecad">actualizar</a> (void)=0</td></tr>
+<tr><td colspan="2"><h2><a name="pro-methods"></a>
+Métodos protegidos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#aaf2ab542855def4f2de6a0afd9c2493d">cargarDatosIniciales</a> (const std::string &amp;ruta)  throw (ArchivoEx, TarjetaEx, CodigoEx, XmlEx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#a2ceb4ff003aa6b4eda77d135bbc156bc">leerAnimaciones</a> (TiXmlElement *nodo)  throw (CodigoEx, XmlEx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#a757da03fc2339c8ac0f3d2245c227739">leerColisiones</a> (TiXmlElement *nodo)</td></tr>
+<tr><td colspan="2"><h2><a name="pro-attribs"></a>
+Atributos protegidos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">s16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#a20017f792d4a038c36ee551044c1e16c">_vx</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">s16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#a7c16c691d0a24eb546ff32113fed01de">_vy</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#ab89fbb7da40b4f50c6c58a0abb69e2b9">_x</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#aa9926a267064024564c21becd235431b">_y</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#a3032659e74980c39f7dcff6799fc749a">_x_previo</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#a891414fdf06393b758287976477dcfa1">_y_previo</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#a852c141a92f809c64ed2e3c402df1b41">_estado_actual</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#ae3eb29427a81b8082a01ad2be8f426c7">_estado_previo</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#ab3f6143e149974fe0792a20f64d40c31">_tipo_actor</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#a34a2899f19b5fddb5c38b946ea5e6583">_invertida</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classActor.html#a1d0a3cdd82143c906260a23bc453617c">Colisiones</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#a4a21a3f60628baaf2c0bd4034db0f34a">_map_colisiones</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classActor.html#a1e7ee055136226d7992d681cff7fe204">Animaciones</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#a3a334dd1334b0b3628353c471e95fc76">_map_animaciones</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classNivel.html">Nivel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActor.html#ab5f259f7e3aea691cbbcb961da93620d">_nivel</a></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Descripción detallada</h2>
+<div class="textblock"><p>Clase que proporciona una base para definir actores (también llamados sprites) de una manera fácil. </p>
+<dl class="author"><dt><b>Autor:</b></dt><dd>Ezequiel Vázquez de la Calle </dd></dl>
+<dl class="version"><dt><b>Versión:</b></dt><dd>0.9.2</dd></dl>
+<p>Un actor es la unidad básica en el desarrollo de un videojuego en dos dimensiones, y consiste en un objeto con entidad propia que se puede visualizar en la pantalla, y que almacena información sobre sus distintas características. Para facilitar la creación de actores que participen en el universo de un videojuego, libWiiEsp proporciona esta clase abstracta <a class="el" href="classActor.html" title="Clase que proporciona una base para definir actores (también llamados sprites) de una manera fácil...">Actor</a>, que permite controlar desde un mismo sitio los distintos estados por los que puede pasar un actor durante el transcurso del videojuego.</p>
+<p>Las características de que dispone un actor son las siguientes: posición actual dentro del universo del juego (pareja de coordenadas (x,y)), posición previa del actor en el universo del juego (otro par de coordenadas (x,y)), velocidad de movimiento horizontal y vertical, estado actual del actor, estado previo del actor, y el tipo de actor. Por supuesto, al derivar esta clase abstracta, se pueden añadir más características según se crea necesario.</p>
+<p>Realizando un acercamiento más técnico y concreto, un actor no es más que un conjunto de las características antes mencionadas, además de dos diccionarios donde, a cada estado del actor, le corresponde una animación y un conjunto de cajas de colisión, y que proporciona una manera sencilla y efectiva de cargar todas estas características desde un archivo XML almacenado en la tarjeta SD de la consola.</p>
+<p>Existen dos referencias para las coordenadas de un actor. En primer lugar, están las coordenadas de posición del actor dentro del escenario que conforma el propio juego, y que se refieren al desplazamiento en píxeles hacia la derecha del actor respecto al límite izquierdo del escenario (coordenada X), y al desplazamiento hacia abajo, también en píxeles, del actor respecto al límite superior de dicho escenario (coordenada Y). Por otra parte, existe otra referencia para las coordenadas de dibujo de un actor en la pantalla, y que se refieren a la posición respecto a los límites izquierdo y superior de la pantalla, además de la capa en la que se dibuja el actor (consultar la documentación de la clase <a class="el" href="classScreen.html" title="Clase que gestiona los gráficos en la Nintendo Wii.">Screen</a> para más información respecto al dibujo de texturas en la pantalla). Para ilustrar esta diferencia, nada mejor que un ejemplo: supongamos un escenario de 4000 píxeles de ancho y 2000 de alto. La pantalla de la consola Nintendo Wii con una configuración PAL y proporción 4:3 tendrá un tamaño de 640 píxeles de ancho, y 528 de alto. Si el actor a dibujar se encuentra en las coordenadas (1700, 1000) del escenario, se utilizarán estos valores para los cálculos de colisiones, de cambios de posición y de estados. Sin embargo, a la hora de dibujar al actor, hay que tener en cuenta el propio desplazamiento de la pantalla sobre el escenario; si la pantalla tuviera su punto (0,0) en el píxel (1600, 900) del escenario, entonces las coordenadas de dibujo del actor serán (100,100). El desplazamiento de la pantalla respecto a los límites del escenario se controla desde la clase que controla el propio escenario, que será una clase derivada de la clase abstracta <a class="el" href="classNivel.html" title="Clase que proporciona una base para definir niveles (escenarios donde participan actores) de manera f...">Nivel</a> (ver documentación de esta clase para más información).</p>
+<p>El comportamiento de un actor viene definido por los distintos estados que puede adoptar a lo largo de la ejecución del juego. Cada estado tiene asociado un comportamiento concreto, y que se ejecutará en cada iteración del bucle principal del juego en la que el actor tenga activo ese estado concreto. Las transiciones entre estados se realizan externamente (generalmente, desde la clase que gestiona el escenario, y que deriva de la clase abstracta <a class="el" href="classNivel.html" title="Clase que proporciona una base para definir niveles (escenarios donde participan actores) de manera f...">Nivel</a>). Los estados se identifican mediante una cadena de caracteres de alto nivel (de tipo std::string), y se crean según aparezcan en el archivo XML que define las animaciones y las cajas de colisión para cada estado, es decir, un estado sólo se creará si aparece en algún momento en el mencionado archivo XML. El comportamiento del actor según su estado actual debe definirse en el método virtual puro actualizar cuando se derive la clase <a class="el" href="classActor.html" title="Clase que proporciona una base para definir actores (también llamados sprites) de una manera fácil...">Actor</a>.</p>
+<p>Un detalle muy importante es que existe un estado obligatorio que hay que incluir forzosamente, y es el estado "normal", que es el que se toma por defecto. Si este estado faltara en el archivo XML del actor, se produciría un error y/o un comportamiento inesperado.</p>
+<p>La cadena de caracteres que identifica a un estado se toma como clave para dos diccionarios, uno que almacena una animación asociada al estado concreto (consultar documentación de la clase Animación para cualquier duda sobre ésta), y otra que almacena un conjunto (de tipo std::set&lt;Figura*&gt;) de figuras de colisión también asociadas al mismo estado. Estos diccionarios que tienen códigos de estado como clave identificativa se utilizan para que, en cada iteración del bucle principal, se dibuje la animación del actor correspondiente con el estado actual de éste, y sólo se tengan en cuenta las cajas de colisión asociadas al estado actual del actor para evaluar sus colisiones. Se proporcionan métodos para evaluar colisiones entre dos actores de una manera muy sencilla, y también para dibujar el actor en la pantalla en base a unas coordenadas de pantalla que se reciben desde fuera de la clase (la diferencia entre las coordenadas de posición y las de pantalla se explican unos párrafos más arriba).</p>
+<p>Otro detalle más es que se almacena un identificador de tipo de actor, es decir, todos los actores que estén gestionados por la misma clase derivada de <a class="el" href="classActor.html" title="Clase que proporciona una base para definir actores (también llamados sprites) de una manera fácil...">Actor</a> deberán tener este atributo con el mismo valor.</p>
+<p>Como ya se ha comentado, se consigue una separación completa de código fuente y datos, de tal manera que para cambiar las figuras de colisión, los estados o las animaciones de un actor, basta con modificar el archivo XML desde el cual se lee toda esta información. Este archivo tendrá una estructura parecida a esta:</p>
+<div class="fragment"><pre class="fragment"> &lt;?xml version=<span class="stringliteral">&quot;1.0&quot;</span> encoding=<span class="stringliteral">&quot;UTF-8&quot;</span>?&gt;
+ &lt;actor vx=<span class="stringliteral">&quot;3&quot;</span> vy=<span class="stringliteral">&quot;3&quot;</span> tipo=<span class="stringliteral">&quot;jugador&quot;</span>&gt;
+   &lt;animaciones&gt;
+     &lt;animacion <a class="code" href="classActor.html#af43729472c2a73871faaa2b6fb2b5490">estado</a>=<span class="stringliteral">&quot;normal&quot;</span> img=<span class="stringliteral">&quot;chief&quot;</span> sec=<span class="stringliteral">&quot;0&quot;</span> filas=<span class="stringliteral">&quot;1&quot;</span> columnas=<span class="stringliteral">&quot;5&quot;</span> retardo=<span class="stringliteral">&quot;3&quot;</span> /&gt;
+     &lt;animacion <a class="code" href="classActor.html#af43729472c2a73871faaa2b6fb2b5490">estado</a>=<span class="stringliteral">&quot;mover&quot;</span> img=<span class="stringliteral">&quot;chief&quot;</span> sec=<span class="stringliteral">&quot;0,1,2,3,4&quot;</span> filas=<span class="stringliteral">&quot;1&quot;</span> columnas=<span class="stringliteral">&quot;5&quot;</span> retardo=<span class="stringliteral">&quot;3&quot;</span> /&gt;
+   &lt;animacion <a class="code" href="classActor.html#af43729472c2a73871faaa2b6fb2b5490">estado</a>=<span class="stringliteral">&quot;muerte&quot;</span> img=<span class="stringliteral">&quot;chief&quot;</span> sec=<span class="stringliteral">&quot;5&quot;</span> filas=<span class="stringliteral">&quot;1&quot;</span> columnas=<span class="stringliteral">&quot;6&quot;</span> retardo=<span class="stringliteral">&quot;0&quot;</span> /&gt;
+  &lt;/animaciones&gt;
+  &lt;colisiones&gt;
+    &lt;rectangulo <a class="code" href="classActor.html#af43729472c2a73871faaa2b6fb2b5490">estado</a>=<span class="stringliteral">&quot;normal&quot;</span> x1=<span class="stringliteral">&quot;27&quot;</span> y1=<span class="stringliteral">&quot;21&quot;</span> x2=<span class="stringliteral">&quot;55&quot;</span> y2=<span class="stringliteral">&quot;21&quot;</span> x3=<span class="stringliteral">&quot;55&quot;</span> y3=<span class="stringliteral">&quot;96&quot;</span> x4=<span class="stringliteral">&quot;27&quot;</span> y4=<span class="stringliteral">&quot;96&quot;</span> /&gt;
+    &lt;circulo <a class="code" href="classActor.html#af43729472c2a73871faaa2b6fb2b5490">estado</a>=<span class="stringliteral">&quot;normal&quot;</span> cx=<span class="stringliteral">&quot;41&quot;</span> cy=<span class="stringliteral">&quot;13&quot;</span> radio=<span class="stringliteral">&quot;8&quot;</span> /&gt;
+    &lt;rectangulo <a class="code" href="classActor.html#af43729472c2a73871faaa2b6fb2b5490">estado</a>=<span class="stringliteral">&quot;mover&quot;</span> x1=<span class="stringliteral">&quot;27&quot;</span> y1=<span class="stringliteral">&quot;21&quot;</span> x2=<span class="stringliteral">&quot;55&quot;</span> y2=<span class="stringliteral">&quot;21&quot;</span> x3=<span class="stringliteral">&quot;55&quot;</span> y3=<span class="stringliteral">&quot;96&quot;</span> x4=<span class="stringliteral">&quot;27&quot;</span> y4=<span class="stringliteral">&quot;96&quot;</span> /&gt;
+    &lt;circulo <a class="code" href="classActor.html#af43729472c2a73871faaa2b6fb2b5490">estado</a>=<span class="stringliteral">&quot;mover&quot;</span> cx=<span class="stringliteral">&quot;41&quot;</span> cy=<span class="stringliteral">&quot;13&quot;</span> radio=<span class="stringliteral">&quot;8&quot;</span> /&gt;
+    &lt;sinfigura <a class="code" href="classActor.html#af43729472c2a73871faaa2b6fb2b5490">estado</a>=<span class="stringliteral">&quot;muerte&quot;</span> /&gt;
+   &lt;/colisiones&gt;
+ &lt;/actor&gt;
+</pre></div><p>En el elemento raíz se observan tres atributos, que son la velocidad de movimiento horizontal del actor en píxeles por fotogramas, la velocidad de movimiento vertical, y el tipo de actor.</p>
+<p>Se pueden apreciar dos grandes bloques, uno para las animaciones, y otro para las cajas de colisión. Cada animación y figura incluye la información necesaria para ser creada, además de un estado al que se asociará. Sólo puede haber una animación por estado; pero no ocurre así para las cajas de colisión, de las cuales puede haber todas las que se deseen en cada estado. Cade destacar que, en ambos bloques, aparece el estado obligatorio "normal", como ya se indicó anteriormente. Para más información sobre los parámetros de los constructores de cajas de colisión o animaciones, consultar la documentación de cada una de estas clases.</p>
+<p>Por último, cabe destacar que al derivar la clase <a class="el" href="classActor.html" title="Clase que proporciona una base para definir actores (también llamados sprites) de una manera fácil...">Actor</a>, se le pueden añadir nuevos atributos y métodos según se considere necesario, consiguiendo así partir de una base como es la propia clase <a class="el" href="classActor.html" title="Clase que proporciona una base para definir actores (también llamados sprites) de una manera fácil...">Actor</a>, pero pudiendo llegar a la complejidad que se desee.</p>
+<p>Hay que mencionar que a la hora de crear un actor, es apropiado diseñar los cambios entre estados como un autómata finito determinado, que como ya se ha explicado, realizaría sus transiciones entre estados de forma externa. Si se realiza de esta manera, es muy fácil desarrollar un actor en un período de tiempo relativamente pequeño. </p>
+</div><hr/><h2>Documentación de los 'Typedef' miembros de la clase</h2>
+<a class="anchor" id="a1e7ee055136226d7992d681cff7fe204"></a><!-- doxytag: member="Actor::Animaciones" ref="a1e7ee055136226d7992d681cff7fe204" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::map&lt;std::string, <a class="el" href="classAnimacion.html">Animacion</a>*&gt; <a class="el" href="classActor.html#a1e7ee055136226d7992d681cff7fe204">Actor::Animaciones</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Diccionario que asocia un estado con una animación. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad22fbe855330f5a409b261956656deee"></a><!-- doxytag: member="Actor::CajasColision" ref="ad22fbe855330f5a409b261956656deee" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::set&lt;<a class="el" href="classFigura.html">Figura</a>*&gt; <a class="el" href="classActor.html#ad22fbe855330f5a409b261956656deee">Actor::CajasColision</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Conjunto de cajas de colisión. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1d0a3cdd82143c906260a23bc453617c"></a><!-- doxytag: member="Actor::Colisiones" ref="a1d0a3cdd82143c906260a23bc453617c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::map&lt;std::string, <a class="el" href="classActor.html#ad22fbe855330f5a409b261956656deee">CajasColision</a>&gt; <a class="el" href="classActor.html#a1d0a3cdd82143c906260a23bc453617c">Actor::Colisiones</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Diccionario que asocia un estado con un conjunto de cajas de colisión. </p>
+
+</div>
+</div>
+<hr/><h2>Documentación del constructor y destructor</h2>
+<a class="anchor" id="a0211f419effddbee853a0605b6b6d9de"></a><!-- doxytag: member="Actor::Actor" ref="a0211f419effddbee853a0605b6b6d9de" args="(const std::string &amp;ruta, const Nivel *nivel)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Actor::Actor </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>ruta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classNivel.html">Nivel</a> *&#160;</td>
+          <td class="paramname"><em>nivel</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>  throw (<a class="el" href="classArchivoEx.html">ArchivoEx</a>, <a class="el" href="classCodigoEx.html">CodigoEx</a>, <a class="el" href="classTarjetaEx.html">TarjetaEx</a>, <a class="el" href="classXmlEx.html">XmlEx</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Constructor de la clase <a class="el" href="classActor.html" title="Clase que proporciona una base para definir actores (también llamados sprites) de una manera fácil...">Actor</a>. Establece el estado "normal" y la posición a cero. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ruta</td><td>Ruta absoluta en la tarjeta SD del archivo XML de datos del actor. </td></tr>
+    <tr><td class="paramname">nivel</td><td>Puntero constante al nivel en el que se mueve el actor. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Excepciones:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classArchivoEx.html" title="Clase de excepción para errores relacionados con archivos.">ArchivoEx</a></td><td>Se lanza si hay algún error al abrir un archivo </td></tr>
+    <tr><td class="paramname"><a class="el" href="classCodigoEx.html" title="Clase de excepción para errores relacionados con códigos identificadores.">CodigoEx</a></td><td>Se lanza si se detectan dos animaciones para un mismo estado. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classTarjetaEx.html" title="Clase de excepción para errores relacionados con la tarjeta SD.">TarjetaEx</a></td><td>Se lanza si ocurre un error relacionado con la tarjeta SD </td></tr>
+    <tr><td class="paramname"><a class="el" href="classXmlEx.html" title="Clase de excepción para errores relacionados con un árbol XML.">XmlEx</a></td><td>Se lanza si hay un error relacionado con un árbol XML </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac0565e14088480f37c58f2b78a0718f7"></a><!-- doxytag: member="Actor::~Actor" ref="ac0565e14088480f37c58f2b78a0718f7" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Actor::~Actor </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Destructor virtual de la clase <a class="el" href="classActor.html" title="Clase que proporciona una base para definir actores (también llamados sprites) de una manera fácil...">Actor</a>. Libera la memoria ocupada por las cajas de colisión y por las animaciones asociadas a cada estado del actor. </p>
+
+</div>
+</div>
+<hr/><h2>Documentación de las funciones miembro</h2>
+<a class="anchor" id="ae97b2e0eb9f32ca077b40b642ccfecad"></a><!-- doxytag: member="Actor::actualizar" ref="ae97b2e0eb9f32ca077b40b642ccfecad" args="(void)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Actor::actualizar </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método virtual puro, en el que se debe implementar el comportamiento del actor (la actualización de las variables internas del actor) según el estado actual de éste. Las modificaciones sobre el estado actual del actor vendrán dadas desde fuera mediante el método setEstado. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9206a7a5738ea371e3e9348294dcf7f5"></a><!-- doxytag: member="Actor::alto" ref="a9206a7a5738ea371e3e9348294dcf7f5" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u16 Actor::alto </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método consultor que devuelve el alto en píxeles de un cuadro de la animación que corresponde al estado actual del actor. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Alto en píxeles de un cuadro de la animación del estado actual del actor. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5379a3952ed3f167d53b790847fc9e0c"></a><!-- doxytag: member="Actor::ancho" ref="a5379a3952ed3f167d53b790847fc9e0c" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u16 Actor::ancho </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método consultor que devuelve el ancho en píxeles de un cuadro de la animación que corresponde al estado actual del actor. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Ancho en píxeles de un cuadro de la animación del estado actual del actor. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acac1941ca230527e62b8bbd643615ccf"></a><!-- doxytag: member="Actor::cajasColision" ref="acac1941ca230527e62b8bbd643615ccf" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classActor.html#ad22fbe855330f5a409b261956656deee">CajasColision</a>&amp; Actor::cajasColision </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método consultor que devuelve una referencia constante al conjunto de figuras de colisión que corresponden al estado actual del actor. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Referencia constante al conjunto de cajas de colisión del estado actual del actor. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aaf2ab542855def4f2de6a0afd9c2493d"></a><!-- doxytag: member="Actor::cargarDatosIniciales" ref="aaf2ab542855def4f2de6a0afd9c2493d" args="(const std::string &amp;ruta)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Actor::cargarDatosIniciales </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>ruta</em></td><td>)</td>
+          <td>  throw (<a class="el" href="classArchivoEx.html">ArchivoEx</a>, <a class="el" href="classTarjetaEx.html">TarjetaEx</a>, <a class="el" href="classCodigoEx.html">CodigoEx</a>, <a class="el" href="classXmlEx.html">XmlEx</a>)<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que, a partir de la ruta de un archivo XML con un formato concreto, abre éste y lanza los métodos que leen los datos iniciales: las animaciones y las cajas de colisión asociadas a cada estado. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ruta</td><td>Ruta absoluta al archivo XML que contiene la información del actor. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Excepciones:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classArchivoEx.html" title="Clase de excepción para errores relacionados con archivos.">ArchivoEx</a></td><td>Se lanza si hay algún error al abrir un archivo </td></tr>
+    <tr><td class="paramname"><a class="el" href="classCodigoEx.html" title="Clase de excepción para errores relacionados con códigos identificadores.">CodigoEx</a></td><td>Se lanza si se detectan dos animaciones para un mismo estado. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classTarjetaEx.html" title="Clase de excepción para errores relacionados con la tarjeta SD.">TarjetaEx</a></td><td>Se lanza si ocurre un error relacionado con la tarjeta SD </td></tr>
+    <tr><td class="paramname"><a class="el" href="classXmlEx.html" title="Clase de excepción para errores relacionados con un árbol XML.">XmlEx</a></td><td>Se lanza si el árbol XML con los datos de la animación esuviera incompleto. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad02e335b098db2f8814ff0a77482d29b"></a><!-- doxytag: member="Actor::colision" ref="ad02e335b098db2f8814ff0a77482d29b" args="(const Actor &amp;a)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Actor::colision </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classActor.html">Actor</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método para saber si el actor al que pertenece la función colisiona con otro externo. Un actor colisiona con otro si lo hacen entre sí, al menos, una figura de colisión de cada uno de ellos. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td><a class="el" href="classActor.html" title="Clase que proporciona una base para definir actores (también llamados sprites) de una manera fácil...">Actor</a> externo con el que se quiere evaluar si hay colisión. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Verdadero si hay colisión entre los actores, y falso en caso contrario. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a35db3f2df853c01393d24c1d9d2ee08d"></a><!-- doxytag: member="Actor::dibujar" ref="a35db3f2df853c01393d24c1d9d2ee08d" args="(s16 x, s16 y, s16 z)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Actor::dibujar </td>
+          <td>(</td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>z</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que dibuja el cuadro correspondiente de la animación asociada al estado actual del actor. Las coordenadas que recibe son coordenadas de la pantalla, no del escenario del juego donde se encuentra el actor; y hacen referencia al punto superior izquierdo de un rectángulo imaginario que contendría al actor. Se permite redefinir el método por si fuera necesario para dibujar un tipo de actor especial. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Coordenada X de la pantalla donde se dibujará el actor. </td></tr>
+    <tr><td class="paramname">y</td><td>Coordenada Y de la pantalla donde se dibujará el actor. </td></tr>
+    <tr><td class="paramname">z</td><td>Capa en la que se dibujará el actor. Más atrás cuanto mayor sea Z. Entre 0 y 999. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af43729472c2a73871faaa2b6fb2b5490"></a><!-- doxytag: member="Actor::estado" ref="af43729472c2a73871faaa2b6fb2b5490" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; Actor::estado </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método consultor que devuelve el estado actual en el que se encuentra el actor. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Estado actual en el que se encuentra el actor. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a251ad509170c036e724e5125fdb5cec8"></a><!-- doxytag: member="Actor::estadoPrevio" ref="a251ad509170c036e724e5125fdb5cec8" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; Actor::estadoPrevio </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método consultor que devuelve el estado del actor en la iteración anterior del bucle principal. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Estado del actor en la iteración anterior del bucle principal. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aace6a41bbd220497ffe8bbf178762e85"></a><!-- doxytag: member="Actor::invertirDibujo" ref="aace6a41bbd220497ffe8bbf178762e85" args="(bool inv)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Actor::invertirDibujo </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>inv</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que establece la orientación de la imagen del actor en la pantalla, sobre el eje vertical. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inv</td><td>Verdadero si se debe dibujar la imagen invertida, falso en caso contrario. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a2ceb4ff003aa6b4eda77d135bbc156bc"></a><!-- doxytag: member="Actor::leerAnimaciones" ref="a2ceb4ff003aa6b4eda77d135bbc156bc" args="(TiXmlElement *nodo)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Actor::leerAnimaciones </td>
+          <td>(</td>
+          <td class="paramtype">TiXmlElement *&#160;</td>
+          <td class="paramname"><em>nodo</em></td><td>)</td>
+          <td>  throw (<a class="el" href="classCodigoEx.html">CodigoEx</a>, <a class="el" href="classXmlEx.html">XmlEx</a>)<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que, a partir de un elemento de un árbol XML, lee las animaciones de un actor. Cada animación se espera que tenga una serie de elementos en el árbol XML, y se asocia con un estado concreto del actor. Un estado sólo puede tener una animación asociada. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nodo</td><td>Elemento de un árbol XML que contiene las animaciones de un actor. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Excepciones:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classCodigoEx.html" title="Clase de excepción para errores relacionados con códigos identificadores.">CodigoEx</a></td><td>Se lanza si se detectan dos animaciones para un mismo estado. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classXmlEx.html" title="Clase de excepción para errores relacionados con un árbol XML.">XmlEx</a></td><td>Se lanza si el árbol XML con los datos de la animación esuviera incompleto. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a757da03fc2339c8ac0f3d2245c227739"></a><!-- doxytag: member="Actor::leerColisiones" ref="a757da03fc2339c8ac0f3d2245c227739" args="(TiXmlElement *nodo)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Actor::leerColisiones </td>
+          <td>(</td>
+          <td class="paramtype">TiXmlElement *&#160;</td>
+          <td class="paramname"><em>nodo</em></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que, a partir de un elemento de un árbol XML, lee las cajas de colisión de un actor. Cada cajas de colisión se espera que tenga una serie de elementos en el árbol XML, y se asocia con un estado concreto del actor. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nodo</td><td>Elemento de un árbol XML que contiene las cajas de colisión de un actor. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4e6a81bb83bb2a20507e8570f3f139aa"></a><!-- doxytag: member="Actor::mover" ref="a4e6a81bb83bb2a20507e8570f3f139aa" args="(u32 x, u32 y)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Actor::mover </td>
+          <td>(</td>
+          <td class="paramtype">u32&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u32&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que modifica la posición del actor estableciendo sus nuevas coordenadas. Se toma como origen el punto superior izquierdo del escenario. Si aumenta la X, más a la derecha estará el actor respecto del punto x = 0; y si aumenta la Y, más abajo estará el actor respecto del punto y = 0. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Nuevo valor para la coordenada X del actor. </td></tr>
+    <tr><td class="paramname">y</td><td>Nuevo valor para la coordenada Y del actor. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af2e0aea9a6d6a0b8e10664ffe040b2fd"></a><!-- doxytag: member="Actor::setEstado" ref="af2e0aea9a6d6a0b8e10664ffe040b2fd" args="(const std::string &amp;e)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Actor::setEstado </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que modifica el estado del actor. Almacena el estado actual, que pasa a ser el anterior. Si el estado que se recibe no se encuentra en los diccionarios de animaciones y cajas de colisión no se modifica el estado, y se devuelve un valor falso. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>Nuevo estado en el que se encuentra el actor. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Verdadero si se ha cambiado el estado del actor, y falso en caso contrario. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a641f0e1852ce50859971e4def8596273"></a><!-- doxytag: member="Actor::setVelX" ref="a641f0e1852ce50859971e4def8596273" args="(s16 vx)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Actor::setVelX </td>
+          <td>(</td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>vx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que modifica la velocidad de desplazamiento horizontal del actor. Indica el número de píxeles que se cambia la posición al realizar un movimiento horizontal. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vx</td><td>Nuevo valor para la velocidad de desplazamiento horizontal. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1a7f02903c3a9cbbfe4a428e542d864c"></a><!-- doxytag: member="Actor::setVelY" ref="a1a7f02903c3a9cbbfe4a428e542d864c" args="(s16 vy)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Actor::setVelY </td>
+          <td>(</td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>vy</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que modifica la velocidad de desplazamiento vertical del actor. Indica el número de píxeles que se cambia la posición al realizar un movimiento vertical. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vy</td><td>Nuevo valor para la velocidad de desplazamiento vertical. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a65aaf76cab7cbdf510c0ccd2d94ff7ef"></a><!-- doxytag: member="Actor::tipoActor" ref="a65aaf76cab7cbdf510c0ccd2d94ff7ef" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; Actor::tipoActor </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método consultor que indica el tipo de actor. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Tipo de actor. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae50b3dd83150fcf498183bf18935601a"></a><!-- doxytag: member="Actor::velX" ref="ae50b3dd83150fcf498183bf18935601a" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">s16 Actor::velX </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método consultor que devuelve el número de píxeles que se desplaza horizontalmente el actor en cada iteración del bucle principal. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Valor de la velocidad horizontal del actor. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7d5bcde0f00b2e11f488baffd4587fa2"></a><!-- doxytag: member="Actor::velY" ref="a7d5bcde0f00b2e11f488baffd4587fa2" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">s16 Actor::velY </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método consultor que devuelve el número de píxeles que se desplaza verticalmente el actor en cada iteración del bucle principal. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Valor de la velocidad vertical del actor. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afcce565a0274a45dac8491f9ef964168"></a><!-- doxytag: member="Actor::x" ref="afcce565a0274a45dac8491f9ef964168" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u32 Actor::x </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método consultor que devuelve el valor de la coordenada X actual del actor. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Coordenada X del actor. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a65420ba1f5f394d0418ec1d90a5661cf"></a><!-- doxytag: member="Actor::xPrevio" ref="a65420ba1f5f394d0418ec1d90a5661cf" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u32 Actor::xPrevio </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método consultor que devuelve el valor de la coordenada X del actor en la iteracion anterior del bucle principal del programa. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Valor de la coordenada X del actor en la iteracion anterior del bucle principal </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0d66e6aa088654516d8dbfe34cfaa267"></a><!-- doxytag: member="Actor::y" ref="a0d66e6aa088654516d8dbfe34cfaa267" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u32 Actor::y </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método consultor que devuelve el valor de la coordenada Y actual del actor. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Coordenada Y del actor. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acb0e3f836c5446a5aa6d436a192e47a3"></a><!-- doxytag: member="Actor::yPrevio" ref="acb0e3f836c5446a5aa6d436a192e47a3" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u32 Actor::yPrevio </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método consultor que devuelve el valor de la coordenada Y del actor en la iteracion anterior del bucle principal del programa. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Valor de la coordenada Y del actor en la iteracion anterior del bucle principal </dd></dl>
+
+</div>
+</div>
+<hr/><h2>Documentación de los datos miembro</h2>
+<a class="anchor" id="a852c141a92f809c64ed2e3c402df1b41"></a><!-- doxytag: member="Actor::_estado_actual" ref="a852c141a92f809c64ed2e3c402df1b41" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classActor.html#a852c141a92f809c64ed2e3c402df1b41">Actor::_estado_actual</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Estado actual del actor. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae3eb29427a81b8082a01ad2be8f426c7"></a><!-- doxytag: member="Actor::_estado_previo" ref="ae3eb29427a81b8082a01ad2be8f426c7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classActor.html#ae3eb29427a81b8082a01ad2be8f426c7">Actor::_estado_previo</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Estado anterior del actor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a34a2899f19b5fddb5c38b946ea5e6583"></a><!-- doxytag: member="Actor::_invertida" ref="a34a2899f19b5fddb5c38b946ea5e6583" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classActor.html#a34a2899f19b5fddb5c38b946ea5e6583">Actor::_invertida</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Indica si se debe dibujar la animación del actor invertida o no. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3a334dd1334b0b3628353c471e95fc76"></a><!-- doxytag: member="Actor::_map_animaciones" ref="a3a334dd1334b0b3628353c471e95fc76" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classActor.html#a1e7ee055136226d7992d681cff7fe204">Animaciones</a> <a class="el" href="classActor.html#a3a334dd1334b0b3628353c471e95fc76">Actor::_map_animaciones</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Diccionario de animaciones del actor, que asocia un estado con una animación. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4a21a3f60628baaf2c0bd4034db0f34a"></a><!-- doxytag: member="Actor::_map_colisiones" ref="a4a21a3f60628baaf2c0bd4034db0f34a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classActor.html#a1d0a3cdd82143c906260a23bc453617c">Colisiones</a> <a class="el" href="classActor.html#a4a21a3f60628baaf2c0bd4034db0f34a">Actor::_map_colisiones</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Diccionario de colisiones del actor, que asocia un estado con un conjunto de cajas de colisión. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab5f259f7e3aea691cbbcb961da93620d"></a><!-- doxytag: member="Actor::_nivel" ref="ab5f259f7e3aea691cbbcb961da93620d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classNivel.html">Nivel</a>* <a class="el" href="classActor.html#ab5f259f7e3aea691cbbcb961da93620d">Actor::_nivel</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Referencia al nivel en el que está participando el actor. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab3f6143e149974fe0792a20f64d40c31"></a><!-- doxytag: member="Actor::_tipo_actor" ref="ab3f6143e149974fe0792a20f64d40c31" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classActor.html#ab3f6143e149974fe0792a20f64d40c31">Actor::_tipo_actor</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Tipo de actor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a20017f792d4a038c36ee551044c1e16c"></a><!-- doxytag: member="Actor::_vx" ref="a20017f792d4a038c36ee551044c1e16c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">s16 <a class="el" href="classActor.html#a20017f792d4a038c36ee551044c1e16c">Actor::_vx</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Número de píxeles que se desplaza horizontalmente el actor en cada actualización </p>
+
+</div>
+</div>
+<a class="anchor" id="a7c16c691d0a24eb546ff32113fed01de"></a><!-- doxytag: member="Actor::_vy" ref="a7c16c691d0a24eb546ff32113fed01de" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">s16 <a class="el" href="classActor.html#a7c16c691d0a24eb546ff32113fed01de">Actor::_vy</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Número de píxeles que se desplaza verticalmente el actor en cada actualización </p>
+
+</div>
+</div>
+<a class="anchor" id="ab89fbb7da40b4f50c6c58a0abb69e2b9"></a><!-- doxytag: member="Actor::_x" ref="ab89fbb7da40b4f50c6c58a0abb69e2b9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u32 <a class="el" href="classActor.html#ab89fbb7da40b4f50c6c58a0abb69e2b9">Actor::_x</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Coordenada X de la posición del actor en el escenario del juego. Representa la distancia en píxeles del punto superior izquierdo del actor respecto al límite izquierdo del escenario. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3032659e74980c39f7dcff6799fc749a"></a><!-- doxytag: member="Actor::_x_previo" ref="a3032659e74980c39f7dcff6799fc749a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u32 <a class="el" href="classActor.html#a3032659e74980c39f7dcff6799fc749a">Actor::_x_previo</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Coordenada X de la posición del actor en la anterior actualización. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa9926a267064024564c21becd235431b"></a><!-- doxytag: member="Actor::_y" ref="aa9926a267064024564c21becd235431b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u32 <a class="el" href="classActor.html#aa9926a267064024564c21becd235431b">Actor::_y</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Coordenada Y de la posición del actor en el escenario del juego. Representa la distancia en píxeles del punto superior izquierdo del actor respecto al límite superior del escenario. </p>
+
+</div>
+</div>
+<a class="anchor" id="a891414fdf06393b758287976477dcfa1"></a><!-- doxytag: member="Actor::_y_previo" ref="a891414fdf06393b758287976477dcfa1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u32 <a class="el" href="classActor.html#a891414fdf06393b758287976477dcfa1">Actor::_y_previo</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Coordenada Y de la posición del actor en la anterior actualización. </p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>/home/rabbit/Escritorio/libwiiesp/include/<a class="el" href="actor_8h_source.html">actor.h</a></li>
+</ul>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumeraciones</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Generado el Martes, 19 de Julio de 2011 20:45:52 para libWiiEsp por&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
+</body>
+</html>

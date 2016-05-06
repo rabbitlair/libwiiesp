@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>libWiiEsp: Fichero Fuente /home/rabbit/Escritorio/libwiiesp/include/parser.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Generado por Doxygen 1.7.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+--></script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libWiiEsp&#160;<span id="projectnumber">0.9.2</span></div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>/home/rabbit/Escritorio/libwiiesp/include/parser.h</h1>  </div>
+</div>
+<div class="contents">
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
+<a name="l00002"></a>00002 <span class="comment">// Licencia GPLv3</span>
+<a name="l00003"></a>00003 <span class="comment">//</span>
+<a name="l00004"></a>00004 <span class="comment">// Este archivo es parte de libWiiEsp. Copyright (C) 2011 Ezequiel Vázquez de la Calle</span>
+<a name="l00005"></a>00005 <span class="comment">//</span>
+<a name="l00006"></a>00006 <span class="comment">// libWiiEsp es software libre: usted puede redistribuirlo y/o modificarlo bajo los términos de la </span>
+<a name="l00007"></a>00007 <span class="comment">// Licencia Pública General GNU publicada por la Fundación para el Software Libre, ya sea la versión 3 </span>
+<a name="l00008"></a>00008 <span class="comment">// de la Licencia, o (a su elección) cualquier versión posterior.</span>
+<a name="l00009"></a>00009 <span class="comment">//</span>
+<a name="l00010"></a>00010 <span class="comment">// libWiiEsp se distribuye con la esperanza de que sea útil, pero SIN GARANTÍA ALGUNA; ni siquiera </span>
+<a name="l00011"></a>00011 <span class="comment">// la garantía implícita MERCANTIL o de APTITUD PARA UN PROPÓSITO DETERMINADO. Consulte los detalles de</span>
+<a name="l00012"></a>00012 <span class="comment">// la Licencia Pública General GNU para obtener una información más detallada.</span>
+<a name="l00013"></a>00013 <span class="comment">//</span>
+<a name="l00014"></a>00014 <span class="comment">// Debería haber recibido una copia de la Licencia Pública General GNU junto a libWiiEsp. En caso </span>
+<a name="l00015"></a>00015 <span class="comment">// contrario, consulte &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00016"></a>00016 <span class="comment">//</span>
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 <span class="preprocessor">#ifndef _PARSER_H_</span>
+<a name="l00019"></a>00019 <span class="preprocessor"></span><span class="preprocessor">#define _PARSER_H_</span>
+<a name="l00020"></a>00020 <span class="preprocessor"></span>
+<a name="l00021"></a>00021 <span class="preprocessor">    #include &lt;gctypes.h&gt;</span>
+<a name="l00022"></a>00022 <span class="preprocessor">    #include &lt;string&gt;</span>
+<a name="l00023"></a>00023 <span class="preprocessor">    #include &lt;tinyxml.h&gt;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">    #include &quot;excepcion.h&quot;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">    #include &quot;sdcard.h&quot;</span>
+<a name="l00026"></a>00026 
+<a name="l00112"></a><a class="code" href="classParser.html">00112</a>     <span class="keyword">class </span><a class="code" href="classParser.html" title="Clase que facilita la lectura de información desde archivos XML situados en la tarjeta SD de la conso...">Parser</a>
+<a name="l00113"></a>00113     {
+<a name="l00114"></a>00114         <span class="keyword">public</span>:
+<a name="l00115"></a>00115 
+<a name="l00121"></a><a class="code" href="classParser.html#a167489de1cb60336f4397460ce5daebd">00121</a>             <span class="keyword">static</span> <a class="code" href="classParser.html" title="Clase que facilita la lectura de información desde archivos XML situados en la tarjeta SD de la conso...">Parser</a>* <a class="code" href="classParser.html#a167489de1cb60336f4397460ce5daebd">get_instance</a>(<span class="keywordtype">void</span>)
+<a name="l00122"></a>00122             {
+<a name="l00123"></a>00123                 <span class="keywordflow">if</span>(_instance == 0)
+<a name="l00124"></a>00124                 {
+<a name="l00125"></a>00125                     _instance = <span class="keyword">new</span> <a class="code" href="classParser.html#a5dfbeb40b0d8dbb76ac2212a41ff6248">Parser</a>();
+<a name="l00126"></a>00126                     atexit(<a class="code" href="classParser.html#ab8c9fae47b90c938ed1f13b1df7b0839">destroy</a>);
+<a name="l00127"></a>00127                 }
+<a name="l00128"></a>00128                 <span class="keywordflow">return</span> _instance;
+<a name="l00129"></a>00129             }
+<a name="l00130"></a>00130 
+<a name="l00134"></a><a class="code" href="classParser.html#ab8c9fae47b90c938ed1f13b1df7b0839">00134</a>             <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classParser.html#ab8c9fae47b90c938ed1f13b1df7b0839">destroy</a>(<span class="keywordtype">void</span>)
+<a name="l00135"></a>00135             {
+<a name="l00136"></a>00136                 <span class="keyword">delete</span> _instance;
+<a name="l00137"></a>00137             }
+<a name="l00138"></a>00138 
+<a name="l00147"></a>00147             <span class="keywordtype">void</span> <a class="code" href="classParser.html#a5b71c68e1f7280d31beee1f7ba6c82d7">cargar</a>(<span class="keyword">const</span> std::string&amp; ruta) <span class="keywordflow">throw</span> (<a class="code" href="classArchivoEx.html" title="Clase de excepción para errores relacionados con archivos.">ArchivoEx</a>, <a class="code" href="classTarjetaEx.html" title="Clase de excepción para errores relacionados con la tarjeta SD.">TarjetaEx</a>);
+<a name="l00148"></a>00148 
+<a name="l00153"></a>00153             TiXmlElement* <a class="code" href="classParser.html#ad80273d9a0e7ccbd5e136ef8f871bf3d">raiz</a>(<span class="keywordtype">void</span>);
+<a name="l00154"></a>00154 
+<a name="l00161"></a>00161             std::string <a class="code" href="classParser.html#ad121e1db94f014fdd15b28d3a5be6426">contenido</a>(<span class="keyword">const</span> TiXmlElement* el) <span class="keyword">const</span>;
+<a name="l00162"></a>00162         
+<a name="l00170"></a>00170             std::string <a class="code" href="classParser.html#a676b15d0882d49952efb48ca00f9d2f7">atributo</a>(<span class="keyword">const</span> std::string&amp; nombre, <span class="keyword">const</span> TiXmlElement* el) <span class="keyword">const</span>;
+<a name="l00171"></a>00171 
+<a name="l00180"></a>00180             u32 <a class="code" href="classParser.html#ae274d696b812d29e8ac4f3965207c929">atributoU32</a>(<span class="keyword">const</span> std::string&amp; nombre, <span class="keyword">const</span> TiXmlElement* el) <span class="keyword">const</span>;
+<a name="l00181"></a>00181 
+<a name="l00190"></a>00190             f32 <a class="code" href="classParser.html#a3d136dc86b4f4f205dad2c9fe7fd6f42">atributoF32</a>(<span class="keyword">const</span> std::string&amp; nombre, <span class="keyword">const</span> TiXmlElement* el) <span class="keyword">const</span>;
+<a name="l00191"></a>00191 
+<a name="l00200"></a>00200             TiXmlElement* <a class="code" href="classParser.html#a8c23754b389a5c1460624bd24782f710">buscar</a>(<span class="keyword">const</span> std::string&amp; valor, TiXmlElement* el = 0);
+<a name="l00201"></a>00201 
+<a name="l00209"></a>00209             TiXmlElement* <a class="code" href="classParser.html#ae61433c12ff766183c1bf362f4a2f187">siguiente</a>(TiXmlElement* el);
+<a name="l00210"></a>00210 
+<a name="l00211"></a>00211         <span class="keyword">protected</span>:
+<a name="l00212"></a>00212             
+<a name="l00217"></a><a class="code" href="classParser.html#a5dfbeb40b0d8dbb76ac2212a41ff6248">00217</a>             <a class="code" href="classParser.html#a5dfbeb40b0d8dbb76ac2212a41ff6248">Parser</a>(<span class="keywordtype">void</span>) { };
+<a name="l00218"></a>00218 
+<a name="l00223"></a><a class="code" href="classParser.html#a1e70d9a903c5d2e8166fb571de3d581c">00223</a>             <a class="code" href="classParser.html#a1e70d9a903c5d2e8166fb571de3d581c">~Parser</a>(<span class="keywordtype">void</span>) { };
+<a name="l00224"></a>00224 
+<a name="l00229"></a>00229             <a class="code" href="classParser.html#a5dfbeb40b0d8dbb76ac2212a41ff6248">Parser</a>(<span class="keyword">const</span> <a class="code" href="classParser.html" title="Clase que facilita la lectura de información desde archivos XML situados en la tarjeta SD de la conso...">Parser</a>&amp; p);
+<a name="l00230"></a>00230 
+<a name="l00235"></a>00235             <a class="code" href="classParser.html" title="Clase que facilita la lectura de información desde archivos XML situados en la tarjeta SD de la conso...">Parser</a>&amp; <a class="code" href="classParser.html#a440fc065639d5ba25fd5577fd8082162">operator=</a>(<span class="keyword">const</span> <a class="code" href="classParser.html" title="Clase que facilita la lectura de información desde archivos XML situados en la tarjeta SD de la conso...">Parser</a>&amp; p);
+<a name="l00236"></a>00236 
+<a name="l00237"></a>00237         <span class="keyword">private</span>:
+<a name="l00238"></a>00238 
+<a name="l00239"></a>00239             <span class="comment">// Función auxiliar para construir la recursividad en el recorrido del árbol XML de la búsqueda</span>
+<a name="l00240"></a>00240             <span class="keywordtype">void</span> buscar_aux(<span class="keyword">const</span> std::string&amp; valor, TiXmlElement* padre, TiXmlElement*&amp; el, <span class="keywordtype">bool</span>&amp; stop);
+<a name="l00241"></a>00241 
+<a name="l00242"></a>00242             <span class="keyword">static</span> <a class="code" href="classParser.html" title="Clase que facilita la lectura de información desde archivos XML situados en la tarjeta SD de la conso...">Parser</a>* _instance;
+<a name="l00243"></a>00243             TiXmlDocument _doc;
+<a name="l00244"></a>00244 
+<a name="l00245"></a>00245     };
+<a name="l00246"></a>00246 
+<a name="l00247"></a>00247 <span class="preprocessor">    #define parser Parser::get_instance()</span>
+<a name="l00248"></a>00248 <span class="preprocessor"></span>
+<a name="l00249"></a>00249 <span class="preprocessor">#endif</span>
+<a name="l00250"></a>00250 <span class="preprocessor"></span>
+</pre></div></div>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumeraciones</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Generado el Martes, 19 de Julio de 2011 20:45:52 para libWiiEsp por&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
+</body>
+</html>

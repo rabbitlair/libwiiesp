@@ -1,0 +1,61 @@
+% Este archivo es parte de libWiiEsp. Copyright (C) 2011 Ezequiel Vázquez de la Calle
+% Licencia GFDL. Encontrará una copia de la licencia en el archivo fdl-1.3.tex
+
+Un actor es un objeto que tiene entidad propia dentro del universo del videojuego. En este sentido, son actores tanto los protagonistas manejados por los jugadores, como los enemigos controlados por la máquina, los items que recogemos, cada una de las balas (en el caso de un juego de disparos) también es un actor\ldots \\
+
+Entrando en el apartado técnico, un actor se representa como un objeto que tiene una pareja de coordenadas (x,y) respecto al origen del escenario, una velocidad en píxeles por fotograma (tanto vertical como horizontal), un conjunto de estados, cada uno de los cuales tiene asociada una animación y varias figuras de colisión, y un indicador sobre qué estado de los posibles es el actual.\\
+
+A continuación se explican los diversos aspectos a tener en cuenta a la hora de crear un actor utilizando la clase abstracta que proporciona \emph{LibWiiEsp}. En primer lugar, tenemos que crear una clase derivada de \emph{Actor}. En el constructor de nuestra clase derivada, no debemos olvidar pasarle al constructor de \emph{Actor} la cadena de caracteres con la ruta absoluta hasta el archivo de datos desde el que se cargan los datos del actor, y una referencia al nivel en el que participará. Además, tenemos que definir el método \emph{actualizar()}, que es un método virtual puro, y en el cual tenemos que definir el comportamiento del actor dependiendo de su estado actual.\\
+
+Ambos aspectos se explican con detalle en los siguientes apartados:
+
+\subsubsection{Cargando los datos de un actor}
+
+Cada actor que se cree derivando la clase \emph{Actor} cargará toda la información relativa a él a través del método \emph{cargarDatosIniciales()}, definido en la propia clase base \emph{Actor} (al cual se llama desde el constructor de ésta clase), y que recibe la ruta absoluta, en la tarjeta SD, de un archivo XML con un formato como el siguiente:\\
+
+\begin{lstlisting}[style=XML]
+<?xml version="1.0" encoding="UTF-8"?>
+<actor vx="3" vy="3" tipo="jugador">
+  <animaciones>
+    <animacion estado="normal" img="chief" sec="0" filas="1" columnas="6" retardo="3" />
+    <animacion estado="mover" img="chief" sec="0,1,2,3,4" filas="1" columnas="6" retardo="3" />
+    <animacion estado="muerte" img="chief" sec="5" filas="1" columnas="6" retardo="0" />
+  </animaciones>
+  <colisiones>
+    <rectangulo estado="normal" x1="27" y1="21" x2="55" y2="21" x3="55" y3="96" x4="27" y4="96" />
+    <circulo estado="normal" cx="41" cy="13" radio="8" />
+    <rectangulo estado="mover" x1="27" y1="21" x2="55" y2="21" x3="55" y3="96" x4="27" y4="96" />
+    <circulo estado="mover" cx="41" cy="13" radio="8" />
+    <sinfigura estado="muerte" />
+  </colisiones>
+</actor>
+\end{lstlisting}
+
+En el archivo XML anterior pueden observarse dos grandes bloques, uno para las animaciones y otro para las figuras de colisión. A cada estado (en el ejemplo hay tres, \emph{normal}, \emph{mover} y \emph{muerte}) le corresponde una única animación, pero puede tener ninguna, una o varias figuras de colisión. En el caso de que un estado concreto no tenga ninguna figura de colisión asociada, basta con introducir un nodo con el nombre \emph{sinfigura} y su correspondiente atributo \emph{estado}. Para más información sobre las animaciones o las figuras de colisión, consultar las secciones correspondientes en la referencia de la biblioteca.\\
+
+\textbf{Muy importante}: Los estados en los cuales puede encontrarse un actor vienen definidos por los que aparezcan en este archivo de datos, y es \textbf{imprescindible} que definamos el estado \emph{normal} (al menos, en las animaciones), ya que es el estado que un actor toma por defecto, y si no se encontrara entre los datos del actor, se produciría un error en el sistema.\\
+
+Para más información sobre la carga de datos iniciales, consultar la documentación de la clase Actor.
+
+\subsubsection{Definir el comportamiento de un actor}
+
+El comportamiento de un actor, como ya se ha comentado, depende del estado en el que se encuentre. A la hora de crear una clase derivada de \emph{Actor} se deberían implementar tantos métodos como estados se hayan definido en el archivo de datos del actor, de tal manera que cada uno de estos métodos corresponda con el comportamiento esperado en cada uno de los estados.\\
+
+Por ejemplo, si tenemos un actor con tres estados (normal, caer y mover), tendríamos tres nuevos métodos llamados \emph{estado\_normal()}, \emph{estado\_caer()} y \emph{estado\_mover()}. En cada una de estas funciones habría que implementar el comportamiento deseado de nuestro actor para ese estado concreto. En el siguiente código se muestra un ejemplo del método \emph{estado\_mover()}, que se encargaría de desplazar horizontalmente al actor:
+
+\begin{lstlisting}[style=C++]
+void estado_mover(void) {
+    mover(_x + _vx, _y);
+}
+\end{lstlisting}
+
+Implementando de esta manera un método por cada estado, únicamente habría que definir el método virtual puro \emph{actualizar()} para que, según el estado actual del actor, se ejecute la función correspondiente.\\
+
+Lo ideal es organizar el comportamiento del actor en un autómata finito determinado, donde se especifiquen los estados posibles, y las transiciones que pueden darse entre los distintos estados. Hay que mencionar que los cambios de estado se realizarán desde una clase derivada de \emph{Nivel}, que será el escenario donde los actores se encontrarán. El motivo de esta decisión no es otro que la falta de conocimiento que tiene un actor sobre lo que ocurre a su alrededor en el escenario del juego, información que sí está disponible en todo momento en la clase que se encarga de gestionar éste.\\
+
+\figura{automata.png}{scale=0.7}{Sencillo autómata de ejemplo para el comportamiento de un actor}{automata}{H}
+
+En la figura 3 puede apreciarse un sencillo ejemplo de autómata finito determinado, formado por cuatro estados, y que define el comportamiento de un actor controlado por un jugador a través de un mando. El actor comienza en el estado denominado \emph{NORMAL}, en el que no sufre ninguna modificación de sus variables internas de posición. Desde este estado, y dependiendo de las condiciones que se cumplan, se puede pasar a los estados \emph{MOVER} (si el jugador pulsa el botón de movimiento) o \emph{CAER} (si no existe colisión entre el actor y el escenario). En el primero, nuestro actor modifica su posición horizontal en base a su velocidad en este eje, y en el segundo, se cambia la posición vertical hacia abajo, en base también a la velocidad del actor respecto al eje vertical. Desde estos dos estados puede llegarse a \emph{MOVER EN CAIDA}, que es una combinación de ambos (movimiento en ambos ejes).\\
+
+Puede comprobarse que, en cada estado, se proporciona un comportamiento para el actor y una serie de condiciones para que sucedan cambios de estado del actor. La manera de comportarse del actor para cada estado debe programarse en el método \emph{actualizar()} de la clase derivada de \emph{Actor} que controla a éste; sin embargo, las comprobaciones sobre el cumplimiento de condiciones que deben satisfacerse para ejecutar un cambio desde un estado a otro puede realizarse en el método correspondiente de la clase que controle el escenario (\emph{actualizarPj()} para los actores jugadores, o \emph{actualizarNpj()} en el caso de los actores controlados por la máquina), o bien en el propio método de actualización del actor, ya que éste tiene un atributo que es una referencia al nivel en el que participa. Se recomienda optar por la primera opción, para así separar el comportamiento del actor según el estado y las transiciones posibles entre éstos.
+

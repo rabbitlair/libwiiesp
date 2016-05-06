@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conf>
+	<log valor="/apps/arkanoid/info.log" nivel="3" />
+	<alpha valor="0xFF00FFFF" />
+	<fps valor="25" />
+	<galeria valor="/apps/arkanoid/xml/galeria.xml" />
+	<lang valor="/apps/arkanoid/xml/lang.xml" defecto="español" />
+	<jugadores pj1="pj1" pj2="" pj3="" pj4="" />
+	<niveles valor="/apps/arkanoid/xml/niveles.xml" />
+</conf>

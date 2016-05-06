@@ -1,0 +1,501 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>libWiiEsp: Referencia de la Clase Parser</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Generado por Doxygen 1.7.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+--></script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libWiiEsp&#160;<span id="projectnumber">0.9.2</span></div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Clases</span></a></li>
+      <li><a href="files.html"><span>Archivos</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-static-methods">Métodos públicos estáticos</a> &#124;
+<a href="#pro-methods">Métodos protegidos</a>  </div>
+  <div class="headertitle">
+<h1>Referencia de la Clase Parser</h1>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="Parser" -->
+<p>Clase que facilita la lectura de información desde archivos XML situados en la tarjeta SD de la consola.  
+<a href="#_details">Más...</a></p>
+
+<p><code>#include &lt;<a class="el" href="parser_8h_source.html">parser.h</a>&gt;</code></p>
+
+<p><a href="classParser-members.html">Lista de todos los miembros.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParser.html#a5b71c68e1f7280d31beee1f7ba6c82d7">cargar</a> (const std::string &amp;ruta)  throw (ArchivoEx, TarjetaEx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">TiXmlElement *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParser.html#ad80273d9a0e7ccbd5e136ef8f871bf3d">raiz</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParser.html#ad121e1db94f014fdd15b28d3a5be6426">contenido</a> (const TiXmlElement *el) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParser.html#a676b15d0882d49952efb48ca00f9d2f7">atributo</a> (const std::string &amp;nombre, const TiXmlElement *el) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParser.html#ae274d696b812d29e8ac4f3965207c929">atributoU32</a> (const std::string &amp;nombre, const TiXmlElement *el) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">f32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParser.html#a3d136dc86b4f4f205dad2c9fe7fd6f42">atributoF32</a> (const std::string &amp;nombre, const TiXmlElement *el) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">TiXmlElement *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParser.html#a8c23754b389a5c1460624bd24782f710">buscar</a> (const std::string &amp;valor, TiXmlElement *el=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">TiXmlElement *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParser.html#ae61433c12ff766183c1bf362f4a2f187">siguiente</a> (TiXmlElement *el)</td></tr>
+<tr><td colspan="2"><h2><a name="pub-static-methods"></a>
+Métodos públicos estáticos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classParser.html">Parser</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParser.html#a167489de1cb60336f4397460ce5daebd">get_instance</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParser.html#ab8c9fae47b90c938ed1f13b1df7b0839">destroy</a> (void)</td></tr>
+<tr><td colspan="2"><h2><a name="pro-methods"></a>
+Métodos protegidos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParser.html#a5dfbeb40b0d8dbb76ac2212a41ff6248">Parser</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParser.html#a1e70d9a903c5d2e8166fb571de3d581c">~Parser</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParser.html#aa7bc7962552137437eacd6833ae18891">Parser</a> (const <a class="el" href="classParser.html">Parser</a> &amp;p)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classParser.html">Parser</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParser.html#a440fc065639d5ba25fd5577fd8082162">operator=</a> (const <a class="el" href="classParser.html">Parser</a> &amp;p)</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Descripción detallada</h2>
+<div class="textblock"><p>Clase que facilita la lectura de información desde archivos XML situados en la tarjeta SD de la consola. </p>
+<dl class="author"><dt><b>Autor:</b></dt><dd>Ezequiel Vázquez de la Calle </dd></dl>
+<dl class="version"><dt><b>Versión:</b></dt><dd>0.9.2</dd></dl>
+<p>La clase <a class="el" href="classParser.html" title="Clase que facilita la lectura de información desde archivos XML situados en la tarjeta SD de la conso...">Parser</a> no es más que una interfaz sencilla y directa para la lectura de información desde archivos XML situados en la tarjeta SD de la consola Nintendo Wii. Abstrae las estructuras de datos y funciones de la biblioteca externa TinyXML, de tal manera que no hay que preocuparse por las comprobaciones y posibles errores que puedan surgir en el proceso de lectura. Implementa un patrón Singleton, de tal manera que es accesible desde cualquier punto del programa, y sólo existe una instancia en el sistema.</p>
+<p>Comentar que no hay que preocuparse por los detalles de BigEndian, reserva de memoria alineada a 32 bytes y demás, porque la versión de TinyXML que se utiliza esta portada a Nintendo Wii, lo cual significa que ya contempla de base estos asuntos.</p>
+<p>Este parser funciona cargando el árbol del documento por completo en memoria, y después realizando búsquedas y lecturas sobre éste, lo cual es una implementación de DOM (Document Object Model, o modelo de objetos del documento en la lengua de Cervantes), que es una interfaz estándar para manipular y acceder a un archivo XML. Al trabajar con árboles, se dispone de un elemento raíz en el documento, a partir del cual van desplegándose elementos hijos, y pueden aplicarse todas las técnicas y algoritmos relativos a árboles. El documento XML, una vez cargado en memoria, se encontrará almacenado dentro de la propia clase hasta que, o bien se destruya ésta, o se cargue un nuevo árbol XML.</p>
+<p>Derivado de esto último, es importante tener en cuenta que si se está trabajando con un árbol XML, no se debe cargar otro nuevo hasta haber finalizado con el primero, ya que el cargar un segundo árbol implica la destrucción del existente, y por tanto, para volver a operar sobre el original, es necesario cargarlo otra vez. Sin embargo, al cargar por segunda vez un mismo archivo XML, las variables que apuntaban a elementos del primer árbol quedan apuntando a zonas de memoria liberadas; de ahí el cuidado necesario al trabajar con varios archivos XML.</p>
+<p>Funcionamiento interno</p>
+<p>La clase únicamente tiene como atributo privado un documento XML de tipo TiXmlDocument, que viene de serie con la biblioteca TinyXML (la definición del tipo, no el atributo). Cuando se realiza una llamada al método cargar, éste recibe como parámetro una cadena de caracteres de alto nivel (de tipo std::string) que indica la ruta absoluta hasta el archivo XML del cual se quiere cargar en memoria su árbol de elementos. Primero comprueba que la tarjeta SD está preparada para trabajar, y después de eso, intenta cargar el árbol completo en el atributo privado que almacenará el documento. Si algo fallara, se lanzaría una excepción con un texto descriptivo sobre el error. Un detalle a mencionar es que la codificación de caracteres con la que se intenta abrir el archivo XML es UTF8.</p>
+<p>Una vez se ha abierto correctamente el archivo, y se ha cargado el árbol de elementos en memoria, hay varias posibilidades para extraer información de éste. En primer lugar, se puede acceder al elemento raíz del árbol mediante el método raiz. También, dado un elemento del árbol, se puede extraer el contenido de éste (si lo tuviera) mediante el método contenido, que lo devuelve en forma de std::string. Si no existiera contenido en el elemento, se devuelve una cadena vacía.</p>
+<p>Para acceder a los atributos de un elemento concreto, puede hacerse mediante los métodos atributo (que intenta devolver el valor del atributo como una cadena de caracteres de alto nivel; si no existe el atributo o el elemento, devuelve una cadena vacía), atributoU32 y atributoF32 (que funcionan de la misma manera, sólo que devolviendo el valor como un entero de 32 bits sin signo, o un decimal de coma flotante de 32 bits, respectivamente. Si no existieran el elemento o el atributo, se devuelve el valor cero).</p>
+<p>La navegación por los elementos del árbol es sencilla, basta con llamar al método buscar con el valor del elemento que se quiere localizar. Se puede especificar otro elemento a partir del cual se comenzará la búsqueda, que se realiza recursivamente en preorden, y devuelve la primera ocurrencia de elemento que coincida con el valor indicado. Si no se determina un elemento como raíz de la búsqueda, se toma el elemento raíz del árbol como inicio. Por último, si no se localizara ningún elemento coincidente en valor con el deseado, se devuelve el valor NULL.</p>
+<p>Otra manera de localizar un elemento es, a partir de uno dado, buscar el siguiente elemento hermano con el mismo valor. Se considera que un elemento es hermano de otro si tienen el mismo padre (elemento inmediatamente superior en el árbol). El siguiente hermano con el mismo valor es aquel elemento que, estando entre los hermanos del elemento original, tiene el mismo valor, y está situado a la derecha del primero. El método siguiente intenta localizar el hermano inmediatamente consecutivo con el mismo valor a un elemento dado, y es útil para evitar bucles que recorran todos los hijos de un elemento dado, en el caso de que se estén buscando sólo los hijos que tengan un valor determinado. Al igual que en la búsqueda, si no se localizara un elemento que coincida con los criterios del método, se devuelve el valor NULL.</p>
+<p>Ejemplo de uso</p>
+<div class="fragment"><pre class="fragment"> <span class="comment">// Cargar un archivo XML</span>
+ parser-&gt;cargar( <span class="stringliteral">&quot;/apps/wiipang/xml/galeria.xml&quot;</span> );
+ <span class="comment">// Buscar el primer elemento con valor &#39;musica&#39; a partir del elemento raíz</span>
+ TiXmlElement* musica = parser-&gt;buscar( <span class="stringliteral">&#39;musica&#39;</span>, parser-&gt;raiz() );
+ <span class="comment">// Leer un atributo llamado codigo, con formato cadena de caracteres</span>
+ std::string ruta = parser-&gt;atributo( <span class="stringliteral">&quot;codigo&quot;</span>, musica );
+ <span class="comment">// Leer un atributo llamado volumen, con formato de entero de 32 bits sin signo</span>
+ u32 volumen = parser-&gt;atributo( <span class="stringliteral">&quot;volumen&quot;</span>, musica );
+ <span class="comment">// Buscar el primer hermano de &#39;musica&#39; con el mismo valor (&quot;musica&quot; también)</span>
+ TiXmlElement* otra_musica = parser-&gt;siguiente( musica );
+</pre></div> </div><hr/><h2>Documentación del constructor y destructor</h2>
+<a class="anchor" id="a5dfbeb40b0d8dbb76ac2212a41ff6248"></a><!-- doxytag: member="Parser::Parser" ref="a5dfbeb40b0d8dbb76ac2212a41ff6248" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Parser::Parser </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Constructor de la clase <a class="el" href="classParser.html" title="Clase que facilita la lectura de información desde archivos XML situados en la tarjeta SD de la conso...">Parser</a>. Se encuentra en la zona protegida debido a la implementación del patrón Singleton. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1e70d9a903c5d2e8166fb571de3d581c"></a><!-- doxytag: member="Parser::~Parser" ref="a1e70d9a903c5d2e8166fb571de3d581c" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Parser::~Parser </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Destructor de la clase <a class="el" href="classParser.html" title="Clase que facilita la lectura de información desde archivos XML situados en la tarjeta SD de la conso...">Parser</a>. Se encuentra en la zona protegida debido a la implementación del patrón Singleton. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa7bc7962552137437eacd6833ae18891"></a><!-- doxytag: member="Parser::Parser" ref="aa7bc7962552137437eacd6833ae18891" args="(const Parser &amp;p)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Parser::Parser </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classParser.html">Parser</a> &amp;&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Constructor de copia de la clase <a class="el" href="classParser.html" title="Clase que facilita la lectura de información desde archivos XML situados en la tarjeta SD de la conso...">Parser</a>. Se encuentra en la zona protegida debido a la implementación del patrón Singleton. </p>
+
+</div>
+</div>
+<hr/><h2>Documentación de las funciones miembro</h2>
+<a class="anchor" id="a676b15d0882d49952efb48ca00f9d2f7"></a><!-- doxytag: member="Parser::atributo" ref="a676b15d0882d49952efb48ca00f9d2f7" args="(const std::string &amp;nombre, const TiXmlElement *el) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Parser::atributo </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>nombre</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const TiXmlElement *&#160;</td>
+          <td class="paramname"><em>el</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que devuelve el texto contenido en un atributo de un elemento XML que se recibe como parámetro. Si el elemento o el atributo no existen, se devuelve una cadena vacía. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nombre</td><td>Nombre del atributo cuyo valor se quiere conocer </td></tr>
+    <tr><td class="paramname">el</td><td>Elemento XML del árbol del cual se quiere conocer el valor de un atributo </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Cadena de texto con el contenido del atributo solicitado </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3d136dc86b4f4f205dad2c9fe7fd6f42"></a><!-- doxytag: member="Parser::atributoF32" ref="a3d136dc86b4f4f205dad2c9fe7fd6f42" args="(const std::string &amp;nombre, const TiXmlElement *el) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">f32 Parser::atributoF32 </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>nombre</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const TiXmlElement *&#160;</td>
+          <td class="paramname"><em>el</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que devuelve el contenido de un atributo de un elemento XML que se recibe como parámetro, en formato de coma flotante de 32 bits sin signo. Si el elemento o el atributo no existen, se devuelve el valor 0.0. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nombre</td><td>Nombre del atributo cuyo valor se quiere conocer </td></tr>
+    <tr><td class="paramname">el</td><td>Elemento XML del árbol del cual se quiere conocer el valor de un atributo </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Número decimal en coma flotante de 32 bits con el contenido del atributo solicitado </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae274d696b812d29e8ac4f3965207c929"></a><!-- doxytag: member="Parser::atributoU32" ref="ae274d696b812d29e8ac4f3965207c929" args="(const std::string &amp;nombre, const TiXmlElement *el) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u32 Parser::atributoU32 </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>nombre</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const TiXmlElement *&#160;</td>
+          <td class="paramname"><em>el</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que devuelve el contenido de un atributo de un elemento XML que se recibe como parámetro, en formato entero de 32 bits sin signo. Si el elemento o el atributo no existen, se devuelve el valor 0. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nombre</td><td>Nombre del atributo cuyo valor se quiere conocer </td></tr>
+    <tr><td class="paramname">el</td><td>Elemento XML del árbol del cual se quiere conocer el valor de un atributo </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Entero de 32 bits sin signo con el contenido del atributo solicitado </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8c23754b389a5c1460624bd24782f710"></a><!-- doxytag: member="Parser::buscar" ref="a8c23754b389a5c1460624bd24782f710" args="(const std::string &amp;valor, TiXmlElement *el=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TiXmlElement* Parser::buscar </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>valor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TiXmlElement *&#160;</td>
+          <td class="paramname"><em>el</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que busca un elemento cuyo valor sea el que se recibe por parámetro. La búsqueda es recursiva entre todos los hijos del elemento que se reciba (si no se recibe ninguno, la búsqueda comienza en el elemento raíz del árbol XML). Si no se encuentra el elemento solicitado, se devuelve NULL. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">valor</td><td>Valor del elemento a buscar </td></tr>
+    <tr><td class="paramname">el</td><td>Elemento del árbol XML a partir del que se comenzará la búsqueda </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Elemento cuyo valor coincide con el introducido por parámetro </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5b71c68e1f7280d31beee1f7ba6c82d7"></a><!-- doxytag: member="Parser::cargar" ref="a5b71c68e1f7280d31beee1f7ba6c82d7" args="(const std::string &amp;ruta)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Parser::cargar </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>ruta</em></td><td>)</td>
+          <td>  throw (<a class="el" href="classArchivoEx.html">ArchivoEx</a>, <a class="el" href="classTarjetaEx.html">TarjetaEx</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que carga en memoria un archivo XML que esté almacenado en la tarjeta SD. El archivo queda listo para ser accedido en cualquier momento, y desde cualquier parte del programa (gracias a la implementación del patrón Singleton). </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ruta</td><td>Ruta absoluta hasta el archivo XML a cargar, debe estar en la tajeta SD </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Excepciones:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classArchivoEx.html" title="Clase de excepción para errores relacionados con archivos.">ArchivoEx</a></td><td>Se lanza si hay algún error al abrir el archivo al que apunta la ruta aportada </td></tr>
+    <tr><td class="paramname"><a class="el" href="classTarjetaEx.html" title="Clase de excepción para errores relacionados con la tarjeta SD.">TarjetaEx</a></td><td>Se lanza si ocurre un error relacionado con la tarjeta SD </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad121e1db94f014fdd15b28d3a5be6426"></a><!-- doxytag: member="Parser::contenido" ref="ad121e1db94f014fdd15b28d3a5be6426" args="(const TiXmlElement *el) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Parser::contenido </td>
+          <td>(</td>
+          <td class="paramtype">const TiXmlElement *&#160;</td>
+          <td class="paramname"><em>el</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que devuelve el texto contenido en un elemento XML que se recibe como parámetro. Si el elemento no existe, o no tiene contenido, se devuelve una cadena vacía. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">el</td><td>Elemento XML del árbol del cual se quiere conocer su contenido </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Cadena de texto con el contenido del elemento recibido </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab8c9fae47b90c938ed1f13b1df7b0839"></a><!-- doxytag: member="Parser::destroy" ref="ab8c9fae47b90c938ed1f13b1df7b0839" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Parser::destroy </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Función estática que destruye la instancia activa del parser XML, llamando a su destructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a167489de1cb60336f4397460ce5daebd"></a><!-- doxytag: member="Parser::get_instance" ref="a167489de1cb60336f4397460ce5daebd" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classParser.html">Parser</a>* Parser::get_instance </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Función estática que devuelve la instancia activa del parser XML en el sistema. En el caso de no haber ninguna instancia, se crea y se devuelve. Implementación del patrón Singleton. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Puntero a la instancia activa del parser XML en el sistema </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a440fc065639d5ba25fd5577fd8082162"></a><!-- doxytag: member="Parser::operator=" ref="a440fc065639d5ba25fd5577fd8082162" args="(const Parser &amp;p)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classParser.html">Parser</a>&amp; Parser::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classParser.html">Parser</a> &amp;&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Operador de asignación de la clase <a class="el" href="classParser.html" title="Clase que facilita la lectura de información desde archivos XML situados en la tarjeta SD de la conso...">Parser</a>. Se encuentra en la zona protegida debido a la implementación del patrón Singleton. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad80273d9a0e7ccbd5e136ef8f871bf3d"></a><!-- doxytag: member="Parser::raiz" ref="ad80273d9a0e7ccbd5e136ef8f871bf3d" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TiXmlElement* Parser::raiz </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que devuelve el elemento raíz del árbol XML del archivo que esté cargado en memoria. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Elemento raíz del árbol XML del archivo que está actualmente cargado </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae61433c12ff766183c1bf362f4a2f187"></a><!-- doxytag: member="Parser::siguiente" ref="ae61433c12ff766183c1bf362f4a2f187" args="(TiXmlElement *el)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TiXmlElement* Parser::siguiente </td>
+          <td>(</td>
+          <td class="paramtype">TiXmlElement *&#160;</td>
+          <td class="paramname"><em>el</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que devuelve el siguiente elemento hermano (es decir, que se encuentra en la misma profundidad en el árbol XML, y que tiene el mismo elemento padre) con el mismo valor que el recibido por parámetro. Si no se encontrara, se devuelve el valor NULL. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">el</td><td>Elemento del árbol XML a partir del que se busca el siguiente hermano </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Elemento hermano consecutivo al recibido, con el mismo valor que éste. </dd></dl>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>/home/rabbit/Escritorio/libwiiesp/include/<a class="el" href="parser_8h_source.html">parser.h</a></li>
+</ul>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumeraciones</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Generado el Martes, 19 de Julio de 2011 20:45:53 para libWiiEsp por&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
+</body>
+</html>

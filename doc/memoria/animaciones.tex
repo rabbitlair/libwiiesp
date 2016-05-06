@@ -1,0 +1,51 @@
+% Este archivo es parte de la memoria de libWiiEsp, protegida bajo la 
+% licencia GFDL. Puede encontrar una copia de la licencia en el archivo fdl-1.3.tex
+
+% Fuente tomada de la plantilla LaTeX para la realización de Proyectos Final 
+% de Carrera de Pablo Recio Quijano.
+
+% Copyright (C) 2009 Pablo Recio Quijano
+% Copyright (C) 2011 Ezequiel Vázquez de la Calle
+
+% -*-animaciones.tex-*-
+
+Llegados a este punto del desarrollo, prácticamente hemos cubierto todas las herramientas necesarias para crear un videojuego, pero de momento, únicamente disponemos de la posibilidad de dibujar una textura estática, lo que nos limita a la hora de crear elementos dinámicos en nuestro juego. En este capítulo, se consigue un nuevo módulo, partiendo de la clase \emph{Imagen}, con el que se pueden crear animaciones fácilmente.
+
+\subsection{¿Qué es una animación?}
+
+En primer lugar, vamos a definir qué tipo de animación queremos conseguir. La idea de animación que se persigue conseguir es una simulación de movimiento mediante la visión de una secuencia de imágenes (denominadas fotogramas), una detrás de otra, pero con leves variaciones entre sí. Es la misma idea que se utiliza en los dibujos animados, medio en el que se muestra una serie de imágenes estáticas con leves diferencias entre sí que, al ser observadas secuencialmente, consiguen que el cerebro humano interprete un movimiento reconstruyendo los "huecos" que existen entre una imagen y la siguiente.\\
+
+\figura{fotogramas.png}{scale=0.6}{Animación formada por 5 fotogramas}{fotogramas}{h}
+
+Partiendo de este concepto de animación, se va a construir un módulo para \emph{LibWiiEsp} que, tomando como base la información de una textura contenida en un objeto de la clase \emph{Imagen}, se encargue de animar los fotogramas que se indiquen en dicha textura.
+
+\subsection{Identificación de funcionalidad necesaria}
+
+La funcionalidad principal para este módulo es dibujar en pantalla una secuencia de imágenes, tomadas todas ellas a partir de una misma textura en la que se encuentren todos los fotogramas de la secuencia. La animación se reproducirá continuamente, es decir, después del último paso se volverá a comenzar por el primero. Además, se debe permitir que entre un cambio de paso y el siguiente cambio puedan existir algunos fotogramas en los que se dibuje el mismo paso de la animación, para poder regular así la velocidad de reproducción de ésta.\\
+
+Es importante también que se permita dibujar la animación tal cual, o que cada paso de ésta pueda ser invertido respecto al eje vertical; esto se utilizará para optimizar el espacio en memoria en los casos en que dos animaciones distintas sean idénticas, pero con distinta orientación (izquierda y derecha), ya que permitirá utilizar la misma textura para reproducir ambas animaciones.\\
+
+Por último, se necesitará acceder al ancho y alto en píxeles de la animación, y al objeto de la clase \emph{Imagen} que sirve de base para la animación, así como conocer en qué paso de la animación se encuentra ésta en un momento dado.
+
+\subsection{Diseño e implementación}
+
+Se crea una clase nueva para cubrir la funcionalidad descrita en el epígrafe anterior. 
+
+Cuando se crea una animación, se le deben pasar al constructor de la clase una serie de parámetros, que son un puntero a la imagen (previamente cargada en memoria) que contenga la rejilla de fotogramas, una cadena de caracteres de alto nivel (de tipo \emph{string}) que contenga una secuencia de números enteros positivos, separados por comas y sin espacios (del tipo "0,1,2,3,4,5"), el número de filas y de columnas que hay en la rejilla, y el retardo a aplicar a la visualización de la animación (el retardo indica el número de fotogramas consecutivos en los que se dibuja el mismo paso de la animación; el valor por defecto 1 indica que se dibuja un nuevo cuadro a cada fotograma).\\
+
+La secuencia de números enteros que se recibe indica el orden en el que se van dibujando los distintos cuadros de la animación. Cada cuadro de la rejilla corresponde con un número entero positivo, siendo el cero el fotograma de arriba a la izquierda, y avanzando de derecha a izquierda y de arriba abajo. Por ejemplo, una rejilla de tres columnas y dos filas tendrá en su primera fila (de izquierda a derecha) los cuadros cero, uno y dos; y la segunda fila, los cuadros tres, cuatro y cinco (igualmente, de izquierda a derecha). Un mismo cuadro se puede repetir cuantas veces se quiera en la secuencia de una misma animación.\\
+
+Un objeto de animación proporciona varios métodos observadores para conocer y acceder fácilmente a las variables que lo controlan, por ejemplo, la imagen, el ancho y alto en píxeles de un cuadro (todos los cuadros se consideran iguales), y cuáles son los índices del primer cuadro y del cuadro actual. También existen dos métodos para modificar el estado de la animación, concretamente son reiniciar (método que establece el paso actual al primero de la secuencia) y avanzar (que se encarga de calcular el siguiente cuadro a dibujar teniendo en cuenta el retardo y la propia secuencia de cuadros).\\
+
+El método dibujar se encarga de, como su propio nombre indica, plasmar en la pantalla el fotograma correspondiente al cuadro actual de la animación. Se da la opción de invertir el fotograma respecto al eje vertical, funcionalidad que proporciona la propia clase Screen a través de su método \emph{dibujarCuadro} (que es el método que sirve de base para dibujar la parte correspondiente de la textura origen). Este método realiza una llamada a avanzar, con lo que no es necesario preocuparse por la gestión de cuadros desde el exterior.\\
+
+Una cosa más a tener en cuenta es que el destructor de la clase es el predeterminado, por lo que no se destruye la imagen asociada a la animación (se utiliza un puntero constante a la imagen), y hay que destruirla manualmente en caso de que se quiera liberar la memoria ocupada por ésta.\\
+
+En la figura \ref{animacion} puede verse la interfaz pública de la clase Animacion.\\
+
+\figura{animacion.png}{scale=0.6}{Interfaz pública de la clase Animacion}{animacion}{h}
+
+\subsection{Pruebas}
+
+Las pruebas realizadas a este módulo consistieron en crear varias animaciones a partir de otras tantas texturas previamente cargadas en objetos de la clase \emph{Imagen}, y dibujarlas en pantalla con distintos retardos, con inversión respecto al eje vertical o sin ella, y con distintas secuencias de pasos.
+

@@ -1,0 +1,815 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>libWiiEsp: Referencia de la Clase Mando</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Generado por Doxygen 1.7.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+--></script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libWiiEsp&#160;<span id="projectnumber">0.9.2</span></div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Clases</span></a></li>
+      <li><a href="files.html"><span>Archivos</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Tipos públicos</a> &#124;
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-static-methods">Métodos públicos estáticos</a>  </div>
+  <div class="headertitle">
+<h1>Referencia de la Clase Mando</h1>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="Mando" -->
+<p>Clase que permite leer información desde un Wii Remote.  
+<a href="#_details">Más...</a></p>
+
+<p><code>#include &lt;<a class="el" href="mando_8h_source.html">mando.h</a>&gt;</code></p>
+
+<p><a href="classMando-members.html">Lista de todos los miembros.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-types"></a>
+Tipos públicos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMando.html#a922740d0827b41159cd7c293f9989f44">boton_str</a> { <br/>
+&#160;&#160;<b>BOTON_A</b>, 
+<b>BOTON_B</b>, 
+<b>BOTON_C</b>, 
+<b>BOTON_Z</b>, 
+<br/>
+&#160;&#160;<b>BOTON_1</b>, 
+<b>BOTON_2</b>, 
+<b>BOTON_MAS</b>, 
+<b>BOTON_MENOS</b>, 
+<br/>
+&#160;&#160;<b>BOTON_HOME</b>, 
+<b>BOTON_ARRIBA</b>, 
+<b>BOTON_ABAJO</b>, 
+<b>BOTON_DERECHA</b>, 
+<br/>
+&#160;&#160;<b>BOTON_IZQUIERDA</b>
+<br/>
+ }</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMando.html#ac14e84214eaa24caa4e0b67200ccec4c">nunchuck_x_str</a> { <b>PALANCA_CENTRO_X</b>, 
+<b>PALANCA_DERECHA</b>, 
+<b>PALANCA_IZQUIERDA</b>
+ }</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMando.html#a5f6d156986cccbe4f66bdd5589a62127">nunchuck_y_str</a> { <b>PALANCA_CENTRO_Y</b>, 
+<b>PALANCA_ARRIBA</b>, 
+<b>PALANCA_ABAJO</b>
+ }</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="classMando.html#a922740d0827b41159cd7c293f9989f44">Mando::boton_str</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMando.html#a7c12c8433bfe3fc2863f4740492e7f26">Boton</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="classMando.html#ac14e84214eaa24caa4e0b67200ccec4c">Mando::nunchuck_x_str</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMando.html#ad0a6e67a7a7c9ba2b403286713e5f675">Nunchuck_x</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="classMando.html#a5f6d156986cccbe4f66bdd5589a62127">Mando::nunchuck_y_str</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMando.html#a9be1e6a5efbc37bff412e563a600164f">Nunchuck_y</a></td></tr>
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMando.html#af9248daa4f0395e88988564f929693ca">Mando</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMando.html#aa69fb62dc19e997e6acd4306c5dec139">~Mando</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMando.html#a11bd753905e27a8c1e6a2d5f107641d1">conectado</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMando.html#a9bfde3fe20e906ce964d4df3d3cdbf3d">chan</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMando.html#aeba17ed37ace90f7110eed2ccd9e0a7d">actualizar</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMando.html#a4b234219dce1bf0da2b5a6a3fcf2a015">pressed</a> (<a class="el" href="classMando.html#a7c12c8433bfe3fc2863f4740492e7f26">Boton</a> boton) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMando.html#aebb999a6874737be353e9feace3f1fd7">released</a> (<a class="el" href="classMando.html#a7c12c8433bfe3fc2863f4740492e7f26">Boton</a> boton) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMando.html#af7b0d6ab95919d46df341fbf769c96c9">newPressed</a> (<a class="el" href="classMando.html#a7c12c8433bfe3fc2863f4740492e7f26">Boton</a> boton) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">s16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMando.html#a547baa835144a60190d179ce53b0c856">punteroX</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">s16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMando.html#a45d9770f46cab94671c9aa286cf1dbbd">punteroY</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMando.html#affe0fbb6a4f4ce38a15e8492897a5488">punteroEnPantalla</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMando.html#a5ae699c19862c27cf2a1241d9c0ec6d7">vibrar</a> (u16 tiempo)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">f32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMando.html#ae178e685818c231571ff0beca3c0c83d">cabeceo</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">f32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMando.html#a098bd5b73c2baaeb18b9123c7d9c33a0">viraje</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">f32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMando.html#a8e4848b6dbd3722c4387173e9adb536e">rotacion</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMando.html#a394b06c7565c5e585df5d4636e10b658">nunConectado</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMando.html#ad0a6e67a7a7c9ba2b403286713e5f675">Nunchuck_x</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMando.html#a9276562c0da2ca7408327cfa3c857bae">nunPalancaEstadoX</a> (void) const   throw (NunchuckEx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMando.html#a9be1e6a5efbc37bff412e563a600164f">Nunchuck_y</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMando.html#ad9c4b08859e817fc1636ee554db6aa7a">nunPalancaEstadoY</a> (void) const   throw (NunchuckEx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMando.html#a89cdcf0bfd6154cbac40b9993e90d522">nunPalancaValorX</a> (void) const   throw (NunchuckEx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMando.html#a4698f27117dfc31da2a0c4808166e543">nunPalancaValorY</a> (void) const   throw (NunchuckEx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMando.html#ac4bdb33561c24203af92a1b040017730">nunPalancaCentroX</a> (void) const   throw (NunchuckEx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMando.html#ae038b5f28c00330b8f4edf46f6ca62d7">nunPalancaCentroY</a> (void) const   throw (NunchuckEx)</td></tr>
+<tr><td colspan="2"><h2><a name="pub-static-methods"></a>
+Métodos públicos estáticos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMando.html#a1dd67ff1669927c2e07aaf372f91c378">leerDatos</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMando.html#a38b8100e401a6ffc5b6a38d1789e0ffb">inicializar</a> (u16 ancho_pantalla, u16 alto_pantalla)</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Descripción detallada</h2>
+<div class="textblock"><p>Clase que permite leer información desde un Wii Remote. </p>
+<dl class="author"><dt><b>Autor:</b></dt><dd>Ezequiel Vázquez de la Calle </dd></dl>
+<dl class="version"><dt><b>Versión:</b></dt><dd>0.9.2</dd></dl>
+<p>Clase que representa al Wii Remote, permitiendo acceder en cada momento al estado de pulsación de los botones, la situación del puntero infrarrojo mediante sus coordenadas, y el estado de la palanca de la expansión Nunchuck.</p>
+<p>Funcionamiento interno</p>
+<p>La libogc proporciona una estructura (definida como WPADData), en la cual se plasma toda la información relativa a todos los mandos cuando se llama a la función WPAD_ScanPads(). Importante: Una llamada a WPAD_ScanPads() actualiza la información de todos los mandos, así que hay que tener cuidado de llamarla sólo una vez por frame (a menos que se le quiera dar otro uso distinto al habitual de 'leer la entrada una vez por frame y actualizar el mundo del juego en consecuencia'). En un mismo frame, hay que llamar una vez a WPAD_ScanPads() para actualizar la estructura WPADData, y después actualizar cada mando por separado (mapeo de botones, estado del puntero infrarrojo, etc.)</p>
+<p>Cada mando conectado a la consola se identifica en esta estructura WPADData con un número denominado chan, que tiene los valores desde 0 a 3, y que es único para cada mando. Importante: La libogc sólo tiene acceso a los mandos que tienen sincronización permanente, con la consola; es decir, que los mandos que se vayan a utilizar no deben estar conectados a la consola en modo invitado (para más información sobre la sincronización permanente y el modo invitado, consultar el manual de la propia consola Wii). Además, podemos saber la extensión que tiene conectada el mando (Nunchuck, mando clásico, o incluso la guitarra del Guitar Hero 3) mediante la función WPAD_Probe(u32 chan, u32* type); se guarda la información en type.</p>
+<p>El mapeado de los botones se realiza aparte, haciendo uso de dos valarrays booleanos, uno de los cuales representa las pulsaciones de todos los botones en el momento actual, y el otro, las pulsaciones en el momento anterior. De esta manera, en cualquier frame podemos saber si un botón está siendo pulsado, si se acaba de soltar, o si lo acabamos de pulsar. En realidad, la detección de las pulsaciones se hace llamando a la función WPAD_ButtonsDown(u32 chan), y almacenando el resultado en una variable u32 llamada _pulsado. Dicho resultado es un entero de 32 bits, donde cada bit indica una pulsación de un botón concreto, y si se compara mediante un operador AND de bits (&amp;) con los valores de cada botón que proporciona libogc, nos dirá si dicho botón ha sido pulsado. Así pues, si para cada botón, comparamos su valor conocido con _pulsado y lo almacenamos en su lugar correspondiente en el valarray de pulsaciones, tendremos un mapeo completo de todos los botones del mando.</p>
+<p>Un detalle más, muy importante, y es que cada vez que se crea una instancia de la clase, se toma como chan el número actual de mandos activos (es decir, si ya tengo dos mandos, uno con chan 0 y otro con chan 1, la nueva instancia tendrá, sí o sí, el chan 2). Hay que tener cuidado de no crear indiscriminadamente instancias de <a class="el" href="classMando.html" title="Clase que permite leer información desde un Wii Remote.">Mando</a>, porque sólo habrá una instancia en todo el sistema con un chan determinado; y un mando, una vez inicializado con un chan, no puede modificarlo. Es decir, que si se crea una instancia de <a class="el" href="classMando.html" title="Clase que permite leer información desde un Wii Remote.">Mando</a> para controlar el primer mando, hay que utilizar esa instancia en todo el sistema, nada de crear una instancia en otro sitio para intentar controlar el primer mando.</p>
+<p>Uso de la clase</p>
+<p>Antes de utilizar una instancia de <a class="el" href="classMando.html" title="Clase que permite leer información desde un Wii Remote.">Mando</a>, hay que inicializar la clase, esto se hace con la llamada</p>
+<div class="fragment"><pre class="fragment"> <span class="comment">// Inicializar la clase Mando</span>
+ <a class="code" href="classMando.html#a38b8100e401a6ffc5b6a38d1789e0ffb">Mando::inicializar</a>(u16 ancho, u16 alto);
+</pre></div><p>donde los parámetros son el alto y ancho de la pantalla en píxeles.</p>
+<p>La mayoría de los métodos que componen la clase <a class="el" href="classMando.html" title="Clase que permite leer información desde un Wii Remote.">Mando</a> no son más que métodos observadores sobre el estado descrito las estructuras de datos internas, y que se describen por sí solos en la documentación que acompaña a la clase.</p>
+<p>Métodos de orientación del mando</p>
+<p>Hay tres métodos observadores (cabeceo, viraje y rotacion), que devuelven un valor entre 180 y -180. Estos valores representan el ángulo de giro respecto a tres ejes (x, y, z) del mando, suponiendo que el (0,0,0) se da cuando el mando está apuntando perpendicularmente a la pantalla, y con los botones hacia arriba.</p>
+<p>Para más información sobre estos tres métodos, consultar su descripción.</p>
+<p>Ejemplos de uso:</p>
+<div class="fragment"><pre class="fragment"> <span class="comment">// Actualizar los dos mandos:</span>
+ <a class="code" href="classMando.html#a1dd67ff1669927c2e07aaf372f91c378">Mando::leerDatos</a>();
+ m1.actualizar();
+ m2.actualizar();
+
+ <span class="comment">// Saber las coordenadas en pantalla del puntero infrarrojo del mando 1:</span>
+ m1.punteroX();
+ m1.punteroY();
+
+ <span class="comment">// Saber si el segundo mando ha pulsado el botón A:</span>
+ <span class="keywordflow">if</span> ( m2.newPressed( Mando::BOTON_A ) )
+ <span class="comment">// ... Hacer algo</span>
+
+ <span class="comment">// Hacer vibrar el primer mando durante 300 milisegundos:</span>
+ m1.vibrar( 300000 );
+
+ <span class="comment">// ¿Tiene el Nunchuck del segundo mando la palanca pulsada hacia la derecha?</span>
+ <span class="keywordflow">if</span> ( m2.nunPalancaEstadoX() == Mando::PALANCA_DERECHA )
+ <span class="comment">// ... Hacer algo</span>
+</pre></div> </div><hr/><h2>Documentación de los 'Typedef' miembros de la clase</h2>
+<a class="anchor" id="a7c12c8433bfe3fc2863f4740492e7f26"></a><!-- doxytag: member="Mando::Boton" ref="a7c12c8433bfe3fc2863f4740492e7f26" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="classMando.html#a922740d0827b41159cd7c293f9989f44">Mando::boton_str</a>  <a class="el" href="classMando.html#a7c12c8433bfe3fc2863f4740492e7f26">Mando::Boton</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Enumeración en la que cada elemento representa uno de los botones mapeados del Wii Remote </p>
+
+</div>
+</div>
+<a class="anchor" id="ad0a6e67a7a7c9ba2b403286713e5f675"></a><!-- doxytag: member="Mando::Nunchuck_x" ref="ad0a6e67a7a7c9ba2b403286713e5f675" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="classMando.html#ac14e84214eaa24caa4e0b67200ccec4c">Mando::nunchuck_x_str</a>  <a class="el" href="classMando.html#ad0a6e67a7a7c9ba2b403286713e5f675">Mando::Nunchuck_x</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Enumeración que representa los estados horizontales de la palanca del Nunchuck </p>
+
+</div>
+</div>
+<a class="anchor" id="a9be1e6a5efbc37bff412e563a600164f"></a><!-- doxytag: member="Mando::Nunchuck_y" ref="a9be1e6a5efbc37bff412e563a600164f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="classMando.html#a5f6d156986cccbe4f66bdd5589a62127">Mando::nunchuck_y_str</a>  <a class="el" href="classMando.html#a9be1e6a5efbc37bff412e563a600164f">Mando::Nunchuck_y</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Enumeración que representa los estados verticales de la palanca del Nunchuck </p>
+
+</div>
+</div>
+<hr/><h2>Documentación de las enumeraciones miembro de la clase</h2>
+<a class="anchor" id="a922740d0827b41159cd7c293f9989f44"></a><!-- doxytag: member="Mando::boton_str" ref="a922740d0827b41159cd7c293f9989f44" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classMando.html#a922740d0827b41159cd7c293f9989f44">Mando::boton_str</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Enumeración en la que cada elemento representa uno de los botones mapeados del Wii Remote </p>
+
+</div>
+</div>
+<a class="anchor" id="ac14e84214eaa24caa4e0b67200ccec4c"></a><!-- doxytag: member="Mando::nunchuck_x_str" ref="ac14e84214eaa24caa4e0b67200ccec4c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classMando.html#ac14e84214eaa24caa4e0b67200ccec4c">Mando::nunchuck_x_str</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Enumeración que representa los estados horizontales de la palanca del Nunchuck </p>
+
+</div>
+</div>
+<a class="anchor" id="a5f6d156986cccbe4f66bdd5589a62127"></a><!-- doxytag: member="Mando::nunchuck_y_str" ref="a5f6d156986cccbe4f66bdd5589a62127" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classMando.html#a5f6d156986cccbe4f66bdd5589a62127">Mando::nunchuck_y_str</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Enumeración que representa los estados verticales de la palanca del Nunchuck </p>
+
+</div>
+</div>
+<hr/><h2>Documentación del constructor y destructor</h2>
+<a class="anchor" id="af9248daa4f0395e88988564f929693ca"></a><!-- doxytag: member="Mando::Mando" ref="af9248daa4f0395e88988564f929693ca" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Mando::Mando </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Constructor predeterminado de la clase <a class="el" href="classMando.html" title="Clase que permite leer información desde un Wii Remote.">Mando</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa69fb62dc19e997e6acd4306c5dec139"></a><!-- doxytag: member="Mando::~Mando" ref="aa69fb62dc19e997e6acd4306c5dec139" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Mando::~Mando </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Destructor de la clase <a class="el" href="classMando.html" title="Clase que permite leer información desde un Wii Remote.">Mando</a>. </p>
+
+</div>
+</div>
+<hr/><h2>Documentación de las funciones miembro</h2>
+<a class="anchor" id="aeba17ed37ace90f7110eed2ccd9e0a7d"></a><!-- doxytag: member="Mando::actualizar" ref="aeba17ed37ace90f7110eed2ccd9e0a7d" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mando::actualizar </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Actualiza el estado del Wii Remote. Mapea los botones pulsados (conservando el estado anterior, para detectar nuevas pulsaciones, o botones soltados), los acelerómetros y el puntero infrarrojo. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae178e685818c231571ff0beca3c0c83d"></a><!-- doxytag: member="Mando::cabeceo" ref="ae178e685818c231571ff0beca3c0c83d" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">f32 Mando::cabeceo </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Valor del cabeceo del Wii Remote. El cabeceo del mando es el ángulo que forma éste con un plano horizontal perpendicular a la pantalla, si se le hace girar sobre el eje X. El ángulo es positivo si la punta del mando queda por encima de la parte trasera, y negativo en caso contrario. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Valor del ángulo de cabeceo del Wii Remote. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9bfde3fe20e906ce964d4df3d3cdbf3d"></a><!-- doxytag: member="Mando::chan" ref="a9bfde3fe20e906ce964d4df3d3cdbf3d" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u8 Mando::chan </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método observador para conocer el mando concreto (de 0 a 3) con el que se está trabajando. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Número de mando (de 0 a 3) con el que se está trabajando en la instancia. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a11bd753905e27a8c1e6a2d5f107641d1"></a><!-- doxytag: member="Mando::conectado" ref="a11bd753905e27a8c1e6a2d5f107641d1" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Mando::conectado </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método observador para saber si el Wii Remote está conectado o no. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>True si el mando está conectado, o False si no lo está </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a38b8100e401a6ffc5b6a38d1789e0ffb"></a><!-- doxytag: member="Mando::inicializar" ref="a38b8100e401a6ffc5b6a38d1789e0ffb" args="(u16 ancho_pantalla, u16 alto_pantalla)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Mando::inicializar </td>
+          <td>(</td>
+          <td class="paramtype">u16&#160;</td>
+          <td class="paramname"><em>ancho_pantalla</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u16&#160;</td>
+          <td class="paramname"><em>alto_pantalla</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método de clase para inicializar el sistema de bluetooth de los mandos. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ancho_pantalla</td><td>Ancho en píxeles de la pantalla </td></tr>
+    <tr><td class="paramname">alto_pantalla</td><td>Alto en píxeles de la pantalla </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1dd67ff1669927c2e07aaf372f91c378"></a><!-- doxytag: member="Mando::leerDatos" ref="a1dd67ff1669927c2e07aaf372f91c378" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Mando::leerDatos </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método de clase para leer los datos de estado de todos los Wii Remotes conectados. Debe llamarse una única vez por cada frame. </p>
+
+</div>
+</div>
+<a class="anchor" id="af7b0d6ab95919d46df341fbf769c96c9"></a><!-- doxytag: member="Mando::newPressed" ref="af7b0d6ab95919d46df341fbf769c96c9" args="(Boton boton) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Mando::newPressed </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classMando.html#a7c12c8433bfe3fc2863f4740492e7f26">Boton</a>&#160;</td>
+          <td class="paramname"><em>boton</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método observador para saber si un botón ha sido pulsado en un momento determinado. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">boton</td><td>Botón que se desea saber si ha sido pulsado o no. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Devuelve True si el botón se acaba de pulsar, o False en caso contrario. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a394b06c7565c5e585df5d4636e10b658"></a><!-- doxytag: member="Mando::nunConectado" ref="a394b06c7565c5e585df5d4636e10b658" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Mando::nunConectado </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método observador que indica si el Nunchuck está conectado al Wii Remote. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>True si el Nunchuck está conectado, o False si no lo está. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac4bdb33561c24203af92a1b040017730"></a><!-- doxytag: member="Mando::nunPalancaCentroX" ref="ac4bdb33561c24203af92a1b040017730" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u16 Mando::nunPalancaCentroX </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const  throw (<a class="el" href="classNunchuckEx.html">NunchuckEx</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método observador para el valor central horizontal de la palanca del Nunchuck. Este valor es constante, pero la palanca suelta (supuestamente centrada) no siempre devuelve el mismo valor, por lo que es recomendable dar un margen de +/- 15 a la hora de utilizar este valor. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Valor central de la coordenada X de la palanca del Nunchuck. </dd></dl>
+<dl><dt><b>Excepciones:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classNunchuckEx.html" title="Clase de excepción para errores relacionados con el Nunchuck de un mando.">NunchuckEx</a></td><td>Se lanza si el Nunchuck no está conectado al WiiRemote </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae038b5f28c00330b8f4edf46f6ca62d7"></a><!-- doxytag: member="Mando::nunPalancaCentroY" ref="ae038b5f28c00330b8f4edf46f6ca62d7" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u16 Mando::nunPalancaCentroY </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const  throw (<a class="el" href="classNunchuckEx.html">NunchuckEx</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método observador para el valor central vertical de la palanca del Nunchuck. Este valor es constante, pero la palanca suelta (supuestamente centrada) no siempre devuelve el mismo valor, por lo que es recomendable dar un margen de +/- 15 a la hora de utilizar este valor. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Valor central de la coordenada Y de la palanca del Nunchuck. </dd></dl>
+<dl><dt><b>Excepciones:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classNunchuckEx.html" title="Clase de excepción para errores relacionados con el Nunchuck de un mando.">NunchuckEx</a></td><td>Se lanza si el Nunchuck no está conectado al WiiRemote </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a9276562c0da2ca7408327cfa3c857bae"></a><!-- doxytag: member="Mando::nunPalancaEstadoX" ref="a9276562c0da2ca7408327cfa3c857bae" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMando.html#ad0a6e67a7a7c9ba2b403286713e5f675">Nunchuck_x</a> Mando::nunPalancaEstadoX </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const  throw (<a class="el" href="classNunchuckEx.html">NunchuckEx</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método observador para conocer el estado básico horizontal de la palanca del Nunchuck. Este método devuelve PALANCA_CENTRADA, PALANCA_IZQUIERDA o PALANCA_DERECHA, dependiendo del estado de pulsación horizontal de la palanca. Si se necesita un control más exacto de los valores de la coordenada X de la palanca del Nunchuck, es conveniente utilizar los métodos 'nunPalancaValorX' y 'nunPalancaCentroX' </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Estado básico horizontal de la palanca del Nunchuck </dd></dl>
+<dl><dt><b>Excepciones:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classNunchuckEx.html" title="Clase de excepción para errores relacionados con el Nunchuck de un mando.">NunchuckEx</a></td><td>Se lanza si el Nunchuck no está conectado al WiiRemote </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad9c4b08859e817fc1636ee554db6aa7a"></a><!-- doxytag: member="Mando::nunPalancaEstadoY" ref="ad9c4b08859e817fc1636ee554db6aa7a" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMando.html#a9be1e6a5efbc37bff412e563a600164f">Nunchuck_y</a> Mando::nunPalancaEstadoY </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const  throw (<a class="el" href="classNunchuckEx.html">NunchuckEx</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método observador para conocer el estado básico vertical de la palanca del Nunchuck. Este método devuelve PALANCA_CENTRADA, PALANCA_ARRIBA o PALANCA_ABAJO, dependiendo del estado de pulsación vertical de la palanca. Si se necesita un control más exacto de los valores de la coordenada Y de la palanca del Nunchuck, es conveniente utilizar los métodos 'nunPalancaValorY' y 'nunPalancaCentroY' </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Estado básico vertical de la palanca del Nunchuck </dd></dl>
+<dl><dt><b>Excepciones:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classNunchuckEx.html" title="Clase de excepción para errores relacionados con el Nunchuck de un mando.">NunchuckEx</a></td><td>Se lanza si el Nunchuck no está conectado al WiiRemote </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a89cdcf0bfd6154cbac40b9993e90d522"></a><!-- doxytag: member="Mando::nunPalancaValorX" ref="a89cdcf0bfd6154cbac40b9993e90d522" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u16 Mando::nunPalancaValorX </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const  throw (<a class="el" href="classNunchuckEx.html">NunchuckEx</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método observador para el valor de la coordenada horizontal de la palanca del Nunchuck. Si este valor es superior al valor central, se considera que la palanca está siendo pulsada hacia la derecha, en caso contrario, está siendo pulsada hacia la izquierda. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Valor de la coordenada horizontal de la palanca del Nunchuck </dd></dl>
+<dl><dt><b>Excepciones:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classNunchuckEx.html" title="Clase de excepción para errores relacionados con el Nunchuck de un mando.">NunchuckEx</a></td><td>Se lanza si el Nunchuck no está conectado al WiiRemote </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4698f27117dfc31da2a0c4808166e543"></a><!-- doxytag: member="Mando::nunPalancaValorY" ref="a4698f27117dfc31da2a0c4808166e543" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u16 Mando::nunPalancaValorY </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const  throw (<a class="el" href="classNunchuckEx.html">NunchuckEx</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método observador para el valor de la coordenada vertical de la palanca del Nunchuck. Si este valor es superior al valor central, se considera que la palanca está siendo pulsada hacia abajo, en caso contrario, está siendo pulsada hacia arriba. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Valor de la coordenada vertical de la palanca del Nunchuck </dd></dl>
+<dl><dt><b>Excepciones:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classNunchuckEx.html" title="Clase de excepción para errores relacionados con el Nunchuck de un mando.">NunchuckEx</a></td><td>Se lanza si el Nunchuck no está conectado al WiiRemote </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4b234219dce1bf0da2b5a6a3fcf2a015"></a><!-- doxytag: member="Mando::pressed" ref="a4b234219dce1bf0da2b5a6a3fcf2a015" args="(Boton boton) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Mando::pressed </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classMando.html#a7c12c8433bfe3fc2863f4740492e7f26">Boton</a>&#160;</td>
+          <td class="paramname"><em>boton</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método observador para saber si un botón está pulsado en un momento determinado. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">boton</td><td>Botón que se desea saber si está pulsado o no. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Devuelve True si el botón está pulsado, o False en caso contrario. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="affe0fbb6a4f4ce38a15e8492897a5488"></a><!-- doxytag: member="Mando::punteroEnPantalla" ref="affe0fbb6a4f4ce38a15e8492897a5488" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Mando::punteroEnPantalla </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método observador que permite conocer si el puntero infrarrojo del Wii Remote se encuentra dentro de los límites de la pantalla. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>True si el puntero infrarrojo está dentro de la pantalla; en caso contrario, False </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a547baa835144a60190d179ce53b0c856"></a><!-- doxytag: member="Mando::punteroX" ref="a547baa835144a60190d179ce53b0c856" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">s16 Mando::punteroX </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método observador para la coordenada X del puntero infrarrojo del Wii Remote. La coordenada X tiene su posición cero en la izquierda de la pantalla, y aumenta a medida que se acerca a la derecha de la pantalla. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Coordenada X, en píxeles, del puntero infrarrojo del Wii Remote </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a45d9770f46cab94671c9aa286cf1dbbd"></a><!-- doxytag: member="Mando::punteroY" ref="a45d9770f46cab94671c9aa286cf1dbbd" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">s16 Mando::punteroY </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método observador para la coordenada Y del puntero infrarrojo del Wii Remote. La coordenada Y tiene su posición cero en la parte superior de la pantalla, y aumenta a medida que se acerca a la parte inferior de la pantalla. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Coordenada Y, en píxeles, del puntero infrarrojo del Wii Remote </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aebb999a6874737be353e9feace3f1fd7"></a><!-- doxytag: member="Mando::released" ref="aebb999a6874737be353e9feace3f1fd7" args="(Boton boton) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Mando::released </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classMando.html#a7c12c8433bfe3fc2863f4740492e7f26">Boton</a>&#160;</td>
+          <td class="paramname"><em>boton</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método observador para saber si un botón ha sido soltado en un momento determinado. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">boton</td><td>Botón que se desea saber si ha dejado de estar pulsado o no. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Devuelve True si el botón se ha soltado, o False en caso contrario. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8e4848b6dbd3722c4387173e9adb536e"></a><!-- doxytag: member="Mando::rotacion" ref="a8e4848b6dbd3722c4387173e9adb536e" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">f32 Mando::rotacion </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Valor de la rotación del Wii Remote. La rotación del mando es un ángulo que mide el giro de éste sobre el eje Y (como si estuviera dando una vuelta de campana). El ángulo es positivo si la rotación es hacia la derecha, y negativo en caso contrario. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Valor del ángulo de rotación del Wii Remote. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5ae699c19862c27cf2a1241d9c0ec6d7"></a><!-- doxytag: member="Mando::vibrar" ref="a5ae699c19862c27cf2a1241d9c0ec6d7" args="(u16 tiempo)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mando::vibrar </td>
+          <td>(</td>
+          <td class="paramtype">u16&#160;</td>
+          <td class="paramname"><em>tiempo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que hace vibrar el Wii Remote durante una cantidad concreta de tiempo. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tiempo</td><td>Tiempo, en microsegundos, que se quiere hacer vibrar el Wii Remote </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a098bd5b73c2baaeb18b9123c7d9c33a0"></a><!-- doxytag: member="Mando::viraje" ref="a098bd5b73c2baaeb18b9123c7d9c33a0" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">f32 Mando::viraje </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Valor del viraje del Wii Remote. El viraje del mando es el ángulo que forma éste con un plano vertical perpendicular a la pantalla, si se le hace girar sobre el eje Z. El ángulo es positivo si la punta del mando queda a la derecha de la parte trasera, y negativo en caso contrario. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Valor del ángulo de viraje del Wii Remote. </dd></dl>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>/home/rabbit/Escritorio/libwiiesp/include/<a class="el" href="mando_8h_source.html">mando.h</a></li>
+</ul>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumeraciones</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Generado el Martes, 19 de Julio de 2011 20:45:52 para libWiiEsp por&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
+</body>
+</html>

@@ -1,0 +1,7 @@
+digraph G
+{
+  edge [fontname="FreeSans.ttf",fontsize="10",labelfontname="FreeSans.ttf",labelfontsize="10"];
+  node [fontname="FreeSans.ttf",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="Galeria",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGaleria.html",tooltip="Clase que gestiona los recursos media del sistema, y facilita su carga en memoria y el acceso a ellos..."];
+}

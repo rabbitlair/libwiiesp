@@ -1,0 +1,43 @@
+% Este archivo es parte de la memoria de libWiiEsp, protegida bajo la 
+% licencia GFDL. Puede encontrar una copia de la licencia en el archivo fdl-1.3.tex
+
+% Fuente tomada de la plantilla LaTeX para la realización de Proyectos Final 
+% de Carrera de Pablo Recio Quijano.
+
+% Copyright (C) 2009 Pablo Recio Quijano
+% Copyright (C) 2011 Ezequiel Vázquez de la Calle
+
+% -*-conclusiones.tex-*-
+
+\section{Aspectos generales}
+
+La biblioteca desarrollada como resultado del proyecto es una herramienta completa para la creación de videojuegos en dos dimensiones para Nintendo Wii, utilizando como base el lenguaje de programación C++. Además de proporcionar abstracción sobre todos los aspectos que dificultan el desarrollo en esta videoconsola, supone una gran fuente de información para todo aquel interesado en el funcionamiento de los distintos sistemas de ésta, debido principalmente a la enorme cantidad de documentación generada, tanto en forma de manual como las descripciones de las clases recogidas en la referencia y en este propio documento.\\
+
+Por supuesto, \programa{LibWiiEsp} necesita continuar su desarrollo con el objetivo de refinar cada vez más sus componentes, aportar funcionalidad nueva y revisar la existente. Sin embargo, a partir de una herramienta como ésta puede surgir una comunidad que la perfeccione y le dé uso, hecho que se hace más real por cuanto se trata de una biblioteca totalmente libre.\\
+
+Un último aspecto a destacar es lo útiles que resultan, didácticamente hablando, tanto \programa{LibWiiEsp} como su documentación y los tres juegos de ejemplo. Se ha conseguido aportar no sólo una herramienta de desarrollo, si no una vía para acercar el desarrollo de software para videoconsolas a la gente \emph{de a pie}, demostrando que es posible crear videojuegos para plataformas cerradas gracias al trabajo (prácticamente en todas las ocasiones, \textbf{libre}) de muchos \emph{sceners} a lo largo del mundo.
+
+\section{Conocimientos adquiridos}
+
+Durante el desarrollo se han intentado aplicar todos los conocimientos adquiridos a lo largo del plan de estudios cursado, concentrándolos en la creación de una herramienta software útil. Además de todo lo relacionado con la programación en lenguaje C++, se ha utilizado el enfoque de la programación orientada a objetos (ya que el producto final es una biblioteca escrita por completo haciendo uso de este paradigma), técnicas de optimización, se han empleado patrones de diseño según las circunstancias lo requerían y se ha utilizado una metodología de desarrollo iterativa. Los nuevos conocimientos incluyen una profundización exhaustiva en los archivos de órdenes de recompilación (\emph{makefile} \cite{website:make}), la investigación y obtención de información sobre un sistema cerrado como es Nintendo Wii, la creación de un sistema sobre otro existente partiendo de poca o nula documentación, el trabajo con la tecnología XML, las transformaciones entre formatos de textura a bajo nivel (bit a bit) y todos los conceptos relacionados con los formatos de vídeo y audio, la utilización de periféricos distintos a los comunes ratón y teclado, el uso de bibliotecas externas para tareas tan comunes como acceder a un dispositivo de almacenamiento (utilizando \emph{libFat}) o escribir textos en una pantalla (\emph{FreeType2}) y los conceptos de \emph{Endian} y alineación de datos y zonas de memoria.\\
+
+Respecto a la redacción de la memoria, se ha profundizado en la generación de documentación técnica, tanto en lo que a manuales se refiere como con las descripciones de los distintos módulos que componen la herramienta. Al no tratarse de un proyecto de creación de un software de gestión, se ha intentado aplicar un punto de vista diferente: la documentación recogida en esta memoria trata, en primer lugar, de mostrar cómo trabaja a bajo nivel Nintendo Wii con la biblioteca \programa{libogc} \cite{website:libogc}, y después se hace una descripción completa sobre la funcionalidad que aporta \programa{LibWiiEsp}. Durante la redacción de toda la documentación se ha aprendido a utilizar \LaTeX, un sistema de composición de textos muy útil y extendido, así como a trabajar con el diseñador de diagramas \programa{Dia}. Además, para la generación automática de la documentación relativa a los métodos y atributos públicos definidos en cada módulo, se ha utilizado el software \programa{Doxygen} \cite{website:doxygen}.
+
+\section{Posibles mejoras}
+
+A continuación se listan algunas mejoras que sería deseable añadir a la biblioteca en futuras versiones:
+
+\begin{itemize}
+\item \textbf{Sistema de sonido 3D}: implementar un sistema de sonido 3D, jugando con el volumen de los dos canales de audio de los que se dispone a la hora de reproducir un sonido.
+\item \textbf{Controlar los acelerómetros de los mandos}: en este punto, se depende de que los creadores de \programa{libogc} implementaran correctamente la lectura de estos dispositivos.
+\item \textbf{Soporte para todos los periféricos de Wii}: como la guitarra de \programa{Guitar Hero}, el Wii Fit, el mando clásico o el mando de Nintendo \emph{Game Cube}.
+\item \textbf{Soporte para utilizar los puertos USB traseros}: así como el soporte de almacenamiento más sencillo de utilizar es el lector de tarjetas SD del que dispone la videoconsola, los puertos USB de Nintendo Wii tienen tecnología USB 2.0, por lo que se conseguiría un mayor rendimiento a la hora de realizar operaciones de lectura y escritura.
+\end{itemize}
+
+\section{Futuro del proyecto}
+
+Aunque a día de hoy es una herramienta completa, \programa{LibWiiEsp} necesita seguir creciendo, tanto para corregir algunos defectos que puedan presentarse a medida que se utilice la herramienta, como para proporcionar nueva funcionalidad, por ejemplo, dar soporte a un mayor número de formatos para los recursos multimedia, aumentar el número de figuras de colisión disponibles y proporcionar soporte para hilos y utilización de protocolos de red.\\
+
+A corto plazo se quiere crear una comunidad de usuarios alrededor de este producto, de tal manera que se fomente su utilización y se perfeccione a partir de más puntos de vista que no únicamente el de su creador original.\\
+
+También se ha pensado utilizar el mismo conjunto de módulos que componen \programa{LibWiiEsp} y adaptarlo para que trabaje con otras videoconsolas actuales, como son \emph{PlayStation Portable}, \emph{Nintendo DS} o incluso \emph{PlayStation 3}.

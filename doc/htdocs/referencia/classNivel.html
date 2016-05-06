@@ -1,0 +1,985 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>libWiiEsp: Referencia de la Clase Nivel</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Generado por Doxygen 1.7.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+--></script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libWiiEsp&#160;<span id="projectnumber">0.9.2</span></div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Clases</span></a></li>
+      <li><a href="files.html"><span>Archivos</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Clases</a> &#124;
+<a href="#pub-types">Tipos públicos</a> &#124;
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pro-types">Tipos protegidos</a> &#124;
+<a href="#pro-methods">Métodos protegidos</a> &#124;
+<a href="#pro-attribs">Atributos protegidos</a>  </div>
+  <div class="headertitle">
+<h1>Referencia de la Clase Nivel</h1>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="Nivel" -->
+<p>Clase que proporciona una base para definir niveles (escenarios donde participan actores) de manera fácil.  
+<a href="#_details">Más...</a></p>
+
+<p><code>#include &lt;<a class="el" href="nivel_8h_source.html">nivel.h</a>&gt;</code></p>
+
+<p><a href="classNivel-members.html">Lista de todos los miembros.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="nested-classes"></a>
+Clases</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNivel_1_1actor.html">actor</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Estructura para almacenar de forma temporal la información de un actor.  <a href="structNivel_1_1actor.html#_details">Más...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNivel_1_1tile.html">tile</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Estructura que almacena los datos de un tile.  <a href="structNivel_1_1tile.html#_details">Más...</a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pub-types"></a>
+Tipos públicos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#aed6ad41d54c382497340467581423120">Capa</a> { <b>PLATAFORMAS</b>, 
+<b>ESCENARIO</b>
+ }</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structNivel_1_1tile.html">Nivel::tile</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#a8a8d39822df100fa23c0f974f0016c01">Tile</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; <a class="el" href="classNivel.html#aed6ad41d54c382497340467581423120">Capa</a>, <a class="el" href="structNivel_1_1tile.html">Tile</a> ** &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#a9f346861d82f9e1fe310648f305f77c7">Escenario</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="classActor.html">Actor</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#a83ebd38813eb4c49c43980e49d3c112a">Actores</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; std::string, <br class="typebreak"/>
+<a class="el" href="classActor.html">Actor</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#a2eb2ef5528ee6025efa22b86dead7193">Jugadores</a></td></tr>
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#ae12e03c0a3d464b3d7be1186dace54a1">Nivel</a> (const std::string &amp;ruta)  throw (ArchivoEx, TarjetaEx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#a22b70d3681654e0cae6c81605e5043bc">~Nivel</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#a776815722bd45d20938ee004e18f18a8">ancho</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#ab493f22ee983591692dde12121f332c3">alto</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#a00be2e52e079182b6ec18ca82e8d8dc2">xScroll</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#a0273d1bdf8cc780515e910721523d1c2">yScroll</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classMusica.html">Musica</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#a4b15c15df99c845fe218cc0872922e12">musica</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#a3e4e0dcb5742c842987f057b25dd946d">moverScroll</a> (u32 x, u32 y)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#ad5d1718b04e32bae5fb99e3140144c34">colision</a> (const <a class="el" href="classActor.html">Actor</a> *a)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#aed1647306f61c2bce087187e1d8ed4b3">colisionBordes</a> (const <a class="el" href="classActor.html">Actor</a> *a)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#af7727e9795771e4d8d65beb3c51dc576">actualizarPj</a> (const std::string &amp;jugador, const <a class="el" href="classMando.html">Mando</a> &amp;m)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#a741d6ae283f581fbbc0c89db89c0576a">actualizarNpj</a> (void)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#af2cf5f77c22cd349e5773c9533ef6549">actualizarEscenario</a> (void)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#aa857f42c9c48428b576ccaad69d13ee3">dibujar</a> (void)</td></tr>
+<tr><td colspan="2"><h2><a name="pro-types"></a>
+Tipos protegidos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structNivel_1_1actor.html">Nivel::actor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#a17e089ca49c99625b0e8ecf489e8d6fb">ActorTemp</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="structNivel_1_1actor.html">ActorTemp</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#a8fef0904670f88dfcf0409bc43ab3896">Temporal</a></td></tr>
+<tr><td colspan="2"><h2><a name="pro-methods"></a>
+Métodos protegidos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#a5273f9847f9506330591b1cab0c26f85">leerPropiedades</a> (TiXmlElement *propiedades)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#a95d4532808b2109d7f56fe786d525c3b">leerEscenario</a> (TiXmlElement *escenario)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#a1c5fcd2c8c5cf356d1a5aa9af663877a">leerPlataformas</a> (TiXmlElement *plataformas)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#a1a3e4f1f1fc404f8dfc64d7af5ded258">leerActores</a> (TiXmlElement *actores)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#a2b4abbc1033f5404cf2529304e5c51f7">cargarActores</a> (void)=0</td></tr>
+<tr><td colspan="2"><h2><a name="pro-attribs"></a>
+Atributos protegidos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#af29f145ba7dd4880034e08c52d980379">_imagen_fondo</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#aca568916514c947481661758329384b7">_imagen_tileset</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#a16c9fcd711cd939408db3e32e0220975">_musica</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#ae50a8537321f7c47a89f47c2f25a0599">_ancho_un_tile</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#a84815dfb270317c424e9d6191f144d18">_alto_un_tile</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#afaf6133abea1278a5e4a8bdc9f6a3dbe">_ancho_tiles</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#a0fea1bca5795e11d5061fc56aeb2b5dd">_alto_tiles</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#a05fa1950bf92517d39c2ad4be2315e38">_scroll_x</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#a27e5dc9ba1dbd91b97aa58420df7e72d">_scroll_y</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#a4cc1709bc082af950eb6bf8e161e02ff">_ancho_nivel</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#af3ab0545fbcc9ca5bb1b6ff941d36cdb">_alto_nivel</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#a70e31bf4e712ee6b4fa1bfced819a9a0">_filas_tileset</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#a6cfbf44495d191eaab1b5c3a82d51611">_columnas_tileset</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNivel.html#a9f346861d82f9e1fe310648f305f77c7">Escenario</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#aa8707165cea833c160cd80f1b62f15fe">_escenario</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNivel.html#a83ebd38813eb4c49c43980e49d3c112a">Actores</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#abdf73007ecb6ae68839525ec3c0744ab">_actores</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNivel.html#a2eb2ef5528ee6025efa22b86dead7193">Jugadores</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#ad8f484753fc81276e7aeb1a6f4b14ce7">_jugadores</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNivel.html#a8fef0904670f88dfcf0409bc43ab3896">Temporal</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNivel.html#a13a4cf660dba59d72a6c3845de4266c0">_temporal</a></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Descripción detallada</h2>
+<div class="textblock"><p>Clase que proporciona una base para definir niveles (escenarios donde participan actores) de manera fácil. </p>
+<dl class="author"><dt><b>Autor:</b></dt><dd>Ezequiel Vázquez de la Calle </dd></dl>
+<dl class="version"><dt><b>Versión:</b></dt><dd>0.9.2</dd></dl>
+<p>Un nivel, desde el punto de vista de LibWiiEsp, no es más que un escenario donde los actores participan en el juego. Está formado por tres elementos principales que son los actores, el conjunto de tiles que componen el propio nivel y una imagen de fondo. También tiene asociada una pista de música propia, una imagen desde la que se toman los tiles que se dibujan, y unas coordenadas de scroll para la pantalla, así como un ancho y un alto.</p>
+<p>El escenario que presenta un nivel es de forma rectangular, y tiene un ancho y un alto definidos por el número de tiles que lo componen. A pesar de ello, en todo momento están disponibles sus medidas en píxeles. Dentro de este escenario, todos los elementos tienen una pareja de coordenadas que indican la distancia horizontal hacia la derecha respecto al límite izquierdo del nivel (coordenada X), y la distancia vertical hacia abajo respecto al límite superior del nivel (coordenada Y). Así pues, el origen de coordenadas del nivel (el punto (0,0)) es el vértice superior izquierdo del rectángulo que forma el escenario.</p>
+<p>En la pantalla sólo puede dibujarse una parte del escenario del nivel, ya que ésta tiene un tamaño determinado por el modo de vídeo. La parte del nivel que se dibuja en la pantalla en un momento determinado es la ventana del nivel, y es un rectángulo con las mismas medidas que la pantalla, y que tiene unas coordenadas respecto al punto (0,0) del escenario. Estas coordenadas son el scroll del nivel, y se puede modificar mediante el método <a class="el" href="classNivel.html#a3e4e0dcb5742c842987f057b25dd946d">moverScroll()</a>.</p>
+<p>La imagen de fondo del nivel debe tener el tamaño de la pantalla completa (para una televisión PAL de proporciones 4:3, las medidas en píxeles son 640×528), y será fija durante todo el transcurso del nivel. La idea de esta imagen de fondo estática es para situar un paisaje que acompañe al nivel, ya que la sensación de avance se produce con los propios tiles que componen la estructura del nivel.</p>
+<p>Existen dos tipos de tiles en un nivel, que se distinguen únicamente en que los tiles no atravesables tienen un rectángulo de colisión con el mismo tamaño y posición, y por lo tanto, provocará que un actor que colisione con él pueda reaccionar de una manera; sin embargo, los tiles atravesables no disponen de esta figura de colisión, y por lo tanto tienen únicamente un objetivo decorativo, para dotar de mayor detalle al escenario del nivel, pero no provocarán una colisión cuando un actor los toque. Todos estos tiles se almacenan en la misma estructura (de tipo Escenario), y para comprobar si un actor concreto colisiona con algún elemento del nivel se proporciona el método <a class="el" href="classNivel.html#ad5d1718b04e32bae5fb99e3140144c34">colision()</a> (información útil para saber, por ejemplo en un juego de plataformas, si el actor está cayendo o está sobre una plataforma). Si el programador necesita un mayor detalle en la detección de colisiones entre actores y escenario, siempre puede añadir los métodos y atributos que considere necesarios para ello al crear la clase derivada de <a class="el" href="classNivel.html" title="Clase que proporciona una base para definir niveles (escenarios donde participan actores) de manera f...">Nivel</a>. La detección de colisiones entre un actor y los tiles del escenario está optimizada para que sólo se evalúe la colisión con los tiles sobre los que se encuentre el actor, evitando cálculos innecesarios.</p>
+<p>Se proporciona un método virtual puro <a class="el" href="classNivel.html#af2cf5f77c22cd349e5773c9533ef6549">actualizarEscenario()</a> en el que se pueden implementar comportamientos para el escenario (como por ejemplo, plataformas destructibles, o en movimiento, además de cambiar las coordenadas del scroll de la pantalla), y un método que dibuja la ventana del nivel en la pantalla de la consola.</p>
+<p>Los actores que participan en un nivel se distinguen entre los actores que son dirigidos por los jugadores, y los actores que controla la propia CPU. Cada uno de ellos se almacena en una estructura distinta, y dispone de un método concreto para actualizarlo. Concretamente, el método para actualizar los actores no jugadores es <a class="el" href="classNivel.html#a741d6ae283f581fbbc0c89db89c0576a">actualizarNpj()</a>, en el que se supone que se debe implementar la actualización de todos los actores controlados por la máquina (la decisión sobre cómo llevar a cabo esta operación queda, por entero, en manos del programador). Igualmente, para actualizar los actores jugadores, se dispone del método <a class="el" href="classNivel.html#af7727e9795771e4d8d65beb3c51dc576">actualizarPj()</a>, que debe actualizar a un único jugador en cada llamada, y lo hace recibiendo el código identificador único del jugador, y el mando asociado a él.</p>
+<p>Hay que destacar especialmente la filosofía de esta clase <a class="el" href="classNivel.html" title="Clase que proporciona una base para definir niveles (escenarios donde participan actores) de manera f...">Nivel</a> junto con la clase <a class="el" href="classActor.html" title="Clase que proporciona una base para definir actores (también llamados sprites) de una manera fácil...">Actor</a>. En cada clase derivada de <a class="el" href="classActor.html" title="Clase que proporciona una base para definir actores (también llamados sprites) de una manera fácil...">Actor</a> se debe definir el comportamiento de cada actor dependiendo de su estado actual. Sin embargo, las transiciones entre estados de un actor pueden realizarse desde el <a class="el" href="classNivel.html" title="Clase que proporciona una base para definir niveles (escenarios donde participan actores) de manera f...">Nivel</a> en el que el actor está participando, o bien en el propio actor, ya que éste dispone de una referencia constante al <a class="el" href="classNivel.html" title="Clase que proporciona una base para definir niveles (escenarios donde participan actores) de manera f...">Nivel</a> en el que se encuentra, aunque lo que se recomienda es tomar la primera opción, y situar las transiciones entre estados en el método de actualización del <a class="el" href="classNivel.html" title="Clase que proporciona una base para definir niveles (escenarios donde participan actores) de manera f...">Nivel</a>, de tal manera que los actores respondan con un comportamiento u otro, dependiendo de cómo se les haya definido, y siempre según el estado que tengan activado.</p>
+<p>Una vez descritos los elementos que conforman el escenario de un nivel, hay que detallar especialmente el proceso de carga de un nivel desde un archivo TMX creado con el editor de mapas de tiles Tiled (<a href="http://www.mapeditor.org/">http://www.mapeditor.org/</a>):</p>
+<p>Cuando se crea un nivel, el constructor recibe un archivo TMX que se carga desde la tarjeta SD gracias a la clase <a class="el" href="classParser.html" title="Clase que facilita la lectura de información desde archivos XML situados en la tarjeta SD de la conso...">Parser</a>. Una vez en memoria, se lee el ancho y alto del nivel en tiles, y el ancho y el alto en píxeles de un único tile (las medidas de un tile deben ser múltiplos de 8, ya que llevarán una imagen asociada, ver documentación de <a class="el" href="classImagen.html" title="Clase que representa una imagen cargada en memoria, lista para ser dibujada en la pantalla...">Imagen</a> para más información). A partir de estos datos, se calcula el ancho y alto del escenario del nivel en píxeles.</p>
+<p>Después, el proceso de lectura desde el archivo TMX continúa leyendo las propiedades del mapa, que son imagen_fondo (que es el código que debe tener la imagen de fondo del nivel en la <a class="el" href="classGaleria.html" title="Clase que gestiona los recursos media del sistema, y facilita su carga en memoria y el acceso a ellos...">Galeria</a> de medias), imagen_tileset (código que la imagen del tileset deberá tener asociado en la <a class="el" href="classGaleria.html" title="Clase que gestiona los recursos media del sistema, y facilita su carga en memoria y el acceso a ellos...">Galeria</a> de medias del sistema) y musica (código identificador de la pista de música en la <a class="el" href="classGaleria.html" title="Clase que gestiona los recursos media del sistema, y facilita su carga en memoria y el acceso a ellos...">Galeria</a> de medias del sistema). Tras leer las propiedades del mapa de tiles, se procede a leer las tres capas que debe contener el archivo TMX, que son las siguientes:</p>
+<p>1. Capa ‘escenario’ (nombre obligatorio): capa de patrones del editor Tiled, debe contener los tiles atravesables. 2. Capa ‘plataformas’ (nombre obligatorio): capa de patrones del editor Tiled, que contiene los tiles no atravesables (los que tendrán figura de colisión asociada) 3. Capa ‘actores’ (nombre obligatorio): capa de objetos del editor Tiled. Cada objeto definido en esta capa debe tener la propiedad xml con la dirección absoluta en la tarjeta SD del archivo XML de descripción del actor como valor. Si además, el actor es un actor jugador, se espera que tenga otra propiedad llamada jugador, y cuyo valor debe ser el código identificador del jugador. También debe tener el identificador de su tipo en el campo Tipo.</p>
+<p>Hay que tener en cuenta otro detalle importante, y es que, al llamar al constructor, la información de los actores se guardan en una estructura temporal. Por ese motivo, existe el método virtual puro <a class="el" href="classNivel.html#a2b4abbc1033f5404cf2529304e5c51f7">cargarActores()</a>, que ha de ser implementado por el programador al derivar la clase <a class="el" href="classNivel.html" title="Clase que proporciona una base para definir niveles (escenarios donde participan actores) de manera f...">Nivel</a>, y que se debe encargar de recorrer esta estructura temporal, crear cada actor utilizando el constructor de la clase correspondiente al tipo del actor, y almacenarlo en la estructura correspondiente (dependiendo de si es un actor jugador o no jugador). Por último, es conveniente que este método vacíe la estructura temporal para no malgastar memoria.</p>
+<p>Esto último es necesario ya que, en la propia clase abstracta <a class="el" href="classNivel.html" title="Clase que proporciona una base para definir niveles (escenarios donde participan actores) de manera f...">Nivel</a> que forma parte de LibWiiEsp no se conoce qué clases derivadas habrá de <a class="el" href="classActor.html" title="Clase que proporciona una base para definir actores (también llamados sprites) de una manera fácil...">Actor</a>, y por tanto, se deja en manos del programador implementar la creación de Actores en el nivel. A continuación, se establece el scroll del nivel al valor (0,0), y se da por concluida la carga del nivel. Para conocer todos los detalles sobre la creación de niveles con el editor Tiled, consultar el manual de LibWiiEsp.</p>
+<p>Ejemplo de uso</p>
+<p>Con todo lo descrito, una vez cargado un nivel a partir de su archivo TMX, ya está listo para empezar a jugar. Un ejemplo de bucle principal utilizando un único nivel sería el siguiente:</p>
+<div class="fragment"><pre class="fragment"> <a class="code" href="classMando.html" title="Clase que permite leer información desde un Wii Remote.">Mando</a> m();
+ NivelPrueba* nivel = <span class="keyword">new</span> NivelPrueba( <span class="stringliteral">&quot;/apps/wiipang/xml/prueba.tmx&quot;</span> );
+ <span class="keywordtype">bool</span> salir = <span class="keyword">false</span>;
+ <span class="keywordflow">while</span>(not salir) {
+   <span class="comment">// Actualizar el mando del jugador</span>
+   <a class="code" href="classMando.html#a1dd67ff1669927c2e07aaf372f91c378">Mando::leerDatos</a>();
+   m.actualizar();
+   <span class="comment">// Salir al pulsar HOME</span>
+   <span class="keywordflow">if</span>(m.newPressed(Mando::BOTON_HOME))
+     salir = <span class="keyword">true</span>;
+   <span class="comment">// Actualizar el jugador en base a su mando (cambios de estado)</span>
+   nivel-&gt;actualizarPj(<span class="stringliteral">&quot;pj1&quot;</span>, m);
+   <span class="comment">// Actualizar los personajes no jugadores (cambios de estado)</span>
+   nivel-&gt;actualizarNpj();
+   <span class="comment">// Actualiza los elementos del nivel que no son actores (scroll)</span>
+   nivel-&gt;actualizarEscenario();
+   <span class="comment">// Mantener la reproducción continua de la pista de música del nivel</span>
+   nivel-&gt;musica().loop();
+   <span class="comment">// Dibujar el nivel</span>
+   nivel-&gt;dibujar();
+ }
+</pre></div><p>En este ejemplo, se considera que se ha derivado la clase abstracta <a class="el" href="classNivel.html" title="Clase que proporciona una base para definir niveles (escenarios donde participan actores) de manera f...">Nivel</a> en la clase NivelPrueba, a la que se le han implementado los métodos <a class="el" href="classNivel.html#af7727e9795771e4d8d65beb3c51dc576">actualizarPj()</a>, <a class="el" href="classNivel.html#a741d6ae283f581fbbc0c89db89c0576a">actualizarNpj()</a> y <a class="el" href="classNivel.html#af2cf5f77c22cd349e5773c9533ef6549">actualizarEscenario()</a>, y que los actores del nivel se vuelcan desde la estructura temporal con la definición del método <a class="el" href="classNivel.html#a2b4abbc1033f5404cf2529304e5c51f7">cargarActores()</a>. </p>
+</div><hr/><h2>Documentación de los 'Typedef' miembros de la clase</h2>
+<a class="anchor" id="a83ebd38813eb4c49c43980e49d3c112a"></a><!-- doxytag: member="Nivel::Actores" ref="a83ebd38813eb4c49c43980e49d3c112a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt;<a class="el" href="classActor.html">Actor</a>*&gt; <a class="el" href="classNivel.html#a83ebd38813eb4c49c43980e49d3c112a">Nivel::Actores</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Vector que almacena todos los actores no jugadores que participan en un nivel. </p>
+
+</div>
+</div>
+<a class="anchor" id="a17e089ca49c99625b0e8ecf489e8d6fb"></a><!-- doxytag: member="Nivel::ActorTemp" ref="a17e089ca49c99625b0e8ecf489e8d6fb" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structNivel_1_1actor.html">Nivel::actor</a>  <a class="el" href="structNivel_1_1actor.html">Nivel::ActorTemp</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Estructura para almacenar de forma temporal la información de un actor. </p>
+<p>Se compone de un identificador del tipo de actor al que pertenece la información, la ruta hasta el archivo XML desde donde se cargan los datos iniciales del actor, las coordenadas (X,Y) del actor respecto al origen de coordenadas del nivel, y una cadena de caracteres que guarda el código identificador del jugador al que representa el actor (si este último atributo es una cadena vacía se asume que el actor no es controlado por ningún jugador). </p>
+
+</div>
+</div>
+<a class="anchor" id="a9f346861d82f9e1fe310648f305f77c7"></a><!-- doxytag: member="Nivel::Escenario" ref="a9f346861d82f9e1fe310648f305f77c7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::map&lt;<a class="el" href="classNivel.html#aed6ad41d54c382497340467581423120">Capa</a>, <a class="el" href="structNivel_1_1tile.html">Tile</a>**&gt; <a class="el" href="classNivel.html#a9f346861d82f9e1fe310648f305f77c7">Nivel::Escenario</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Dicionario que almacena todos los tiles que componen un nivel. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2eb2ef5528ee6025efa22b86dead7193"></a><!-- doxytag: member="Nivel::Jugadores" ref="a2eb2ef5528ee6025efa22b86dead7193" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::map&lt;std::string, <a class="el" href="classActor.html">Actor</a>*&gt; <a class="el" href="classNivel.html#a2eb2ef5528ee6025efa22b86dead7193">Nivel::Jugadores</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Diccionario que almacena los actores jugadores que participan en un nivel, asociando cada jugador con un código identificativo único. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8fef0904670f88dfcf0409bc43ab3896"></a><!-- doxytag: member="Nivel::Temporal" ref="a8fef0904670f88dfcf0409bc43ab3896" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt;<a class="el" href="structNivel_1_1actor.html">ActorTemp</a>&gt; <a class="el" href="classNivel.html#a8fef0904670f88dfcf0409bc43ab3896">Nivel::Temporal</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Vector para almacenar de forma temporal la información de todos los actores el nivel. Se cargan los datos en el constructor del nivel. Para crear cada actor como tal hay que definir el método virtual <a class="el" href="classNivel.html#a2b4abbc1033f5404cf2529304e5c51f7">cargarActores()</a>, el cual se deja en manos del programador, y que debe recoger la información almacenada en este vector y crear cada actor utilizando el constructor de la clase derivada de <a class="el" href="classActor.html" title="Clase que proporciona una base para definir actores (también llamados sprites) de una manera fácil...">Actor</a> que corresponda al tipo de actor de cada registro temporal. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8a8d39822df100fa23c0f974f0016c01"></a><!-- doxytag: member="Nivel::Tile" ref="a8a8d39822df100fa23c0f974f0016c01" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structNivel_1_1tile.html">Nivel::tile</a>  <a class="el" href="structNivel_1_1tile.html">Nivel::Tile</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Estructura que almacena los datos de un tile. </p>
+<p>Se compone de una pareja de coordenadas (X,Y), que especifican la distancia del punto superior izquierdo del tile respecto al origen de coordenadas (0,0) del nivel, un entero de 32 bits que indica el número identificador del tile dentro del mapa de tiles generado con la aplicación Tiled, y un puntero a un rectángulo de colisión asociado al tile (puede ser NULL). </p>
+
+</div>
+</div>
+<hr/><h2>Documentación de las enumeraciones miembro de la clase</h2>
+<a class="anchor" id="aed6ad41d54c382497340467581423120"></a><!-- doxytag: member="Nivel::Capa" ref="aed6ad41d54c382497340467581423120" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classNivel.html#aed6ad41d54c382497340467581423120">Nivel::Capa</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Nombres de las distintas capas de Tiles que componen un escenario </p>
+
+</div>
+</div>
+<hr/><h2>Documentación del constructor y destructor</h2>
+<a class="anchor" id="ae12e03c0a3d464b3d7be1186dace54a1"></a><!-- doxytag: member="Nivel::Nivel" ref="ae12e03c0a3d464b3d7be1186dace54a1" args="(const std::string &amp;ruta)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Nivel::Nivel </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>ruta</em></td><td>)</td>
+          <td>  throw (<a class="el" href="classArchivoEx.html">ArchivoEx</a>, <a class="el" href="classTarjetaEx.html">TarjetaEx</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Constructor de la clase <a class="el" href="classNivel.html" title="Clase que proporciona una base para definir niveles (escenarios donde participan actores) de manera f...">Nivel</a>. Carga un archivo TMX generado con el editor de mapas de tiles Tiled, creando todas las estructuras necesarias del nivel, los actores no jugadores y los actores jugadores. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ruta</td><td>Ruta absoluta hasta el archivo TMX generado con Tiled que almacena la información del nivel </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Excepciones:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classArchivoEx.html" title="Clase de excepción para errores relacionados con archivos.">ArchivoEx</a></td><td>Se lanza si hay algún error al abrir un archivo </td></tr>
+    <tr><td class="paramname"><a class="el" href="classTarjetaEx.html" title="Clase de excepción para errores relacionados con la tarjeta SD.">TarjetaEx</a></td><td>Se lanza si ocurre un error relacionado con la tarjeta SD </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a22b70d3681654e0cae6c81605e5043bc"></a><!-- doxytag: member="Nivel::~Nivel" ref="a22b70d3681654e0cae6c81605e5043bc" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Nivel::~Nivel </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Destructor virtual de la clase. Destruye todos los tiles y actores. </p>
+
+</div>
+</div>
+<hr/><h2>Documentación de las funciones miembro</h2>
+<a class="anchor" id="af2cf5f77c22cd349e5773c9533ef6549"></a><!-- doxytag: member="Nivel::actualizarEscenario" ref="af2cf5f77c22cd349e5773c9533ef6549" args="(void)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Nivel::actualizarEscenario </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método virtual puro en el que se debe implementar la actualización de todos los aspectos del escenario del nivel que no correspondan a ningún actor, por ejemplo, el scroll, las zonas de escenario destructibles, etc. </p>
+
+</div>
+</div>
+<a class="anchor" id="a741d6ae283f581fbbc0c89db89c0576a"></a><!-- doxytag: member="Nivel::actualizarNpj" ref="a741d6ae283f581fbbc0c89db89c0576a" args="(void)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Nivel::actualizarNpj </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método virtual puro en el que se debe implementar la actualización de un actor no jugador. En este método se deben gestionar las transiciones entre estados del autómata finito determinado que controla el comportamiento del <a class="el" href="classActor.html" title="Clase que proporciona una base para definir actores (también llamados sprites) de una manera fácil...">Actor</a>. En este caso, no se depende de un mando, si no del estado del nivel. </p>
+
+</div>
+</div>
+<a class="anchor" id="af7727e9795771e4d8d65beb3c51dc576"></a><!-- doxytag: member="Nivel::actualizarPj" ref="af7727e9795771e4d8d65beb3c51dc576" args="(const std::string &amp;jugador, const Mando &amp;m)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Nivel::actualizarPj </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>jugador</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classMando.html">Mando</a> &amp;&#160;</td>
+          <td class="paramname"><em>m</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método virtual puro en el que se debe implementar la actualización de un actor jugador en base al estado del mando asociado a él. En este método se deben gestionar las transiciones entre estados del autómata finito determinado que controla el comportamiento del <a class="el" href="classActor.html" title="Clase que proporciona una base para definir actores (también llamados sprites) de una manera fácil...">Actor</a>. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">jugador</td><td>Código identificador único del actor jugador que se quiere actualizar. </td></tr>
+    <tr><td class="paramname">m</td><td><a class="el" href="classMando.html" title="Clase que permite leer información desde un Wii Remote.">Mando</a> asociado al actor jugador que se quiere actualizar. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab493f22ee983591692dde12121f332c3"></a><!-- doxytag: member="Nivel::alto" ref="ab493f22ee983591692dde12121f332c3" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u32 Nivel::alto </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método consultor para conocer el alto en píxeles del escenario que compone el nivel. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Alto en píxeles del escenario que compone el nivel. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a776815722bd45d20938ee004e18f18a8"></a><!-- doxytag: member="Nivel::ancho" ref="a776815722bd45d20938ee004e18f18a8" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u32 Nivel::ancho </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método consultor para conocer el ancho en píxeles del escenario que compone el nivel. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Ancho en píxeles del escenario que compone el nivel. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2b4abbc1033f5404cf2529304e5c51f7"></a><!-- doxytag: member="Nivel::cargarActores" ref="a2b4abbc1033f5404cf2529304e5c51f7" args="(void)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Nivel::cargarActores </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [protected, pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método virtual puro que hay que definir en las clases derivadas, y que se debe encargar de volcar la información de los actores, almacenada en la estructura temporal que se rellena en el constructor del nivel, en las estructuras definitivas de los actores. Para cada actor, debe identificar su tipo y llamar al constructor de la clase adecuada con los parámetros de inicialización que se proporcionan desde esta estructura temporal. Es recomendable que vacíe la estructura temporal cuando finalice. Debe ser llamado en el constructor de la clase derivada de <a class="el" href="classNivel.html" title="Clase que proporciona una base para definir niveles (escenarios donde participan actores) de manera f...">Nivel</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad5d1718b04e32bae5fb99e3140144c34"></a><!-- doxytag: member="Nivel::colision" ref="ad5d1718b04e32bae5fb99e3140144c34" args="(const Actor *a)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Nivel::colision </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classActor.html">Actor</a> *&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método para conocer si un actor externo colisiona con, al menos, un tile del escenario del nivel. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>Puntero constante al actor del cual se quiere saber si colisiona con el escenario del nivel. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Verdadero si hay colisión, o falso en caso contrario. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aed1647306f61c2bce087187e1d8ed4b3"></a><!-- doxytag: member="Nivel::colisionBordes" ref="aed1647306f61c2bce087187e1d8ed4b3" args="(const Actor *a)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Nivel::colisionBordes </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classActor.html">Actor</a> *&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método para conocer si un actor externo colisiona con uno de los límites del nivel. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>Puntero constante al actor del cual se quiere saber si colisiona con los límites del nivel. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Verdadero si hay colisión, o falso en caso contrario. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa857f42c9c48428b576ccaad69d13ee3"></a><!-- doxytag: member="Nivel::dibujar" ref="aa857f42c9c48428b576ccaad69d13ee3" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Nivel::dibujar </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que dibuja la parte del escenario del nivel que marque las coordenadas del scroll en la pantalla. Las coordenadas de scroll indicarán el punto superior izquierdo de la parte rectangular del escenario del nivel a dibujar. Se dibujan también todos los actores que se encuentren dentro de esta sección. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1a3e4f1f1fc404f8dfc64d7af5ded258"></a><!-- doxytag: member="Nivel::leerActores" ref="a1a3e4f1f1fc404f8dfc64d7af5ded258" args="(TiXmlElement *actores)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Nivel::leerActores </td>
+          <td>(</td>
+          <td class="paramtype">TiXmlElement *&#160;</td>
+          <td class="paramname"><em>actores</em></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que, a partir de un elemento de un árbol XML, se encarga de leer todos los actores que participan en el nivel, tanto los jugadores como los no jugadores, y los almacena en la estructura temporal de tipo Temporal. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">actores</td><td>Elemento XML donde se almacena la información de los actores del nivel. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a95d4532808b2109d7f56fe786d525c3b"></a><!-- doxytag: member="Nivel::leerEscenario" ref="a95d4532808b2109d7f56fe786d525c3b" args="(TiXmlElement *escenario)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Nivel::leerEscenario </td>
+          <td>(</td>
+          <td class="paramtype">TiXmlElement *&#160;</td>
+          <td class="paramname"><em>escenario</em></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que, a partir de un elemento de un árbol XML, se encarga de leer los tiles que componen el escenario del nivel. Un tile forma parte del escenario si no tiene asociado ninguna caja de colisión, es decir, si es un tile atravesable. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">escenario</td><td>Elemento XML donde se almacenan los tiles del escenario del nivel. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1c5fcd2c8c5cf356d1a5aa9af663877a"></a><!-- doxytag: member="Nivel::leerPlataformas" ref="a1c5fcd2c8c5cf356d1a5aa9af663877a" args="(TiXmlElement *plataformas)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Nivel::leerPlataformas </td>
+          <td>(</td>
+          <td class="paramtype">TiXmlElement *&#160;</td>
+          <td class="paramname"><em>plataformas</em></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que, a partir de un elemento de un árbol XML, se encarga de leer los tiles que componen las platformas del nivel. Un tile forma parte de las plataformas si tiene asociada una caja de colisión, es decir, si es un tile no atravesable. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">plataformas</td><td>Elemento XML donde se almacenan los tiles de las plataformas del nivel. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5273f9847f9506330591b1cab0c26f85"></a><!-- doxytag: member="Nivel::leerPropiedades" ref="a5273f9847f9506330591b1cab0c26f85" args="(TiXmlElement *propiedades)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Nivel::leerPropiedades </td>
+          <td>(</td>
+          <td class="paramtype">TiXmlElement *&#160;</td>
+          <td class="paramname"><em>propiedades</em></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que, a partir de un elemento de un árbol XML, se encarga de leer todas las propiedades del nivel. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propiedades</td><td>Elemento XML donde se almacenan las propiedades del nivel. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a3e4e0dcb5742c842987f057b25dd946d"></a><!-- doxytag: member="Nivel::moverScroll" ref="a3e4e0dcb5742c842987f057b25dd946d" args="(u32 x, u32 y)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Nivel::moverScroll </td>
+          <td>(</td>
+          <td class="paramtype">u32&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u32&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que modifica la posición del scroll estableciendo sus nuevas coordenadas. Se toma como origen el punto superior izquierdo del escenario. Si aumenta la X, más a la derecha estará el scroll respecto del punto x = 0; y si aumenta la Y, más abajo estará el scroll respecto del punto y = 0. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Nuevo valor para la coordenada X del scroll. </td></tr>
+    <tr><td class="paramname">y</td><td>Nuevo valor para la coordenada Y del scroll. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4b15c15df99c845fe218cc0872922e12"></a><!-- doxytag: member="Nivel::musica" ref="a4b15c15df99c845fe218cc0872922e12" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classMusica.html">Musica</a>&amp; Nivel::musica </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método consultor para obtener la pista de música del nivel. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Referencia constante a la pista de música del nivel. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a00be2e52e079182b6ec18ca82e8d8dc2"></a><!-- doxytag: member="Nivel::xScroll" ref="a00be2e52e079182b6ec18ca82e8d8dc2" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u32 Nivel::xScroll </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método consultor para saber la posición del scroll horizontal del nivel. El scroll horizontal es un entero de 32 bits sin signo, que indica la distancia, desde el límite izquierdo del escenario y hacia la izquierda, a la que se encuentra la esquina superior izquierda de la parte del nivel que se dibujará en la pantalla de la consola. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Posición del scroll horizontal. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0273d1bdf8cc780515e910721523d1c2"></a><!-- doxytag: member="Nivel::yScroll" ref="a0273d1bdf8cc780515e910721523d1c2" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u32 Nivel::yScroll </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método consultor para saber la posición del scroll vertical del nivel. El scroll vertical es un entero de 32 bits sin signo, que indica la distancia, desde el límite superior del escenario y hacia abajo, a la que se encuentra la esquina superior izquierda de la parte del nivel que se dibujará en la pantalla de la consola. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Posición del scroll vertical. </dd></dl>
+
+</div>
+</div>
+<hr/><h2>Documentación de los datos miembro</h2>
+<a class="anchor" id="abdf73007ecb6ae68839525ec3c0744ab"></a><!-- doxytag: member="Nivel::_actores" ref="abdf73007ecb6ae68839525ec3c0744ab" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classNivel.html#a83ebd38813eb4c49c43980e49d3c112a">Actores</a> <a class="el" href="classNivel.html#abdf73007ecb6ae68839525ec3c0744ab">Nivel::_actores</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Estructura que almacena todos los actores no jugadores del nivel. </p>
+
+</div>
+</div>
+<a class="anchor" id="af3ab0545fbcc9ca5bb1b6ff941d36cdb"></a><!-- doxytag: member="Nivel::_alto_nivel" ref="af3ab0545fbcc9ca5bb1b6ff941d36cdb" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u32 <a class="el" href="classNivel.html#af3ab0545fbcc9ca5bb1b6ff941d36cdb">Nivel::_alto_nivel</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Alto del nivel medido en píxeles </p>
+
+</div>
+</div>
+<a class="anchor" id="a0fea1bca5795e11d5061fc56aeb2b5dd"></a><!-- doxytag: member="Nivel::_alto_tiles" ref="a0fea1bca5795e11d5061fc56aeb2b5dd" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u32 <a class="el" href="classNivel.html#a0fea1bca5795e11d5061fc56aeb2b5dd">Nivel::_alto_tiles</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Alto, medido en tiles, del nivel </p>
+
+</div>
+</div>
+<a class="anchor" id="a84815dfb270317c424e9d6191f144d18"></a><!-- doxytag: member="Nivel::_alto_un_tile" ref="a84815dfb270317c424e9d6191f144d18" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u32 <a class="el" href="classNivel.html#a84815dfb270317c424e9d6191f144d18">Nivel::_alto_un_tile</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Alto en píxeles de un tile </p>
+
+</div>
+</div>
+<a class="anchor" id="a4cc1709bc082af950eb6bf8e161e02ff"></a><!-- doxytag: member="Nivel::_ancho_nivel" ref="a4cc1709bc082af950eb6bf8e161e02ff" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u32 <a class="el" href="classNivel.html#a4cc1709bc082af950eb6bf8e161e02ff">Nivel::_ancho_nivel</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Ancho del nivel medido en píxeles </p>
+
+</div>
+</div>
+<a class="anchor" id="afaf6133abea1278a5e4a8bdc9f6a3dbe"></a><!-- doxytag: member="Nivel::_ancho_tiles" ref="afaf6133abea1278a5e4a8bdc9f6a3dbe" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u32 <a class="el" href="classNivel.html#afaf6133abea1278a5e4a8bdc9f6a3dbe">Nivel::_ancho_tiles</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Ancho, medido en tiles, del nivel </p>
+
+</div>
+</div>
+<a class="anchor" id="ae50a8537321f7c47a89f47c2f25a0599"></a><!-- doxytag: member="Nivel::_ancho_un_tile" ref="ae50a8537321f7c47a89f47c2f25a0599" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u32 <a class="el" href="classNivel.html#ae50a8537321f7c47a89f47c2f25a0599">Nivel::_ancho_un_tile</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Ancho en píxeles de un tile </p>
+
+</div>
+</div>
+<a class="anchor" id="a6cfbf44495d191eaab1b5c3a82d51611"></a><!-- doxytag: member="Nivel::_columnas_tileset" ref="a6cfbf44495d191eaab1b5c3a82d51611" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u16 <a class="el" href="classNivel.html#a6cfbf44495d191eaab1b5c3a82d51611">Nivel::_columnas_tileset</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Número de columnas de tiles que componen la imagen del tileset. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa8707165cea833c160cd80f1b62f15fe"></a><!-- doxytag: member="Nivel::_escenario" ref="aa8707165cea833c160cd80f1b62f15fe" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classNivel.html#a9f346861d82f9e1fe310648f305f77c7">Escenario</a> <a class="el" href="classNivel.html#aa8707165cea833c160cd80f1b62f15fe">Nivel::_escenario</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Estructura que almacena todos los tiles del nivel, tanto los atravesables como los no atravesables. </p>
+
+</div>
+</div>
+<a class="anchor" id="a70e31bf4e712ee6b4fa1bfced819a9a0"></a><!-- doxytag: member="Nivel::_filas_tileset" ref="a70e31bf4e712ee6b4fa1bfced819a9a0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u16 <a class="el" href="classNivel.html#a70e31bf4e712ee6b4fa1bfced819a9a0">Nivel::_filas_tileset</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Número de filas de tiles que componen la imagen del tileset. </p>
+
+</div>
+</div>
+<a class="anchor" id="af29f145ba7dd4880034e08c52d980379"></a><!-- doxytag: member="Nivel::_imagen_fondo" ref="af29f145ba7dd4880034e08c52d980379" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classNivel.html#af29f145ba7dd4880034e08c52d980379">Nivel::_imagen_fondo</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Código con el que se almacena la imagen de fondo del nivel en la <a class="el" href="classGaleria.html" title="Clase que gestiona los recursos media del sistema, y facilita su carga en memoria y el acceso a ellos...">Galeria</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="aca568916514c947481661758329384b7"></a><!-- doxytag: member="Nivel::_imagen_tileset" ref="aca568916514c947481661758329384b7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classNivel.html#aca568916514c947481661758329384b7">Nivel::_imagen_tileset</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Código con el que se almacena la imagen del tileset del nivel en la <a class="el" href="classGaleria.html" title="Clase que gestiona los recursos media del sistema, y facilita su carga en memoria y el acceso a ellos...">Galeria</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad8f484753fc81276e7aeb1a6f4b14ce7"></a><!-- doxytag: member="Nivel::_jugadores" ref="ad8f484753fc81276e7aeb1a6f4b14ce7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classNivel.html#a2eb2ef5528ee6025efa22b86dead7193">Jugadores</a> <a class="el" href="classNivel.html#ad8f484753fc81276e7aeb1a6f4b14ce7">Nivel::_jugadores</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Estructura que almacena todos los actores jugadores del nivel. </p>
+
+</div>
+</div>
+<a class="anchor" id="a16c9fcd711cd939408db3e32e0220975"></a><!-- doxytag: member="Nivel::_musica" ref="a16c9fcd711cd939408db3e32e0220975" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classNivel.html#a16c9fcd711cd939408db3e32e0220975">Nivel::_musica</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Código con el que se almacena la pista de música del nivel en la <a class="el" href="classGaleria.html" title="Clase que gestiona los recursos media del sistema, y facilita su carga en memoria y el acceso a ellos...">Galeria</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a05fa1950bf92517d39c2ad4be2315e38"></a><!-- doxytag: member="Nivel::_scroll_x" ref="a05fa1950bf92517d39c2ad4be2315e38" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u32 <a class="el" href="classNivel.html#a05fa1950bf92517d39c2ad4be2315e38">Nivel::_scroll_x</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Posición del scroll horizontal del nivel. </p>
+
+</div>
+</div>
+<a class="anchor" id="a27e5dc9ba1dbd91b97aa58420df7e72d"></a><!-- doxytag: member="Nivel::_scroll_y" ref="a27e5dc9ba1dbd91b97aa58420df7e72d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u32 <a class="el" href="classNivel.html#a27e5dc9ba1dbd91b97aa58420df7e72d">Nivel::_scroll_y</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Posición del scroll vertical del nivel. </p>
+
+</div>
+</div>
+<a class="anchor" id="a13a4cf660dba59d72a6c3845de4266c0"></a><!-- doxytag: member="Nivel::_temporal" ref="a13a4cf660dba59d72a6c3845de4266c0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classNivel.html#a8fef0904670f88dfcf0409bc43ab3896">Temporal</a> <a class="el" href="classNivel.html#a13a4cf660dba59d72a6c3845de4266c0">Nivel::_temporal</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Estructura que guarda temporalmente todos los actores del nivel. Esto se hace en el constructor, y se hace para que el constructor no deba llamar a una función virtual pura de carga de actores (el compilador daría error). Como solución a este problema, se ha decidido que el constructor carga la información de los actores en esta estructura temporal, y después, en el constructor de la clase derivada de <a class="el" href="classNivel.html" title="Clase que proporciona una base para definir niveles (escenarios donde participan actores) de manera f...">Nivel</a>, se vuelca esta información en las estructuras definitivas para los actores. </p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>/home/rabbit/Escritorio/libwiiesp/include/<a class="el" href="nivel_8h_source.html">nivel.h</a></li>
+</ul>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumeraciones</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Generado el Martes, 19 de Julio de 2011 20:45:52 para libWiiEsp por&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
+</body>
+</html>

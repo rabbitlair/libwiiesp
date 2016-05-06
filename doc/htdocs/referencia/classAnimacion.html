@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>libWiiEsp: Referencia de la Clase Animacion</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Generado por Doxygen 1.7.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+--></script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libWiiEsp&#160;<span id="projectnumber">0.9.2</span></div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Clases</span></a></li>
+      <li><a href="files.html"><span>Archivos</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a>  </div>
+  <div class="headertitle">
+<h1>Referencia de la Clase Animacion</h1>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="Animacion" -->
+<p>Clase que permite crear una animación a partir de una imagen cargada en memoria.  
+<a href="#_details">Más...</a></p>
+
+<p><code>#include &lt;<a class="el" href="animacion_8h_source.html">animacion.h</a>&gt;</code></p>
+
+<p><a href="classAnimacion-members.html">Lista de todos los miembros.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimacion.html#aea06af2f732e351c13d3cd0fadf95b23">Animacion</a> (const <a class="el" href="classImagen.html">Imagen</a> &amp;i, const std::string &amp;secuencia, u8 filas=1, u8 columnas=1, u8 retardo=1)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimacion.html#ab16559b9e356f1c2f387f9696b9fc5e6">primerPaso</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimacion.html#a8b5573b04526c9fce6266e51e30ade41">pasoActual</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimacion.html#aa02e25d50d152857b498267919fe419e">alto</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimacion.html#afe472aab959762218e421f50cda7c958">ancho</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classImagen.html">Imagen</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimacion.html#a0d30a13cd3b818e9e9f08692ae734d78">imagen</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimacion.html#a2599b6a5311463f33beb73f54d5a0574">avanzar</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimacion.html#ad35bc3c51528a62d97c393d0c5c44e7d">reiniciar</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimacion.html#a4b59b814026de79d42cd2afe14921f16">dibujar</a> (s16 x, s16 y, s16 z, bool invertir=false)</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Descripción detallada</h2>
+<div class="textblock"><p>Clase que permite crear una animación a partir de una imagen cargada en memoria. </p>
+<dl class="author"><dt><b>Autor:</b></dt><dd>Ezequiel Vázquez de la Calle </dd></dl>
+<dl class="version"><dt><b>Versión:</b></dt><dd>0.9.2</dd></dl>
+<p>La clase Animación es un mecanismo para, a partir de una imagen previamente cargada en memoria, conseguir una simulación de movimiento mediante una secuencia de imágenes en dos dimensiones. Se basa en la idea de tener, en una misma textura, todos los fotogramas o cuadros que conforman la animación, y el orden por el que se organizan para mostrar un movimiento fluido.</p>
+<p>La misma idea de animación es la que se utiliza en el cine o la televisión: se muestra una secuencia de imágenes, una detrás de otra, pero con leves variaciones entre sí. Lo que se consigue con esto es que el cerebro humano interprete un movimiento reconstruyendo los "huecos" que existen entre una imagen y la siguiente.</p>
+<p>Como ya se ha mencionado, esta clase crea una animación a partir de una única imagen. Esta imagen debe organizar los fotogramas en forma de rejilla, de tal manera que todos los cuadros que vayan a componer el movimiento se encuentren en ella formando filas y columnas. Se recomienda ajustar lo mejor posible la cantidad de filas y columnas respecto al número de cuadros que contenga la animación, por ejemplo, si se van a emplear 20 fotogramas, es razonable tener cuatro o cinco filas y cinco o cuatro columnas respectivamente; por el contrario, resultaría menos práctico (sobretodo a la hora de editar el archivo de imagen) tener una única fila con 20 columnas. Pero esto es sólo un consejo, ya que la clase Animación soporta tanto el primer caso como el segundo.</p>
+<p>Otro concepto importante sobre las animaciones es el control del tiempo: el ojo humano sólo percibe 24 imágenes por segundo, de tal manera que un movimiento fluido tendrá ese número de fotogramas por segundo, o fps. Sin embargo, es posible crear una animación con un mayor o menor número de cuadros. En todo caso, la cantidad de cuadros que se utilicen para una animación determina tanto su velocidad como su fluidez: por ejemplo, en un sistema con una tasa de 24 fps, una animación que tenga 24 cuadros se apreciará totalmente fluida, y tardará un segundo en completar su ciclo; otra animación construida en el mismo sistema sobre 12 cuadros, por otra parte, tardará medio segundo en concluir, pero será menos fluida que la anterior.</p>
+<p>Teniendo en cuenta que, en un sistema, la tasa de fps es constante, y con el objetivo de intentar homogeneizar la duración de las animaciones, independientemente del número de cuadros que la compongan, surge el concepto de retardo. Esta idea consiste en esperar a que pasen algunos fotogramas dibujando el mismo cuadro de la animación antes de pasar a dibujar el siguiente. Siguiendo el mismo ejemplo anterior, se consigue que las dos animaciones tarden lo mismo en completarse si se incluye un retardo de dos fotogramas en la segunda de ellas. Es decir, la animación de 24 cuadros dibujaría uno de éstos en cada actualización, pero la de 12 lo haría cada dos avances (en una actualización se dibuja un cuadro nuevo, y en la inmediatamente siguiente, se vuelve a dibujar este mismo), de tal manera que ambas animaciones concluirían en el mismo periodo de tiempo.</p>
+<p>Esta técnica del retardo consigue, además, que la velocidad de todos los movimientos del programa dependan únicamente de la tasa de fotogramas por segundo, centralizando el control de la velocidad en un punto.</p>
+<p>Un último detalle a mencionar es que esta clase está construida sobre las clases <a class="el" href="classImagen.html" title="Clase que representa una imagen cargada en memoria, lista para ser dibujada en la pantalla...">Imagen</a> y <a class="el" href="classScreen.html" title="Clase que gestiona los gráficos en la Nintendo Wii.">Screen</a>. Hay que tener en cuenta, por ejemplo, que para cargar una imagen en memoria, existe la limitación de que sus medidas en píxeles deben ser múltiplos de 8. Todos estos detalles se pueden consultar en la documentación de cada una de las clases.</p>
+<p>Funcionamiento interno</p>
+<p>Cuando se crea una animación, se le deben pasar al constructor de la clase una serie de parámetros, que son un puntero a la imagen (previamente cargada en memoria) que contenga la rejilla de fotogramas, una cadena de caracteres de alto nivel (de tipo std::string) que contenga una secuencia de números enteros positivos, separados por comas y sin espacios (del tipo "0,1,2,3,4,5"), el número de filas y de columnas que hay en la rejilla, y el retardo a aplicar a la visualización de la animación (como ya se ha mencionado, esta cifra indica cada cuantas actualizaciones de la animación se va a dibujar un nuevo cuadro: el valor por defecto 1 indica que se dibuja un nuevo cuadro a cada fotograma).</p>
+<p>La secuencia de números enteros que se recibe indica el orden en el que se van dibujando los distintos cuadros de la animación. Cada cuadro de la rejilla corresponde con un número entero positivo, siendo el cero el fotograma de arriba a la izquierda, y avanzando de derecha a izquierda y de arriba abajo. Por ejemplo, una rejilla de tres columnas y dos filas tendrá en su primera fila (de izquierda a derecha) los cuadros cero, uno y dos; y la segunda fila, los cuadros tres, cuatro y cinco (igualmente, de izquierda a derecha). Un mismo cuadro se puede repetir cuantas veces se quiera en la secuencia de una misma animación.</p>
+<p>Un objeto de animación proporciona varios métodos observadores para conocer y acceder fácilmente a las variables que lo controlan, por ejemplo, la imagen, el ancho y alto en píxeles de un cuadro (todos los cuadros se consideran iguales), y cuáles son los índices del primer cuadro y del cuadro actual. También existen dos métodos para modificar el estado de la animación, concretamente son reiniciar (método que establece el paso actual al primero de la secuencia) y avanzar (que se encarga de calcular el siguiente cuadro a dibujar teniendo en cuenta el retardo y la propia secuencia de cuadros).</p>
+<p>El método dibujar se encarga de, como su propio nombre indica, plasmar en la pantalla el fotograma correspondiente al cuadro actual de la animación, en las coordenadas (x,y,z) que se indiquen. Se da la opción de invertir el fotograma respecto al eje vertical, funcionalidad que proporciona la propia clase <a class="el" href="classScreen.html" title="Clase que gestiona los gráficos en la Nintendo Wii.">Screen</a> a través de su método dibujarCuadro. Este método realiza una llamada a avanzar, con lo que no es necesario preocuparse por la gestión de cuadros desde el exterior.</p>
+<p>Una cosa más a tener en cuenta es que el destructor de la clase es el predeterminado, por lo que no se destruye la imagen asociada a la animación, y hay que destruirla manualmente en caso de que se quiera liberar la memoria ocupada por ésta.</p>
+<p>Ejemplo de uso</p>
+<div class="fragment"><pre class="fragment"> <span class="comment">// Crear una animación a partir de una imagen de 3 filas y 4 columnas (12 cuadros), </span>
+ <span class="comment">// con un retardo de 2 (pasar a un nuevo cuadro cada dos actualizaciones)</span>
+ <a class="code" href="classImagen.html" title="Clase que representa una imagen cargada en memoria, lista para ser dibujada en la pantalla...">Imagen</a>* rejilla = <span class="keyword">new</span> <a class="code" href="classImagen.html" title="Clase que representa una imagen cargada en memoria, lista para ser dibujada en la pantalla...">Imagen</a>();
+ rejilla-&gt;<a class="code" href="classImagen.html#a703eaec1e9de38b0f6c077aa3d756c4a">cargarBmp</a>( <span class="stringliteral">&quot;/apps/wiipang/media/rejilla.bmp&quot;</span> );
+ <a class="code" href="classAnimacion.html" title="Clase que permite crear una animación a partir de una imagen cargada en memoria.">Animacion</a> anima( rejilla, <span class="stringliteral">&quot;0,1,2,3,4,5,6,7,8,9,10,11&quot;</span>, 3, 4, 2 );
+ <span class="comment">// Bucle principal del juego</span>
+ <span class="keywordflow">while</span>( 1 )
+ {
+   <span class="comment">// Dibujar animación</span>
+   anima.dibujar( 100, 100, 50 );
+   <span class="comment">// Dibujar animación invertida</span>
+   anima.dibujar( 250, 100, 51, <span class="keyword">true</span> );
+   <span class="comment">// ...</span>
+   screen-&gt;flip();
+ }
+</pre></div> </div><hr/><h2>Documentación del constructor y destructor</h2>
+<a class="anchor" id="aea06af2f732e351c13d3cd0fadf95b23"></a><!-- doxytag: member="Animacion::Animacion" ref="aea06af2f732e351c13d3cd0fadf95b23" args="(const Imagen &amp;i, const std::string &amp;secuencia, u8 filas=1, u8 columnas=1, u8 retardo=1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Animacion::Animacion </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classImagen.html">Imagen</a> &amp;&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>secuencia</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u8&#160;</td>
+          <td class="paramname"><em>filas</em> = <code>1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u8&#160;</td>
+          <td class="paramname"><em>columnas</em> = <code>1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u8&#160;</td>
+          <td class="paramname"><em>retardo</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Constructor de la clase <a class="el" href="classAnimacion.html" title="Clase que permite crear una animación a partir de una imagen cargada en memoria.">Animacion</a>. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td><a class="el" href="classImagen.html" title="Clase que representa una imagen cargada en memoria, lista para ser dibujada en la pantalla...">Imagen</a> que será base de la animación </td></tr>
+    <tr><td class="paramname">secuencia</td><td>Enteros separados por comas, indica los distintos pasos correlativos de una animación </td></tr>
+    <tr><td class="paramname">filas</td><td>Número de filas en la rejilla de la imagen i </td></tr>
+    <tr><td class="paramname">columnas</td><td>Número de columnas en la rejilla de la imagen i </td></tr>
+    <tr><td class="paramname">retardo</td><td>Número de frames que tienen que pasar para que se produzca un avance en la animación </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Documentación de las funciones miembro</h2>
+<a class="anchor" id="aa02e25d50d152857b498267919fe419e"></a><!-- doxytag: member="Animacion::alto" ref="aa02e25d50d152857b498267919fe419e" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u16 Animacion::alto </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Devuelve el alto, en píxeles, de cada cuadro de la animación </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Alto, en píxeles, de cada cuadro de la animación </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afe472aab959762218e421f50cda7c958"></a><!-- doxytag: member="Animacion::ancho" ref="afe472aab959762218e421f50cda7c958" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u16 Animacion::ancho </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Devuelve el ancho, en píxeles, de cada cuadro de la animación </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Ancho, en píxeles, de cada cuadro de la animación </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2599b6a5311463f33beb73f54d5a0574"></a><!-- doxytag: member="Animacion::avanzar" ref="a2599b6a5311463f33beb73f54d5a0574" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Animacion::avanzar </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Avanza al paso siguiente del actual. Si el actual es el último, se sitúa en el primero. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4b59b814026de79d42cd2afe14921f16"></a><!-- doxytag: member="Animacion::dibujar" ref="a4b59b814026de79d42cd2afe14921f16" args="(s16 x, s16 y, s16 z, bool invertir=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Animacion::dibujar </td>
+          <td>(</td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>invertir</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Dibuja en la pantalla la imagen asociada con el paso actual de la animación, y avanza al paso siguiente. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Coordenada X donde se dibujará la imagen asociada al paso actual de la animación </td></tr>
+    <tr><td class="paramname">y</td><td>Coordenada Y donde se dibujará la imagen asociada al paso actual de la animación </td></tr>
+    <tr><td class="paramname">z</td><td>Capa donde se dibujará la imagen asociada al paso actual de la animación (entre 0 y 999) </td></tr>
+    <tr><td class="paramname">invertir</td><td>Verdadero si se quiere dibujar el cuadro de la textura invertido respecto al eje vertical </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0d30a13cd3b818e9e9f08692ae734d78"></a><!-- doxytag: member="Animacion::imagen" ref="a0d30a13cd3b818e9e9f08692ae734d78" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classImagen.html">Imagen</a>&amp; Animacion::imagen </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Devuelve la imagen de la animación. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Referencia constante a la imagen de la animación. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8b5573b04526c9fce6266e51e30ade41"></a><!-- doxytag: member="Animacion::pasoActual" ref="a8b5573b04526c9fce6266e51e30ade41" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u8 Animacion::pasoActual </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Devuelve el número que indica el paso actual de la animación. El primero es cero. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Número que indica el paso actual de la animación. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab16559b9e356f1c2f387f9696b9fc5e6"></a><!-- doxytag: member="Animacion::primerPaso" ref="ab16559b9e356f1c2f387f9696b9fc5e6" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Animacion::primerPaso </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Indica si la animación se encuentra en el primer paso. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Verdadero si la animación se encuentra en el primer paso, o falso en caso contrario. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad35bc3c51528a62d97c393d0c5c44e7d"></a><!-- doxytag: member="Animacion::reiniciar" ref="ad35bc3c51528a62d97c393d0c5c44e7d" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Animacion::reiniciar </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Sitúa el contador de pasos de la animación en el primer paso. </p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>/home/rabbit/Escritorio/libwiiesp/include/<a class="el" href="animacion_8h_source.html">animacion.h</a></li>
+</ul>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumeraciones</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Generado el Martes, 19 de Julio de 2011 20:45:52 para libWiiEsp por&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
+</body>
+</html>

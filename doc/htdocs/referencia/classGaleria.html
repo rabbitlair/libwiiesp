@@ -1,0 +1,411 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>libWiiEsp: Referencia de la Clase Galeria</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Generado por Doxygen 1.7.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+--></script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libWiiEsp&#160;<span id="projectnumber">0.9.2</span></div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Clases</span></a></li>
+      <li><a href="files.html"><span>Archivos</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-static-methods">Métodos públicos estáticos</a> &#124;
+<a href="#pro-methods">Métodos protegidos</a>  </div>
+  <div class="headertitle">
+<h1>Referencia de la Clase Galeria</h1>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="Galeria" -->
+<p>Clase que gestiona los recursos media del sistema, y facilita su carga en memoria y el acceso a ellos.  
+<a href="#_details">Más...</a></p>
+
+<p><code>#include &lt;<a class="el" href="galeria_8h_source.html">galeria.h</a>&gt;</code></p>
+
+<p><a href="classGaleria-members.html">Lista de todos los miembros.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGaleria.html#a402e4c1a613dceb89adc46fe7e023cc1">inicializar</a> (const std::string &amp;ruta)  throw (ArchivoEx, ImagenEx, TarjetaEx, XmlEx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classImagen.html">Imagen</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGaleria.html#a81977c7db2cf66eae332579c87cac23a">imagen</a> (const std::string &amp;codigo)  throw (CodigoEx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classMusica.html">Musica</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGaleria.html#a4a03ff6bbe5ad80ce04a9f00236b4525">musica</a> (const std::string &amp;codigo)  throw (CodigoEx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classSonido.html">Sonido</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGaleria.html#a3e3d8f59b66c8f286b9efde960d27fa2">sonido</a> (const std::string &amp;codigo)  throw (CodigoEx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classFuente.html">Fuente</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGaleria.html#ad0d87ef7221398eda7c9918c8b9af9f7">fuente</a> (const std::string &amp;codigo)  throw (CodigoEx)</td></tr>
+<tr><td colspan="2"><h2><a name="pub-static-methods"></a>
+Métodos públicos estáticos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classGaleria.html">Galeria</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGaleria.html#a3c6817c036a514cc0e62226aab2db06c">get_instance</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGaleria.html#abe84fee98414effb5e2c4cc82d6212ee">destroy</a> (void)</td></tr>
+<tr><td colspan="2"><h2><a name="pro-methods"></a>
+Métodos protegidos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGaleria.html#a2323ffe3728a6fe09a9c9a87a29176c6">Galeria</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGaleria.html#aef5df547be17fd4d9536aa39369db657">~Galeria</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGaleria.html#ac8e881d863f0484f1c53cd9be91819ca">Galeria</a> (const <a class="el" href="classGaleria.html">Galeria</a> &amp;g)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGaleria.html">Galeria</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGaleria.html#a17b965af9e11b85470728e0adf1cefc4">operator=</a> (const <a class="el" href="classGaleria.html">Galeria</a> &amp;g)</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Descripción detallada</h2>
+<div class="textblock"><p>Clase que gestiona los recursos media del sistema, y facilita su carga en memoria y el acceso a ellos. </p>
+<dl class="author"><dt><b>Autor:</b></dt><dd>Ezequiel Vázquez de la Calle </dd></dl>
+<dl class="version"><dt><b>Versión:</b></dt><dd>0.9.2</dd></dl>
+<p>Esta clase consiste en un conjunto de diccionarios (en C++, maps), uno por cada tipo de recurso media que se vaya a utilizar en el desarrollo del juego. La carga de éstos se realiza al principio de la ejecución a partir de un archivo XML con un formato concreto. Además, esta clase implementa un patrón Singleton, de tal manera que los recursos media están disponibles en todo momento, y en cualquier parte del sistema.</p>
+<p>En estos momentos, los cuatro recursos que se contemplan son: imágenes, sonidos, pistas de música y fuentes de texto. Cada uno de estos recursos se encuentra disponible mediante un código único de identificación, en formato std::string, y que se lee desde el ya mencionado archivo de datos XML. Si en un futuro se decidiera implementar un nuevo tipo de recurso, basta con implementar su correspondiente diccionario, la función de lectura desde el XML, y las funciones consultoras.</p>
+<p>Dos recursos de distinto tipo pueden tener identificadores idénticos, ya que se archivan cada uno en su diccionario.Por otra parte, los recursos se crean mediante su constructor, y con los parámetros que cada uno de ellos espera (como mínimo, un recurso debe tener su código identificativo y la ruta hasta el archivo que contiene el media que se va a cargar). Por ejemplo, si se va a cargar un sonido, los parámetros que se esperan son el código (en formato std::string), la ruta absoluta hasta el archivo situado en la tarjeta SD (también en formato std::string), y los valores numéricos (enteros de 8 bits sin signo) que indican el volumen de cada uno de los dos canales de reproducción.</p>
+<p>Funcionamiento interno</p>
+<p>Los diccionarios sobre los que trabaja esta clase consisten en parejas formadas por una cadena de caracteres de alto nivel (del tipo ya mencionado, std::string), que actúa como clave identificativa, y un puntero a la zona de memoria donde se encuentra el recurso correspondiente. Cuando se solicita a la clase un recurso media, esta operación se hace a partir del código del media. El método comprueba que el código recibido corresponde a un recurso, lo busca y devuelve el puntero que apunta a él; si el código no estuviera registrado en el diccionario, se lanzaría una excepción.</p>
+<p>La clase necesita que la tarjeta SD esté montada para poder acceder a los archivos que contienen los recursos; en caso contrario, se lanzará una excepción al intentar acceder a éstos.</p>
+<p>A la hora de inicializar la galería de recursos, se le debe pasar como parámetro la ruta absoluta (en la tarjeta SD) hasta el archivo XML en el que se encuentra la información de los media. Este archivo debe tener un nodo raíz cuyos hijos serán, cada uno de ellos, un recurso media. El método que se encarga de recorrer la información e ir creando cada recurso a partir de ésta irá leyendo cada etiqueta de recurso, la identificará por su tipo, y según sea éste, intentará leer unos u otros atributos de la etiqueta. A continuación se muestra un ejemplo de etiqueta válida para cada uno de los cuatro tipos de recursos contemplados en estos momentos por la clase:</p>
+<div class="fragment"><pre class="fragment"> &lt;<a class="code" href="classGaleria.html#a81977c7db2cf66eae332579c87cac23a">imagen</a> codigo=<span class="stringliteral">&quot;fondo&quot;</span> formato=<span class="stringliteral">&quot;bmp&quot;</span> ruta=<span class="stringliteral">&quot;/apps/wiipang/media/fondo.bmp&quot;</span> /&gt;
+ &lt;<a class="code" href="classGaleria.html#a4a03ff6bbe5ad80ce04a9f00236b4525">musica</a> codigo=<span class="stringliteral">&quot;rock&quot;</span> volumen=<span class="stringliteral">&quot;128&quot;</span> ruta=<span class="stringliteral">&quot;/apps/wiipang/media/rock.mp3&quot;</span> /&gt;
+ &lt;<a class="code" href="classGaleria.html#a3e3d8f59b66c8f286b9efde960d27fa2">sonido</a> codigo=<span class="stringliteral">&quot;sound&quot;</span> volumen=<span class="stringliteral">&quot;255&quot;</span> ruta=<span class="stringliteral">&quot;/apps/wiipang/media/sound.pcm&quot;</span> /&gt;
+ &lt;<a class="code" href="classGaleria.html#ad0d87ef7221398eda7c9918c8b9af9f7">fuente</a> codigo=<span class="stringliteral">&quot;arial&quot;</span> ruta=<span class="stringliteral">&quot;/apps/wiipang/media/arial.ttf&quot;</span> /&gt;
+</pre></div><p>Añadir un nuevo recurso media al sistema es tan sencillo como copiar el archivo a la tarjeta SD (se recomienda mantener una carpeta donde se almacenen todos los recursos, por ejemplo, una llamada 'media'), y después añadir la etiqueta correspondiente al archivo que contenga la información de la galería. De esta forma se evita tener que volver a compilar el proyecto en caso de querer añadir o modificar un recurso, consiguiendo así una separación de código y datos.</p>
+<p>Por último, al crear la galería, se establece que, cuando se salga del programa, se llame a su destructor que, a su vez, llama a los destructores de cada uno de los recursos almacenados, de tal manera que se evitan fugas de memoria.</p>
+<p>Ejemplo de uso </p>
+<div class="fragment"><pre class="fragment"> <span class="comment">// Inicialización de la galería a partir de un XML</span>
+ galeria-&gt;inicializar(<span class="stringliteral">&quot;/apps/wiipang/xml/galeria.xml&quot;</span>);
+ <span class="comment">// Ejemplo de acceso a cada uno de los recursos</span>
+ galeria-&gt;sonido(<span class="stringliteral">&quot;sound&quot;</span>)-&gt;play();
+ galeria-&gt;fuente(<span class="stringliteral">&quot;arial&quot;</span>)-&gt;escribir(<span class="stringliteral">&quot;¡Funciona!&quot;</span>, 30, 80, 100, 10, 0x00FF00FF);
+ galeria-&gt;imagen(<span class="stringliteral">&quot;fondo&quot;</span>)-&gt;dibujar(0, 0, 900);
+ galeria-&gt;musica(<span class="stringliteral">&quot;rock&quot;</span>)-&gt;play();
+</pre></div> </div><hr/><h2>Documentación del constructor y destructor</h2>
+<a class="anchor" id="a2323ffe3728a6fe09a9c9a87a29176c6"></a><!-- doxytag: member="Galeria::Galeria" ref="a2323ffe3728a6fe09a9c9a87a29176c6" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Galeria::Galeria </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Constructor de la clase <a class="el" href="classGaleria.html" title="Clase que gestiona los recursos media del sistema, y facilita su carga en memoria y el acceso a ellos...">Galeria</a>. Se encuentra en la zona protegida debido a la implementación del patrón Singleton. </p>
+
+</div>
+</div>
+<a class="anchor" id="aef5df547be17fd4d9536aa39369db657"></a><!-- doxytag: member="Galeria::~Galeria" ref="aef5df547be17fd4d9536aa39369db657" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Galeria::~Galeria </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Destructor de la clase <a class="el" href="classGaleria.html" title="Clase que gestiona los recursos media del sistema, y facilita su carga en memoria y el acceso a ellos...">Galeria</a>. Se encuentra en la zona protegida debido a la implementación del patrón Singleton. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac8e881d863f0484f1c53cd9be91819ca"></a><!-- doxytag: member="Galeria::Galeria" ref="ac8e881d863f0484f1c53cd9be91819ca" args="(const Galeria &amp;g)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Galeria::Galeria </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classGaleria.html">Galeria</a> &amp;&#160;</td>
+          <td class="paramname"><em>g</em></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Constructor de copia de la clase <a class="el" href="classGaleria.html" title="Clase que gestiona los recursos media del sistema, y facilita su carga en memoria y el acceso a ellos...">Galeria</a>. Se encuentra en la zona protegida debido a la implementación del patrón Singleton. </p>
+
+</div>
+</div>
+<hr/><h2>Documentación de las funciones miembro</h2>
+<a class="anchor" id="abe84fee98414effb5e2c4cc82d6212ee"></a><!-- doxytag: member="Galeria::destroy" ref="abe84fee98414effb5e2c4cc82d6212ee" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Galeria::destroy </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Función estática que destruye la instancia activa de la galeria de medias, llamando a su destructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad0d87ef7221398eda7c9918c8b9af9f7"></a><!-- doxytag: member="Galeria::fuente" ref="ad0d87ef7221398eda7c9918c8b9af9f7" args="(const std::string &amp;codigo)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classFuente.html">Fuente</a>&amp; Galeria::fuente </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>codigo</em></td><td>)</td>
+          <td>  throw (<a class="el" href="classCodigoEx.html">CodigoEx</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que devuelve un puntero a la fuente que tenga el código que se indica </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">codigo</td><td>Código de la fuente que se quiere obtener </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Puntero a la fuente que corresponde al código introducido </dd></dl>
+<dl><dt><b>Excepciones:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classCodigoEx.html" title="Clase de excepción para errores relacionados con códigos identificadores.">CodigoEx</a></td><td>Se lanza si el código recibido no corresponde a ninguna fuente de texto </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a3c6817c036a514cc0e62226aab2db06c"></a><!-- doxytag: member="Galeria::get_instance" ref="a3c6817c036a514cc0e62226aab2db06c" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classGaleria.html">Galeria</a>* Galeria::get_instance </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Función estática que devuelve la instancia activa de la galeria de medias en el sistema. En el caso de no haber ninguna instancia, se crea y se devuelve. Implementación del patrón Singleton. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Puntero a la instancia activa de la galeria de medias en el sistema </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a81977c7db2cf66eae332579c87cac23a"></a><!-- doxytag: member="Galeria::imagen" ref="a81977c7db2cf66eae332579c87cac23a" args="(const std::string &amp;codigo)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classImagen.html">Imagen</a>&amp; Galeria::imagen </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>codigo</em></td><td>)</td>
+          <td>  throw (<a class="el" href="classCodigoEx.html">CodigoEx</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que devuelve un puntero a la imagen que tenga el código que se indica </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">codigo</td><td>Código de la imagen que se quiere obtener </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Puntero a la imagen que corresponde al código introducido </dd></dl>
+<dl><dt><b>Excepciones:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classCodigoEx.html" title="Clase de excepción para errores relacionados con códigos identificadores.">CodigoEx</a></td><td>Se lanza si el código recibido no corresponde a ninguna imagen </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a402e4c1a613dceb89adc46fe7e023cc1"></a><!-- doxytag: member="Galeria::inicializar" ref="a402e4c1a613dceb89adc46fe7e023cc1" args="(const std::string &amp;ruta)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Galeria::inicializar </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>ruta</em></td><td>)</td>
+          <td>  throw (<a class="el" href="classArchivoEx.html">ArchivoEx</a>, <a class="el" href="classImagenEx.html">ImagenEx</a>, <a class="el" href="classTarjetaEx.html">TarjetaEx</a>, <a class="el" href="classXmlEx.html">XmlEx</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método para inicializar la galería, y cargar los medias en la biblioteca de medias. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ruta</td><td>Ruta absoluta hasta el archivo XML en el que se encuentra la información de los media </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Excepciones:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classArchivoEx.html" title="Clase de excepción para errores relacionados con archivos.">ArchivoEx</a></td><td>Se lanza si hay algún error al abrir un archivo </td></tr>
+    <tr><td class="paramname"><a class="el" href="classImagenEx.html" title="Clase de excepción para errores relacionados con una imagen o textura.">ImagenEx</a></td><td>Se lanza si sucede un error relacionado con la carga de una imagen </td></tr>
+    <tr><td class="paramname"><a class="el" href="classTarjetaEx.html" title="Clase de excepción para errores relacionados con la tarjeta SD.">TarjetaEx</a></td><td>Se lanza si ocurre un error relacionado con la tarjeta SD </td></tr>
+    <tr><td class="paramname"><a class="el" href="classXmlEx.html" title="Clase de excepción para errores relacionados con un árbol XML.">XmlEx</a></td><td>Se lanza si hay un error relacionado con un árbol XML </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4a03ff6bbe5ad80ce04a9f00236b4525"></a><!-- doxytag: member="Galeria::musica" ref="a4a03ff6bbe5ad80ce04a9f00236b4525" args="(const std::string &amp;codigo)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classMusica.html">Musica</a>&amp; Galeria::musica </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>codigo</em></td><td>)</td>
+          <td>  throw (<a class="el" href="classCodigoEx.html">CodigoEx</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que devuelve un puntero a la pista de música que tenga el código que se indica </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">codigo</td><td>Código de la pista de música que se quiere obtener </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Puntero a la pista de música que corresponde al código introducido </dd></dl>
+<dl><dt><b>Excepciones:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classCodigoEx.html" title="Clase de excepción para errores relacionados con códigos identificadores.">CodigoEx</a></td><td>Se lanza si el código recibido no corresponde a ninguna pista de música </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a17b965af9e11b85470728e0adf1cefc4"></a><!-- doxytag: member="Galeria::operator=" ref="a17b965af9e11b85470728e0adf1cefc4" args="(const Galeria &amp;g)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGaleria.html">Galeria</a>&amp; Galeria::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classGaleria.html">Galeria</a> &amp;&#160;</td>
+          <td class="paramname"><em>g</em></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Operador de asignación de la clase <a class="el" href="classGaleria.html" title="Clase que gestiona los recursos media del sistema, y facilita su carga en memoria y el acceso a ellos...">Galeria</a>. Se encuentra en la zona protegida debido a la implementación del patrón Singleton. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3e3d8f59b66c8f286b9efde960d27fa2"></a><!-- doxytag: member="Galeria::sonido" ref="a3e3d8f59b66c8f286b9efde960d27fa2" args="(const std::string &amp;codigo)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classSonido.html">Sonido</a>&amp; Galeria::sonido </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>codigo</em></td><td>)</td>
+          <td>  throw (<a class="el" href="classCodigoEx.html">CodigoEx</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que devuelve un puntero al sonido que tenga el código que se indica </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">codigo</td><td>Código del sonido que se quiere obtener </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Puntero al sonido que corresponde al código introducido </dd></dl>
+<dl><dt><b>Excepciones:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classCodigoEx.html" title="Clase de excepción para errores relacionados con códigos identificadores.">CodigoEx</a></td><td>Se lanza si el código recibido no corresponde a ningún sonido </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>/home/rabbit/Escritorio/libwiiesp/include/<a class="el" href="galeria_8h_source.html">galeria.h</a></li>
+</ul>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumeraciones</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Generado el Martes, 19 de Julio de 2011 20:45:52 para libWiiEsp por&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
+</body>
+</html>

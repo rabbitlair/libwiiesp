@@ -1,0 +1,439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>libWiiEsp: Referencia de la Clase Lang</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Generado por Doxygen 1.7.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+--></script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libWiiEsp&#160;<span id="projectnumber">0.9.2</span></div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Clases</span></a></li>
+      <li><a href="files.html"><span>Archivos</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-static-methods">Métodos públicos estáticos</a> &#124;
+<a href="#pro-methods">Métodos protegidos</a>  </div>
+  <div class="headertitle">
+<h1>Referencia de la Clase Lang</h1>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="Lang" -->
+<p>Soporte para múltiples idiomas en la misma aplicación, basado en un archivo de idiomas en formato XML.  
+<a href="#_details">Más...</a></p>
+
+<p><code>#include &lt;<a class="el" href="lang_8h_source.html">lang.h</a>&gt;</code></p>
+
+<p><a href="classLang-members.html">Lista de todos los miembros.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLang.html#a0a84b1e16d2567d917b2fa1feb6743f7">inicializar</a> (const std::string &amp;ruta, const std::wstring &amp;idioma_activo)  throw (ArchivoEx, CodigoEx, TarjetaEx, XmlEx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLang.html#a445051b66d22964a82f40f0145754fc8">activarIdioma</a> (const std::wstring &amp;idioma)  throw (CodigoEx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const std::wstring &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLang.html#a6e41dc164d678e1ab0a7f8aec2d22a83">idiomaActivo</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLang.html#a39764ee344402414193e0d5878d5160d">existeIdioma</a> (const std::wstring &amp;idioma) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLang.html#a42549bbf7fe15a62c3f43eea9a187fde">cambiarIdioma</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const std::wstring &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLang.html#a07d6c95b1c7a996702c2eb2c727f8480">texto</a> (const std::string &amp;tag)  throw (CodigoEx)</td></tr>
+<tr><td colspan="2"><h2><a name="pub-static-methods"></a>
+Métodos públicos estáticos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classLang.html">Lang</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLang.html#ac44aebc79f65686f920c92e93f17cf7b">get_instance</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLang.html#ae48dc905aef36b302197a7727c5eabeb">destroy</a> (void)</td></tr>
+<tr><td colspan="2"><h2><a name="pro-methods"></a>
+Métodos protegidos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLang.html#a92a4524697a7590fc2b6fa1eafe2ac82">Lang</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLang.html#a14e48cad972035817fc4a7cbe8b468c0">~Lang</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLang.html#a7b007b5da3dff62356498aad275b7a2b">Lang</a> (const <a class="el" href="classLang.html">Lang</a> &amp;l)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classLang.html">Lang</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLang.html#ac4a779e571d52531d321e1d0d8890445">operator=</a> (const <a class="el" href="classLang.html">Lang</a> &amp;l)</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Descripción detallada</h2>
+<div class="textblock"><p>Soporte para múltiples idiomas en la misma aplicación, basado en un archivo de idiomas en formato XML. </p>
+<dl class="author"><dt><b>Autor:</b></dt><dd>Ezequiel Vázquez de la Calle </dd></dl>
+<dl class="version"><dt><b>Versión:</b></dt><dd>0.9.2</dd></dl>
+<p>Esta clase proporciona soporte de idiomas en cualquier aplicación que se desarrolle para Nintendo Wii, pero también es reutilizable en cualquier aplicación de C++, ya que no tiene dependencia del sistema de la consola. Implementa un patrón Singleton, de tal manera que el soporte de idiomas está disponible en cualquier momento y en cualquier parte del sistema.</p>
+<p>La idea sobre la que se trabaja es que cada vez que se quiera escribir un texto en el programa, en lugar de ponerlo directamente desde el código fuente, se asignará una etiqueta de texto. Dicha etiqueta de texto será sustituida, en tiempo de ejecución, por la cadena de caracteres asociada a ella, en el idioma que esté marcado como activo en ese momento en la clase <a class="el" href="classLang.html" title="Soporte para múltiples idiomas en la misma aplicación, basado en un archivo de idiomas en formato XML...">Lang</a>. Así, el texto que se muestra en una etiqueta determinada cambiará dinámicamente según se active un idioma u otro.</p>
+<p>Los idiomas, las etiquetas y el contenido de cada una de éstas en cada uno de los idiomas se especifican desde un archivo de datos XML, con un formato concreto. A continuación se muestra un ejemplo de XML válido para el soporte de idiomas:</p>
+<div class="fragment"><pre class="fragment"> &lt;?xml version=<span class="stringliteral">&quot;1.0&quot;</span> encoding=<span class="stringliteral">&quot;UTF-8&quot;</span>?&gt;
+ &lt;lang&gt;
+     &lt;idioma nombre=<span class="stringliteral">&quot;español&quot;</span>&gt;
+         &lt;tag nombre=<span class="stringliteral">&quot;MENU1&quot;</span> valor=<span class="stringliteral">&quot;Jugar&quot;</span> /&gt;
+         &lt;tag nombre=<span class="stringliteral">&quot;MENU2&quot;</span> valor=<span class="stringliteral">&quot;Puntuación&quot;</span> /&gt;
+         &lt;tag nombre=<span class="stringliteral">&quot;MENU3&quot;</span> valor=<span class="stringliteral">&quot;Salir&quot;</span> /&gt;
+     &lt;/idioma&gt;
+     &lt;idioma nombre=<span class="stringliteral">&quot;english&quot;</span>&gt;
+         &lt;tag nombre=<span class="stringliteral">&quot;MENU1&quot;</span> valor=<span class="stringliteral">&quot;Play&quot;</span> /&gt;
+         &lt;tag nombre=<span class="stringliteral">&quot;MENU2&quot;</span> valor=<span class="stringliteral">&quot;Ranking&quot;</span> /&gt;
+         &lt;tag nombre=<span class="stringliteral">&quot;MENU3&quot;</span> valor=<span class="stringliteral">&quot;Exit&quot;</span> /&gt;
+     &lt;/idioma&gt;
+ &lt;/lang&gt;
+</pre></div><p>Se trabaja con cadenas de caracteres de alto nivel que utilizan como base caracteres anchos (en C/C++, el tipo wchar_t, que almacena caracteres de 1, 2 ó 4 bytes); así se consigue que cualquier carácter Unicode esté soportado. Cada idioma viene identificado por su nombre (que es, a su vez, una cadena de caracteres anchos), y consiste en un diccionario de etiquetas de texto. Una etiqueta de texto tiene dos componentes, que son su código identificativo (una cadena de caracteres de alto nivel) y el texto que se sustituirá en la etiqueta en el idioma correspondiente. Es muy importante que cada etiqueta tenga su correspondencia en cada uno de los idiomas soportados, ya que la clase <a class="el" href="classLang.html" title="Soporte para múltiples idiomas en la misma aplicación, basado en un archivo de idiomas en formato XML...">Lang</a> asume que si una etiqueta aparece en un idioma, aparecerá en todos los demás.</p>
+<p>Funcionamiento interno</p>
+<p>La estructura de datos diseñada para almacenar un idioma consiste en un diccionario (en C++, un std::map), donde su primera componente es una cadena de caracteres de alto nivel (de tipo std::string) que almacena el nombre de una etiqueta de texto (y mediante la cual se identifica la etiqueta), y su segunda componente es otra cadena de caracteres de alto nivel, pero de caracteres anchos (de tipo std::wstring), en la cual se guarda el texto asociado a la etiqueta traducido al idioma correspondiente.</p>
+<p>Cada idioma se almacena en otro diccionario en la segunda componente de éste, identificado por su nombre (cadena de caracteres de tipo std::wstring) en la primera componente del diccionario.</p>
+<p>Cuando se inicializa el soporte de idiomas, se le pasa como parámetro una cadena de caracteres con la ruta absoluta en la tarjeta SD del archivo de idiomas anteriormente descrito. Este archivo se carga en memoria y se recorre, creando cada idioma que se encuentre, y guardando cada etiqueta de texto asociada a él.</p>
+<p>Al leer el contenido de una etiqueta, éste se almacena temporalmente en una std::string. Antes de guardarlo en el diccionario del idioma correspondiente, se transforma a UTF32, mediante una función definida en la cabecera <a class="el" href="util_8h_source.html">util.h</a>. La explicación de esta transformación es sencilla: cuando se lee un texto con caracteres anchos (que necesita un espacio mayor que 1 byte), cada carácter ancho se ‘rompe’ en trozos de 1 byte cada uno. Un carácter ASCII normal ocupará el espacio esperado, es decir, 1 byte. Lo que ocurre dentro de la función antes mencionada es que se crea una cadena de caracteres anchos (de tipo wchar_t), y se rellena con el contenido leído desde el archivo después de pasarlo por la función de C llamada mbstowcs. Esta función se encarga de detectar los caracteres anchos que están ‘rotos’ en trozos de 1 byte, los une, y devuelve toda la cadena recibida como una cadena de caracteres anchos. Por último, se almacena lo devuelto en una std::wstring, y se introduce en el idioma correspondiente.</p>
+<p>Otra funcionalidad que ofrece esta clase consiste en activar un idioma concreto mediante su nombre, conocer cuál está activo en un momento determinado, saber si un idioma concreto existe, y alternar entre todos los idiomas registrados a través de una función que va activando cada uno según se lo encuentre al recorrer el diccionario. Este último método obtiene un iterador al idioma activo actual dentro del diccionario, y lo avanza una posición. Si no se ha llegado al final del diccionario, se activa el idioma encontrado; en caso contrario, se activa el primero del diccionario.</p>
+<p>Por último, para obtener el texto asociado a una etiqueta concreta en el idioma activo actual, existe una función que, dado el nombre de la etiqueta mediante un std::string, devuelve el texto asociado a ésta mediante un std::wstring, el cual se puede dibujar en pantalla (si la fuente seleccionada para ello tiene soporte para el juego de caracteres necesario), guardar en un fichero, o utilizar en cualquier operación deseada.</p>
+<p>Ejemplo de uso</p>
+<div class="fragment"><pre class="fragment"> <span class="comment">// Inicializar el soporte de idiomas mediante el archivo y el idioma activo por defecto (ruso)</span>
+ lang-&gt;inicializar( <span class="stringliteral">&quot;/apps/wiipang/xml/lang.xml&quot;</span>, <span class="stringliteral">&quot;english&quot;</span> );
+
+ <span class="comment">// Escribir en pantalla el texto de una etiqueta (ver clase Fuente y clase Galeria</span>
+ <span class="comment">// Se escribiría en pantalla &#39; Play &#39;</span>
+ galeria-&gt;fuente( <span class="stringliteral">&quot;arial&quot;</span> )-&gt;escribir( lang-&gt;texto( <span class="stringliteral">&quot;MENU1&quot;</span> ), 30, 100, 100, 5, 0xFF0000FF );
+
+ <span class="comment">// Cambiar el idioma activo a &#39;español&#39;</span>
+ lang-&gt;activarIdioma( <span class="stringliteral">&quot;español&quot;</span> );
+
+ <span class="comment">// Escribir la misma etiqueta de texto que antes</span>
+ <span class="comment">// Se escribiría en pantalla &#39; Jugar &#39;</span>
+ galeria-&gt;fuente( <span class="stringliteral">&quot;arial&quot;</span> )-&gt;escribir( lang-&gt;texto( <span class="stringliteral">&quot;MENU1&quot;</span> ), 30, 100, 100, 5, 0xFF0000FF );
+</pre></div> </div><hr/><h2>Documentación del constructor y destructor</h2>
+<a class="anchor" id="a92a4524697a7590fc2b6fa1eafe2ac82"></a><!-- doxytag: member="Lang::Lang" ref="a92a4524697a7590fc2b6fa1eafe2ac82" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Lang::Lang </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Constructor de la clase <a class="el" href="classLang.html" title="Soporte para múltiples idiomas en la misma aplicación, basado en un archivo de idiomas en formato XML...">Lang</a>. Se encuentra en la zona protegida debido a la implementación del patrón Singleton. </p>
+
+</div>
+</div>
+<a class="anchor" id="a14e48cad972035817fc4a7cbe8b468c0"></a><!-- doxytag: member="Lang::~Lang" ref="a14e48cad972035817fc4a7cbe8b468c0" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Lang::~Lang </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Destructor de la clase <a class="el" href="classLang.html" title="Soporte para múltiples idiomas en la misma aplicación, basado en un archivo de idiomas en formato XML...">Lang</a>. Se encuentra en la zona protegida debido a la implementación del patrón Singleton. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7b007b5da3dff62356498aad275b7a2b"></a><!-- doxytag: member="Lang::Lang" ref="a7b007b5da3dff62356498aad275b7a2b" args="(const Lang &amp;l)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Lang::Lang </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classLang.html">Lang</a> &amp;&#160;</td>
+          <td class="paramname"><em>l</em></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Constructor de copia de la clase <a class="el" href="classLang.html" title="Soporte para múltiples idiomas en la misma aplicación, basado en un archivo de idiomas en formato XML...">Lang</a>. Se encuentra en la zona protegida debido a la implementación del patrón Singleton. </p>
+
+</div>
+</div>
+<hr/><h2>Documentación de las funciones miembro</h2>
+<a class="anchor" id="a445051b66d22964a82f40f0145754fc8"></a><!-- doxytag: member="Lang::activarIdioma" ref="a445051b66d22964a82f40f0145754fc8" args="(const std::wstring &amp;idioma)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Lang::activarIdioma </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>idioma</em></td><td>)</td>
+          <td>  throw (<a class="el" href="classCodigoEx.html">CodigoEx</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Activa un idioma para que, a partir de este momento, se utilice en todas las etiquetas del sistema. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idioma</td><td>Nombre del idioma que se quiere utilizar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Excepciones:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classCodigoEx.html" title="Clase de excepción para errores relacionados con códigos identificadores.">CodigoEx</a></td><td>Se lanza si el nombre del idioma no corresponde a ninguno existente </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a42549bbf7fe15a62c3f43eea9a187fde"></a><!-- doxytag: member="Lang::cambiarIdioma" ref="a42549bbf7fe15a62c3f43eea9a187fde" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Lang::cambiarIdioma </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que va cambiando el idioma activo de forma circular entre los idiomas disponibles </p>
+
+</div>
+</div>
+<a class="anchor" id="ae48dc905aef36b302197a7727c5eabeb"></a><!-- doxytag: member="Lang::destroy" ref="ae48dc905aef36b302197a7727c5eabeb" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Lang::destroy </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Función estática que destruye la instancia activa del soporte de idiomas, llamando a su destructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a39764ee344402414193e0d5878d5160d"></a><!-- doxytag: member="Lang::existeIdioma" ref="a39764ee344402414193e0d5878d5160d" args="(const std::wstring &amp;idioma) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Lang::existeIdioma </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>idioma</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Función consultora que indica si existe un idioma concreto en el sistema. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idioma</td><td>Nombre del idioma que se desea saber si existe en el sistema. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Verdadero si el idioma existe, o falso en caso contrario. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac44aebc79f65686f920c92e93f17cf7b"></a><!-- doxytag: member="Lang::get_instance" ref="ac44aebc79f65686f920c92e93f17cf7b" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classLang.html">Lang</a>* Lang::get_instance </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Función estática que devuelve la instancia activa del soporte de idiomas en el sistema. En el caso de no haber ninguna instancia, se crea y se devuelve. Implementación del patrón Singleton. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Puntero a la instancia activa del soporte de idiomas en el sistema </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6e41dc164d678e1ab0a7f8aec2d22a83"></a><!-- doxytag: member="Lang::idiomaActivo" ref="a6e41dc164d678e1ab0a7f8aec2d22a83" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::wstring&amp; Lang::idiomaActivo </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Función para conocer el idioma que actualmente está activo en el sistema. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Nombre del idioma que está activo en el sistema </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0a84b1e16d2567d917b2fa1feb6743f7"></a><!-- doxytag: member="Lang::inicializar" ref="a0a84b1e16d2567d917b2fa1feb6743f7" args="(const std::string &amp;ruta, const std::wstring &amp;idioma_activo)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Lang::inicializar </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>ruta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>idioma_activo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>  throw (<a class="el" href="classArchivoEx.html">ArchivoEx</a>, <a class="el" href="classCodigoEx.html">CodigoEx</a>, <a class="el" href="classTarjetaEx.html">TarjetaEx</a>, <a class="el" href="classXmlEx.html">XmlEx</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método para inicializar el soporte de idiomas </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ruta</td><td>Archivo XML con la información del soporte de idiomas </td></tr>
+    <tr><td class="paramname">idioma_activo</td><td>Nombre del idioma que estará activo en el sistema desde el principio </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Excepciones:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classArchivoEx.html" title="Clase de excepción para errores relacionados con archivos.">ArchivoEx</a></td><td>Se lanza si hay algún error al abrir un archivo </td></tr>
+    <tr><td class="paramname"><a class="el" href="classCodigoEx.html" title="Clase de excepción para errores relacionados con códigos identificadores.">CodigoEx</a></td><td>Se lanza si se intenta activar un idioma que no existe </td></tr>
+    <tr><td class="paramname"><a class="el" href="classTarjetaEx.html" title="Clase de excepción para errores relacionados con la tarjeta SD.">TarjetaEx</a></td><td>Se lanza si ocurre un error relacionado con la tarjeta SD </td></tr>
+    <tr><td class="paramname"><a class="el" href="classXmlEx.html" title="Clase de excepción para errores relacionados con un árbol XML.">XmlEx</a></td><td>Se lanza si hay un error relacionado con un árbol XML </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac4a779e571d52531d321e1d0d8890445"></a><!-- doxytag: member="Lang::operator=" ref="ac4a779e571d52531d321e1d0d8890445" args="(const Lang &amp;l)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classLang.html">Lang</a>&amp; Lang::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classLang.html">Lang</a> &amp;&#160;</td>
+          <td class="paramname"><em>l</em></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Operador de asignación de la clase <a class="el" href="classLang.html" title="Soporte para múltiples idiomas en la misma aplicación, basado en un archivo de idiomas en formato XML...">Lang</a>. Se encuentra en la zona protegida debido a la implementación del patrón Singleton. </p>
+
+</div>
+</div>
+<a class="anchor" id="a07d6c95b1c7a996702c2eb2c727f8480"></a><!-- doxytag: member="Lang::texto" ref="a07d6c95b1c7a996702c2eb2c727f8480" args="(const std::string &amp;tag)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::wstring&amp; Lang::texto </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>tag</em></td><td>)</td>
+          <td>  throw (<a class="el" href="classCodigoEx.html">CodigoEx</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Función que devuelve el texto, en el idioma activo, asociado a la etiqueta que se recibe. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tag</td><td>Etiqueta de la cual se quiere obtener el texto asociado en el idioma activo. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Texto, en el idioma activo del sistema, asociado con la etiqueta que se recibe </dd></dl>
+<dl><dt><b>Excepciones:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classCodigoEx.html" title="Clase de excepción para errores relacionados con códigos identificadores.">CodigoEx</a></td><td>Se lanza si la etiqueta solicitada no existe en el idioma activo </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>/home/rabbit/Escritorio/libwiiesp/include/<a class="el" href="lang_8h_source.html">lang.h</a></li>
+</ul>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumeraciones</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Generado el Martes, 19 de Julio de 2011 20:45:52 para libWiiEsp por&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$classExcepcion.html" title="Clase de excepción básica." alt="" coords="7,139,92,168"/>
+<area shape="rect" id="node3" href="$classArchivoEx.html" title="Clase de excepción para errores relacionados con archivos." alt="" coords="151,5,233,35"/>
+<area shape="rect" id="node5" href="$classCodigoEx.html" title="Clase de excepción para errores relacionados con códigos identificadores." alt="" coords="152,59,232,88"/>
+<area shape="rect" id="node7" href="$classImagenEx.html" title="Clase de excepción para errores relacionados con una imagen o textura." alt="" coords="149,112,235,141"/>
+<area shape="rect" id="node9" href="$classNunchuckEx.html" title="Clase de excepción para errores relacionados con el Nunchuck de un mando." alt="" coords="143,165,241,195"/>
+<area shape="rect" id="node11" href="$classTarjetaEx.html" title="Clase de excepción para errores relacionados con la tarjeta SD." alt="" coords="153,219,231,248"/>
+<area shape="rect" id="node13" href="$classXmlEx.html" title="Clase de excepción para errores relacionados con un árbol XML." alt="" coords="161,272,223,301"/>
+</map>

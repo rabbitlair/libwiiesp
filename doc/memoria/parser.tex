@@ -1,0 +1,45 @@
+% Este archivo es parte de la memoria de libWiiEsp, protegida bajo la 
+% licencia GFDL. Puede encontrar una copia de la licencia en el archivo fdl-1.3.tex
+
+% Fuente tomada de la plantilla LaTeX para la realización de Proyectos Final 
+% de Carrera de Pablo Recio Quijano.
+
+% Copyright (C) 2009 Pablo Recio Quijano
+% Copyright (C) 2011 Ezequiel Vázquez de la Calle
+
+% -*-parser.tex-*-
+
+En los requisitos sobre interfaces externas se hace referencia a la utilización de la tecnología XML para conseguir una separación efectiva entre código fuente y datos. En esta quinta fase del desarrollo se recoge información sobre la creación de un módulo que permita trabajar cómodamente con este formato de archivos.
+
+\subsection{Biblioteca \emph{TinyXML}}
+
+El primer paso para cubrir la funcionalidad deseada consiste en una investigación sobre las distintas herramientas ya existentes que permitan cargar información desde un archivo XML y, por supuesto, que sean compatibles con Nintendo Wii. Tras la lectura de diversas fuentes, se encuentra que la única herramienta disponible actualmente para procesar este tipo de ficheros en la videoconsola es \emph{TinyXML}.\\
+
+Esta pequeña utilidad proporciona abstracción sobre la lectura del árbol formado por los nodos del documento XML, y además, ya viene adaptada para su funcionamiento bajo la plataforma de Nintendo, por lo que no hay que preocuparse sobre la alineación de datos ni del \emph{Endian}. Trabaja cargando el documento en memoria, y accediendo a los distintos nodos que lo componen mediante punteros. Da acceso a elementos, atributos y contenido de nodos, además de permitir una fácil navegación descendente (es decir, de padre a hijo), por lo que cubre las necesidades básicas para nuestros propósitos.\\
+
+Al poderse cargar completamente el árbol XML con esta herramienta, podemos implementar fácilmente un \emph{parser} que siga el método de trabajo DOM, que funciona precisamente cargando el árbol completo en memoria y accediendo posteriormente a los elementos necesarios.
+
+\subsection{Identificación de funcionalidad necesaria}
+
+Para trabajar cómodamente con archivos XML, necesitamos una interfaz accesible desde cualquier punto del sistema, y que permita cargar un documento completo y acceder al nodo raíz. A partir de este elemento (o de cualquier otro que hayamos localizado previamente), debemos poder buscar otro elemento bajo él a partir de su valor, y sería muy interesante poder navegar entre los hermanos (elementos que se encuentran bajo el mismo padre en el árbol) del mismo valor. Por supuesto, también se requiere poder leer atributos de tipo cadena de caracteres, entero y decimal de coma flotante, y al texto contenido en un elemento.\\
+
+Por último, también es interesante que todas estas operaciones se realicen eficientemente, para no cargar demasiado el sistema al trabajar con este tipo de archivos de datos.
+
+\subsection{Diseño e implementación}
+
+Para obtener la funcionalidad especificada en el epígrafe anterior, se decide crear una clase que implemente el patrón \emph{Singleton}, así podemos tener la certeza de que sólo habrá una instancia de esta herramienta en el sistema, ahorrando costes de memoria (ya que sólo se permite tener cargado un único árbol XML a la vez) y teniendo la utilidad siempre disponible en cualquier punto del sistema.\\
+
+Se implementa un método que, a partir de la ruta absoluta de un archivo XML en la tarjeta SD, carga un árbol XML completo en memoria. Este método sobreescribe cualquier otro documento XML que estuviera previamente cargado, por lo que se consigue que no haya fugas de memoria en este aspecto. También se crean varios métodos consultores que proporcionan acceso al nodo raíz del documento, al valor y el contenido de un elemento dado, y a un atributo de un elemento a partir de su nombre y el elemento al que pertenece (existiendo métodos de consulta de atributos para cadenas de caracteres, números enteros y decimales de coma flotante).\\
+
+Para facilitar la navegación por el árbol del documento, se crea un método que, dado un valor y un elemento, buscará y devolverá el primer elemento cuyo valor coincida con el indicado. Si no se le indica un elemento a partir del cual buscar, recorrerá todo el documento a partir del elemento raíz. Además, existe otro método que, a partir de un elemento, busca entre los elementos hermanos (que tienen el mismo nodo padre) por el siguiente elemento con el que comparta valor.\\
+
+El recorrido del árbol XML del documento realizado por estos métodos de navegación se realiza en preorden, de ahí los criterios de ordenación de elementos (por ejemplo, "siguiente hermano" se refiere al elemento, hijo del mismo padre, que es posterior al dado en preorden). Comentar también que los posibles errores de inexistencia de un elemento con un valor dado o de un atributo solicitado están controlados haciendo uso de las comprobaciones pertinentes.\\
+
+En la figura \ref{parser} puede observarse la interfaz pública de la clase Parser, que nace como resultado de esta fase de desarrollo.\\
+
+\figura{parser.png}{scale=0.6}{Interfaz pública de la clase Parser}{parser}{h}
+
+\subsection{Pruebas}
+
+La batería de pruebas de esta clase consistió en la carga de varios documentos XML distintos, a partir de los cuales se realizaron varias lecturas y recorridos en los árboles, imprimiendo en el sistema de consola de \emph{libogc} los valores de cada elemento visitado, así como los atributos solicitados. Se probaron tanto casos que se esperaban correctos como situaciones en las que se solicita un atributo inexistente, la búsqueda de un elemento no válido o la obtención del valor o el contenido de elementos que no existen.
+

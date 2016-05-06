@@ -1,0 +1,75 @@
+% Este archivo es parte de la memoria de libWiiEsp, protegida bajo la 
+% licencia GFDL. Puede encontrar una copia de la licencia en el archivo fdl-1.3.tex
+
+% Fuente tomada de la plantilla LaTeX para la realización de Proyectos Final 
+% de Carrera de Pablo Recio Quijano.
+
+% Copyright (C) 2009 Pablo Recio Quijano
+% Copyright (C) 2011 Ezequiel Vázquez de la Calle
+
+% -*-recursos.tex-*-
+
+Tras obtener la funcionalidad necesaria para gestionar el sistema gráfico de Nintendo Wii, el lector de tarjetas y el soporte para hasta cuatro mandos, es el momento de trabajar en la carga y funcionamiento de los recursos multimedia. En este punto es especialmente necesario que se optimice al máximo, ya que de no hacerlo podemos provocar que los tiempos de carga se alarguen demasiado.\\
+
+Tal y como ya se ha comentado, \programa{LibWiiEsp} ofrece soporte para utilizar imágenes, efectos de sonido, pistas de música y fuentes de texto.
+
+\subsection{Módulos \emph{asndlib}, \emph{libmad} y biblioteca \emph{FreeType2}}
+
+Como primer detalle a tener en cuenta, sabemos que la clase \emph{Sdcard} nos permite acceder a cualquier archivo que se encuentre en la tarjeta SD insertada en la videoconsola mediante, por ejemplo, un flujo de datos de entrada de ficheros (\emph{ifstream}). Otra cuestión ya mencionada, pero muy importante, es que toda reserva de memoria que se realice para almacenar un flujo de bytes debe estar alineado a 32 bytes y tener un tamaño múltiplo exacto de 32 bytes (consultar el capítulo 2 para más información).\\
+
+En la primera iteración del proceso de desarrollo, la que cubre la construcción de la clase \emph{Screen}, se detalla todo lo relacionado con \emph{GX}, el módulo de \emph{libogc} que se encarga del sistema gráfico. Gracias a los avances conseguidos en aquel punto, ahora disponemos de un método que, a partir de una imagen almacenada en un flujo de datos, con sus bits organizados en RGB5A3 (formato de vídeo nativo de Nintendo Wii), crea un objeto de textura de tipo \emph{GXTexObj}, con el que trabaja \emph{GX}. Por otra parte, también disponemos en esta clase de dos funciones que nos permiten dibujar en la pantalla una textura de este tipo al completo, o una parte de ella. Respecto al formato de archivo de la imagen, se necesita, para una primera versión, un formato de archivo de imagen que no tenga compresión y que tenga la información de color de forma directa, sin utilizar paletas de color. El formato adecuado según estas premisas sería el mapa de bits (BMP) de 24 bits de color por píxel (8 bits por componente en cada píxel). Un detalle importante es la limitación que sufre el formato \emph{GXTexObj}, que consiste en que las medidas de toda imagen que vaya a ser transformada en textura deben ser múltiplo de 8 (tanto el ancho como el alto en píxeles); en caso de no respetarse, se produciría un error en el sistema.\\
+
+Respecto al sonido, \programa{libogc} incorpora el módulo \emph{asndlib}, que es un conjunto de funciones que procesan flujos de bytes con efectos de sonido. \emph{Asndlib} utiliza un dispositivo hardware especial para mezclar el sonido, llamado DSP, y que soporta hasta 16 voces simultáneas (una voz es flujo de bytes que contiene un sonido). Nintendo Wii trabaja a 48000Hz de frecuencia, a 16 bits por \emph{sample} y en estéreo de forma nativa. Este módulo de gestión de sonido debe inicializarse antes de ser usado, y apagarse antes de finalizar la ejecución del programa. \emph{Asndlib} incorpora dos funciones de reproducción, una para reproducir una sola vez un efecto de sonido, y otra para reproducirlo infinitamente.\\
+
+Las pistas de música son aún más fáciles de reproducir que los efectos de sonido, gracias a que \programa{libogc} incorpora el módulo \emph{libmad}. A partir de una zona de memoria que contenga un archivo de música en un formato MP3 válido, \emph{libmad} reproduce la pista de música en una voz reservada del DSP, y además abstrae de la necesidad de cambiar la forma de representación del fichero MP3, ya que se encarga de realizar el cambio desde \emph{Little Endian} a \emph{Big Endian} si fuera necesario.\\
+
+En lo que concierne a la escritura en pantalla utilizando fuentes de texto, \programa{libogc} no ofrece ningún módulo para trabajar con ellas, pero existe una adaptación de la biblioteca \emph{FreeType2} para operar con Nintendo Wii, y que abstrae también del cambio de \emph{Endian} al cargar las fuentes y de la reserva de memoria alineada y con tamaño múltiplo de 32 bytes. Una vez cargada una fuente con \emph{FreeType2}, se puede extraer un carácter con una sencilla función que devuelve una imagen bitmap con dicho carácter dibujado. La biblioteca permite extraer la imagen del carácter en formato monocromo, es decir, en blanco y negro puro; por tanto, para dibujar el carácter bastaría con recorrer píxel a píxel esta imagen, dibujando en la pantalla los píxeles que correspondan en el color seleccionado (utilizando el método \emph{dibujarPunto} de la clase \emph{Screen}). Como último punto de interés, \emph{FreeType2} soporta cualquier carácter de cualquier codificación, siempre que esté soportado en la fuente de texto que se utilice.
+
+\subsection{Identificación de funcionalidad necesaria}
+
+Con respecto a las texturas, se necesita cargar desde la SD una imagen de mapa de bits de 24 bits de profundidad de color directo y almacenarla en un flujo de bytes en formato RGB5A3. Después de eso, se necesita crear una textura que se pueda dibujar con los métodos de la clase \emph{Screen}, es decir, de tipo \emph{GXTexObj}. Hay que permitir que se indique un color transparente (es decir, que no se dibuje) para que las texturas dibujadas en pantalla no se dibujen únicamente con forma rectangular, y ofrecer métodos observadores para el ancho y el alto en píxeles de la imagen. Por supuesto, también es necesario un método que dibuje la textura en la pantalla.\\
+
+Los efectos de sonido únicamente necesitan ser cargados desde la tarjeta SD a un flujo de bytes, y poder ser reproducidos en cualquier momento. Como son sonidos estéreo (con dos canales), se debería permitir controlar el volumen de cada canal de forma independiente, para que así el usuario pueda conseguir efectos de sonido 3D.\\
+
+Una pista de música debe ser cargada desde la tarjeta SD y almacenada en una zona de memoria, se debe poder reproducir, detener, y mantener en repetición si así se desea, así como controlar su volumen de reproducción.\\
+
+Para trabajar con las fuentes de texto, primero hay que cargarlas desde la tarjeta SD y almacenarlas. Después de eso, hay que proporcionar al menos un método que permita escribir una cadena de caracteres, independientemente del juego de caracteres que utilice. Para ello, se puede usar el tipo de C++ \emph{wstring}, que es idéntico a \emph{string} salvo por el tipo de carácter base que utiliza, \emph{wchar\_t}, que permite trabajar con caracteres de hasta 32 bits.\\
+
+Por supuesto, los cuatro recursos multimedia deben respetar las condiciones de utilizar alineación a 32 bytes cuando se reserve memoria, y se debe rellenar dichas zonas de memoria para que su tamaño sea múltiplo de 32 bytes. Además, deben cuidarse todas las situaciones que puedan derivar en error, comprobando las condiciones necesarias antes de cada operación.
+
+\subsection{Diseño e implementación}
+
+Con toda la información recopilada, procedemos a crear cuatro clases, una para representar cada uno de los recursos multimedia presentados. A continuación se aporta una descripción de cómo cumple los objetivos marcados cada una de ellas.\\
+
+La clase \textbf{Imagen} es la que se encarga de proporcionar la funcionalidad necesaria para dibujar texturas en la pantalla. Dispone de un atributo de clase público que indica el color considerado como transparente, que es compartido por todas las instancias de la clase, y que al cargar la imagen corresponde con un píxel con el canal \emph{alpha} activado (es decir, un píxel que en la imagen tenga el mismo color que el transparente será un píxel invisible en la textura). Se ofrecen métodos consultores para el ancho y el alto en píxeles de la imagen, así como a la textura \emph{GXTexObj} creada a partir de ella.\\
+
+En la primera versión de \programa{LibWiiEsp} sólo se dará soporte a imágenes de mapa de bits de 24 bits de profundidad de color directo, como ya se mencionó antes. Como se pretende que sea sencillo implementar soporte para un abanico amplio de formatos de imagen, el constructor de la clase Imagen únicamente inicializará las variables internas de la instancia creada. Para cargar una imagen se utilizará el método \emph{cargarXXX}, donde XXX corresponde con la extensión de la imagen en la tarjeta SD; así, para cargar \emph{archivo.bmp} se implementa el método \emph{cargarBmp}. Con esto se consigue que si en un futuro se quisiera implementar la carga de archivos PNG, bastaría con crear el método \emph{cargarPng}.\\
+
+Para trabajar con archivos BMP son necesarias dos estructuras, que corresponden con las dos cabeceras de todo archivo que siga este formato: la primera cabecera ocupa 14 bytes, e indica los detalles del archivo; la segunda son 40 bytes, y contiene información relativa a la imagen en sí.\\
+
+Entrando en la implementación del método de carga de mapas de bits, el proceso que sigue es sencillo: primero se comprueba que la tarjeta SD está montada y accesible, y se lee el archivo BMP a un flujo de entrada de ficheros. Después, se lee la primera cabecera y se comprueba que el archivo sigue efectivamente un formato de mapa de bits. Seguidamente, se lee la segunda cabecera, y de ahí se extraen los datos de ancho y alto de la imagen (recordemos, deben ser ambos múltiplo de 8) y la profundidad del color (que, de momento, sólo será válido si es 24 bits). A continuación, se recorre el resto del archivo con un bucle, leyendo en cada iteración 3 bytes (que corresponden con un píxel, siguiendo el formato BBGGRR, es decir, componente azul de 8 bits, después verde y por último rojo). La información de cada píxel se transforma al formato RGB5A3, haciendo que si el píxel coincide con el color invisible, tenga el canal \emph{alpha} activo al máximo (transparencia total). Como detalle, una imagen BMP se lee desde abajo a la izquierda, hacia la derecha y hacia arriba, pero las texturas \emph{GXTexObj} necesitan la información desde la esquina superior izquierda, hacia la derecha y hacia abajo. Una vez leída la imagen al flujo de bytes, se crea la textura utilizando el método correspondiente de la clase \emph{Screen} y se da por finalizado el proceso.\\
+
+Para dibujar la textura, se proporciona un método que llama a \emph{dibujarTextura} de \emph{Screen}, pasándole como parámetro la textura asociada con la imagen. La interfaz pública de la clase se muestra en la figura \ref{imagen}.\\
+
+\figura{imagen.png}{scale=0.6}{Interfaz pública de la clase Imagen}{imagen}{h}
+
+Respecto a la clase \textbf{Sonido}, se proporciona un método de clase que inicializa el módulo \emph{asndlib}, y en el constructor se comprueba que la tarjeta SD está accesible y se lee el archivo de sonido (que debe tener \emph{samples} de 16 bits con signo, estéreo, una frecuencia de 48000 Hz y representación \emph{Big Endian}, formato que puede obtenerse procesando el archivo con SoX \cite{website:sox}) a una zona de memoria alineada. Se ofrecen dos métodos para controlar el volumen de los dos canales del sonido por separado, y otro para reproducir el efecto. En la figura \ref{sonido} puede observarse la interfaz pública de la clase.\\
+
+\figura{sonido.png}{scale=0.6}{Interfaz pública de la clase Sonido}{sonido}{h}
+
+Las pistas de música funcionan con la clase \textbf{Musica}, que tiene una implementación parecida a la anterior, solo que también incorpora un método que detiene la reproducción, y otro que permite mantener la reproducción en bucle (el método comienza la reproducción de la pista si ésta ya hubiera terminado). Se muestra la interfaz pública de la clase en la figura \ref{musica}.\\
+
+\figura{musica.png}{scale=0.6}{Interfaz pública de la clase Musica}{musica}{h}
+
+La clase \textbf{Fuente}, por último, utiliza el método de carga del archivo de fuentes que proporciona la adaptación de \emph{FreeType2}, de tal manera que no hay que preocuparse por la memoria alineada y el \emph{Endian}. Se aportan dos métodos de escritura en pantalla, uno recibe una cadena de caracteres \emph{string}, y el otro una \emph{wstring}, de tal manera que se cubren todos los posibles caracteres (de hasta 32 bits). Para escribir el texto, se recorre la cadena recibida, cargando el bitmap asociado a cada carácter, y dibujándolo en la pantalla píxel a píxel en el color que se indique. También se ofrece un método de clase que inicializa la biblioteca \emph{FreeType2}, y que debe ser llamado antes de poder utilizarla. La interfaz pública de la clase se puede observar en la figura \ref{fuente}.\\
+
+\figura{fuente.png}{scale=0.6}{Interfaz pública de la clase Fuente}{fuente}{h}
+
+Todos los destructores de estas clases se encargan de liberar la memoria ocupada por todos los flujos de bytes y zonas de memoria reservada.
+
+\subsection{Pruebas}
+
+La batería de pruebas relativa a los recursos multimedia consistieron en un programa que cargaba una imagen desde un archivo, en distintos formatos (soportados o no), y trataba de dibujarla en pantalla. Las comprobaciones de las condiciones necesarias para la carga y utilización de imágenes BMP se cumplieron escrupulosamente, y sólo se dibujó en pantalla la que tenía el formato adecuado.\\
+
+El sonido y la música se probaron en el mismo programa, cargando los archivos correspondientes y reproduciéndolos al pulsar un determinado botón del mando. Las fuentes de texto, por otra parte, se probaron escribiendo textos en la pantalla en distintos idiomas (inglés, español, ruso y japonés), resultando positivas todas las comprobaciones. Los caracteres no latinos se mostraban correctamente.
+

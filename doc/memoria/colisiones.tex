@@ -1,0 +1,64 @@
+% Este archivo es parte de la memoria de libWiiEsp, protegida bajo la 
+% licencia GFDL. Puede encontrar una copia de la licencia en el archivo fdl-1.3.tex
+
+% Fuente tomada de la plantilla LaTeX para la realización de Proyectos Final 
+% de Carrera de Pablo Recio Quijano.
+
+% Copyright (C) 2009 Pablo Recio Quijano
+% Copyright (C) 2011 Ezequiel Vázquez de la Calle
+
+% -*-colisiones.tex-*-
+
+La décima etapa de desarrollo del proyecto aborda uno de los módulos más importantes a la hora de crear un videojuego en dos dimensiones, ya que debe ser escrupulosamente eficiente y, a la vez, permitir una gran flexibilidad. En esta sección se detallan todos los pormenores del sistema de colisiones de \emph{LibWiiEsp}.\\
+
+Este módulo de detección de colisiones no depende de ninguna otra parte del sistema, así que puede ser reutilizado para otros desarrollos no relacionados con Nintendo Wii.
+
+\subsection{Identificación de funcionalidad necesaria}
+
+Las colisiones se calcularán en base a figuras geométricas planas, y una colisión ocurrirá siempre entre dos de estas figuras. Se necesita que, cuando se evalúe una colisión, se indique únicamente si efectivamente ha ocurrido o no, no es necesario identificar el punto o puntos de colisión. Las figuras entre las que se calcularán colisiones serán un punto, un círculo y un rectángulo cuyos lados estén alineados a los ejes.\\
+
+Las figuras de colisión estarán normalmente asociadas a entidades propias del juego que tendrán unas coordenadas respecto a un punto (0,0) determinado por la esquina superior izquierda del escenario, por lo que se ha planteado que existen dos formas de representar la posición de las figuras de colisión asociadas:
+
+\begin{enumerate}
+\item Figuras de colisión con posición absoluta respecto al mismo origen de coordenadas que las entidades del juego.
+\item Que las figuras tengan su posición relativa al punto superior izquierdo del objeto del juego con el que están asociadas.
+\end{enumerate}
+
+Ambas aproximaciones tienen sus ventajas e inconvenientes. El primer punto de vista facilita los cálculos, pero necesita que se actualice la posición de las figuras cada vez que el objeto al que están asociadas modifique la suya. Por otro lado, la segunda opción complica ligeramente la detección de la colisión (ya que habría que tener en cuenta la posición de los objetos contenedores de las figuras), pero elimina la necesidad de actualización de la posición de las figuras.\\
+
+Se ha elegido la segunda opción por considerarla más eficiente, así que será necesario que en los cálculos matemáticos se tengan en cuenta las posiciones de los objetos asociados a las figuras de colisión.\\
+
+Por último, se necesita que una figura de colisión pueda ser cargada desde un elemento de un árbol XML.
+
+\subsection{Diseño e implementación}
+
+En base a lo decidido en el punto anterior, se crea una clase abstracta pura, llamada Figura, y de la cual derivarán todas las demás clases que representen los distintos polígonos de colisión. Concretamente, de la clase Figura derivarán las clases Punto, Rectángulo y Círculo.\\
+
+La clase punto tendrá dos enteros para indicar sus coordenadas respecto a la esquina superior izquierda del objeto del sistema con el que estará asociado, un círculo estará determinado por un punto y un número decimal que indique el radio, y un rectángulo estará formado por cuatro puntos. A pesar de que los rectángulos tendrán sus lados alineados a los ejes de coordenadas, se utiliza la representación de cuatro puntos en lugar de un punto y las longitudes de los lados para que, en el futuro, se pueda eliminar fácilmente la restricción de los lados paralelos a los ejes.\\
+
+La clase abstracta Figura es la base del módulo de gestión de colisiones integrado en \emph{LibWiiEsp}. Se basa en una implementación de la técnica \emph{double dispatch} (que a su vez es una implementación del patrón \emph{Visitante})consistente en una especie de polimorfismo en tiempo de ejecución, donde la elección del método a ejecutar depende no sólo del objeto que lo ejecuta, si no del tipo del parámetro que recibe. En la práctica, al emplear esta técnica se consigue evitar la comprobación de tipos mediante estructuras de tipo condicional (\emph{if}, \emph{switch} \ldots) cuando se quiere evaluar una colisión entre dos objetos de clases derivadas de Figura.\\
+
+Entrado un poco más en detalle, \emph{double dispatch} implica que toda clase derivada de Figura implementará un método denominado \emph{hayColision}, en el que recibirá un puntero a zona de memoria donde se almacenará otra Figura. Este método devolverá un valor booleano, que será verdadero si hay colisión entre las dos figuras, o falso en caso contrario. Internamente, devuelve el resultado de llamar al método \emph{hayColision} de la segunda figura, pasando como parámetro la figura actual (es decir, el objeto \emph{this} en el contexto de la primera figura). Con este intercambio de parámetros se consigue que esta segunda llamada se realice conociendo el tipo exacto del parámetro que se pasa, ya que en el contexto de ejecución (se hace desde un método de la primera figura) se conoce el tipo del objeto \emph{this}. Al llamarse el método \emph{hayColision} de la segunda figura con un parámetro con el tipo perfectamente identificado, esta segunda figura ya sabe los tipos de ambos objetos (conoce su propio tipo por el contexto de ejecución, y el de la primera figura por lo explicado anteriormente), de tal manera que se ejecuta el método adecuado con los cálculos necesarios para averiguar si hay colisión entre ambas figuras o no. En la figura \ref{doubledispatch} se puede observar un ejemplo de implementación de la técnica.\\
+
+\figura{doubledispatch.png}{scale=0.7}{Sencillo ejemplo de implementación de la técnica de \emph{Double Dispatch}}{doubledispatch}{h}
+
+Gracias a esta técnica de \emph{double dispatch} se consigue una mayor escalabilidad del código de las colisiones, ya que resulta muy sencillo añadir nuevas figuras que detecten colisiones entre sí y entre las ya existentes.\\
+
+El otro aspecto importante relativo a las figuras de colisión es el desplazamiento de éstas. Una figura de colisión está determinada, como mínimo, por una pareja de coordenadas cuyo punto de origen (es decir, el (0,0)) corresponde con el punto superior izquierdo de un objeto del sistema; objeto que tendrá, a su vez, una pareja de coordenadas (x,y) respecto al límite izquierdo del escenario (coordenada X, cuanto mayor sea, más alejado hacia la derecha estará el objeto de este límite izquierdo) y al límite superior del escenario (coordenada Y, cuanto mayor sea, más alejado hacia abajo estará el objeto de este límite superior). Es decir, las coordenadas de una figura de colisión son relativas a un punto que no tiene por qué ser el origen (0,0) de las coordenadas de los objetos del sistema.\\
+
+Por ejemplo, suponiendo un personaje en un juego de plataformas que tenga asociado un rectángulo de colisiones. Este personaje tiene unas coordenadas (x,y) respecto al punto superior izquierdo del escenario, y que determinan su posición en dicho escenario. Esta pareja de coordenadas variará en función del comportamiento del personaje durante la ejecución del juego. Sin embargo, las parejas de coordenadas de los puntos que determinan el rectángulo de colisiones se mantendrán fijas en todo momento, ya que son relativas al punto superior izquierdo del personaje, y no al del escenario. Esto provoca que, para conocer la posición absoluta de un punto del rectángulo respecto al origen de coordenadas del escenario, haya que sumar el valor de la coordenada X del personaje con el de la coordenada X del punto; y análogamente para las coordenadas Y. En la figura \ref{desplazamiento} se puede observar un ejemplo del sistema de coordenadas de las figuras de colisión, donde el origen de coordenadas es el punto superior izquierdo del objeto con el que están las figuras asociadas.\\
+
+\figura{desplazamiento.png}{scale=0.6}{Ejemplo para ilustrar el desplazamiento de las figuras de colisión}{desplazamiento}{h}
+
+Tomando en consideración todo lo explicado, se ha creado una clase abstracta pura, llamada Figura, que será la base para todas las clases derivadas que representen a una figura concreta. Esta clase Figura incluye métodos de clase (estáticos) que se encargan de crear una figura concreta a partir de un elemento de un árbol XML, así como los métodos virtuales puros que implementan el patrón \emph{Visitante} y la técnica del \emph{double dispatch}.\\
+
+A partir de esta clase, se crean las clases Punto, Rectangulo y Circulo, cada una con los métodos necesarios para evaluar las posibles colisiones entre sí. También incluyen los métodos observadores y modificadores para todos sus atributos. La interfaz pública de la clase Figura pueden observarse en la figura \ref{colisiones}.\\
+
+\figura{colisiones.png}{scale=0.6}{Interfaz pública de la clase Figura}{colisiones}{h}
+
+Por último, comentar que se ha conseguido una escalabilidad alta, ya que para añadir una figura nueva (por ejemplo, un triángulo), bastaría con crear una nueva clase que herede de Figura, y añadir a las existentes los métodos necesarios para detectar colisiones entre ellas y la nueva.
+
+\subsection{Pruebas}
+
+Las comprobaciones realizadas a este módulo consistieron en un programa que generaba varias figuras y comprobaba las colisiones entre ellas. Previamente a la ejecución del programa, se sabía qué figuras debían colisionar con otras. A la hora de probar la figura Punto se creó un programa interactivo, en el que se asignaban las coordenadas del puntero infrarrojo del mando a un objeto de la clase, y se actualizaba su posición en cada fotograma. Además, se incluían varias figuras (rectángulos y círculos) que cambiaban de color según apuntáramos el puntero infrarrojo sobre ellas o no (es decir, si se detectaba una colisión entre el punto y las figuras).
+

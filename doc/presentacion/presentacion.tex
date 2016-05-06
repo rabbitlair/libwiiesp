@@ -1,0 +1,56 @@
+% Este archivo es parte de la presentación de libWiiEsp, protegida bajo la 
+% licencia GFDL. Copyright (C) 2011 Ezequiel Vázquez de la Calle
+
+% -*-presentacion.tex-*-
+
+\documentclass{beamer}
+\usepackage[utf8x]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{fancyvrb}
+\usepackage{color}
+\usetheme{Warsaw}
+\setbeamertemplate{headline}[default]
+\setlength\fboxsep{0pt}
+\setlength\fboxrule{0.1pt}
+\graphicspath{{./imagenes/}}
+
+\title[LibWiiEsp]{LibWiiEsp: Biblioteca libre de desarrollo de videojuegos para Nintendo Wii}
+\author[Ezequiel Vázquez de la Calle]{Ezequiel Vázquez de la Calle \\ Codirectores: \\ Manuel Palomo Duarte \\ Antonio García Domínguez}
+\date{}
+\institute[UCA]
+
+\begin{document}
+% Primera pagina
+\def\newblock{\hskip .11em plus .33em minus .07em}
+
+\begin{frame}[fragile]{}
+    \titlepage 
+    \begin{picture}(0,0)
+        \put(130,-10){\includegraphics[scale=0.1]{logo_uca.png}}
+    \end{picture}
+\end{frame}
+%-------------------------
+
+\normalsize
+
+% Mostrar indice antes de la secciones
+\AtBeginSection[] {
+  \begin{frame}{Índice}
+    \tableofcontents[currentsection]
+  \end{frame}} 
+%-------------------------
+
+% Introducción
+\input{introduccion.tex}
+% Planificación
+\input{planificacion.tex}
+% Descripción del desarrollo
+\input{desarrollo.tex}
+% Conclusiones
+\input{conclusiones.tex}
+% Bibliografia
+\input{bibliografia.tex}
+\end{document}
+

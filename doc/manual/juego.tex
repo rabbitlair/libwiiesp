@@ -1,0 +1,49 @@
+% Este archivo es parte de libWiiEsp. Copyright (C) 2011 Ezequiel Vázquez de la Calle
+% Licencia GFDL. Encontrará una copia de la licencia en el archivo fdl-1.3.tex
+
+La clase abstracta \emph{Juego} es la tercera y última plantilla que \emph{LibWiiEsp} ofrece para facilitar el desarrollo de videojuegos para Nintendo Wii. Es muy sencilla, y consiste en dos partes principales. El constructor se encarga de inicializar la consola a partir de la información que se introduzca en el archivo de configuración de la aplicación, y el método \emph{run()} ejecuta el bucle principal del programa. A continuación se aportan todos los detalles relativos a esta plantilla para construir la clase principal de nuestro videojuego.
+
+\subsubsection{Inicialización de la consola}
+
+Como ya se ha comentado, la inicialización de todos los sistemas de la consola Nintendo Wii se realiza en el constructor de la clase \emph{Juego}, que recibe como parámetro la ruta absoluta en la tarjeta SD de un archivo XML de configuración. Esta inicialización consiste en montar la primera partición de la tarjeta SD de la consola (debe tener un sistema de ficheros FAT), establecer el sistema de \emph{logging}, leer el archivo de configuración y, a partir de éste, iniciar todos los aspectos de la consola que vamos a utilizar.\\
+
+El proceso de inicialización, llegados a este punto, es el siguiente:
+
+\begin{enumerate}
+\item Inicializar la pantalla, el sistema de mandos, el sonido y las fuentes de textos (en este orden).
+\item Establecer el color transparente, y los fotogramas por segundo que tendrá la aplicación.
+\item Cargar los identificadores de los jugadores y asociar un mando con cada uno de ellos.
+\item Cargar en memoria todos los recursos multimedia que se indiquen en el archivo XML de la galería.
+\item Cargar en memoria las etiquetas de texto del soporte de idiomas.
+\end{enumerate}
+
+Cuando creamos una clase derivada de \emph{Juego} hay que llamar al constructor de la clase base, pasándole como parámetro la ruta absoluta en la tarjeta SD del archivo de configuración. Por otro lado, el destructor de la clase base se encarga de liberar la memoria ocupada por la estructura que almacena los objetos de la clase \emph{Mando}, y de llamar a la función \emph{exit()}, hecho obligatorio para que la pila de la función \emph{atexit()} se ejecute al salir del programa (esto es muy importante, ya que en caso contrario nos encontraremos con una pantalla de error por no haber apagado los sistemas de la consola).\\
+
+Un ejemplo del archivo XML de configuración es el siguiente:
+
+\begin{lstlisting}[style=XML]
+<?xml version="1.0" encoding="UTF-8"?>
+<conf>
+  <log valor="/apps/wiipang/info.log" nivel="3" />
+  <alpha valor="0xFF00FFFF" />
+  <fps valor="25" />
+  <galeria valor="/apps/wiipang/xml/galeria.xml" />
+  <lang valor="/apps/wiipang/xml/lang.xml" defecto="english" />
+  <jugadores pj1="pj1" pj2="pj2" pj3="" pj4="" />
+</conf>
+\end{lstlisting}
+
+En este archivo de configuración se establece que el sistema de \emph{logging} registrará todos los eventos que sucedan en el sistema, el color transparente será el magenta, se correrá la aplicación a 25 fotogramas por segundo, se indican los archivos XML de la galería y el sistema de idiomas, se establece el inglés como idioma por defecto, y se prepara la consola para trabajar con dos mandos, asociados respectivamente a un jugador identificado por el código \emph{pj1} y otro identificado por \emph{pj2}.\\
+
+\subsubsection{El bucle principal}
+
+La clase base \emph{Juego} proporciona, además, un método que ejecuta un bucle principal sencillo. Este método es virtual, de tal manera que si el programador necesita otra forma de gestionar su aplicación, se le permite redefinirlo en su clase derivada.\\
+
+El método \emph{run()} es el que se encarga de controlar este bucle principal. En primer lugar, llama al método \emph{cargar()}, que es virtual puro y debe ser definido en la clase derivada de \emph{Juego}. En esta función debe ejecutarse todo lo que se necesite \textbf{antes} de que se entre en el bucle. Después, se inicializa la bandera de salida con un valor falso y se establece el contador de ciclos del procesador a cero (este contador se utiliza para mantener constante el valor de los fotogramas por segundo), tras lo cual se entra en el bucle principal.\\
+
+El bucle principal actualiza, al principio de cada fotograma, el estado de todos los mandos conectados a la consola, ejecuta el método virtual puro \emph{frame()}, y después finaliza el fotograma y controla la tasa de FPS. En este método \emph{frame()} se incluirán todos los detalles de la ejecución de cada fotograma, y devolverá un valor booleano falso si la ejecución debe continuar, siendo el valor de retorno verdadero en el caso de que el programa deba terminar.\\
+
+Un detalle más, en el caso de que ocurriera una excepción en el transcurso de la ejecución del programa, ésta será registrada por el sistema de \emph{logging} (siempre que éste esté activado, al menos, en el nivel \emph{error}, identificador 1), y después se saldrá de la aplicación.\\
+
+Por último, destacar el hecho de que tanto si se necesita una gestión del bucle principal diferente, o un mayor número de funciones, el hecho de tener que derivar de la clase \emph{Juego} implica la posibilidad de crear tantos métodos como sea necesario, y la redefinición opcional del método \emph{run()} nos permite ejecutar estos nuevos métodos de la manera que mejor se adecúe a nuestras necesidades.
+

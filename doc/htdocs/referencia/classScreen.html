@@ -1,0 +1,826 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>libWiiEsp: Referencia de la Clase Screen</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Generado por Doxygen 1.7.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+--></script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libWiiEsp&#160;<span id="projectnumber">0.9.2</span></div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Clases</span></a></li>
+      <li><a href="files.html"><span>Archivos</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-static-methods">Métodos públicos estáticos</a> &#124;
+<a href="#pro-methods">Métodos protegidos</a>  </div>
+  <div class="headertitle">
+<h1>Referencia de la Clase Screen</h1>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="Screen" -->
+<p>Clase que gestiona los gráficos en la Nintendo Wii.  
+<a href="#_details">Más...</a></p>
+
+<p><code>#include &lt;<a class="el" href="screen_8h_source.html">screen.h</a>&gt;</code></p>
+
+<p><a href="classScreen-members.html">Lista de todos los miembros.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreen.html#a18b1f5c14c4a820cdc63a57c4e61d7eb">inicializar</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreen.html#a1d071195837af66cb6829d0043169ad6">ancho</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreen.html#ae0b582b036da9f61377933e64ff0bbe4">alto</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreen.html#a5239cca0980df63b651371b598cc3712">flip</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreen.html#abbf9ba9b30daf6439c303092001c8cdf">crearTextura</a> (GXTexObj *textura, void *pixeles, u16 ancho, u16 alto)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreen.html#ac309fa3bdbe7a78926e4ff0d92b0876b">dibujarTextura</a> (GXTexObj *textura, s16 x, s16 y, s16 z, u16 ancho, u16 alto)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreen.html#afc490aeecf3cff04b3aa5ede5909598d">dibujarCuadro</a> (GXTexObj *textura, u16 texAncho, u16 texAlto, s16 x, s16 y, s16 z, s16 cuadroX, s16 cuadroY, u16 cuadroAncho, u16 cuadroAlto, bool invertido=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreen.html#a273000a29dd6574b8c972cebd219d510">dibujarPunto</a> (s16 x, s16 y, s16 z, u32 color)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreen.html#a9637e49bfffb736d7164b2c1d877ca06">dibujarLinea</a> (s16 x1, s16 y1, s16 x2, s16 y2, s16 z, u16 ancho, u32 color)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreen.html#a99b7b6b7fa45465a8642512b5b50ad6f">dibujarRectangulo</a> (s16 x1, s16 y1, s16 x2, s16 y2, s16 x3, s16 y3, s16 x4, s16 y4, s16 z, u32 color)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreen.html#a2ecba6e7719023a70f0e07e4d8063d92">dibujarCirculo</a> (s16 x, s16 y, s16 z, f32 r, u32 color)</td></tr>
+<tr><td colspan="2"><h2><a name="pub-static-methods"></a>
+Métodos públicos estáticos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classScreen.html">Screen</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreen.html#a3756c4beb36cc498e98a8ec80ad3b53f">get_instance</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreen.html#acc0c7e7ee81f775b5659e6430355a5c5">destroy</a> (void)</td></tr>
+<tr><td colspan="2"><h2><a name="pro-methods"></a>
+Métodos protegidos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreen.html#a7670d4029625d65e6846842e9d8f6c02">Screen</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreen.html#aca8e6d405d54bd0ea318564f11a68f00">~Screen</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreen.html#a2eb13eaf0ca4a2387645033c934d3a50">Screen</a> (const <a class="el" href="classScreen.html">Screen</a> &amp;s)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classScreen.html">Screen</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreen.html#a40d4385858c67d5088a98ecbf38be433">operator=</a> (const <a class="el" href="classScreen.html">Screen</a> &amp;s)</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Descripción detallada</h2>
+<div class="textblock"><p>Clase que gestiona los gráficos en la Nintendo Wii. </p>
+<dl class="author"><dt><b>Autor:</b></dt><dd>Ezequiel Vázquez de la Calle </dd></dl>
+<dl class="version"><dt><b>Versión:</b></dt><dd>0.9.2</dd></dl>
+<p>La libogc proporciona una biblioteca de bajo nivel para trabajar con los gráficos, llamada GX. La GX trabaja, de base, en tres dimensiones, y soporta varias proyecciones gráficas, pero como este es un proyecto en 2D, sólo se utilizará la proyección ortográfica. Básicamente, se trata de que todo lo que hay en el mundo del juego se proyecta sobre la pantalla de TV de forma perpendicular (como si el foco de luz estuviera en el infinito), de tal manera que se muestra como si sólo hubiera dos dimensiones, y además, la profundidad no se tiene en cuenta: se ve al mismo tamaño un objeto, esté en la capa 0, o en la 999.</p>
+<p>GX espera que, a cada frame, se le pase un buffer con lo que tiene que dibujar en ese momento. Esta clase <a class="el" href="classScreen.html" title="Clase que gestiona los gráficos en la Nintendo Wii.">Screen</a> utiliza un buffer (de ahora en adelante FIFO, First Input First Output, nombre descriptivo sobre cómo funciona) de 1MB, que es el tamaño máximo que está soportado, y es un tamaño más que sobrado para dibujar toda la pantalla en un frame concreto. Además, implementa un sistema de doble buffer de una forma sencilla, de tal manera que se alternan: cada vez que hay que copiar datos al FIFO, se hace desde un buffer distinto. Es decir, que habrá un framebuffer activo en cada frame, que será en el que se dibuje todo, y al final del frame, el contenido de dicho buffer se copia al FIFO.</p>
+<p>El modo de pantalla (PAL, NTSC, PAL60) se toma automáticamente de la configuración que tenga la consola en el momento de inicializar la clase, de tal manera que no hay que preocuparse. Además, cuando se configura el modo de vídeo, pasamos a tener disponibles el ancho y el alto de la pantalla en píxeles. Se proporciona también el uso de capas de profundidad, que van desde 0 (primer plano) hasta 999 (capa más profunda). Nota: de momento, esta clase sólo trabaja con proporción 4:3, en un futuro no muy lejano se implementará soporte para 16:9.</p>
+<p>Cada punto que se vaya a dibujar en la pantalla consta de tres coordenadas (x,y,z), donde X es la distancia horizontal en píxeles hasta el lado izquierdo de la pantalla, Y es la distancia vertical en píxeles hasta el borde superior de la pantalla, y Z es la capa en la que se va a dibujar (como se ha dicho ya, es un número entero positivo que, cuanto más se acerca de 0, más cerca del primer plano estará el punto). El tipo de estas tres coordenadas es s16 (entero con signo de 16 bits).</p>
+<p>Cuando se dibuja un punto, hay que darle color para que se vea (si no, estaríamos hablando de un píxel invisible). El formato de color esperado es un entero sin signo de 32 bits (tipo u32 en la biblioteca), con el formato hexadecimal 0xRRGGBBAA, donde cada pareja representa un componente del color: RR es rojo representado en 8 bits, GG es verde, BB es azul, y AA es el canal alpha. Este canal alpha tiene una peculiaridad, y es que todo lo que tenga un valor inferior a 0×08 será considerado invisible.</p>
+<p>La GX de libogc proporciona un serie de funciones de dibujo primitivas para plasmar en la pantalla figuras geométricas. Las que se utilizan en la clase <a class="el" href="classScreen.html" title="Clase que gestiona los gráficos en la Nintendo Wii.">Screen</a> son las siguientes: 1. GX_POINTS: Dibuja un sólo punto. 2. GX_LINES: Dibuja una línea recta entre dos puntos, de un píxel de ancho. 3. GX_TRIANGLES: Dibuja un triángulo a partir de tres puntos. 4. GX_QUADS: Dibujar un rectángulo a partir de cuatro puntos.</p>
+<p>Utilizar estas funciones primitivas para dibujar figuras geométricas es muy sencillo. Primero, hay que establecer una serie de descriptores, o dicho de otro modo, parámetros que le pasamos a la GX para que sepa qué vamos a hacer. Estos descriptores incluyen información sobre qué vamos a mandarle y cómo, por ejemplo, se le puede decir "se van a pintar puntos representados por tres variables s16, con color directo utilizando una variable u32, y no
+ se va a utilizar textura". Posteriormente, con la instrucción GX_Begin(primitiva, GX_VTXFMT0, numero_de_puntos_a_dibujar), comenzamos el bloque de dibujo propiamente dicho. Esta función indica qué primitiva se va a utilizar, y cuántos puntos se emplearán. Por ejemplo, para dibujar dos triángulos, la llamada sería:</p>
+<div class="fragment"><pre class="fragment"> <span class="comment">// Primitiva GX_TRIANGLES, y 6 vértices, para dibujar dos triángulos</span>
+ GX_Begin(GX_TRIANGLES, GX_VTXFMT0, 6)
+</pre></div><p>Seguidamente, se procede a dibujar los seis puntos, siguiendo el mismo formato que se ha indicado antes con los descriptores. Para dibujar un punto, la llamada es:</p>
+<div class="fragment"><pre class="fragment"> <span class="comment">// Dibujar un punto invisible en las coordenadas (x,y,z)</span>
+ GX_Position3s16(s16 x, s16 y, s16 z);
+ <span class="comment">// Rellenar el último punto dibujado con color rojo (0xRR0000AA)</span>
+ GX_Color1u32(0xFF0000FF);
+</pre></div><p>Finalmente, hay que cerrar el bloque de dibujo con la función GX_End()</p>
+<p>Descripción de la clase <a class="el" href="classScreen.html" title="Clase que gestiona los gráficos en la Nintendo Wii.">Screen</a></p>
+<p>La clase <a class="el" href="classScreen.html" title="Clase que gestiona los gráficos en la Nintendo Wii.">Screen</a> implementa un patrón Singleton, ya que es lógico pensar que sólo se va a utilizar una pantalla en un juego. Tiene tres partes bien diferenciadas, que son las funciones que gestionan la pantalla propiamente dicha, las funciones relativas a texturas, y los métodos que se encargan de dibujar figuras geométricas en el framebuffer.</p>
+<p>Las funciones de gestión de pantalla son, principalmente, la de inicialización (<a class="el" href="classScreen.html#a18b1f5c14c4a820cdc63a57c4e61d7eb">inicializar()</a>, llamar al principio del programa una sola vez), la de fin de frame (<a class="el" href="classScreen.html#a5239cca0980df63b651371b598cc3712">flip()</a>, que se encarga de copiar lo que tengamos en el framebuffer actual al FIFO y de enviarlo al chip gráfico de la consola), y dos métodos consultores para saber, en todo momento, el ancho y alto de la pantalla en píxeles.</p>
+<p>El punto fuerte de la clase <a class="el" href="classScreen.html" title="Clase que gestiona los gráficos en la Nintendo Wii.">Screen</a> tiene que ver con las texturas. Se proporciona una función, <a class="el" href="classScreen.html#abbf9ba9b30daf6439c303092001c8cdf">crearTextura()</a>, que a partir de una zona de memoria en la cual haya píxeles de 8 bits por color y en formato RGB, creará un objeto de textura GXTexObj, con el formato que utiliza la GX, y preparado para trabajar con él. El formato de imagen que utiliza la Wii es RGB5A3, de 16 bits. Se representa con 5 bits para cada color, y uno para el canal alpha, pero se puede utilizar un píxel de cada color para determinar niveles de transparencia más complejos. Esta función de creación de texturas modifica la zona de memoria que almacena la información de los píxeles, convirtiéndola en tiles de 4×4.</p>
+<p>Una vez creada la textura, se puede dibujar tal cual en la pantalla utilizando la función <a class="el" href="classScreen.html#ac309fa3bdbe7a78926e4ff0d92b0876b">dibujarTextura()</a>, indicando sus coordenadas y su ancho y alto. También se puede dibujar una parte de esa textura, utilizando la función <a class="el" href="classScreen.html#afc490aeecf3cff04b3aa5ede5909598d">dibujarCuadro()</a>, a la cual hay que pasarle las coordenadas de dibujo, el ancho y alto de la textura completa, y tanto las coordenadas X e Y de la parte de la textura que se quiere dibujar, como el ancho y el alto del cuadro. Internamente, estas dos funciones de dibujo hacen uso de una función privada de la clase, configurarTextura(), que se encarga de establecer los descriptores de la GX para dibujar texturas.</p>
+<p>El tercer bloque de funciones de dibujo de la clase <a class="el" href="classScreen.html" title="Clase que gestiona los gráficos en la Nintendo Wii.">Screen</a> son, básicamente, funciones que permiten dibujar formas geométricas (como son un punto, una línea recta, un rectángulo y un círculo), en un color plano, y a partir de las primitivas que se describieron anteriormente. Importante: al dibujar un rectángulo, el orden de los puntos debe ser, sí o sí, izquierda-arriba, derecha-arriba, derecha-abajo, e izquierda-abajo. Si no se sigue esta recomendación, existe riesgo de provocar un cuelgue en el sistema. Internamente, estas funciones de dibujo hacen uso de una función privada de la clase, configurarColor(), que se encarga de establecer los descriptores de la GX para dibujar con color directo de relleno.</p>
+<p>Para más información sobre los métodos de la clase <a class="el" href="classScreen.html" title="Clase que gestiona los gráficos en la Nintendo Wii.">Screen</a>, consultar su descripción.</p>
+<p>Ejemplo de uso:</p>
+<div class="fragment"><pre class="fragment">    screen-&gt;inicializar();
+
+    <span class="comment">// Bucle principal</span>
+    <span class="keywordflow">while</span>(1) {
+        <span class="comment">// Gestionar entrada, realizar cálculos, etc.</span>
+        <span class="comment">// ...</span>
+
+        <span class="comment">// Fase de dibujo: un circulo rojo y un rectangulo azul</span>
+        screen-&gt;dibujarCirculo(100, 100, 5, 30.0f, 0xFF0000FF);
+        screen-&gt;dibujarRectangulo(300, 200, 400, 200, 400, 250, 300, 250, 10, 0x0000FFFF);
+
+        <span class="comment">// Fin de frame</span>
+        screen-&gt;flip();
+    }
+</pre></div> </div><hr/><h2>Documentación del constructor y destructor</h2>
+<a class="anchor" id="a7670d4029625d65e6846842e9d8f6c02"></a><!-- doxytag: member="Screen::Screen" ref="a7670d4029625d65e6846842e9d8f6c02" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Screen::Screen </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Constructor de la clase <a class="el" href="classScreen.html" title="Clase que gestiona los gráficos en la Nintendo Wii.">Screen</a>. En la zona protegida debido a la implementación del patrón Singleton. La llamada al constructor inicializa el sistema de vídeo de la Nintendo Wii. Fija la constante FIFO_SIZE, que será el tamaño del bus que envía los datos al procesador gráfico en cada frame. </p>
+
+</div>
+</div>
+<a class="anchor" id="aca8e6d405d54bd0ea318564f11a68f00"></a><!-- doxytag: member="Screen::~Screen" ref="aca8e6d405d54bd0ea318564f11a68f00" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Screen::~Screen </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Destructor de la clase <a class="el" href="classScreen.html" title="Clase que gestiona los gráficos en la Nintendo Wii.">Screen</a>. Se encuentra en la zona protegida debido a la implementación del patrón Singleton. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2eb13eaf0ca4a2387645033c934d3a50"></a><!-- doxytag: member="Screen::Screen" ref="a2eb13eaf0ca4a2387645033c934d3a50" args="(const Screen &amp;s)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Screen::Screen </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classScreen.html">Screen</a> &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Constructor de copia de la clase <a class="el" href="classScreen.html" title="Clase que gestiona los gráficos en la Nintendo Wii.">Screen</a>. Se encuentra en la zona protegida debido a la implementación del patrón Singleton (evita la copia). </p>
+
+</div>
+</div>
+<hr/><h2>Documentación de las funciones miembro</h2>
+<a class="anchor" id="ae0b582b036da9f61377933e64ff0bbe4"></a><!-- doxytag: member="Screen::alto" ref="ae0b582b036da9f61377933e64ff0bbe4" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u16 Screen::alto </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método observador para el alto de la pantalla en píxeles </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Alto de la pantalla en píxeles </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1d071195837af66cb6829d0043169ad6"></a><!-- doxytag: member="Screen::ancho" ref="a1d071195837af66cb6829d0043169ad6" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u16 Screen::ancho </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método observador para el ancho de la pantalla en píxeles </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Ancho de la pantalla en píxeles </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abbf9ba9b30daf6439c303092001c8cdf"></a><!-- doxytag: member="Screen::crearTextura" ref="abbf9ba9b30daf6439c303092001c8cdf" args="(GXTexObj *textura, void *pixeles, u16 ancho, u16 alto)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Screen::crearTextura </td>
+          <td>(</td>
+          <td class="paramtype">GXTexObj *&#160;</td>
+          <td class="paramname"><em>textura</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>pixeles</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u16&#160;</td>
+          <td class="paramname"><em>ancho</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u16&#160;</td>
+          <td class="paramname"><em>alto</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que, a partir de una zona de memoria con información de píxeles, crea un objeto de textura GXTexObj, con el cual puede trabajar la biblioteca de bajo nivel GX. El formato de la zona de memoria debe ser una secuencia de píxeles, con 24 bits por píxel (ocho bits por color, primero rojo, seguido de verde y finalmente azul). Las medidas de la imagen formada por la información de estos píxeles debe tener medidas (alto y ancho) múltiplos de 8. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">textura</td><td>Dirección de memoria a un objeto GXTexObj recién creado. </td></tr>
+    <tr><td class="paramname">pixeles</td><td>Dirección a la zona de memoria donde se encuentra la información de la imagen. </td></tr>
+    <tr><td class="paramname">ancho</td><td>Ancho en píxeles que tiene la imagen que se convertirá en textura. </td></tr>
+    <tr><td class="paramname">alto</td><td>Alto en píxeles que tiene la imagen que se convertirá en textura. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="acc0c7e7ee81f775b5659e6430355a5c5"></a><!-- doxytag: member="Screen::destroy" ref="acc0c7e7ee81f775b5659e6430355a5c5" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Screen::destroy </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método de clase que limpia la memoria ocupada por la instancia activa en el sistema de la clase <a class="el" href="classScreen.html" title="Clase que gestiona los gráficos en la Nintendo Wii.">Screen</a>, llamando a su destructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2ecba6e7719023a70f0e07e4d8063d92"></a><!-- doxytag: member="Screen::dibujarCirculo" ref="a2ecba6e7719023a70f0e07e4d8063d92" args="(s16 x, s16 y, s16 z, f32 r, u32 color)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Screen::dibujarCirculo </td>
+          <td>(</td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">f32&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u32&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que dibuja un círculo relleno de un color concreto a partir de un punto y un radio. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Coordenada X del centro del círculo. </td></tr>
+    <tr><td class="paramname">y</td><td>Coordenada Y del centro del círculo. </td></tr>
+    <tr><td class="paramname">z</td><td>Coordenada Z (capa) donde se dibujará el círculo. Entre 0 y 999. </td></tr>
+    <tr><td class="paramname">r</td><td>Radio, en píxeles, del círculo. </td></tr>
+    <tr><td class="paramname">color</td><td>Entero de 32 bits sin signo que indica el color del círculo. Formato 0xRRGGBBAA </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="afc490aeecf3cff04b3aa5ede5909598d"></a><!-- doxytag: member="Screen::dibujarCuadro" ref="afc490aeecf3cff04b3aa5ede5909598d" args="(GXTexObj *textura, u16 texAncho, u16 texAlto, s16 x, s16 y, s16 z, s16 cuadroX, s16 cuadroY, u16 cuadroAncho, u16 cuadroAlto, bool invertido=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Screen::dibujarCuadro </td>
+          <td>(</td>
+          <td class="paramtype">GXTexObj *&#160;</td>
+          <td class="paramname"><em>textura</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u16&#160;</td>
+          <td class="paramname"><em>texAncho</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u16&#160;</td>
+          <td class="paramname"><em>texAlto</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>cuadroX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>cuadroY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u16&#160;</td>
+          <td class="paramname"><em>cuadroAncho</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u16&#160;</td>
+          <td class="paramname"><em>cuadroAlto</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>invertido</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que dibuja una parte de una textura en formato GXTexObj en unas coordenadas (x,y,z) de la pantalla. En esas coordenadas se dibujará la esquina superior izquierda de la zona de la textura que se quiera dibujar. Dicha zona viene determinada por unas coordenadas (x,y), que indican, respectivamente, la distancia en horizontal al lado izquierdo de la textura, y en vertical al lado superior de ésta, del punto superior izquierdo del cuadro de la textura que se va a dibujar. Este cuadro también se define por su alto y ancho en píxeles. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">textura</td><td>Dirección de memoria de la textura que se va a dibujar. </td></tr>
+    <tr><td class="paramname">texAncho</td><td>Ancho en píxeles de la textura a dibujar </td></tr>
+    <tr><td class="paramname">texAlto</td><td>Alto en píxeles de la textura a dibujar </td></tr>
+    <tr><td class="paramname">x</td><td>Coordenada X donde se comenzará a dibujar la textura. </td></tr>
+    <tr><td class="paramname">y</td><td>Coordenada Y donde se comenzará a dibujar la textura. </td></tr>
+    <tr><td class="paramname">z</td><td>Coordenada Z (capa) donde se comenzará a dibujar la textura. Entre 0 y 999. </td></tr>
+    <tr><td class="paramname">cuadroX</td><td>Coordenada X (interna a la textura) donde comienza el cuadro a dibujar. </td></tr>
+    <tr><td class="paramname">cuadroY</td><td>Coordenada Y (interna a la textura) donde comienza el cuadro a dibujar. </td></tr>
+    <tr><td class="paramname">cuadroAncho</td><td>Ancho en píxeles del cuadro de la textura que se va a dibujar. </td></tr>
+    <tr><td class="paramname">cuadroAlto</td><td>Alto en píxeles del cuadro de la textura que se va a dibujar. </td></tr>
+    <tr><td class="paramname">invertido</td><td>Verdadero si se quiere dibujar el cuadro de la textura invertido respecto al eje vert. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a9637e49bfffb736d7164b2c1d877ca06"></a><!-- doxytag: member="Screen::dibujarLinea" ref="a9637e49bfffb736d7164b2c1d877ca06" args="(s16 x1, s16 y1, s16 x2, s16 y2, s16 z, u16 ancho, u32 color)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Screen::dibujarLinea </td>
+          <td>(</td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>x2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>y2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u16&#160;</td>
+          <td class="paramname"><em>ancho</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u32&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que dibuja una recta rellena de un color concreto entre dos puntos. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x1</td><td>Coordenada X del punto origen de la recta. </td></tr>
+    <tr><td class="paramname">y1</td><td>Coordenada Y del punto origen de la recta. </td></tr>
+    <tr><td class="paramname">x2</td><td>Coordenada X del punto final de la recta. </td></tr>
+    <tr><td class="paramname">y2</td><td>Coordenada Y del punto final de la recta. </td></tr>
+    <tr><td class="paramname">z</td><td>Coordenada Z (capa) donde se dibujará la recta. Entre 0 y 999. </td></tr>
+    <tr><td class="paramname">ancho</td><td>Ancho en píxeles de la recta </td></tr>
+    <tr><td class="paramname">color</td><td>Entero de 32 bits sin signo que indica el color de la recta a dibujar. Formato 0xRRGGBBAA </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a273000a29dd6574b8c972cebd219d510"></a><!-- doxytag: member="Screen::dibujarPunto" ref="a273000a29dd6574b8c972cebd219d510" args="(s16 x, s16 y, s16 z, u32 color)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Screen::dibujarPunto </td>
+          <td>(</td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u32&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que dibuja un punto de un color concreto en unas coordenadas (x,y,z). </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Coordenada X donde se dibujará el punto. </td></tr>
+    <tr><td class="paramname">y</td><td>Coordenada Y donde se dibujará el punto. </td></tr>
+    <tr><td class="paramname">z</td><td>Coordenada Z (capa) donde se dibujará el punto. Entre 0 y 999. </td></tr>
+    <tr><td class="paramname">color</td><td>Entero de 32 bits sin signo que indica el color del punto a dibujar. Formato 0xRRGGBBAA </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a99b7b6b7fa45465a8642512b5b50ad6f"></a><!-- doxytag: member="Screen::dibujarRectangulo" ref="a99b7b6b7fa45465a8642512b5b50ad6f" args="(s16 x1, s16 y1, s16 x2, s16 y2, s16 x3, s16 y3, s16 x4, s16 y4, s16 z, u32 color)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Screen::dibujarRectangulo </td>
+          <td>(</td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>x2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>y2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>x3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>y3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>x4</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>y4</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u32&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que dibuja un rectángulo relleno de un color concreto a partir de cuatro puntos. El orden de los puntos debe ser, obligatoriamente, izquierda-arriba, derecha-arriba, derecha-abajo, izquierda-abajo. Si no se sigue esta recomendación, puede darse un comportamiento inesperado. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x1</td><td>Coordenada X del punto superior izquierdo del rectángulo. </td></tr>
+    <tr><td class="paramname">y1</td><td>Coordenada Y del punto superior izquierdo del rectángulo. </td></tr>
+    <tr><td class="paramname">x2</td><td>Coordenada X del punto superior derecho del rectángulo. </td></tr>
+    <tr><td class="paramname">y2</td><td>Coordenada Y del punto superior derecho del rectángulo. </td></tr>
+    <tr><td class="paramname">x3</td><td>Coordenada X del punto inferior derecho del rectángulo. </td></tr>
+    <tr><td class="paramname">y3</td><td>Coordenada Y del punto inferior derecho del rectángulo. </td></tr>
+    <tr><td class="paramname">x4</td><td>Coordenada X del punto inferior izquierdo del rectángulo. </td></tr>
+    <tr><td class="paramname">y4</td><td>Coordenada Y del punto inferior izquierdo del rectángulo. </td></tr>
+    <tr><td class="paramname">z</td><td>Coordenada Z (capa) donde se dibujará el rectángulo. Entre 0 y 999. </td></tr>
+    <tr><td class="paramname">color</td><td>Entero de 32 bits sin signo que indica el color del rectángulo. Formato 0xRRGGBBAA </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac309fa3bdbe7a78926e4ff0d92b0876b"></a><!-- doxytag: member="Screen::dibujarTextura" ref="ac309fa3bdbe7a78926e4ff0d92b0876b" args="(GXTexObj *textura, s16 x, s16 y, s16 z, u16 ancho, u16 alto)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Screen::dibujarTextura </td>
+          <td>(</td>
+          <td class="paramtype">GXTexObj *&#160;</td>
+          <td class="paramname"><em>textura</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u16&#160;</td>
+          <td class="paramname"><em>ancho</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u16&#160;</td>
+          <td class="paramname"><em>alto</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que dibuja una textura en formato GXTexObj en unas coordenadas (x,y,z) de la pantalla. En esas coordenadas se dibujará la esquina superior izquierda de la textura. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">textura</td><td>Dirección de memoria de la textura que se va a dibujar. </td></tr>
+    <tr><td class="paramname">x</td><td>Coordenada X donde se comenzará a dibujar la textura. </td></tr>
+    <tr><td class="paramname">y</td><td>Coordenada Y donde se comenzará a dibujar la textura. </td></tr>
+    <tr><td class="paramname">z</td><td>Coordenada Z (capa) donde se comenzará a dibujar la textura. Entre 0 y 999. </td></tr>
+    <tr><td class="paramname">ancho</td><td>Ancho en píxeles de la textura a dibujar </td></tr>
+    <tr><td class="paramname">alto</td><td>Alto en píxeles de la textura a dibujar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5239cca0980df63b651371b598cc3712"></a><!-- doxytag: member="Screen::flip" ref="a5239cca0980df63b651371b598cc3712" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Screen::flip </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que da por finalizado un frame. Si se ha marcado el flag interno de actualización de gráficos, se copia al buffer FIFO el contenido del framebuffer activo, y se establece el otro como activo para el siguiente frame. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3756c4beb36cc498e98a8ec80ad3b53f"></a><!-- doxytag: member="Screen::get_instance" ref="a3756c4beb36cc498e98a8ec80ad3b53f" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classScreen.html">Screen</a>* Screen::get_instance </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método de clase que devuelve la dirección de memoria de la instancia activa en el sistema de la clase <a class="el" href="classScreen.html" title="Clase que gestiona los gráficos en la Nintendo Wii.">Screen</a>. Si aún no existe dicha instancia, la crea y la devuelve. Además, establece que al salir del programa, se destruya por medio de una llamada al destructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a18b1f5c14c4a820cdc63a57c4e61d7eb"></a><!-- doxytag: member="Screen::inicializar" ref="a18b1f5c14c4a820cdc63a57c4e61d7eb" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Screen::inicializar </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que inicializa todo el sistema de vídeo de la consola Nintendo Wii. Se debe llamar al comienzo del programa una sola vez. </p>
+
+</div>
+</div>
+<a class="anchor" id="a40d4385858c67d5088a98ecbf38be433"></a><!-- doxytag: member="Screen::operator=" ref="a40d4385858c67d5088a98ecbf38be433" args="(const Screen &amp;s)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classScreen.html">Screen</a>&amp; Screen::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classScreen.html">Screen</a> &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Operador de asignación de la clase <a class="el" href="classScreen.html" title="Clase que gestiona los gráficos en la Nintendo Wii.">Screen</a>. Se encuentra en la zona protegida debido a la implementación del patrón Singleton (evita la copia) </p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>/home/rabbit/Escritorio/libwiiesp/include/<a class="el" href="screen_8h_source.html">screen.h</a></li>
+</ul>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumeraciones</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Generado el Martes, 19 de Julio de 2011 20:45:53 para libWiiEsp por&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
+</body>
+</html>

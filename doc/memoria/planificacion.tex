@@ -1,0 +1,46 @@
+% Este archivo es parte de la memoria de libWiiEsp, protegida bajo la 
+% licencia GFDL. Puede encontrar una copia de la licencia en el archivo fdl-1.3.tex
+
+% Fuente tomada de la plantilla LaTeX para la realización de Proyectos Final 
+% de Carrera de Pablo Recio Quijano.
+
+% Copyright (C) 2009 Pablo Recio Quijano
+% Copyright (C) 2011 Ezequiel Vázquez de la Calle
+
+% -*-planificacion.tex-*-
+
+En este capítulo puede consultarse el desarrollo temporal del proyecto, reflejado en un diagrama de Gantt. Cabe destacar que el proyecto se ha elaborado en el periodo que abarca desde octubre de 2010 hasta julio de 2011, pero sufrió un parón de un mes entre noviembre y diciembre de 2010, por lo que el tiempo de desarrollo aproximado constó de 245 días. A continuación se resumen las actividades realizadas en cada una de las fases de ejecución del proyecto:
+
+\begin{itemize}
+\item \textbf{Fase de planificación} [35 días]: Se trata de la primera fase, en la que se pone en marcha el proyecto.
+	\begin{itemize}
+	\item Idea de proyecto [3 días]: en este punto se plantean varias opciones sobre en qué consistirá el proyecto, sin tener en cuenta detalles sobre el desarrollo, descartando las ideas que se excedían en su complejidad o no llegaban a un mínimo nivel de contenido. En un primer momento se decide construir un videojuego para la consola Nintendo Wii.
+	\item Estudio de viabilidad [7 días]: tras acotar aproximadamente el contenido del proyecto, se procede a recabar información general sobre si es posible o no desarrollar para Nintendo Wii, y en qué condiciones. Tras la recogida de datos desde diversas fuentes, se llega a la conclusión de que es necesaria una inmersión en la programación para la videoconsola, con el objetivo de conocer hasta qué punto es viable desarrollar con las herramientas de bajo nivel encontradas.
+	\item Pruebas de viabilidad [10 días]: se pone en práctica todo lo encontrado en el punto anterior, llegando a la conclusión de que no es suficiente contar con las herramientas proporcionadas por los \emph{sceners}, ya que operaciones relativamente sencillas como cargar un recurso multimedia desde la tarjeta SD requiere una cantidad enorme de líneas de código.
+	\item Cambio de planteamiento [1 día]: tras las conclusiones obtenidas a lo largo de los puntos anteriores, se decide cambiar el objetivo del proyecto; en lugar de implementar un videojuego, se desarrollará una herramienta completa, con documentación amplia y en español, que sirva para desarrollar videojuegos en dos dimensiones para Nintendo Wii.
+	\item Búsqueda de documentación adicional [10 días]: desde el momento en el que se decide construir una biblioteca completa para desarrollar videojuegos para Nintendo Wii, se profundiza en la documentación encontrada, obteniendo nuevas fuentes de información, pero todo en inglés. Se decide que, como complemento para la herramienta, se debe generar una documentación apropiada en español.
+	\item Entrevista con los tutores [1 día]: tras tener clara la idea de proyecto que se quiere llevar a cabo, se concierta una reunión con los directores del proyecto para exponerles la situación. Los tutores aceptan la idea, y se firman los correspondientes documentos.
+	\item Planificación temporal del proyecto [3 días]: una vez el proyecto comienza a andar, se realiza una estimación temporal del desarrollo, siendo ésta bastante flexible en el sentido de que, en un principio, no se conoce el alcance que tendrá la herramienta de desarrollo para Nintendo Wii.
+	\end{itemize}
+
+\item \textbf{Fase de ejecución} [130 días]: Una vez establecidos los objetivos del proyecto se procede a comenzar el desarrollo propiamente dicho.
+	\begin{itemize}
+	\item Especificación de requisitos [15 días]: se pule la idea de herramienta de desarrollo para Nintendo Wii, acotando qué funcionalidad se proporcionará a los usuarios de la biblioteca, y descartando una serie de puntos que, aunque podrían ser interesantes, aumentan exponencialmente la complejidad del sistema. A pesar de ello, posteriormente se irán añadiendo más requisitos a medida que se van concluyendo los objetivos marcados en un primer momento, consecuencia ello de la metodología de desarrollo seguida. Por otro lado, se decide crear tres sencillos juegos de ejemplo para ilustrar la utilidad de la herramienta una vez creada.
+	\item Iteraciones de desarrollo [95 días]: una vez decidida la funcionalidad general del producto, se procede a desarrollar cada uno de los módulos que cubrirán los distintos aspectos de la biblioteca. La construcción de cada módulo se descompone en cuatro fases bien diferenciadas:
+		\begin{enumerate}
+		\item Análisis: partiendo de los requisitos indicados en la especificación, se marca exactamente qué se quiere conseguir con el desarrollo del módulo correspondiente, y qué no se podrá ofrecer por aumentar excesivamente la complejidad. Se deciden las tecnologías, bibliotecas externas y otros detalles necesarios para comenzar la implementación de cada apartado de la herramienta.
+		\item Diseño: a la hora de definir cómo cumpliría su cometido cada uno de los módulos de la biblioteca, se tuvieron en cuenta todas las fuentes de información consultadas previamente, además de otras tantas que se iban localizando a medida que era necesario. Debido a ello, la fase de diseño de algunos módulos (como el módulo de vídeo, por ejemplo) se alargó bastante en el tiempo.
+		\item Codificación: tras establecer claramente cómo trabajaría cada componente de la herramienta, llegaba el momento de implementar el módulo correspondiente. Se tuvieron que continuar realizando indagaciones sobre la forma de trabajar de Nintendo Wii, ya que en cada fase de implementación surgían errores desconocidos y conceptos particulares de la videoconsola.
+		\item Pruebas: después de terminar la codificación de cada módulo, se dedicaba un cierto tiempo a las comprobaciones y validaciones necesarias de ese módulo concreto, más las pruebas oportunas para comprobar cómo se incorporaba el nuevo módulo al conjunto de los ya existentes.
+		\end{enumerate}
+	\item Juegos de ejemplo [20 días]: tras dar por finalizada la construcción de \programa{LibWiiEsp}, se desarrollaron los tres juegos que acompañan a la herramienta. La creación de estas tres aplicaciones constó también de las clásicas etapas de análisis, diseño, codificación y pruebas, y se requirió relativamente poco tiempo (menos de un mes para los tres ejemplos), demostrando que la biblioteca facilita enormemente el desarrollo de videojuegos.
+	\end{itemize}
+
+\item \textbf{Fase de documentación} [60 días]: Ya durante el desarrollo de la biblioteca se fue generando documentación, especialmente tras concluir la construcción de cada uno de los módulos. Sin embargo, una vez finalizada la herramienta se redactaron el manual de instalación y uso y la memoria del proyecto, suponiendo una inversión considerable de tiempo, y alternándose la construcción de los juegos de ejemplo con la generación de documentación.
+
+\item \textbf{Fase de finalización} [20 días]: En este último punto se produce la revisión final del proyecto y la documentación por parte de los tutores, se preparan los materiales necesarios para la presentación del trabajo, y se realiza la defensa ante el tribunal.
+
+\end{itemize}
+
+\figura{gantt.png}{scale=0.7,angle=90}{Diagrama de Gantt con la planificación del proyecto}{gantt}{p}
+

@@ -1,0 +1,423 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>libWiiEsp: Referencia de la Clase Logger</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Generado por Doxygen 1.7.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+--></script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libWiiEsp&#160;<span id="projectnumber">0.9.2</span></div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Clases</span></a></li>
+      <li><a href="files.html"><span>Archivos</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Tipos públicos</a> &#124;
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-static-methods">Métodos públicos estáticos</a> &#124;
+<a href="#pro-methods">Métodos protegidos</a>  </div>
+  <div class="headertitle">
+<h1>Referencia de la Clase Logger</h1>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="Logger" -->
+<p>Sistema de registro de mensajes de información, aviso o error en un archivo de texto plano en la SD.  
+<a href="#_details">Más...</a></p>
+
+<p><code>#include &lt;<a class="el" href="logger_8h_source.html">logger.h</a>&gt;</code></p>
+
+<p><a href="classLogger-members.html">Lista de todos los miembros.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-types"></a>
+Tipos públicos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#a6560059d9d36935b7f5e6d4f0eaac8f3">nivel_log</a> { <b>OFF</b>, 
+<b>ERROR</b>, 
+<b>AVISO</b>, 
+<b>INFO</b>
+ }</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="classLogger.html#a6560059d9d36935b7f5e6d4f0eaac8f3">Logger::nivel_log</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#a90af384b3a44ef697bcc5510a4af0152">Nivel</a></td></tr>
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#a027c21796174f294bf9de0bdaaa66dc8">inicializar</a> (const std::string &amp;ruta, <a class="el" href="classLogger.html#a90af384b3a44ef697bcc5510a4af0152">Nivel</a> nivel=OFF)  throw (ArchivoEx, TarjetaEx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#ac50c45629f1de85814ccdaf7efeb8356">debug</a> (void) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#a723d0e2a5cc2e97fe9110cf7f942404d">info</a> (const std::string &amp;texto)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#a6c9b8b23cea9cbd588dc7ff111107a94">aviso</a> (const std::string &amp;texto)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#aab89845bf07bda427a96e940eb53a75c">error</a> (const std::string &amp;texto)</td></tr>
+<tr><td colspan="2"><h2><a name="pub-static-methods"></a>
+Métodos públicos estáticos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classLogger.html">Logger</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#a9c3d3848e95d739939a381df5628e2a3">get_instance</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#a1c9b3e3f0ac9ef72b77b1779a567cd93">destroy</a> (void)</td></tr>
+<tr><td colspan="2"><h2><a name="pro-methods"></a>
+Métodos protegidos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#a1bea5a42ff2f4c386fc16ed59f08292d">Logger</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#a0e94c9d4dfa44e5d9c82f216e9f0c419">~Logger</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#a8e91f215879eb570739e17150acb56fc">Logger</a> (const <a class="el" href="classLogger.html">Logger</a> &amp;l)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classLogger.html">Logger</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#a99cb479789493f86760d5dae0e021985">operator=</a> (const <a class="el" href="classLogger.html">Logger</a> &amp;l)</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Descripción detallada</h2>
+<div class="textblock"><p>Sistema de registro de mensajes de información, aviso o error en un archivo de texto plano en la SD. </p>
+<dl class="author"><dt><b>Autor:</b></dt><dd>Ezequiel Vázquez de la Calle </dd></dl>
+<dl class="version"><dt><b>Versión:</b></dt><dd>0.9.2</dd></dl>
+<p>Esta clase pretende ser una forma sencilla pero eficaz de registrar los eventos que se deseen durante la ejecución de un programa. Al ejecutarse un programa directamente en la videoconsola, no se dispone de ninguna herramienta que permita conocer el valor de expresiones o variables en tiempo de ejecución. <a class="el" href="classLogger.html" title="Sistema de registro de mensajes de información, aviso o error en un archivo de texto plano en la SD...">Logger</a> es de ayuda cuando sucede algún comportamiento anómalo o no esperado en la ejecución, ya que permite almacenar cadenas de texto en un búffer, y guardar éste en un archivo situado en la tarjeta SD para poder consultarlo posteriormente.</p>
+<p>La clase proporciona cuatro niveles de registro, cada uno de los cuales se centra en un tipo concreto de información. Estos niveles son apagado (no se registra ningún evento) información (aquí se incluye cualquier tipo de información relevante sobre el comportamiento del sistema durante la ejecución), aviso (en este nivel se debería incluir información concreta sobre comportamientos que, sin llegar a provocar un error, no son esperados), y error (nivel de registro para almacenar mensajes sobre errores que pueden provocar la parada de la ejecución).</p>
+<p><a class="el" href="classLogger.html" title="Sistema de registro de mensajes de información, aviso o error en un archivo de texto plano en la SD...">Logger</a> implementa un patrón Singleton, de tal manera que se tendrá una única instancia fácilmente localizable en el sistema. Además, está pensada para ser combinada con un sistema de gestión de excepciones, ya que todos los eventos e informaciones que se registran en el archivo de log son cadenas de texto de alto nivel (de tipo std::string). Esto último facilita enormemente el poder registrar los mensajes de toda excepción que disponga de un método a la usanza de what() de las excepciones estándar (toda aquella que derive de std::exception), que devuelve una cadena de texto con el mensaje de la excepción.</p>
+<p>Se debe tener en cuenta que las operaciones de lectura, y más aún las de escritura, en la tarjeta SD de la consola son muy lentas. Es por este motivo por el que se permite desactivar la función de log, mediante el nivel de registro OFF, cuando el programa no necesite información de depuración. Desactivando el registro de eventos se consigue que, al final del programa (que es cuando se produce la escritura del búffer en el archivo de log), no se sobrecargue el sistema con la operación de salida, y la ejecución pueda terminar en un intervalo de tiempo normal.</p>
+<p>Funcionamiento interno</p>
+<p>Los niveles de registro están agrupados en una enumeración que, a su vez, se define como tipo público de la clase para facilitar su utilización. El orden es desde el nivel más restrictivo (OFF, no se registra nada) a más amplio (INFO, se registra todo). Un nivel más amplio incluye a los más restrictivos que él, lo cual quiere decir que si, por ejemplo, se activara el nivel AVISO, se registrarían tanto mensajes de aviso como de error. Es por esto que se recomienda, en caso de necesitar representar los niveles como enteros, se utilice el cero para OFF, uno para ERROR, dos para AVISO y tres para INFO, con la intención de respetar la jerarquía de niveles. Por supuesto, la decisión final queda en manos del desarrollador.</p>
+<p>Cuando se inicializa el sistema de registro de eventos, se guarda el nivel de log introducido como parámetro, y si éste no es OFF (no registrar nada), se sigue adelante. Se comprueba que la tarjeta SD esté disponible para realizar operaciones de entrada/salida, se abre el archivo de log indicado en el primer parámetro en modo escritura (si no existiera, se crea), y se establece una cadena de caracteres de alto nivel como búffer para los mensajes de log.</p>
+<p>La clase irá registrando eventos en el búffer, cada uno en una línea, y comenzando por las cadenas [INFO] para el nivel de información, [AVISO] para el nivel de aviso, y [ERROR] para una cadena que contenga un mensaje con nivel de registro error. El guardado de eventos se realiza por orden de ejecución, de tal manera que cuanto más adelante se encuentre una línea en el archivo de log, será posterior en su ejecución a los eventos reflejados en líneas anteriores.</p>
+<p>Por último, hay que tener en cuenta que el volcado del búffer en el archivo se realiza cuando se destruye la instancia de la clase. La ventaja de esta decisión es que, al realizarse un único guardado, el rendimiento del programa con <a class="el" href="classLogger.html" title="Sistema de registro de mensajes de información, aviso o error en un archivo de texto plano en la SD...">Logger</a> activado no se ve afectado durante la ejecución, hecho que merece la pena aún sabiendo que, al finalizar la aplicación, habrá que esperar a que finalice la operación de salida.</p>
+<p>Ejemplo de uso</p>
+<div class="fragment"><pre class="fragment"> <span class="comment">// Inicializar Logger con nivel de registro de avisos</span>
+ logger-&gt;inicializar( <span class="stringliteral">&quot;/apps/wiipang/info.log&quot;</span>, Logger::AVISO );
+ <span class="comment">// Registrar un mensaje de error</span>
+ logger-&gt;error( <span class="stringliteral">&quot;Esto es un mensaje de error&quot;</span> );
+ <span class="comment">// Registrar un mensaje de aviso</span>
+ logger-&gt;aviso( <span class="stringliteral">&quot;Esto es un mensaje de aviso&quot;</span> );
+ <span class="comment">// Registrar un mensaje de información, que no se guardará en el archivo de log</span>
+ logger-&gt;info( <span class="stringliteral">&quot;Esto es un mensaje de información, no se guardará&quot;</span> );
+</pre></div> </div><hr/><h2>Documentación de los 'Typedef' miembros de la clase</h2>
+<a class="anchor" id="a90af384b3a44ef697bcc5510a4af0152"></a><!-- doxytag: member="Logger::Nivel" ref="a90af384b3a44ef697bcc5510a4af0152" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="classLogger.html#a6560059d9d36935b7f5e6d4f0eaac8f3">Logger::nivel_log</a>  <a class="el" href="classLogger.html#a90af384b3a44ef697bcc5510a4af0152">Logger::Nivel</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Niveles de log, desde el más amplio (INFO) hasta el más restrictivo (OFF, no se registra nada) </p>
+
+</div>
+</div>
+<hr/><h2>Documentación de las enumeraciones miembro de la clase</h2>
+<a class="anchor" id="a6560059d9d36935b7f5e6d4f0eaac8f3"></a><!-- doxytag: member="Logger::nivel_log" ref="a6560059d9d36935b7f5e6d4f0eaac8f3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classLogger.html#a6560059d9d36935b7f5e6d4f0eaac8f3">Logger::nivel_log</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Niveles de log, desde el más amplio (INFO) hasta el más restrictivo (OFF, no se registra nada) </p>
+
+</div>
+</div>
+<hr/><h2>Documentación del constructor y destructor</h2>
+<a class="anchor" id="a1bea5a42ff2f4c386fc16ed59f08292d"></a><!-- doxytag: member="Logger::Logger" ref="a1bea5a42ff2f4c386fc16ed59f08292d" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Logger::Logger </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Constructor de la clase <a class="el" href="classLogger.html" title="Sistema de registro de mensajes de información, aviso o error en un archivo de texto plano en la SD...">Logger</a>. Se encuentra en la zona protegida debido a la implementación del patrón Singleton. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0e94c9d4dfa44e5d9c82f216e9f0c419"></a><!-- doxytag: member="Logger::~Logger" ref="a0e94c9d4dfa44e5d9c82f216e9f0c419" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Logger::~Logger </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Destructor de la clase <a class="el" href="classLogger.html" title="Sistema de registro de mensajes de información, aviso o error en un archivo de texto plano en la SD...">Logger</a>. Se encuentra en la zona protegida debido a la implementación del patrón Singleton. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8e91f215879eb570739e17150acb56fc"></a><!-- doxytag: member="Logger::Logger" ref="a8e91f215879eb570739e17150acb56fc" args="(const Logger &amp;l)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Logger::Logger </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classLogger.html">Logger</a> &amp;&#160;</td>
+          <td class="paramname"><em>l</em></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Constructor de copia de la clase <a class="el" href="classLogger.html" title="Sistema de registro de mensajes de información, aviso o error en un archivo de texto plano en la SD...">Logger</a>. Se encuentra en la zona protegida debido a la implementación del patrón Singleton. </p>
+
+</div>
+</div>
+<hr/><h2>Documentación de las funciones miembro</h2>
+<a class="anchor" id="a6c9b8b23cea9cbd588dc7ff111107a94"></a><!-- doxytag: member="Logger::aviso" ref="a6c9b8b23cea9cbd588dc7ff111107a94" args="(const std::string &amp;texto)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Logger::aviso </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>texto</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método para introducir un evento de log en la categoría de aviso </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">texto</td><td>Texto que se quiere introducir en el log en la categoría de aviso </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac50c45629f1de85814ccdaf7efeb8356"></a><!-- doxytag: member="Logger::debug" ref="ac50c45629f1de85814ccdaf7efeb8356" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Logger::debug </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método consultor para conocer si está activado el modo debug </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Verdadero si el modo debug está activado, y false si no lo está </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1c9b3e3f0ac9ef72b77b1779a567cd93"></a><!-- doxytag: member="Logger::destroy" ref="a1c9b3e3f0ac9ef72b77b1779a567cd93" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Logger::destroy </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Función estática que destruye la instancia activa del log, llamando a su destructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="aab89845bf07bda427a96e940eb53a75c"></a><!-- doxytag: member="Logger::error" ref="aab89845bf07bda427a96e940eb53a75c" args="(const std::string &amp;texto)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Logger::error </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>texto</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método para introducir un evento de log en la categoría de error </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">texto</td><td>Texto que se quiere introducir en el log en la categoría de error </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a9c3d3848e95d739939a381df5628e2a3"></a><!-- doxytag: member="Logger::get_instance" ref="a9c3d3848e95d739939a381df5628e2a3" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classLogger.html">Logger</a>* Logger::get_instance </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Función estática que devuelve la instancia activa del log en el sistema. En el caso de no haber ninguna instancia, se crea y se devuelve. Implementación del patrón Singleton. </p>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Puntero a la instancia activa del log en el sistema </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a723d0e2a5cc2e97fe9110cf7f942404d"></a><!-- doxytag: member="Logger::info" ref="a723d0e2a5cc2e97fe9110cf7f942404d" args="(const std::string &amp;texto)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Logger::info </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>texto</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método para introducir un evento de log en la categoría de información </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">texto</td><td>Texto que se quiere introducir en el log en la categoría de información </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a027c21796174f294bf9de0bdaaa66dc8"></a><!-- doxytag: member="Logger::inicializar" ref="a027c21796174f294bf9de0bdaaa66dc8" args="(const std::string &amp;ruta, Nivel nivel=OFF)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Logger::inicializar </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>ruta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classLogger.html#a90af384b3a44ef697bcc5510a4af0152">Nivel</a>&#160;</td>
+          <td class="paramname"><em>nivel</em> = <code>OFF</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>  throw (<a class="el" href="classArchivoEx.html">ArchivoEx</a>, <a class="el" href="classTarjetaEx.html">TarjetaEx</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Método que inicializa la clase, abriendo el archivo que recibe por parámetro. La clase sólo registra logs si el segundo parámetro es verdadero; esto se hace así para poder desactivar el modo debug de una forma fácil. </p>
+<dl><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ruta</td><td>Ruta absoluta del archivo de logs en la SD </td></tr>
+    <tr><td class="paramname">nivel</td><td><a class="el" href="classNivel.html" title="Clase que proporciona una base para definir niveles (escenarios donde participan actores) de manera f...">Nivel</a> de severidad en el registro de logs </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Excepciones:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classArchivoEx.html" title="Clase de excepción para errores relacionados con archivos.">ArchivoEx</a></td><td>Se lanza si hay algún error al abrir un archivo </td></tr>
+    <tr><td class="paramname"><a class="el" href="classTarjetaEx.html" title="Clase de excepción para errores relacionados con la tarjeta SD.">TarjetaEx</a></td><td>Se lanza si ocurre un error relacionado con la tarjeta SD </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a99cb479789493f86760d5dae0e021985"></a><!-- doxytag: member="Logger::operator=" ref="a99cb479789493f86760d5dae0e021985" args="(const Logger &amp;l)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classLogger.html">Logger</a>&amp; Logger::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classLogger.html">Logger</a> &amp;&#160;</td>
+          <td class="paramname"><em>l</em></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Operador de asignación de la clase <a class="el" href="classLogger.html" title="Sistema de registro de mensajes de información, aviso o error en un archivo de texto plano en la SD...">Logger</a>. Se encuentra en la zona protegida debido a la implementación del patrón Singleton. </p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>/home/rabbit/Escritorio/libwiiesp/include/<a class="el" href="logger_8h_source.html">logger.h</a></li>
+</ul>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumeraciones</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Generado el Martes, 19 de Julio de 2011 20:45:52 para libWiiEsp por&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
+</body>
+</html>

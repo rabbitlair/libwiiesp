@@ -1,0 +1,121 @@
+% Este archivo es parte de la memoria de libWiiEsp, protegida bajo la 
+% licencia GFDL. Puede encontrar una copia de la licencia en el archivo fdl-1.3.tex
+
+% Fuente tomada de la plantilla LaTeX para la realización de Proyectos Final 
+% de Carrera de Pablo Recio Quijano.
+
+% Copyright (C) 2009 Pablo Recio Quijano
+% Copyright (C) 2011 Ezequiel Vázquez de la Calle
+
+% -*-plantillas.tex-*-
+
+Con todo lo desarrollado hasta el momento, ya se dispone de una herramienta completa para construir videojuegos para Nintendo Wii. A partir de este punto, se considera necesario la creación de una serie de plantillas (clases abstractas) para facilitar la implementación de videojuegos. El uso o no de estas plantillas son totalmente opcionales, pero suponen una ayuda para aquellos programadores que no tengan mucha experiencia en el desarrollo de videojuegos en dos dimensiones.
+
+\subsection{Actores}
+
+Un actor es la unidad básica en el desarrollo de un videojuego en dos dimensiones, y consiste en un objeto con entidad propia que se puede visualizar en la pantalla, y que almacena información sobre sus distintas características. Estas características son las siguientes: posición actual dentro del universo del juego (pareja de coordenadas (x,y)), posición previa del actor en el universo del juego (otro par de coordenadas (x,y)), velocidad de movimiento horizontal y vertical (número de píxeles que avanza el actor en un fotograma en cada uno de los ejes), estado actual del actor, estado previo del actor y el tipo de actor (una cadena de caracteres). Por supuesto, al derivar esta clase abstracta, se pueden añadir más características según se crea necesario.\\
+
+Realizando un acercamiento más técnico y concreto, un actor no es más que un conjunto de las características antes mencionadas, además de dos diccionarios donde, a cada estado del actor, le corresponde una animación y un conjunto de cajas de colisión, y que proporciona una manera sencilla y efectiva de cargar todas estas características desde un archivo XML almacenado en la tarjeta SD de la consola.\\
+
+Existen dos referencias para las coordenadas de un actor. En primer lugar, están las coordenadas de posición del actor dentro del escenario que conforma el propio juego, y que se refieren al desplazamiento en píxeles hacia la derecha del actor respecto al límite izquierdo del escenario (coordenada X), y al desplazamiento hacia abajo, también en píxeles, del actor respecto al límite superior de dicho escenario (coordenada Y). Por otra parte, existe otra referencia para las coordenadas de dibujo de un actor en la pantalla, y que se refieren a la posición respecto a los límites izquierdo y superior de la pantalla, además de la capa en la que se dibuja el actor (consultar la documentación de la clase Screen para más información respecto al dibujo de texturas en la pantalla).\\
+
+El comportamiento de un actor viene definido por los distintos estados que puede adoptar a lo largo de la ejecución del juego. Cada estado tiene asociado un comportamiento concreto, y que se ejecutará en cada iteración del bucle principal del juego en la que el actor tenga activo ese estado concreto. Las transiciones entre estados se realizan externamente (generalmente, desde la clase que gestiona el escenario, y que deriva de la clase abstracta Nivel). Los estados se identifican mediante una cadena de caracteres de alto nivel (de tipo \emph{string}), y se crean según aparezcan en el archivo XML que define las animaciones y las cajas de colisión para cada estado, es decir, un estado sólo se creará si aparece en algún momento en el mencionado archivo XML. El comportamiento del actor según su estado actual debe definirse en el método virtual puro \emph{actualizar} cuando se derive la clase Actor.
+
+Un detalle muy importante es que existe un estado obligatorio que hay que incluir forzosamente, y es el estado "normal", que es el que se toma por defecto. Si este estado faltara en el archivo XML del actor, se produciría un error y/o un comportamiento inesperado.\\
+
+La cadena de caracteres que identifica a un estado se toma como clave para dos diccionarios, uno que almacena una animación asociada al estado concreto, y otra que almacena un conjunto (de tipo \emph{set<Figura*>}) de figuras de colisión también asociadas al mismo estado. Estos diccionarios que tienen códigos de estado como clave identificativa se utilizan para que, en cada iteración del bucle principal, se dibuje la animación del actor correspondiente con el estado actual de éste, y sólo se tengan en cuenta las cajas de colisión asociadas al estado actual del actor para evaluar sus colisiones. Se proporcionan métodos para evaluar colisiones entre dos actores de una manera muy sencilla, y también para dibujar el actor en la pantalla en base a unas coordenadas de pantalla que se reciben desde fuera de la clase (la diferencia entre las coordenadas de posición y las de pantalla se explican unos párrafos más arriba).\\
+
+Otro detalle más es que se almacena un identificador de tipo de actor, es decir, todos los actores que estén gestionados por la misma clase derivada de Actor deberán tener este atributo con el mismo valor.\\
+
+Como ya se ha comentado, se consigue una separación completa de código fuente y datos, de tal manera que para cambiar las figuras de colisión, los estados o las animaciones de un actor, basta con modificar el archivo XML desde el cual se lee toda esta información. Este archivo tendrá una estructura parecida a esta:
+
+\begin{lstlisting}[style=XML]
+<?xml version="1.0" encoding="UTF-8"?>
+  <actor vx="3" vy="3" tipo="jugador">
+    <animaciones>
+    <animacion estado="normal" img="chief" sec="0" filas="1" columnas="5" retardo="3" />
+    <animacion estado="mover" img="chief" sec="0,1,2,3,4" filas="1" columnas="5" retardo="3" />
+    <animacion estado="muerte" img="chief" sec="5" filas="1" columnas="6" retardo="0" />
+  </animaciones>
+  <colisiones>
+    <rectangulo estado="normal" x1="27" y1="21" x2="55" y2="21" x3="55" y3="96" x4="27" y4="96" />
+    <circulo estado="normal" cx="41" cy="13" radio="8" />
+    <rectangulo estado="mover" x1="27" y1="21" x2="55" y2="21" x3="55" y3="96" x4="27" y4="96" />
+    <circulo estado="mover" cx="41" cy="13" radio="8" />
+    <sinfigura estado="muerte" />
+    </colisiones>
+  </actor>
+\end{lstlisting}
+
+En el elemento raíz se observan tres atributos, que son la velocidad de movimiento horizontal del actor en píxeles por fotogramas, la velocidad de movimiento vertical, y el tipo de actor.\\
+
+Se pueden apreciar dos grandes bloques, uno para las animaciones, y otro para las cajas de colisión. Cada animación y figura incluye la información necesaria para ser creada, además de un estado al que se asociará. Sólo puede haber una animación por estado; pero no ocurre así para las cajas de colisión, de las cuales puede haber todas las que se deseen en cada estado. Cade destacar que, en ambos bloques, aparece el estado obligatorio "normal", como ya se indicó anteriormente.\\
+
+Por último, cabe destacar que al derivar la clase Actor, se le pueden añadir nuevos atributos y métodos según se considere necesario, consiguiendo así partir de una base como es la propia clase Actor, pero pudiendo llegar a la complejidad que se desee. También hay que mencionar que a la hora de crear un actor, es apropiado diseñar los cambios entre estados como un autómata finito determinado, que como ya se ha explicado, realizaría sus transiciones entre estados de forma externa. Si se realiza de esta manera, es muy fácil desarrollar un actor en un período de tiempo relativamente pequeño.
+
+\subsection{Niveles}
+
+Un nivel, desde el punto de vista de \emph{LibWiiEsp}, no es más que un escenario donde los actores participan en el juego. Está formado por tres elementos principales que son los actores, el conjunto de \emph{tiles} que componen el propio nivel y una imagen de fondo. También tiene asociada una pista de música propia, una imagen desde la que se toman los \emph{tiles} que se dibujan, y unas coordenadas de \emph{scroll} para la pantalla, así como un ancho y un alto.\\
+
+El escenario que presenta un nivel es de forma rectangular, y tiene un ancho y un alto definidos por el número de \emph{tiles} que lo componen. A pesar de ello, en todo momento están disponibles sus medidas en píxeles. Dentro de este escenario, todos los elementos tienen una pareja de coordenadas que indican la distancia horizontal hacia la derecha respecto al límite izquierdo del nivel (coordenada X), y la distancia vertical hacia abajo respecto al límite superior del nivel (coordenada Y). Así pues, el origen de coordenadas del nivel (el punto (0,0)) es el vértice superior izquierdo del rectángulo que forma el escenario.\\
+
+En la pantalla sólo puede dibujarse una parte del escenario del nivel, ya que ésta tiene un tamaño determinado por el modo de vídeo. La parte del nivel que se dibuja en la pantalla en un momento determinado es la ventana del nivel, y es un rectángulo con las mismas medidas que la pantalla, y que tiene unas coordenadas respecto al punto (0,0) del escenario. Estas coordenadas son el \emph{scroll} del nivel, y se puede modificar mediante el método \emph{moverScroll}.\\
+
+La imagen de fondo del nivel debe tener el tamaño de la pantalla completa (para una televisión PAL de proporciones 4:3, las medidas en píxeles son 640x528), y será fija durante todo el transcurso del nivel. La idea de esta imagen de fondo estática es para situar un paisaje que acompañe al nivel, ya que la sensación de avance se produce con los propios \emph{tiles} que componen la estructura del nivel.\\
+
+Existen dos tipos de \emph{tiles} en un nivel, que se distinguen únicamente en que los \emph{tiles} no atravesables tienen un rectángulo de colisión con el mismo tamaño y posición, y por lo tanto, provocará que un actor que colisione con él pueda reaccionar de una manera; sin embargo, los \emph{tiles} atravesables no disponen de esta figura de colisión, y tienen únicamente un objetivo decorativo, para dotar de mayor detalle al escenario del nivel, pero no provocarán una colisión cuando un actor los toque. Todos estos \emph{tiles} se almacenan en la misma estructura (de tipo \emph{Escenario}), y para comprobar si un actor concreto colisiona con algún elemento del nivel se proporciona el método \emph{colision} (información útil para saber, por ejemplo en un juego de plataformas, si el actor está cayendo o está sobre una plataforma). Si el programador necesita un mayor detalle en la detección de colisiones entre actores y escenario, siempre puede añadir los métodos y atributos que considere necesarios para ello al crear la clase derivada de Nivel. La detección de colisiones entre un actor y los \emph{tiles} del escenario está optimizada para que sólo se evalúe la colisión con los \emph{tiles} sobre los que se encuentre el actor, evitando cálculos innecesarios.\\
+
+Se proporciona un método virtual puro \emph{actualizarEscenario} en el que se pueden implementar comportamientos para el escenario (como por ejemplo, plataformas destructibles, o en movimiento, además de cambiar las coordenadas del \emph{scroll} de la pantalla), y un método que dibuja la ventana del nivel en la pantalla de la consola.\\
+
+Los actores que participan en un nivel se distinguen entre los actores que son dirigidos por los jugadores, y los actores que controla la máquina. Cada uno de ellos se almacena en una estructura distinta, y dispone de un método concreto para actualizarlo. Concretamente, el método para actualizar los actores no jugadores es \emph{actualizarNpj}, en el que se supone que se debe implementar la actualización de todos los actores controlados por la máquina (la decisión sobre cómo llevar a cabo esta operación queda, por entero, en manos del programador). Igualmente, para actualizar los actores jugadores, se dispone del método \emph{actualizarPj}, que debe actualizar a un único jugador en cada llamada, y lo hace recibiendo el código identificador único del jugador, y el mando asociado a él.\\
+
+Hay que destacar especialmente la filosofía de esta clase Nivel junto con la clase Actor. En cada clase derivada de Actor se debe definir el comportamiento de cada actor dependiendo de su estado actual. Sin embargo, las transiciones entre estados de un actor pueden realizarse desde el Nivel en el que el actor está participando, o bien en el propio actor, ya que éste dispone de una referencia constante al Nivel en el que se encuentra, aunque lo que se recomienda es tomar la primera opción, y situar las transiciones entre estados en el método de actualización del Nivel, de tal manera que los actores respondan con un comportamiento u otro, dependiendo de cómo se les haya definido, y siempre según el estado que tengan activado.\\
+
+Una vez descritos los elementos que conforman el escenario de un nivel, hay que detallar especialmente el proceso de carga de un nivel desde un archivo TMX creado con el editor de mapas de \emph{tiles} Tiled \cite{website:tiled}:
+
+\begin{itemize}
+\item Cuando se crea un nivel, el constructor recibe un archivo TMX que se carga desde la tarjeta SD gracias a la clase Parser. Una vez en memoria, se lee el ancho y alto del nivel en \emph{tiles}, y el ancho y el alto en píxeles de un único \emph{tile} (las medidas de un \emph{tile} deben ser múltiplos de 8, ya que llevarán una imagen asociada). A partir de estos datos, se calcula el ancho y alto del escenario del nivel en píxeles.
+\item El proceso de lectura desde el archivo TMX continúa leyendo las propiedades del mapa, que son \emph{imagen\_fondo} (que es el código que debe tener la imagen de fondo del nivel en la galería de medias), \emph{imagen\_tileset} (código que la imagen del tileset deberá tener asociado en la galería de medias del sistema) y musica (código identificador de la pista de música en la galería de medias del sistema). Tras leer las propiedades del mapa de \emph{tiles}, se procede a leer las tres capas que debe contener el archivo TMX, que son las siguientes:
+	\begin{enumerate}
+	\item Capa 'escenario': capa de patrones del editor Tiled, debe contener los \emph{tiles} atravesables.
+	\item Capa 'plataformas': capa de patrones del editor Tiled, que contiene los \emph{tiles} no atravesables (los que tendrán figura de colisión asociada).
+	\item Capa 'actores': capa de objetos del editor Tiled. Cada objeto definido en esta capa debe tener la propiedad XML con la dirección absoluta en la tarjeta SD del archivo XML de descripción del actor como valor. Si además, el actor es un actor jugador, se espera que tenga otra propiedad llamada jugador, y cuyo valor debe ser el código identificador del jugador. También debe tener el identificador de su tipo en el campo Tipo.
+	\end{enumerate}
+
+\item Hay que tener en cuenta otro detalle importante, y es que, al llamar al constructor, la información de los actores se guardan en una estructura temporal. Por ese motivo, existe el método virtual puro \emph{cargarActores}, que ha de ser implementado por el programador al derivar la clase Nivel, y que se debe encargar de recorrer esta estructura temporal, crear cada actor utilizando el constructor de la clase correspondiente al tipo del actor, y almacenarlo en la estructura correspondiente (dependiendo de si es un actor jugador o no jugador). Por último, es conveniente que este método vacíe la estructura temporal para no malgastar memoria.\\
+\end{itemize}
+
+Esto último es necesario ya que, en la propia clase abstracta Nivel que forma parte de \emph{LibWiiEsp} no se conoce qué clases derivadas habrá de Actor, y por tanto, se deja en manos del programador implementar la creación de Actores en el nivel. A continuación, se establece el \emph{scroll} del nivel al valor (0,0), y se da por concluida la carga del nivel. Para conocer todos los detalles sobre la creación de niveles con el editor Tiled, consultar el manual de \emph{LibWiiEsp}.
+
+\subsection{Juego}
+
+Esta clase abstracta proporciona una plantilla sobre la que construir el objeto principal de toda aplicación desarrollada con \emph{LibWiiEsp}. Consiste en dos apartados bien diferenciados, que son la inicialización de todos los subsistemas de la consola y de la biblioteca (esto se realiza desde el constructor), y la ejecución del bucle principal de la aplicación. Como clase abstracta que es, no se puede instanciar directamente, si no que hay que crear a partir de ella una clase derivada en la que se definan los métodos que el programador considere oportunos para gestionar el programa.\\
+
+Además de la inicialización de la consola y el control del bucle principal del programa, esta clase también se encarga de gestionar la entrada de hasta cuatro mandos en la consola. Para ello, dispone de un diccionario en el que cada jugador, que está identificado por un código único (de tipo \emph{string}), tiene asociado un mando concreto de la consola. Para acceder al mando de un jugador, basta con buscar en el diccionario mediante el código identificativo del éste.\\
+
+El constructor de la clase recibe como parámetro un archivo XML con un formato concreto, en el que se deben especificar las opciones de configuración para el programa, como son el nivel de registro de mensajes deseado y la ruta completa del archivo de registro que se generará en el caso de estar el subsistema activado, el color considerado transparente y que no se dibujará en la pantalla (en formato 0xRRGGBBAA), el número de fotogramas por segundo (FPS) que se quiere que tenga el videojuego, la ruta absoluta hasta el archivo XML donde se especifican los recursos multimedia que deben ser cargados en la galería de medias, la ruta absoluta hasta el archivo XML donde se especifican las etiquetas de texto del sistema de internacionalización y el nombre del idioma por defecto, y por último, la configuración de jugadores, consistente en cuatro atributos de tipo cadena de caracteres en los que se deben especificar los códigos identificadores para cada uno de los jugadores.\\
+
+\begin{lstlisting}[style=XML]
+<?xml version="1.0" encoding="UTF-8"?>
+<conf>
+  <log valor="/apps/wiipang/info.log" nivel="3" />
+  <alpha valor="0xFF00FFFF" />
+  <fps valor="25" />
+  <galeria valor="/apps/wiipang/xml/galeria.xml" />
+  <lang valor="/apps/wiipang/xml/lang.xml" defecto="english" />
+  <jugadores pj1="pj1" pj2="pj2" pj3="" pj4="" />
+</conf>
+\end{lstlisting}
+
+El constructor de la clase Juego, que debe ser llamado en el constructor de la correspondiente clase derivada, se encarga en primer lugar de montar la primera partición de la tarjeta SD (debe ser una partición con sistema de ficheros FAT), cargar el árbol XML del archivo de configuración en memoria mediante la clase Parser, e inicializar el sistema de registro de mensajes según se haya especificado en el archivo de configuración. Si en alguna de estas operaciones se produjera un error, se saldría del programa mediante una llamada a la función \emph{exit}.\\
+
+A partir de ese momento, el constructor inicializará los sistemas de vídeo (clase Screen), controles (clase Mando), sonido (clase Sonido) y la biblioteca \emph{FreeType2} de gestión de fuentes de texto (clase Fuente). A continuación, establece el color transparente del sistema, el número de FPS, leerá la configuración de los jugadores, y creará una instancia de Mando para cada jugador que, en el archivo de configuración, no tenga una cadena vacía como identificador. Posteriormente, guarda cada mando asociado al código del jugador correspondiente en el diccionario de controles.\\
+
+Por último, se cargan todos los recursos media en la galería, y las etiquetas de texto para los idiomas del sistema en la clase Lang.\\
+
+Después de haber inicializado la consola partiendo del archivo de configuración, el método virtual \emph{run} proporciona una implementación básica del bucle principal del programa, en la que se controlan las posibles excepciones que puedan lanzarse (las cuales captura y almacena su mensaje en el archivo de mensajes), se mantiene constante la tasa de fotogramas por segundo, y se actualizan todos los mandos conectados a la consola y se gestiona correctamente la actualización de los gráficos a cada fotograma. Junto a este método también se proporciona un método virtual puro, llamado \emph{cargar}, y que se ejecuta antes de entrar en el bucle principal. Este método permite realizar las operaciones que se estimen necesarias antes de comenzar la ejecución del bucle, en el caso de que fueran necesarias (en caso contrario, bastaría con definir el método como una función vacía a la hora de derivar la clase Juego).\\
+
+Igualmente, al ser el método \emph{run} virtual, si el programador necesita otro tipo de gestión para el bucle principal de la aplicación, basta con que lo redefina en la clase derivada; a pesar de ello, tendrá disponible un sencillo ejemplo de control del bucle de la aplicación en la definición del método en la clase Juego.\\
+
+Por último, especificar un detalle, y es que el destructor de la clase Juego se encarga de liberar la memoria ocupada por los objetos de la clase Mando, de tal manera que no hay que preocuparse por ello.
+

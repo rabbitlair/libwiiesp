@@ -1,0 +1,7 @@
+digraph G
+{
+  edge [fontname="FreeSans.ttf",fontsize="10",labelfontname="FreeSans.ttf",labelfontsize="10"];
+  node [fontname="FreeSans.ttf",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="Logger",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classLogger.html",tooltip="Sistema de registro de mensajes de información, aviso o error en un archivo de texto plano en la SD..."];
+}

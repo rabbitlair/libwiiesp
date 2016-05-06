@@ -1,0 +1,7 @@
+digraph G
+{
+  edge [fontname="FreeSans.ttf",fontsize="10",labelfontname="FreeSans.ttf",labelfontsize="10"];
+  node [fontname="FreeSans.ttf",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="Juego",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classJuego.html",tooltip="Clase que proporciona una base para definir el objeto principal del programa de manera fácil..."];
+}

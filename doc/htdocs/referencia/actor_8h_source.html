@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>libWiiEsp: Fichero Fuente /home/rabbit/Escritorio/libwiiesp/include/actor.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Generado por Doxygen 1.7.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+--></script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libWiiEsp&#160;<span id="projectnumber">0.9.2</span></div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>/home/rabbit/Escritorio/libwiiesp/include/actor.h</h1>  </div>
+</div>
+<div class="contents">
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
+<a name="l00002"></a>00002 <span class="comment">// Licencia GPLv3</span>
+<a name="l00003"></a>00003 <span class="comment">//</span>
+<a name="l00004"></a>00004 <span class="comment">// Este archivo es parte de libWiiEsp. Copyright (C) 2011 Ezequiel Vázquez de la Calle</span>
+<a name="l00005"></a>00005 <span class="comment">//</span>
+<a name="l00006"></a>00006 <span class="comment">// libWiiEsp es software libre: usted puede redistribuirlo y/o modificarlo bajo los términos de la </span>
+<a name="l00007"></a>00007 <span class="comment">// Licencia Pública General GNU publicada por la Fundación para el Software Libre, ya sea la versión 3 </span>
+<a name="l00008"></a>00008 <span class="comment">// de la Licencia, o (a su elección) cualquier versión posterior.</span>
+<a name="l00009"></a>00009 <span class="comment">//</span>
+<a name="l00010"></a>00010 <span class="comment">// libWiiEsp se distribuye con la esperanza de que sea útil, pero SIN GARANTÍA ALGUNA; ni siquiera </span>
+<a name="l00011"></a>00011 <span class="comment">// la garantía implícita MERCANTIL o de APTITUD PARA UN PROPÓSITO DETERMINADO. Consulte los detalles de</span>
+<a name="l00012"></a>00012 <span class="comment">// la Licencia Pública General GNU para obtener una información más detallada.</span>
+<a name="l00013"></a>00013 <span class="comment">//</span>
+<a name="l00014"></a>00014 <span class="comment">// Debería haber recibido una copia de la Licencia Pública General GNU junto a libWiiEsp. En caso </span>
+<a name="l00015"></a>00015 <span class="comment">// contrario, consulte &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00016"></a>00016 <span class="comment">//</span>
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 <span class="preprocessor">#ifndef _ACTOR_H_</span>
+<a name="l00019"></a>00019 <span class="preprocessor"></span><span class="preprocessor">#define _ACTOR_H_</span>
+<a name="l00020"></a>00020 <span class="preprocessor"></span>
+<a name="l00021"></a>00021 <span class="preprocessor">    #include &lt;gctypes.h&gt;</span>
+<a name="l00022"></a>00022 <span class="preprocessor">    #include &lt;map&gt;</span>
+<a name="l00023"></a>00023 <span class="preprocessor">    #include &lt;set&gt;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">    #include &lt;string&gt;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">    #include &lt;valarray&gt;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">    #include &quot;animacion.h&quot;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">    #include &quot;colision.h&quot;</span>
+<a name="l00028"></a>00028 <span class="preprocessor">    #include &quot;excepcion.h&quot;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">    #include &quot;galeria.h&quot;</span>
+<a name="l00030"></a>00030 <span class="preprocessor">    #include &quot;parser.h&quot;</span>
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032     <span class="keyword">class </span><a class="code" href="classNivel.html" title="Clase que proporciona una base para definir niveles (escenarios donde participan actores) de manera f...">Nivel</a>;
+<a name="l00033"></a>00033 
+<a name="l00143"></a><a class="code" href="classActor.html">00143</a>     <span class="keyword">class </span><a class="code" href="classActor.html" title="Clase que proporciona una base para definir actores (también llamados sprites) de una manera fácil...">Actor</a>
+<a name="l00144"></a>00144     {
+<a name="l00145"></a>00145         <span class="keyword">public</span>:
+<a name="l00146"></a>00146 
+<a name="l00150"></a><a class="code" href="classActor.html#ad22fbe855330f5a409b261956656deee">00150</a>             <span class="keyword">typedef</span> std::set&lt;Figura*&gt; <a class="code" href="classActor.html#ad22fbe855330f5a409b261956656deee">CajasColision</a>;
+<a name="l00151"></a>00151 
+<a name="l00155"></a><a class="code" href="classActor.html#a1d0a3cdd82143c906260a23bc453617c">00155</a>             <span class="keyword">typedef</span> std::map&lt;std::string, CajasColision&gt; <a class="code" href="classActor.html#a1d0a3cdd82143c906260a23bc453617c">Colisiones</a>;
+<a name="l00156"></a>00156 
+<a name="l00160"></a><a class="code" href="classActor.html#a1e7ee055136226d7992d681cff7fe204">00160</a>             <span class="keyword">typedef</span> std::map&lt;std::string, Animacion*&gt; <a class="code" href="classActor.html#a1e7ee055136226d7992d681cff7fe204">Animaciones</a>;
+<a name="l00161"></a>00161 
+<a name="l00171"></a>00171             <a class="code" href="classActor.html#a0211f419effddbee853a0605b6b6d9de">Actor</a>(<span class="keyword">const</span> std::string&amp; ruta, <span class="keyword">const</span> <a class="code" href="classNivel.html" title="Clase que proporciona una base para definir niveles (escenarios donde participan actores) de manera f...">Nivel</a>* nivel) <span class="keywordflow">throw</span> (<a class="code" href="classArchivoEx.html" title="Clase de excepción para errores relacionados con archivos.">ArchivoEx</a>, <a class="code" href="classCodigoEx.html" title="Clase de excepción para errores relacionados con códigos identificadores.">CodigoEx</a>, <a class="code" href="classTarjetaEx.html" title="Clase de excepción para errores relacionados con la tarjeta SD.">TarjetaEx</a>, <a class="code" href="classXmlEx.html" title="Clase de excepción para errores relacionados con un árbol XML.">XmlEx</a>);
+<a name="l00172"></a>00172 
+<a name="l00177"></a>00177             <span class="keyword">virtual</span> <a class="code" href="classActor.html#ac0565e14088480f37c58f2b78a0718f7">~Actor</a>(<span class="keywordtype">void</span>);
+<a name="l00178"></a>00178 
+<a name="l00183"></a>00183             u32 <a class="code" href="classActor.html#afcce565a0274a45dac8491f9ef964168">x</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;
+<a name="l00184"></a>00184 
+<a name="l00189"></a>00189             u32 <a class="code" href="classActor.html#a0d66e6aa088654516d8dbfe34cfaa267">y</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;
+<a name="l00190"></a>00190 
+<a name="l00196"></a>00196             u32 <a class="code" href="classActor.html#a65420ba1f5f394d0418ec1d90a5661cf">xPrevio</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;
+<a name="l00197"></a>00197 
+<a name="l00203"></a>00203             u32 <a class="code" href="classActor.html#acb0e3f836c5446a5aa6d436a192e47a3">yPrevio</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;
+<a name="l00204"></a>00204 
+<a name="l00210"></a>00210             s16 <a class="code" href="classActor.html#ae50b3dd83150fcf498183bf18935601a">velX</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;
+<a name="l00211"></a>00211 
+<a name="l00217"></a>00217             s16 <a class="code" href="classActor.html#a7d5bcde0f00b2e11f488baffd4587fa2">velY</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;
+<a name="l00218"></a>00218 
+<a name="l00223"></a>00223             <span class="keyword">const</span> std::string&amp; <a class="code" href="classActor.html#af43729472c2a73871faaa2b6fb2b5490">estado</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;
+<a name="l00224"></a>00224 
+<a name="l00229"></a>00229             <span class="keyword">const</span> std::string&amp; <a class="code" href="classActor.html#a251ad509170c036e724e5125fdb5cec8">estadoPrevio</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;
+<a name="l00230"></a>00230 
+<a name="l00236"></a>00236             <span class="keyword">const</span> <a class="code" href="classActor.html#ad22fbe855330f5a409b261956656deee">CajasColision</a>&amp; <a class="code" href="classActor.html#acac1941ca230527e62b8bbd643615ccf">cajasColision</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;
+<a name="l00237"></a>00237 
+<a name="l00243"></a>00243             u16 <a class="code" href="classActor.html#a5379a3952ed3f167d53b790847fc9e0c">ancho</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;
+<a name="l00244"></a>00244 
+<a name="l00250"></a>00250             u16 <a class="code" href="classActor.html#a9206a7a5738ea371e3e9348294dcf7f5">alto</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;
+<a name="l00251"></a>00251 
+<a name="l00256"></a>00256             <span class="keyword">const</span> std::string&amp; <a class="code" href="classActor.html#a65aaf76cab7cbdf510c0ccd2d94ff7ef">tipoActor</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;
+<a name="l00257"></a>00257 
+<a name="l00265"></a>00265             <span class="keywordtype">void</span> <a class="code" href="classActor.html#a4e6a81bb83bb2a20507e8570f3f139aa">mover</a>(u32 <a class="code" href="classActor.html#afcce565a0274a45dac8491f9ef964168">x</a>, u32 <a class="code" href="classActor.html#a0d66e6aa088654516d8dbfe34cfaa267">y</a>);
+<a name="l00266"></a>00266 
+<a name="l00272"></a>00272             <span class="keywordtype">void</span> <a class="code" href="classActor.html#a641f0e1852ce50859971e4def8596273">setVelX</a>(s16 vx);
+<a name="l00273"></a>00273 
+<a name="l00279"></a>00279             <span class="keywordtype">void</span> <a class="code" href="classActor.html#a1a7f02903c3a9cbbfe4a428e542d864c">setVelY</a>(s16 vy);
+<a name="l00280"></a>00280 
+<a name="l00288"></a>00288             <span class="keywordtype">bool</span> <a class="code" href="classActor.html#af2e0aea9a6d6a0b8e10664ffe040b2fd">setEstado</a>(<span class="keyword">const</span> std::string&amp; e);
+<a name="l00289"></a>00289 
+<a name="l00294"></a>00294             <span class="keywordtype">void</span> <a class="code" href="classActor.html#aace6a41bbd220497ffe8bbf178762e85">invertirDibujo</a>(<span class="keywordtype">bool</span> inv);
+<a name="l00295"></a>00295 
+<a name="l00306"></a>00306             <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classActor.html#a35db3f2df853c01393d24c1d9d2ee08d">dibujar</a>(s16 <a class="code" href="classActor.html#afcce565a0274a45dac8491f9ef964168">x</a>, s16 <a class="code" href="classActor.html#a0d66e6aa088654516d8dbfe34cfaa267">y</a>, s16 z);
+<a name="l00307"></a>00307 
+<a name="l00314"></a>00314             <span class="keywordtype">bool</span> <a class="code" href="classActor.html#ad02e335b098db2f8814ff0a77482d29b">colision</a>(<span class="keyword">const</span> <a class="code" href="classActor.html" title="Clase que proporciona una base para definir actores (también llamados sprites) de una manera fácil...">Actor</a>&amp; a);
+<a name="l00315"></a>00315 
+<a name="l00321"></a>00321             <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classActor.html#ae97b2e0eb9f32ca077b40b642ccfecad">actualizar</a>(<span class="keywordtype">void</span>) = 0;
+<a name="l00322"></a>00322 
+<a name="l00323"></a>00323         <span class="keyword">protected</span>:
+<a name="l00324"></a>00324 
+<a name="l00335"></a>00335             <span class="keywordtype">void</span> <a class="code" href="classActor.html#aaf2ab542855def4f2de6a0afd9c2493d">cargarDatosIniciales</a>(<span class="keyword">const</span> std::string&amp; ruta) <span class="keywordflow">throw</span> (<a class="code" href="classArchivoEx.html" title="Clase de excepción para errores relacionados con archivos.">ArchivoEx</a>, <a class="code" href="classTarjetaEx.html" title="Clase de excepción para errores relacionados con la tarjeta SD.">TarjetaEx</a>, <a class="code" href="classCodigoEx.html" title="Clase de excepción para errores relacionados con códigos identificadores.">CodigoEx</a>, <a class="code" href="classXmlEx.html" title="Clase de excepción para errores relacionados con un árbol XML.">XmlEx</a>);
+<a name="l00336"></a>00336 
+<a name="l00345"></a>00345             <span class="keywordtype">void</span> <a class="code" href="classActor.html#a2ceb4ff003aa6b4eda77d135bbc156bc">leerAnimaciones</a>(TiXmlElement* nodo) <span class="keywordflow">throw</span> (<a class="code" href="classCodigoEx.html" title="Clase de excepción para errores relacionados con códigos identificadores.">CodigoEx</a>, <a class="code" href="classXmlEx.html" title="Clase de excepción para errores relacionados con un árbol XML.">XmlEx</a>);
+<a name="l00346"></a>00346 
+<a name="l00353"></a>00353             <span class="keywordtype">void</span> <a class="code" href="classActor.html#a757da03fc2339c8ac0f3d2245c227739">leerColisiones</a>(TiXmlElement* nodo);
+<a name="l00354"></a>00354 
+<a name="l00358"></a><a class="code" href="classActor.html#a20017f792d4a038c36ee551044c1e16c">00358</a>             s16 <a class="code" href="classActor.html#a20017f792d4a038c36ee551044c1e16c">_vx</a>;
+<a name="l00359"></a>00359 
+<a name="l00363"></a><a class="code" href="classActor.html#a7c16c691d0a24eb546ff32113fed01de">00363</a>             s16 <a class="code" href="classActor.html#a7c16c691d0a24eb546ff32113fed01de">_vy</a>;
+<a name="l00364"></a>00364 
+<a name="l00369"></a><a class="code" href="classActor.html#ab89fbb7da40b4f50c6c58a0abb69e2b9">00369</a>             u32 <a class="code" href="classActor.html#ab89fbb7da40b4f50c6c58a0abb69e2b9">_x</a>;
+<a name="l00370"></a>00370 
+<a name="l00375"></a><a class="code" href="classActor.html#aa9926a267064024564c21becd235431b">00375</a>             u32 <a class="code" href="classActor.html#aa9926a267064024564c21becd235431b">_y</a>;
+<a name="l00376"></a>00376 
+<a name="l00380"></a><a class="code" href="classActor.html#a3032659e74980c39f7dcff6799fc749a">00380</a>             u32 <a class="code" href="classActor.html#a3032659e74980c39f7dcff6799fc749a">_x_previo</a>;
+<a name="l00381"></a>00381 
+<a name="l00385"></a><a class="code" href="classActor.html#a891414fdf06393b758287976477dcfa1">00385</a>             u32 <a class="code" href="classActor.html#a891414fdf06393b758287976477dcfa1">_y_previo</a>;
+<a name="l00386"></a>00386 
+<a name="l00390"></a><a class="code" href="classActor.html#a852c141a92f809c64ed2e3c402df1b41">00390</a>             std::string <a class="code" href="classActor.html#a852c141a92f809c64ed2e3c402df1b41">_estado_actual</a>;
+<a name="l00391"></a>00391 
+<a name="l00395"></a><a class="code" href="classActor.html#ae3eb29427a81b8082a01ad2be8f426c7">00395</a>             std::string <a class="code" href="classActor.html#ae3eb29427a81b8082a01ad2be8f426c7">_estado_previo</a>;
+<a name="l00396"></a>00396 
+<a name="l00400"></a><a class="code" href="classActor.html#ab3f6143e149974fe0792a20f64d40c31">00400</a>             std::string <a class="code" href="classActor.html#ab3f6143e149974fe0792a20f64d40c31">_tipo_actor</a>;
+<a name="l00401"></a>00401 
+<a name="l00405"></a><a class="code" href="classActor.html#a34a2899f19b5fddb5c38b946ea5e6583">00405</a>             <span class="keywordtype">bool</span> <a class="code" href="classActor.html#a34a2899f19b5fddb5c38b946ea5e6583">_invertida</a>;
+<a name="l00406"></a>00406 
+<a name="l00410"></a><a class="code" href="classActor.html#a4a21a3f60628baaf2c0bd4034db0f34a">00410</a>             <a class="code" href="classActor.html#a1d0a3cdd82143c906260a23bc453617c">Colisiones</a> <a class="code" href="classActor.html#a4a21a3f60628baaf2c0bd4034db0f34a">_map_colisiones</a>;
+<a name="l00411"></a>00411 
+<a name="l00415"></a><a class="code" href="classActor.html#a3a334dd1334b0b3628353c471e95fc76">00415</a>             <a class="code" href="classActor.html#a1e7ee055136226d7992d681cff7fe204">Animaciones</a> <a class="code" href="classActor.html#a3a334dd1334b0b3628353c471e95fc76">_map_animaciones</a>;
+<a name="l00416"></a>00416 
+<a name="l00420"></a><a class="code" href="classActor.html#ab5f259f7e3aea691cbbcb961da93620d">00420</a>             <span class="keyword">const</span> <a class="code" href="classNivel.html" title="Clase que proporciona una base para definir niveles (escenarios donde participan actores) de manera f...">Nivel</a>* <a class="code" href="classActor.html#ab5f259f7e3aea691cbbcb961da93620d">_nivel</a>;
+<a name="l00421"></a>00421     };
+<a name="l00422"></a>00422 
+<a name="l00423"></a>00423 <span class="preprocessor">#endif</span>
+<a name="l00424"></a>00424 <span class="preprocessor"></span>
+</pre></div></div>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumeraciones</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Generado el Martes, 19 de Julio de 2011 20:45:52 para libWiiEsp por&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
+</body>
+</html>
